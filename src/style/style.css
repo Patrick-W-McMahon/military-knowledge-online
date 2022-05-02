@@ -1,0 +1,14 @@
+:root {
+    --army-primary-clr: 255, 193, 7;
+}
+
+body {
+    background-image: url('../style/img/Army-Background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar {
+    background-color: rgb(var(--army-primary-clr))!important;
+}
