@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `military-knowledge-online`,
+        title: `Military Knowledge Online`,
         description: `Central knowledge hub for military web services`,
         author: `Patrick W. McMahon`,
         siteUrl: `https://github.com/Patrick-W-McMahon/military-knowledge-online`,
