@@ -20,6 +20,7 @@ const Layout = ({ children }) => {
           nodes {
             name
             seal
+            path
           }
         }
       }

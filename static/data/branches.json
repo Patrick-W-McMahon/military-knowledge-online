@@ -1,30 +1,37 @@
 [{
         "name": "Air Force",
-        "seal": "air_force.png"
+        "seal": "air_force.png",
+        "path": "air_force"
     },
     {
         "name": "Army",
-        "seal": "army.png"
+        "seal": "army.png",
+        "path": "army"
     },
 
     {
         "name": "Coast Guard",
-        "seal": "coast_guard.png"
+        "seal": "coast_guard.png",
+        "path": "cost_guard"
     },
     {
         "name": "Marine Corps",
-        "seal": "marine_corps.png"
+        "seal": "marine_corps.png",
+        "path": "marine_corps"
     },
     {
         "name": "National Guard",
-        "seal": "national_guard.png"
+        "seal": "national_guard.png",
+        "path": "national_guard"
     },
     {
         "name": "Navy",
-        "seal": "navy.png"
+        "seal": "navy.png",
+        "path": "navy"
     },
     {
         "name": "Space Force",
-        "seal": "space_force.png"
+        "seal": "space_force.png",
+        "path": "space_force"
     }
 ]

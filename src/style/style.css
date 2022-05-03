@@ -13,6 +13,10 @@ body {
     background-color: rgb(var(--army-primary-clr))!important;
 }
 
+.navbar a {
+    text-decoration: none;
+}
+
 .military-branch-select {
     padding-right: 8px;
 }
@@ -36,6 +40,7 @@ body {
     padding: 30px 0 0 0;
     text-align: center;
     z-index: -10;
+    border-bottom: 6px solid black;
 }
 
 .military-branch-select div:hover span {
