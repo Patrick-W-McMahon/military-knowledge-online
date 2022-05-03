@@ -1,0 +1,30 @@
+[{
+        "name": "Air Force",
+        "seal": "air_force.png"
+    },
+    {
+        "name": "Army",
+        "seal": "army.png"
+    },
+
+    {
+        "name": "Coast Guard",
+        "seal": "coast_guard.png"
+    },
+    {
+        "name": "Marine Corps",
+        "seal": "marine_corps.png"
+    },
+    {
+        "name": "National Guard",
+        "seal": "national_guard.png"
+    },
+    {
+        "name": "Navy",
+        "seal": "navy.png"
+    },
+    {
+        "name": "Space Force",
+        "seal": "space_force.png"
+    }
+]
