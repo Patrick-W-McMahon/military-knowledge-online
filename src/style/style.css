@@ -12,3 +12,36 @@ body {
 .navbar {
     background-color: rgb(var(--army-primary-clr))!important;
 }
+
+.military-branch-select {
+    padding-right: 8px;
+}
+
+.military-branch-select div {
+    height: 50px;
+}
+
+.military-branch-select div>* {
+    display: block;
+    padding: 3px;
+}
+
+.military-branch-select div span {
+    display: none;
+    position: fixed;
+    color: black;
+    background-color: rgb(var(--army-primary-clr));
+    width: 130px;
+    margin: -48px 0 0 -25px;
+    padding: 30px 0 0 0;
+    text-align: center;
+    z-index: -10;
+}
+
+.military-branch-select div:hover span {
+    display: block;
+}
+
+.military-branch-select img {
+    width: 80px;
+}

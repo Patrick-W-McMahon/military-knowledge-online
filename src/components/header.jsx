@@ -9,10 +9,22 @@ const Header = ({ siteTitle, militaryBranches }) => (
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="/cards">Cards</Nav.Link>
+        {/*
         <NavDropdown title="Branches" id="basic-nav-dropdown">
           {militaryBranches.length > 0 ? militaryBranches.map((branch, index) => <NavDropdown.Item key={index} href={`branch/${branch.name}`}>{branch.name}</NavDropdown.Item>): null}
         </NavDropdown>
+        */}
       </Nav>
+      <div className="nav navbar-nav ml-auto military-branch-select">
+        {militaryBranches.length > 0 ? militaryBranches.map((branch, index) => (
+          <a key={index} href={`/branch/${branch.name}`}>
+            <div>
+              <img src={`/img/insignia/${branch.seal}`} alt={branch.name} />
+              <span>{branch.name}</span>
+            </div>
+          </a>
+        )): null}
+      </div>
     </Navbar.Collapse>
   </Navbar>
 );

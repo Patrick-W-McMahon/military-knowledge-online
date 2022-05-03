@@ -10,18 +10,25 @@ import '../style/style.css';
 
 const Layout = ({ children }) => {
     const data = useStaticQuery(graphql `
-      query SiteTitleQuery {
+      query {
         site {
           siteMetadata {
             title
+          }
+        },
+        allBranch {
+          nodes {
+            name
+            seal
           }
         }
       }
     `);
 
+    const { site, allBranch } = data;
     return (
       <Fragment>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} militaryDepartments={[]} />
+        <Header siteTitle={site.siteMetadata?.title || `Title`} militaryBranches={allBranch.nodes || []} />
         <div className="page-wrapper">
           <div className="main-content">{children}</div>
           <footer>©{new Date().getFullYear()}&middot; Built with <a href="https://www.gatsbyjs.com">Gatsby</a></footer>
