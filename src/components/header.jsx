@@ -1,6 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
+import BranchSelect from './branchSelect';
 
 const Header = ({ siteTitle, militaryBranches }) => (
   <Navbar bg="light" expand="lg">
@@ -15,16 +16,7 @@ const Header = ({ siteTitle, militaryBranches }) => (
         </NavDropdown>
         */}
       </Nav>
-      <div className="nav navbar-nav ml-auto military-branch-select">
-        {militaryBranches.length > 0 ? militaryBranches.map((branch, index) => (
-          <a key={index} href={`/branch/${branch.path}`}>
-            <div>
-              <img src={`/img/insignia/${branch.seal}`} alt={branch.name} />
-              <span>{branch.name}</span>
-            </div>
-          </a>
-        )): null}
-      </div>
+      <BranchSelect militaryBranches={militaryBranches} />
     </Navbar.Collapse>
   </Navbar>
 );

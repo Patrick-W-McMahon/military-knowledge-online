@@ -1,4 +1,26 @@
 const BRANCH_DATA = require('./static/data/branches.json');
+const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
+const LINKS_ARMY = require('./static/data/links_army.json');
+const LINKS_COAST_GUARD = require('./static/data/links_coast_guard.json');
+const LINKS_MARINE_CORPS = require('./static/data/links_marine_corps.json');
+const LINKS_NATIONAL_GUARD = require('./static/data/links_national_guard.json');
+const LINKS_NAVY = require('./static/data/links_navy.json');
+const LINKS_SPACE_FORCE = require('./static/data/links_space_force.json');
+
+const LinkSources = {
+    air_force: LINKS_AIR_FORCE,
+    army: LINKS_ARMY,
+    cost_guard: LINKS_COAST_GUARD,
+    marine_corps: LINKS_MARINE_CORPS,
+    national_guard: LINKS_NATIONAL_GUARD,
+    navy: LINKS_NAVY,
+    space_force: LINKS_SPACE_FORCE
+};
+var links = [];
+BRANCH_DATA.forEach(branch => {
+    LinkSources[branch.path].forEach(link => links.push({...link, branch: branch.path }));
+});
+const LINKS_DATA = links;
 
 
 exports.createPages = async({ actions }) => {
@@ -7,8 +29,16 @@ exports.createPages = async({ actions }) => {
         path: "/using-dsg",
         component: require.resolve("./src/templates/using-dsg.js"),
         context: {},
-        defer: true,
-    })
+        defer: true
+    });
+
+    BRANCH_DATA.forEach(branch => {
+        createPage({
+            path: `/branch/${branch.path}`,
+            component: require.resolve("./src/templates/branch.jsx"),
+            context: { branch: branch.path }
+        });
+    });
 }
 
 
@@ -43,4 +73,5 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
     };
 
     dataArrSetup(BRANCH_DATA, 'branches', 'branch');
+    dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
 }

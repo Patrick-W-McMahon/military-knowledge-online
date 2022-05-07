@@ -50,3 +50,8 @@ body {
 .military-branch-select img {
     width: 80px;
 }
+
+.link-container {
+    background-color: white;
+    margin-top: 20px;
+}
