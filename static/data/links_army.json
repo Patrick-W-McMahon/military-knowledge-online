@@ -265,5 +265,95 @@
         "title": "Cyber Awareness Challenge",
         "url": "https://cs.signal.army.mil",
         "description": "The Cyber Awareness Challenge provides an overview of cybersecurity threats and best practices to keep information and information systems secure."
+    },
+    {
+        "title": "Defense Acquisition University",
+        "url": "https://www.dau.mil/",
+        "description": "The Defense Acquisition University is a corporate university of the United States Department of Defense offering \"acquisition, technology, and logistics\" training to military and Federal civilian staff and Federal contractors."
+    },
+    {
+        "title": "Defense Civilian Personnel Data System",
+        "url": "https://www.dcpas.osd.mil/",
+        "description": "The Defense Civilian Personnel Advisory Service is a multifunction, web-based civilian HR information management and transaction processing system. The core DCPDS system (based on the Oracle HR custom of the-shelf solution (COTS) product), is customized for Defense environments, and provides personnel transaction processing using Oracle Federal HR for appropriated fund, non-appropriated fund, local national and National Guard employees."
+    },
+    {
+        "title": "Defense Enrollment Eligibility Readiness",
+        "url": "https://www.tricare.mil/DEERS/",
+        "description": "Defense Enrollment Eligibility Reporting System (DEERS) is a computerized database for United States Service members, military retirees, 100% VA Disabled Veterans, dependents, DoD active Contractors, and others worldwide who are entitled to Public Key Infrastructure and TRICARE eligibility."
+    },
+    {
+        "title": "Defense Finance and Accounting Service (DFAS)",
+        "url": "https://www.dfas.mil/",
+        "description": "Defense Finance and Accounting Service (DFAS) manage the finance and accounting serves for the U.S. Army."
+    },
+    {
+        "title": "Defense Information Systems Agency",
+        "url": "https://disa.deps.mil/ext/cop/mae/SitePages/Programs.aspx",
+        "description": "Defense Information Systems Agency enable mission operations by providing assured communications through the delivery of optimized cyber infrastructure solutions for our global partners."
+    },
+    {
+        "title": "Defense Logistics Agency",
+        "url": "https://business.dla.mil/landing/index.html",
+        "description": "The Defense Logistics Agency is the Department of Defense's combat logistics support agency. DLA provides the Army, Marine Corps, Navy, Air Force, other federal agencies and partner nation armed forces with a full spectrum of logistics, acquisition and technical services. DLA sources and provides nearly all of the consumable items America's military forces need to operate - from food, fuel and energy to uniforms, medical supplies and construction material."
+    },
+    {
+        "title": "Defense Manpower Data Center",
+        "url": "https://dwp.dmdc.osd.mil/dwp/app/main",
+        "description": "Defense Manpower Data Center is the leader in joint information sharing and support on DoD human resource issues, the central source for identifying, authenticating, authorizing, and providing information on personnel during and after their affiliation with DoD and the one, central access point for information and assistance on DoD entitlements, benefits, and medical readiness for uniformed service members, veterans, and their families."
+    },
+    {
+        "title": "Defense Travel Management System",
+        "url": "https://www.defensetravel.dod.mil/",
+        "description": "The Defense Travel System (DTS) is a fully integrated, automated, end-to-end travel management system that enables DoD travelers to create authorizations (TDY travel orders), prepare reservations, receive approvals, generate travel vouchers, and receive a split reimbursement between their bank accounts and the Government Travel Charge Card (GTCC) vendor."
+    },
+    {
+        "title": "Defense Travel System",
+        "url": "https://www.defensetravel.osd.mil/",
+        "description": "Defense Travel System is an integrated, automated, end-to-end travel management system that enables DOD travelers to create travel orders, prepare reservations, receive approvals, generate travel vouchers, and receive split disbursement between their bank accounts and the Government Travel Charge Card vendor."
+    },
+    {
+        "title": "Department of the Army Photo Management Information System (DAPMIS)",
+        "url": "https://dapmis.hrc.army.mil/ImageAcceptProlog.action",
+        "description": "The Department of the Army Photograph Management Information System (DAPMIS) is a web-enabled, e-business system that receives digitized official photographs from DOD worldwide photo studios."
+    },
+    {
+        "title": "Deployed Digital Training Campus (DDTC)",
+        "url": "https://www.atis.army.mil/DDTC.html",
+        "description": "The Deployed Digital Training Campus is a deployable networked classroom enabling group or individual instruction through Video Tele-training (VTT), interactive multi-media (IMI), web-based instruction, individual collaboration, and professional development training. This is includes access to current Distributed Learning (DL) products and constructive simulations. The DDTC provides a means for the current institutional training base to deliver proponent approved dL training products and services to deployed forces worldwide and to provide a flexible means to meet surge training requirements to deploying or redeploying forces."
+    },
+    {
+        "title": "Deployment Health Assessment Program (DHAP)",
+        "url": "https://www.usar.army.mil/DHAP/",
+        "description": "The Deployment Health Assessment Program (DHAP) allows you to take proactive steps to protect your health and well-being and to ensure your military readiness. DHAP provides early identification of emerging deployment related health conditions and serves as a gateway to care and treatment."
+    },
+    {
+        "title": "Digital Training Facility (DTF)",
+        "url": "https://www.atis.army.mil/DTF.html",
+        "description": "A Digital Training Facility is a computer lab located on Army installations and Reserve sites worldwide. Units use DTFs to conduct training that improves individual and unit readiness. Using high-speed internet access, computer based training and Video Tele-Training (VTT) equipment, Soldiers and civilians can train when it fits their professional needs and personal schedules."
+    },
+    {
+        "title": "Digital Training Management System (DTMS)",
+        "url": "https://dtms.army.mil/",
+        "description": "Digital Training Management System (DTMS) provides streamlined access to the Individual Tasks, Collective Task Training and Evaluation Outlines (T&EO), Headquarters, Department of the Army (HQDA) Standard Mission Essential Task List (METL) and Combined Arms Training Strategy (CATS) that form the building blocks for unit training and achieving readiness."
+    },
+    {
+        "title": "DoD Automated Time Attendance and Production System",
+        "url": "https://ataaps.csd.disa.mil/",
+        "description": "The Automated Time Attendance and Production System (ATAAPS) is used by civilian employees to accurately record time and attendance (e.g. leave, overtime, compensatory time off, wellness), while capturing labor hours by job order."
+    },
+    {
+        "title": "DOD CAC Reference Center",
+        "url": "http://www.cac.mil/",
+        "description": "DoD ID Card Reference Center"
+    },
+    {
+        "title": "DOD MWR Libraries Overdrive",
+        "url": "https://dod.overdrive.com/dod-armymwr/content",
+        "description": "Army MWR Digital Library (Sign up at your on post library)"
+    },
+    {
+        "title": "DS Login Registration",
+        "url": "https://myaccess.dmdc.osd.mil/identitymanagement/registration.do?execution=e1s1",
+        "description": "Defense Self Service Logon makes it easy for you to access your information contained across DoD and VA partner websites. By signing up for a free account, you can view your financial and benefits information; Personally Identifiable Information (PII); personal Health Information (PHI); claim statuses and records."
     }
 ]
