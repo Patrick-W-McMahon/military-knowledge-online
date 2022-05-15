@@ -367,6 +367,50 @@
         "description": "eBenefits is the result of a collaboration between the Department of Veterans Affairs (VA) and the Department of Defense (DoD). We serve Veterans, Service members, Wounded Warriors, their family members, and their authorized caregivers. They offer:\nA secure environment where you can safely access your personal information and perform self-service tasks.\nApplications (online and PDF) for disability compensation and various benefits.\nEmployment resources.\nA personalized Dashboard that you can customize to suit your preferences and information needs.\nAccess to the National Resource Directory, which enables you to find links to resource based on subjects that interest you."
     },
     {
-
+        "title": "electronic Financial Liability Investigations of Property Loss",
+        "url": "https://eflipl.army.mil",
+        "description": "Financial Liability Investigation of Property Loss, or FLIPL, is the procedure the Army uses to recover the cost of lost or damaged property. However, in certain cases, such as the loss of personal arms or equipment, or damage to government housing, a Soldier can be held liable for the entire loss."
+    },
+    {
+        "title": "eMILPO",
+        "url": "https://emilpo.ahrs.army.mil/",
+        "description": "eMILPO is the system of records for Army personnel and keeps track of all Soldiers within a particular unit, keeps track of Soldiers' individual records, and in general houses every Soldier's record in the active duty Army."
+    },
+    {
+        "title": "Evaluation Entry System",
+        "url": "https://evaluations.hrc.army.mil/",
+        "description": "Evaluation Entry System (EES) is the Army's forms system for Army Officer Evaluation Reports (OERs) and NonCommissioned Officer Evaluation Reports (NCOERs)."
+    },
+    {
+        "title": "Federal Voting Assistance Program",
+        "url": "https://www.fvap.gov/",
+        "description": "The Federal Voting Assistance Program (FVAP) works to ensure Service members, their eligible family members, and overseas citizens are aware of their right to vote and have the tools and resources to successfully do so - from anywhere in the world."
+    },
+    {
+        "title": "FEDLOG",
+        "url": "https://www.us.army.mil/common/fedlog/FEDLOG.ZIP",
+        "description": "Federal Logistics (FED LOG) data provides users the ability to access Federal Logistics Information System (FLIS) data during instances when internet connectivity is non-available. FED LOG provides essential information about items of supply to include the National Stock Number (NSN), the Approved Item Name, Manufacturers and Distributors information (to include Part Numbers), Freight Data, Hazardous Materiel Indicators, Interchangeable and Substitutable data, Acquisition Advice Code (AAC) and Unit Price, Physical and Performance Characteristics along with service specific management data.",
+        "network": "DoD"
+    },
+    {
+        "title": "FEDLOG LITE",
+        "url": "https://www.us.army.mil/common/fedlog/FEDLOGLITE.ZIP",
+        "description": "Federal Logistics (FED LOG) data provides users the ability to access Federal Logistics Information System (FLIS) data during instances when internet connectivity is non-available. FED LOG provides essential information about items of supply to include the National Stock Number (NSN), the Approved Item Name, Manufacturers and Distributors information (to include Part Numbers), Freight Data, Hazardous Materiel Indicators, Interchangeable and Substitutable data, Acquisition Advice Code (AAC) and Unit Price, Physical and Performance Characteristics along with service specific management data.",
+        "network": "DoD"
+    },
+    {
+        "title": "FEDMALL",
+        "url": "https://www.fedmall.mil/index.html",
+        "description": "FedMall is the premier government e-commerce acquisition platform providing an optimal experience for customers which include the United States military services, federal, state and authorized local governmental agencies. Customers are able to quickly search and purchase items online whatever the need may be from wherever you are."
+    },
+    {
+        "title": "Financial Disclosure Management",
+        "url": "https://www.fdm.army.mil/",
+        "description": "Financial Disclosure Management (FDM) is a secure, Army electronic filing (e-filing) system for its authorized users to file and maintain required financial interest reports anywhere via a Web browser."
+    },
+    {
+        "title": "Force Management System (FMSWeb)",
+        "url": "https://fmsweb.fms.army.mil/",
+        "description": "An Army System that allows users to access, compare and save unit Modification Tables of Organization and Equipment, or MTOEs. It provides multiple ways to search for information and multiple ways for the user to save the information to their systems."
     }
 ]
