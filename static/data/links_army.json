@@ -494,5 +494,35 @@
         "title": "iSALUTE",
         "url": "https://www.inscom.army.mil/isalute/",
         "description": "iSALUTE is an Army counterintelligence reporting program to assist in preventing espionage, sabotage, subversion, and international terrorism. The program supports the Army's counterintelligence policy established in AR 381‐12, Threat Awareness and Reporting Program"
+    },
+    {
+        "title": "JAG Corps",
+        "url": "https://www.goarmy.com/jag.html",
+        "description": "The U.S. Army Judge Advocate General's Corps is a government organization that operates like a court system. Its practitioners, referred to as Judge Advocates, are licensed attorneys qualified to represent the Army and Army Soldiers in military legal matters."
+    },
+    {
+        "title": "JAG University",
+        "url": "https://jagu.army.mil/",
+        "description": "The online learning home of the Judge Advocate General's corps"
+    },
+    {
+        "title": "Joint Improvised Treat Defeat Organization",
+        "url": "https://www.dtra.mil/Mission/JIDO",
+        "description": "The Joint Improvised-Threat Defeat Organization (JIDO) is a combat support organization of the U.S. Department of Defense (DoD) organization under the Defense Threat Reduction Agency that deals with improvised threats such as the improvised explosive device (IEDs) and small unmanned aerial systems. JIDO was born from the Joint IED Defeat Organization established in 2006, which focused on IEDs. JIDO's mission is to \"enable Department of Defense actions to counter improvised threats with tactical responsiveness and anticipatory acquisition in support of combatant commanders' efforts to prepare for, and adapt to, battlefield surprise.\" This mission supports counter-terrorism, counter-insurgency and other related mission areas including Counter-IED."
+    },
+    {
+        "title": "Joint Knowledge Online (JKO)",
+        "url": "https://jkodirect.jten.mil/",
+        "description": "JKO provides continuous, career-long development of joint knowledge and joint readiness for individuals, staffs, Combatant Commands, Combat Support Agencies, and the Services."
+    },
+    {
+        "title": "Joint Risk Assessment Tool",
+        "url": "https://jrat.safety.army.mil/",
+        "description": "The Joint Risk Assessment Tool (JRAT) is an interactive, easy-to-use, automated system designed to assist users with the application of risk management in accordance with Joint Publication 3-0, Joint Operations, and Service-specific publications."
+    },
+    {
+        "title": "Joint Service Transcript (JST)",
+        "url": "https://jst.doded.mil/jst/",
+        "description": "Joint Services Transcript is an academically accepted document approved by the American Council on Education (ACE) to validate a service members military occupational experience and training along with the corresponding ACE college credit recommendations."
     }
 ]
