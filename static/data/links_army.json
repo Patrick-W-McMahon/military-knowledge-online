@@ -814,5 +814,10 @@
         "title": "Visual Information Ordering Site",
         "url": "https://vios.army.mil/",
         "description": "Visual Information Ordering Site is used to set up an appointment to have a DA Photo taken."
+    },
+    {
+        "title": "Yellow Ribbon Reintegration Program (YRRP)",
+        "url": "https://www.yellowribbon.mil/",
+        "description": "The Yellow Ribbon Reintegration Program (YRRP) is a Department of Defense-wide effort to promote the well-being of National Guard and Reserve members, their families and communities by connecting them with valuable resources."
     }
 ]
