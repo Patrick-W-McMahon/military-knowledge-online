@@ -673,5 +673,10 @@
         "title": "NETCOM",
         "url": "https://netcom.army.mil/",
         "description": "NETCOM leads global operations for the Army's portion of the DODIN, ensuring freedom of action in cyberspace while denying the same to our adversaries."
+    },
+    {
+        "title": "Office of Personnel Management",
+        "url": "https://www.opm.gov/",
+        "description": "The U.S. Office of Personnel Management (OPM) serves as the chief human resources agency and personnel policy manager for the Federal Government. OPM provides human resources leadership and support to Federal agencies and helps the Federal workforce achieve their aspirations as they serve the American people. OPM directs human resources and employee management services, administers retirement benefits, manages healthcare and insurance programs, oversees merit-based and inclusive hiring into the civil service, and provides a secure employment process."
     }
 ]
