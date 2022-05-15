@@ -804,5 +804,15 @@
         "title": "United Services Military Apprenticeship Program (USMAP)",
         "url": "https://usmap.osd.mil/index.htm",
         "description": "The United Services Military Apprenticeship Program (USMAP) provides enlisted Sailors (AC, FTS) the opportunity to complete civilian apprenticeship requirements while on Active duty and earn a U.S. Department of Labor \"Certificate of Completion\" and Journeyman card."
+    },
+    {
+        "title": "Volunteer Management Information System (VMIS)",
+        "url": "https://vmis.armyfamilywebportal.com/",
+        "description": "The Volunteer Management Information System (VMIS) assists the Army Volunteer Corps and Organization Point of Contact (OPOC) in managing these dedicated volunteers and allows volunteers a way track their hours, awards, trainings and certificates. Volunteers can apply for volunteer opportunities, record and track volunteer hours, and manage their volunteer service record."
+    },
+    {
+        "title": "Visual Information Ordering Site",
+        "url": "https://vios.army.mil/",
+        "description": "Visual Information Ordering Site is used to set up an appointment to have a DA Photo taken."
     }
 ]
