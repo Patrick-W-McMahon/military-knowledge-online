@@ -678,5 +678,30 @@
         "title": "Office of Personnel Management",
         "url": "https://www.opm.gov/",
         "description": "The U.S. Office of Personnel Management (OPM) serves as the chief human resources agency and personnel policy manager for the Federal Government. OPM provides human resources leadership and support to Federal agencies and helps the Federal workforce achieve their aspirations as they serve the American people. OPM directs human resources and employee management services, administers retirement benefits, manages healthcare and insurance programs, oversees merit-based and inclusive hiring into the civil service, and provides a secure employment process."
+    },
+    {
+        "title": "Preventative Maintenance Monthly (P.S. Magazine)",
+        "url": "https://www.psmagazine.army.mil/",
+        "description": "Preventative Maintenance Monthly is intended to enhance materiel readiness by emphasizing preventive maintenance and promoting proper maintenance and supply procedures. Review of PS Magazine will be a regular part of unit readiness initiatives. A reader service is available to answer maintenance and supply questions."
+    },
+    {
+        "title": "Procurement Integrated Enterprise Environment (PIEE)",
+        "url": "https://wawf.eb.mil/",
+        "description": "The Procurement Integrated Enterprise Environment (PIEE) is the primary enterprise procure-to-pay (P2P) application for the Department of Defense and its supporting agencies and is trusted by companies reporting over $7.1 billion in spending."
+    },
+    {
+        "title": "Protected Internet eXchange (PiX)",
+        "url": "https://pixtoday.net/",
+        "description": "The Protected Internet eXchange (PiX), is a US government-sponsored program to assist with unclassified information sharing among US government agencies and military, as well as with foreign partners. PiX helps people working on similar problem sets connect with each other in a secure space."
+    },
+    {
+        "title": "Promotion Point Worksheet",
+        "url": "https://www.hrcapps.army.mil/PPW/",
+        "description": "Pulls your Promotion Point Worksheet from HRC. The Promotion Point Worksheet displays your current promotion point brake down for promotions to SGT and SSG."
+    },
+    {
+        "title": "Psychological Health Center of Excellence",
+        "url": "http://www.pdhealth.mil/",
+        "description": "The Psychological Health Center of Excellence (PHCoE) is one of the Centers of Excellence within the Research and Development Directorate of the Defense Health Agency (DHA). PHCoE collaborates across the Department of Defense (DOD) and with the Department of Veterans Affairs and other agencies to provide leadership and expertise to inform policy and drive improvements in psychological health outcomes."
     }
 ]
