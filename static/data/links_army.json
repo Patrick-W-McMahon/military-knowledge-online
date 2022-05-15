@@ -714,5 +714,45 @@
         "url": "https://rmis.safety.army.mil/",
         "description": "A risk management information system (RMIS) is an information system that assists in consolidating property values, claims, policy, and exposure information and providing the tracking and management reporting capabilities to enable the user to monitor and control the overall cost of risk management.",
         "network": "DoD"
+    },
+    {
+        "title": "S1Net",
+        "url": "https://www.milsuite.mil/book/community/spaces/apf/s1net",
+        "description": "S1Net connects HR professionals with a common focus of solving critical problems faced by the professional in the field, and in doing so, develop and archive the tools, insights and approaches needed by members."
+    },
+    {
+        "title": "Service members' Group Life Insurance (SGLI)",
+        "url": "https://milconnect-pki.dmdc.osd.mil/milconnect/public/goto/soes",
+        "description": "Servicemembers' Group Life Insurance (SGLI) offers low-cost term coverage to eligible service members. If you're a service member who meets certain criteria, we'll automatically sign you up. You are automatically insured for the maximum coverage of $400,000, unless you have reduced, canceled, or declined coverage."
+    },
+    {
+        "title": "Sexual Harassment Assault Response and Prevention",
+        "url": "https://www.armyresilience.army.mil/sharp/",
+        "description": "The Army's Sexual Harassment/Assault Response and Prevention program, known as SHARP, exists so the Army can prevent sexual harassment and sexual assaults before they occur. Their goal is to eliminate sexual assaults and sexual harassment by creating a climate that respects the dignity of every member of the Army family. Additionally, they strive to:\n1) Reduce the stigma of reporting\n2) Protect the victim\n3) Increase prevention, investigation, prosecution and victim care capabilities\n4) Increase training and resources\n5) Refine and sustain response capability"
+    },
+    {
+        "title": "Soldier Enhancement Program",
+        "url": "http://www.peosoldier.army.mil/Resources/Soldier-Enhancement-Program/",
+        "description": "The Soldier Enhancement Program (SEP) is an enduring process designed to help the Army move at \"the Speed of Industry\" to evaluate and type classify existing prototypes or commercially available items that will enhance Soldiers' ability to execute their combat mission."
+    },
+    {
+        "title": "Soldier For life",
+        "url": "https://soldierforlife.army.mil/",
+        "description": "The latest news, images, videos, career information, and links from US Army Soldier For Life."
+    },
+    {
+        "title": "Transition Assistance Program (TAP)",
+        "url": "https://www.sfl-tap.army.mil/",
+        "description": "Army Transition Assistance Program (TAP) is a Commander's Program and a Soldier's responsibility. The program provides transition assistance services to eligible Soldiers with at least 180 or more continuous days of Title 10 active duty service, except for those in a training status. TAP helps all eligible transitioning Soldiers discover knowledge, skills, and resources necessary to be competitive and successful in the global workforce. TAP helps Soldiers make informed career decisions through counseling and employment assistance, building upon lessons learned in the Initial and Service phases of the Soldier Life Cycle."
+    },
+    {
+        "title": "Supply and Maintenance Assistance Review Team (SMART)",
+        "url": "https://www.milsuite.mil/book/docs/DOC-101393",
+        "description": "Supply and Maintenance Assistance Review Team (SMART) is made to streamline and improve unit level logistics support through a single source logistics suggestion program. Submit a suggestion with them to receive help on unit level logistics."
+    },
+    {
+        "title": "Survivor OutReach Services (SOS)",
+        "url": "https://www.armymwr.com/programs-and-services/personal-assistance/survivor-outreach",
+        "description": "Survivor Outreach Services is part of the Army Casualty Continuum of Care. It’s designed to provide long-term support to surviving Families of Fallen Soldiers. Their goal is to reassure Survivors that they remain valued members of the Army Family."
     }
 ]
