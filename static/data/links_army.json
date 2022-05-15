@@ -789,5 +789,20 @@
         "title": "Trusted End Node Security (TENS)",
         "url": "https://www.spi.dod.mil/lipose.htm",
         "description": "Trusted End Node Security (TENS) creates a secure end node from trusted media on almost any Intel-based computer (PC or Mac). TENS boots a thin Linux operating system from removable media without mounting a local hard drive. Administrator privileges are not required; nothing is installed. TENS turns an untrusted system (such as a home computer) into a trusted network client. No trace of work activity or malware can be written to the local computer. Simply plug in your USB smart card reader to access CAC and PIV-restricted US government websites."
+    },
+    {
+        "title": "U.S. Armed Forces Legal Assistance (AFLASS)",
+        "url": "https://legalassistance.law.af.mil/",
+        "description": "U.S. Armed Forces Legal Assistance (AFLASS) will locate all legal offices and their contact information on military posts."
+    },
+    {
+        "title": "Unit Commander's Finance Report (UCFR)",
+        "url": "https://lt-apps-priv.dfas.mil/ucfr/",
+        "description": "Unit Commander's Finance Report (UCFR) is an extremely valuable management tool provided to unit commanders once a month. The report provides the unit commander a one-line rollup of a Soldier's monthly pay account status making it easier to review the Soldier's pay. All available documents in the battalion S-1 or the unit PAC should be used to verify data on the UCFR (e.g. unit rosters, AAA-162 Unit Personnel Accountability Report, (eMILPO), DA Form 4187s, AWOL files, Article15 files, etc.)."
+    },
+    {
+        "title": "United Services Military Apprenticeship Program (USMAP)",
+        "url": "https://usmap.osd.mil/index.htm",
+        "description": "The United Services Military Apprenticeship Program (USMAP) provides enlisted Sailors (AC, FTS) the opportunity to complete civilian apprenticeship requirements while on Active duty and earn a U.S. Department of Labor \"Certificate of Completion\" and Journeyman card."
     }
 ]
