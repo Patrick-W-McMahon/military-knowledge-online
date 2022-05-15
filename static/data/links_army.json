@@ -1,5 +1,234 @@
 [{
-    "title": "Air Force Weather Agency",
-    "url": "https://weather.af.mil/",
-    "description": "Air Force Weather Agency is the weather presented by the Air Force."
-}]
+        "title": "Air Force Weather Agency",
+        "url": "https://weather.af.mil/",
+        "description": "Air Force Weather Agency is the weather presented by the Air Force."
+    },
+    {
+        "title": "AMEDD Command Management System",
+        "url": "https://cms.mods.army.mil/cms/",
+        "description": "The Command Management System now hosts tri-service metrics gathered from various MHS and service-specific systems Carepoint, TOC, CARA, MRRS, and DMHRSi to name a few – empowering users to compare location performance, report trending, leverage customizable charting, create formatted reports, and tailor the site with favorites in a highly available, DIACAP-approved, load balanced cluster at the Pentagon as part of the MODS system",
+        "network": "DoD"
+    },
+    {
+        "title": " Anti-Terrorism Enterprise Portal",
+        "url": "https://army.deps.mil/army/sites/PMG/prog/ATEP/default.aspx",
+        "description": "Anti-Terrorism Enterprise Portal gives you resources on how to spot and report possible terrorist activity."
+    },
+    {
+        "title": "Antivirus Home Use Program (AV HUP)",
+        "url": "http://disa.mil/Cybersecurity/Network-Defense/Antivirus/Home-Use",
+        "description": "The DoD Antivirus Software License Agreement from McAfee allows active DoD employees and authorized government contractors to utilize the antivirus software for personal device protection. Home use of the antivirus products will not only protect personal PCs, but will also potentially lessen the likelihood of malicious threats being introduced to the workplace and compromising DoD networks. DISA Home Use is now being offered to government employees and defense contractors with an approved .mil email address."
+    },
+    {
+        "title": "Army 365 Azure Portal",
+        "url": "https://portal.azure.us/#home",
+        "description": "Azure, is Microsoft's public cloud computing platform. It provides a range of cloud services, including compute, analytics, storage and networking. Please note that not all Soldier will have access to this."
+    },
+    {
+        "title": "Army 365 Home",
+        "url": "https://www.ohome.apps.mil/",
+        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives."
+    },
+    {
+        "title": "Army 365 Information Hub",
+        "url": "https://armyeitaas.sharepoint-mil.us/",
+        "description": "Milsuite but with Microsoft 365."
+    },
+    {
+        "title": "Army 365 Teams",
+        "url": "https://dod.teams.microsoft.us/",
+        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives."
+    },
+    {
+        "title": "Army Accident Reporting System",
+        "url": "https://reportit.safety.army.mil/",
+        "description": "ReportIt is the centralized mechanism for collecting injury, illness and loss reports to help the Army meet its applicable regulatory requirements and effectively manage its safety and occupational health program. Army Safety Management Information System Revised (ASMIS‐R), is necessary to reduce accidental loss. This automated incident reporting system will meet the functional needs of both command organizations and users. It will also improve regulatory compliance by offering a single, standard, and efficient process for reporting incidents."
+    },
+    {
+        "title": "Army Acquisition Support Center",
+        "url": "https://asc.army.mil/web/",
+        "description": "The U.S. Army Acquisition Support Center (USAASC) is a Direct Reporting Unit of the Assistant Secretary of the Army for Acquisition, Logistics, and Technology responsible for providing oversight of the Army Acquisition Corps (AAC) and the 40,000-strong Army Acquisition Workforce. USAASC supports the program executive offices in the areas of human resources, resource management (manpower and budget), program structure, and acquisition information management."
+    },
+    {
+        "title": "Army Benefits Center",
+        "url": "https://wr.acpol.army.mil/abc/",
+        "description": "Army Benefits Center provides advisory services and process transactions for: \n- Federal Employees’ Health Benefits (FEHB)\n- Federal Employees’ Group Life Insurance (FEGLI)\n- Thrift Savings Plan (TSP)\n- Retirement (FERS & CSRS)\n- Survivorship (Death Claim Processing)"
+    },
+    {
+        "title": "Army Career Tracker",
+        "url": "https://actnow.army.mil/",
+        "description": "The Army Career Tracker is an Army leadership development web-based tool developed by U.S. Army Training and Doctrine Command's Institute for Non-Commissioned Officer Professional Development."
+    },
+    {
+        "title": "Army Combat Readiness Center",
+        "url": "https://safety.army.mil/",
+        "description": "The U.S. Army Combat Readiness Center preserves Army readiness through analysis, training, and the development of systems that prevent accidental loss of our people and resources."
+    },
+    {
+        "title": "Army Community Service Staff System",
+        "url": "https://acsstaff.armyfamilywebportal.com/",
+        "description": "The Army Community Service (ACS) Staff Application serves as the primary tool for the documentation and tracking of ACS clients, cases, and other services overseen by ACS Staff Members."
+    },
+    {
+        "title": "Army Credentialing Opportunities On-Line (COOL)",
+        "url": "https://www.cool.osd.mil/army/",
+        "description": "The Army COOL contain a variety of service-specific information about certifications and licenses related to military occupations. Use Army COOL to:\n- get background information about civilian licensure and certification in general and specific information on individual credentials, including eligibility and testing requirements and resources to prepare for an exam.\n- identify licenses and certifications relevant to individual military occupations.\n- learn how to fill gaps between military training and experience and civilian credentialing requirements.\n- learn about resources available to Service members that can help them gain civilian job credentials."
+    },
+    {
+        "title": "Army Criminal Investigation Command",
+        "url": "https://www.cid.army.mil/",
+        "description": "It is up to the Army Criminal Investigation Command to investigate and deter serious crimes in which the Army has an interest. CID collects, analyzes, processes and disseminates criminal intelligence; conducts protective service operations; provides forensic laboratory support to all DoD investigative agencies, and maintains Army criminal records. CID also provides criminal investigative support to all U.S. Army elements and deploys on short notice in support of contingency operations worldwide."
+    },
+    {
+        "title": "Army Disaster Personnel Accountability and Assessment System (ADPAAS)",
+        "url": "https://adpaas.army.mil/",
+        "description": "Army Disaster Personnel Accountability and Assessment System (ADPAAS) standardizes a method for the Army to account, assess, manage, and monitor the recovery process for personnel and their families affected and/or scattered by a wide-spread catastrophic event. ADPAAS provides valuable information to all levels of the Army chain of command, allowing commanders to make strategic decisions which facilitate a return to stability."
+    },
+    {
+        "title": "Army E-Learning",
+        "url": "https://www.dls.army.mil/Army_e-Learning.html",
+        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport."
+    },
+    {
+        "title": "Army Email (@army.mil)",
+        "url": "https://webmail.apps.mil",
+        "description": "Provides access to the Army's web mail portal for \"army.mil\" web address. Use your army.mil when prompted for an email address."
+    },
+    {
+        "title": "Army Email (@mail.mil)",
+        "url": "https://web.mail.mil",
+        "description": "Provides access to the Army's web mail portal for \"mail.mil\" web address."
+    },
+    {
+        "title": " Army Enterprise Service Desk (AESD)",
+        "url": "https://snpro.aesd-w.army.mil/",
+        "description": "The Army Enterprise Service Desk is the Army's help desk. Submit a ticket through them if a web site is not working properly."
+    },
+    {
+        "title": "Army Enterprise Systems Integration Program",
+        "url": "https://login.aesip.army.mil",
+        "description": "Army Enterprise Systems Integration Program Hub improves Army information readiness and data agility by providing timely and data-relevant information to fully enable fact-based and resource-informed decision-making by Soldiers."
+    },
+    {
+        "title": "Army Family and Moral, Welfare and Recreation Programs",
+        "url": "https://www.armymwr.com/",
+        "description": "G9 integrates and delivers Family and Morale, Welfare and Recreation programs and services enabling readiness and resilience for a globally-responsive Army."
+    },
+    {
+        "title": "Army Family Readiness Group (FRG)",
+        "url": "https://vsfrg.armyfamilywebportal.com/",
+        "description": "Army Family Readiness Group (FRG) is a command-sponsored organization of family members, volunteers, soldiers, and civilian employees associated with a particular unit within the United States Army, the United States Army Reserve, and the Army National Guard communities."
+    },
+    {
+        "title": "Army Fit",
+        "url": "https://armyfit.army.mil/",
+        "description": "ArmyFit is a web-based application that stores, tracks, and integrates data from personal fitness devices and provides feedback so users can measure their progress toward fitness objectives."
+    },
+    {
+        "title": "Army Housing Online User Services",
+        "url": "https://www.housing.army.mil/",
+        "description": "Army Housing Online User Services is the Army's official website for Soldiers and Families to look for information regarding Army Family Housing (Privatized & Government Owned), Unaccompanied Housing (UH), or Off-Post Housing. It includes detailed reference information and quick links for Army installations all over the world. Inside you will find floorplans and housing policies that pertain to your next duty station."
+    },
+    {
+        "title": "Army Human Resources Command",
+        "url": "https://www.hrc.army.mil/",
+        "description": "Army Human Resources Command is responsible for U.S. Army Human Resources programs, processes, and services. The advantage of the combined Human Resources Command is that it enables every soldier in the U.S. Army to manage their entire career from basic training until retirement and later through one office. Most HR related links can be found scattered across their site as well as current and past milper messages."
+    },
+    {
+        "title": "Army Ideas for Innovation (AI2)",
+        "url": "https://www.milsuite.mil/book/community/spaces/ai2",
+        "description": "The Army Ideas for Innovation (AI2) is a venue for Army Soldiers and civilians to share innovative ideas and creative solutions that positively affect the Army through cost savings, increased productivity, and process improvement."
+    },
+    {
+        "title": "Army Learning Management System (ALMS)",
+        "url": "https://www.lms.army.mil/",
+        "description": "The Army Learning Management System (ALMS) is an online training and education system for Soldiers and civilians. Through U.S. Army Training and Doctrine Command's Combined Arms Center - Training, the ALMS increases readiness and provides training flexibility. Soldiers can achieve many training objectives online."
+    },
+    {
+        "title": "Army Maintenance Application (ArMA)",
+        "url": "https://www.armymaintenance.com/arma",
+        "description": "The Army Maintenance Application (ArMA), allows Soldiers and their families to instantly interact with public works clerks to submit work orders instead of making walk-in appointments or phone calls."
+    },
+    {
+        "title": "Army National Guard GI Personnel Gateway",
+        "url": "https://arngg1.ngb.army.mil/SelfService/CareerCenter/Home.aspx",
+        "description": "The Army National Guard G1 Personnel Gateway is a one-stop shop for human resource information. For Guard Soldiers and Families, the Gateway provides information on medical, educational and financial programs and benefits. The site also features deployment support and readiness resources."
+    },
+    {
+        "title": "Army Publications Directorate",
+        "url": "https://armypubs.army.mil/",
+        "description": "Army Publication Directorate is an online repository for all current Army Regulations, Directives, Policy and Guidance."
+    },
+    {
+        "title": "Army Public Health Center",
+        "url": "https://phc.amedd.army.mil/Pages/default.aspx/",
+        "description": "The Army Public Health Center enhances Army readiness by identifying and assessing current and emerging health threats, developing and communicating public health solutions, and assuring the quality and effectiveness of the Army's Public Health Enterprise."
+    },
+    {
+        "title": "Army Readiness Assessment Program",
+        "url": "https://earap.safety.army.mil/",
+        "description": "Army Readiness Assessment Program (ARAP) is a Web-based resource that provides battalion-level commanders with data on their formation's readiness posture through seven categories:\n- Common Core\n- Organizational Processes\n- Organizational Climate\n- Resources\n- Safety Programs\n- Open Ended"
+    },
+    {
+        "title": "Army Records Information Management System (ARIMS)",
+        "url": "https://www.arims.army.mil/arims/Login.aspx",
+        "description": "Army Records Information Management System (ARIMS) focuses on the management of long-term and permanent records and allows the business process to manage short-term records. It addresses only the record copy of information; all other copies of the same information may be disposed of when no longer needed for business not to exceed the time that the record copy is kept. The ARIMS simplifies record keeping; shifts retention and disposition burdens to records holding areas; improves records processing for deployed units in contingency operations (CONOPS); and provides a host of support services and automated tools on the Web."
+    },
+    {
+        "title": "Army Senior Leadership",
+        "url": "https://www.army.mil/leaders/sa/",
+        "description": "Secretary of the Army's official web page, including a biography, news, photos and videos related to the U.S. Army senior leader."
+    },
+    {
+        "title": "Army SkillSoft",
+        "url": "https://usarmy.skillport.com/",
+        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport."
+    },
+    {
+        "title": "Army Substance Abuse Program (ASAP)",
+        "url": "https://sr2.army.mil/",
+        "description": "The Army Substance Abuse Program is an anti-substance abuse program in the United States Army, operated by the Army Center for Substance Abuse Programs."
+    },
+    {
+        "title": "Army Sustainment",
+        "url": "https://alu.army.mil/alog/",
+        "description": "A quarterly publication, prepared at the Army Logistics University and published by the Army Combined Support Command at Fort Lee, Virginia. It publishes timely, authoritative information on Army and DOD sustainment plans, programs, policies, operations, procedures, and doctrine for the benefit of all Army personnel."
+    },
+    {
+        "title": "Army Training and Certification Tracking System",
+        "url": "https://atc.us.army.mil/iastar/",
+        "description": "The Army Training and Certification Tracking System provides managers at all levels a capability to report and manage their IA Workforce and General User population training and certification statistics and a summary report of certification voucher distribution."
+    },
+    {
+        "title": "Army Training Information System",
+        "url": "https://www.atis.army.mil/Index.html",
+        "description": "The Army Training Information System is a fully automated, centralized system providing a Common Operating Picture (COP) for all Army component Soldiers, Leaders, and Civilians to plan, prepare, execute, and assess training."
+    },
+    {
+        "title": "Army Training Network",
+        "url": "https://atn.army.mil/",
+        "description": "The Army Training Network (ATN) is a secure, web-based portal that provides access to training and education resources. It is the Army's primary delivery platform for training and training management: doctrine, tools, products, and services."
+    },
+    {
+        "title": "Army Training Requirements and Resources System (ATRRS)",
+        "url": "https://www.atrrs.army.mil/",
+        "description": "The Army Training Requirements and Resources System is a system part of the United States Army that keeps a record of student participation, manages class schedules, designates class quotas, and makes seat reservations.",
+        "network": "DoD"
+    },
+    {
+        "title": "Army Veterinary Corps",
+        "url": "https://medcoe.army.mil/amedd-veterinary-corps",
+        "description": "The U.S. Army Veterinary Corps is a staff corps of the U.S. Army Medical Department consisting of commissioned veterinary officers and Health Professions Scholarship Program veterinary students."
+    },
+    {
+        "title": "Assignment Satisfaction Key",
+        "url": "https://www.ask.army.mil/ask",
+        "description": "The Assignment Satisfaction Key provides Soldiers the capability for Soldiers to get their hopes up in selecting their assignment only to have their satisfaction fully dissatisfied and their branch manager an idea of where exactly not to send them.",
+        "network": "DoD"
+    },
+    {
+        "title": "Automated Personal Clothing Request",
+        "url": "https://da3078.natick.army.mil/",
+        "description": "The Automated Personal Clothing Request is a system for processing the DA Form 3078 electronically. It is used to request and authorize clothing bag items not issued during initial Entry Training, as well as replacements, exchanges, gratuitous issue, supplemental issue, and special issue clothing items."
+    }
+]
