@@ -534,5 +534,129 @@
         "title": "LHI Appointment Scheduling",
         "url": "https://lhi.care/start/",
         "description": "LHI is the federal health services business of both Optum and UnitedHealth Group (NYSE: UNH). It brings together the vast resources and clinical insights of UnitedHealthcare's unique health services, along with the innovation, technology and scalability of Optum."
+    },
+    {
+        "title": "Medical Operational Data System",
+        "url": "https://www.mods.army.mil/",
+        "description": "Medical Operational Data System (MODS) is designed to provide the provide Army Medical Department (AMEDD) leadership with an integrated system to manage AMEDD human resources (HR), logistics, education, manpower, and Army medical readiness programs. MODS is an integrated automation system that supports all phases of the AMEDD Human Resource Life-Cycle management processes in both peacetime and mobilization."
+    },
+    {
+        "title": "MEDLine Plus",
+        "url": "https://medlineplus.gov/",
+        "description": "MedlinePlus is an online health information resource for patients and their families and friends. It is a service of the National Library of Medicine (NLM), the world's largest medical library, and a part of the National Institutes of Health (NIH).",
+        "network": "DoD"
+    },
+    {
+        "title": "MEDPROS (ADMINS)",
+        "url": "https://medpros.mods.army.mil/MEDPROSNew/",
+        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit."
+    },
+    {
+        "title": "MHS Genesis",
+        "url": "https://patientportal.mhsgenesis.health.mil/",
+        "description": "MHS GENESIS is the new electronic health record for the Military Health System (MHS), provides enhanced, secure technology to manage your health information. MHS GENESIS integrates inpatient and outpatient solutions that will connect medical and dental information across the continuum of care, from point of injury to the military treatment facility. This includes garrison, operational, and en route care, increasing efficiencies for beneficiaries and health care professionals."
+    },
+    {
+        "title": "milConnect",
+        "url": "https://milconnect.dmdc.osd.mil/milconnect/",
+        "description": "MilConnect provides a convenient self-service portal that allows DOD affiliates and beneficiaries to manage their benefits and records, offering secure access to personal and personnel records held in the Defense Enrollment Eligibility Reporting System."
+    },
+    {
+        "title": "MILGAMING",
+        "url": "https://milgaming.army.mil/",
+        "description": "MilGaming provides news, training events, online instruction, technical support, expert forums and training scenarios. It offers links to products such as Virtual Battlespace 2, known as VBS2, VBS2 Fires and Moral Combat."
+    },
+    {
+        "title": "Military Auxiliary Radio System",
+        "url": "https://netcom.army.mil/MARS/default.aspx",
+        "description": "Army Military Auxiliary Radio System is a Department of Defense sponsored program which utilizes Amateur Radio operators to contribute to the mission of the Department of the Army. Army MARS members must have access to HF radio equipment, file a monthly report, and participate a minimum of 12 hours total, including a minimum 6 hours on HF radio each quarter."
+    },
+    {
+        "title": "Military Child Care",
+        "url": "https://public.militarychildcare.csd.disa.mil/mccu/ui/",
+        "description": "MilitaryChildCare.com provides a gateway to comprehensive information on military-operated or military-approved child care programs worldwide."
+    },
+    {
+        "title": "Military OneSource",
+        "url": "http://www.militaryonesource.mil/",
+        "description": "Military OneSource is your 24/7 connection to information, answers and support to help you reach your goals, overcome challenges and thrive. As a member of our military family, you are eligible to use this Department of Defense-funded program anytime, anywhere. Military OneSource offers assistance with tax services, spouse employment help, webinars and online training, relocation and deployment tools, and much more."
+    },
+    {
+        "title": "MilitaryCAC",
+        "url": "https://militarycac.com/",
+        "description": "MilitaryCAC provides CAC installation assistance; Find information regarding the Department of Defense Common Access Card (CAC)",
+        "network": "non-DoD"
+    },
+    {
+        "title": "MilSuite",
+        "url": "https://www.milsuite.mil/",
+        "description": "MilSuite provides a collection of social business tools for DOD personnel that facilitates professional networking, learning, and innovation through knowledge sharing and collaboration."
+    },
+    {
+        "title": "MOBCOP",
+        "url": "https://mobcop.aoc.army.pentagon.mil/",
+        "description": "MOBCOP is an internet site where Reserve Component Soldiers (USAR, IRR, ARNG, IMA) can find and volunteer for active duty tours. Any command that has positions or missions that could be filled by a RC Soldier can post those jobs on Tour of Duty. TOD allows commands to build and validate their positions so the vacancies can be searched by Soldiers seeking active duty. The positions in TOD must be validated by the command that owns the position or mission before they can be listed. Soldiers can find positions that match their grade and skills and then request the hiring command consider them for the job.",
+        "network": "DoD"
+    },
+    {
+        "title": "Mobile Digital Training Facility (MDTF)",
+        "url": "https://www.atis.army.mil/MDTF.html",
+        "description": "The Mobile Digital Training Facility (MDTF) is a wireless networked classroom of 10 notebook PCs designed to be connected to the unit's local wireless network for use wherever and whenever access to distributed learning is needed. It will deliver individual and collective training to Soldiers and DA Civilians anywhere and anytime."
+    },
+    {
+        "title": "myPay",
+        "url": "https://mypay.dfas.mil/mypay.aspx",
+        "description": "The Defense Department's online payroll and accounting system, providing access to view one's pay account, view travel claims, make changes to withholding and allotments, and chance Thrift Savings Plan contributions."
+    },
+    {
+        "title": "My Army Benefits",
+        "url": "https://myarmybenefits.us.army.mil/",
+        "description": "MyArmyBenefits is the Official Army Benefits Website. Forecast Your Retirement Benefits. Calculate Estimates of Your Survivor and Survivor Education Benefits. Browse Over 150 Fact Sheets for Benefit Eligibility and Highlights"
+    },
+    {
+        "title": "My Clothing Record",
+        "url": "https://ism.army.mil/ism/SelfServiceServlet?nav.nav_id=ssMyClothing",
+        "description": "An online portal allowing Soldiers to manage their organizational clothing and individual equipment."
+    },
+    {
+        "title": "My Enlisted Record Brief (ERB)",
+        "url": "https://myerb.ahrs.army.mil/soldierLogin.do",
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+    },
+    {
+        "title": "My Enlisted/Officer Record Brief (National Guard)",
+        "url": "https://arngg1.ngb.army.mil/SelfService/CareerCenter/Home.aspx",
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+    },
+    {
+        "title": "My Enlisted/Officer Record Brief (Reserve)",
+        "url": "https://selfservice.rcms.usar.army.mil/SelfService/home/selfservice",
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+    },
+    {
+        "title": "MyMEB",
+        "url": "https://cms.mods.army.mil/cms/protected/report/soldierDashboard.aspx",
+        "description": "MyMEB was developed by medical, information-management and administrative specialists to address a perceived need for Soldiers to know more about the MEB process and how it affects them."
+    },
+    {
+        "title": "My MEDPROS Medical Readiness Portal",
+        "url": "https://medpros.mods.army.mil/portal",
+        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit."
+    },
+    {
+        "title": "My Officer Record Brief (ORB)",
+        "url": "https://myorb.hrc.army.mil/",
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+    },
+    {
+        "title": "My RFO (Request for Orders)",
+        "url": "https://aim.hrc.army.mil/",
+        "description": "Assignment Interactive Module 2.0 (AIM 2) is a web based information system designed to enhance the effectiveness and efficiency of the officer management process, and facilitate communication between Soldiers (e.g. officers & warrant officers with talents), Units (e.g. commanders with requirements) and the Officer Personnel Management Directorate (OPMD)",
+        "network": "DoD"
+    },
+    {
+        "title": "My Training Tab",
+        "url": "https://atiam.train.army.mil/mthp/",
+        "description": "My Training Tab (MT2) original available to users at Army Knowledge Online (AKO) , pulls together all web-based training resources on a single, customizable page. Still functional after AKOs was taken down."
     }
 ]
