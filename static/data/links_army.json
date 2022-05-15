@@ -230,5 +230,40 @@
         "title": "Automated Personal Clothing Request",
         "url": "https://da3078.natick.army.mil/",
         "description": "The Automated Personal Clothing Request is a system for processing the DA Form 3078 electronically. It is used to request and authorize clothing bag items not issued during initial Entry Training, as well as replacements, exchanges, gratuitous issue, supplemental issue, and special issue clothing items."
+    },
+    {
+        "title": "Career Acquisition Management Portal",
+        "url": "https://apps.asc.army.mil/camp",
+        "description": "CAMP is the Career Acquisition Management Portal, housing all of the Army DACM Office Applications in one convenient location, and using a single login."
+    },
+    {
+        "title": "Center for the Army Profession and Leadership (CAPL)",
+        "url": "https://capl.army.mil/",
+        "description": "Center for the Army Profession and Leadership (CAPL) supports the Army profession, leadership and leader development with studies, doctrine, products, services and personnel lifecycle integration in order to strengthen the Army profession and enhance leader and unit performance at all echelons."
+    },
+    {
+        "title": "Central Army Registry (CAR)",
+        "url": "https://atiam.train.army.mil/catalog/dashboard",
+        "description": "Central Army Registry (CAR) is your single access point to Army training resources, such as Field Manuals, Training Support Packages, Individual and Collective Tasks, Drills, Courseware and more."
+    },
+    {
+        "title": "Combined Arms Center",
+        "url": "https://usacac.army.mil/organizations/cace/cgsc/cgss",
+        "description": "The US Army Combined Arms Center (CAC) is the force modernization proponent for unified land operations, combined arms operations at echelons above brigade (Division, Corps and Theater Army), mission command, airspace control, information operations, irregular warfare, knowledge management, personnel recovery, OPSEC, military deception, security force assistance, UAP interoperability, and the Army Profession. CAC is made up of more than 34,000 Soldiers and Army Civilian Corps employees stationed throughout the United States, Europe, Korea, and SW Asia and nine centers of excellence, 20 branch schools, and seven non-branch schools. The Combined Arms Center synchronizes 37 US Army schools through Army University educating and training more than 300,000 students annually, including nearly 5,000 students from 130 separate nations and more than 10,000 sailors, airmen, and Marines from the Joint Force."
+    },
+    {
+        "title": "Comprehensive Soldier and Family Fitness",
+        "url": "https://www.usar.army.mil/CSF/",
+        "description": "Comprehensive Soldier and Family Fitness uses individual assessments, tailored virtual training, classroom training and embedded resilience experts to provide the critical skills our Soldiers, Family members and Army Civilians need."
+    },
+    {
+        "title": "Computer Hardware Enterprise Software and Solutions (CHESS)",
+        "url": "https://chess.army.mil/",
+        "description": "Computer Hardware Enterprise Software and Solutions (CHESS) is the Army's designated Primary Source for commercial IT. CHESS provides a no-fee flexible procurement strategy through which an Army user may procure commercial off the shelf (COTS) IT hardware, software and services."
+    },
+    {
+        "title": "Cyber Awareness Challenge",
+        "url": "https://cs.signal.army.mil",
+        "description": "The Cyber Awareness Challenge provides an overview of cybersecurity threats and best practices to keep information and information systems secure."
     }
 ]
