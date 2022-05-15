@@ -703,5 +703,16 @@
         "title": "Psychological Health Center of Excellence",
         "url": "http://www.pdhealth.mil/",
         "description": "The Psychological Health Center of Excellence (PHCoE) is one of the Centers of Excellence within the Research and Development Directorate of the Defense Health Agency (DHA). PHCoE collaborates across the Department of Defense (DOD) and with the Department of Veterans Affairs and other agencies to provide leadership and expertise to inform policy and drive improvements in psychological health outcomes."
+    },
+    {
+        "title": "RAPIDS Appointment Scheduler",
+        "url": "https://idco.dmdc.osd.mil/idco/",
+        "description": "RAPIDS ID Card Office allows you to schedule any CAC or ID card services appointment as well as manage some of your CAC information (Such as current address)."
+    },
+    {
+        "title": "Risk Management Information System (RMIS)",
+        "url": "https://rmis.safety.army.mil/",
+        "description": "A risk management information system (RMIS) is an information system that assists in consolidating property values, claims, policy, and exposure information and providing the tracking and management reporting capabilities to enable the user to monitor and control the overall cost of risk management.",
+        "network": "DoD"
     }
 ]
