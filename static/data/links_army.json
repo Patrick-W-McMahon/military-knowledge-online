@@ -524,5 +524,15 @@
         "title": "Joint Service Transcript (JST)",
         "url": "https://jst.doded.mil/jst/",
         "description": "Joint Services Transcript is an academically accepted document approved by the American Council on Education (ACE) to validate a service members military occupational experience and training along with the corresponding ACE college credit recommendations."
+    },
+    {
+        "title": "LandWarNet eUniversity",
+        "url": "https://lwn.army.mil",
+        "description": "LandWarNet (LWN) is the United States Army's contribution to the Global Information Grid that consists of all globally interconnected, end-to-end set of Army information capabilities, associated processes, and personnel for collecting, processing, storing, disseminating, and managing information on demand supporting warfighters, policy makers, and support personnel. It includes all Army (owned and leased) and leveraged Department of Defense (DOD)/Joint communications and computing systems and services, software (including applications), data security services, and other associated services. LandWarNet exists to enable the warfighter through Mission Command, previously described as Battle Command."
+    },
+    {
+        "title": "LHI Appointment Scheduling",
+        "url": "https://lhi.care/start/",
+        "description": "LHI is the federal health services business of both Optum and UnitedHealth Group (NYSE: UNH). It brings together the vast resources and clinical insights of UnitedHealthcare's unique health services, along with the innovation, technology and scalability of Optum."
     }
 ]
