@@ -355,5 +355,18 @@
         "title": "DS Login Registration",
         "url": "https://myaccess.dmdc.osd.mil/identitymanagement/registration.do?execution=e1s1",
         "description": "Defense Self Service Logon makes it easy for you to access your information contained across DoD and VA partner websites. By signing up for a free account, you can view your financial and benefits information; Personally Identifiable Information (PII); personal Health Information (PHI); claim statuses and records."
+    },
+    {
+        "title": "EagleCash",
+        "url": "https://fiscal.treasury.gov/eaglecash/",
+        "description": "The EagleCash card is an alternative to cash, Debit cards, credit cards, and checks. EagleCash is a \"stored value card\" that serves as a cash management tool. Funds are loaded to an EagleCash card, linked to the cardholder's personal account at a financial institution, using a self-service kiosk. Funds may be added or removed from the card at any time."
+    },
+    {
+        "title": "eBenefits",
+        "url": "https://www.ebenefits.va.gov/ebenefits",
+        "description": "eBenefits is the result of a collaboration between the Department of Veterans Affairs (VA) and the Department of Defense (DoD). We serve Veterans, Service members, Wounded Warriors, their family members, and their authorized caregivers. They offer:\nA secure environment where you can safely access your personal information and perform self-service tasks.\nApplications (online and PDF) for disability compensation and various benefits.\nEmployment resources.\nA personalized Dashboard that you can customize to suit your preferences and information needs.\nAccess to the National Resource Directory, which enables you to find links to resource based on subjects that interest you."
+    },
+    {
+
     }
 ]
