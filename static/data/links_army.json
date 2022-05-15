@@ -412,5 +412,52 @@
         "title": "Force Management System (FMSWeb)",
         "url": "https://fmsweb.fms.army.mil/",
         "description": "An Army System that allows users to access, compare and save unit Modification Tables of Organization and Equipment, or MTOEs. It provides multiple ways to search for information and multiple ways for the user to save the information to their systems."
+    },
+    {
+        "title": "General Fund Enterprise Business System",
+        "url": "https://prodep.gfebs-erp.army.mil",
+        "description": "General Fund Enterprise Business Systems (GFEBS) employs a Commercial-Off-The-Shelf (COTS), web-based Enterprise Resource Planning (ERP) solution to integrate financial, real property and other asset, cost and performance data. GFEBS standardizes business processes and transactions across the active Army, the Army National Guard (ARNG) and the United States Army Reserve (USAR) at over 200 locations. GFEBS provides real-time visibility of transactions, as well as historical data, to provide an integrated, analytic foundation for decision-making.",
+        "network": "DoD"
+    },
+    {
+        "title": "GI Suicide Prevention",
+        "url": "https://www.armyresilience.army.mil/suicide-prevention/index.html",
+        "description": "The Army Suicide Prevention Program (ASPP), provides resources for suicide prevention, intervention skills, and support to those impacted by the loss of a loved one to suicide to develop healthy and resilient Soldiers, reduce stigma, and build awareness of suicide and related behaviors."
+    },
+    {
+        "title": "Global Combat Support System - Army (GCSS-Army)",
+        "url": "https://www.gcss-army.army.mil/irj/portal",
+        "description": "Global Combat Support System - Army (GCSS-Army) is one program with two components. The first component, GCSS-Army Enterprise Resource Planning (ERP) Solution, is an automated information system that serves as the primary tactical logistics enabler supporting Army and joint transformation for sustainment. The program re-engineers current business processes to achieve end-to-end logistics and integration with applicable command and control (C2) and joint systems.\nThe second component, Army Enterprise Systems Integration Program (AESIP), integrates Army business functions by providing a single source for enterprise hub services, master data and business intelligence. GCSS-Army uses Commercial Off-The-Shelf ERP software products to support rapid force projection in the battlefield functional areas of arming, fixing, fueling, sustaining and tactical logistics financial processes."
+    },
+    {
+        "title": "Global Electronic Approval Routing System (GEARS Purple)",
+        "url": "https://army.deps.mil/netcom/sites/GEARS/Live",
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+    },
+    {
+        "title": "Global Electronic Approval Routing System 5 (GEARS Yellow)",
+        "url": "https://army.deps.mil/netcom/sites/GEARS5/Live",
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+    },
+    {
+        "title": "Global Electronic Approval Routing System V (GEARS Red)",
+        "url": "https://army.deps.mil/netcom/sites/GEARSV/Live",
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+    },
+    {
+        "title": "Green To Gold Access Portal",
+        "url": "https://gtg.usarmyrotc.com/",
+        "description": "The Green to Gold Active Duty Option Program is a two-year program that provides eligible, Active Duty enlisted Soldiers an opportunity to complete a baccalaureate degree or a two-year graduate degree and earn a commission as an Army Officer. You can apply and monitor your application here."
+    },
+    {
+        "title": "Ground Risk Assessment Tool (GRAT)",
+        "url": "https://grat.safety.army.mil/GRAT/",
+        "description": "Ground Risk Assessment Tool (GRAT) is a mission planning tool developed to augment the military decision-making process. Consisting of five integral parts, it assists users in identifying potential hazards and controls for specified ground missions or activities, both on and off duty.",
+        "network": "DoD"
+    },
+    {
+        "title": "Guard Knowledge Online (GKO)",
+        "url": "https://gko.portal.ng.mil/SitePages/Home.aspx",
+        "description": "A National Guard Bureau-wide Sharepoint site allowing for document storage and collaboration."
     }
 ]
