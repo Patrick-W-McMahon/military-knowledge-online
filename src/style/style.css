@@ -55,3 +55,7 @@ body {
     background-color: white;
     margin-top: 20px;
 }
+
+.blocklink {
+    display: block;
+}

@@ -3,14 +3,31 @@ import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import { Container } from "react-bootstrap";
 
+const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
 const Branch = ({ data }) => {
     const { allLinksData } = data;
+    const { groupLinks, links } = allLinksData;
     return (
         <Layout>
             <Container className="link-container">
-                {allLinksData.links.map((link, index) => (
+              {/*
+                {links.map((link, index) => (
                     <a key={index} href={link.url}>{link.title}</a>
                 ))}
+                */}
+              {abc.map((a,i) => {
+                const group = groupLinks.find(g => g.fieldValue === a);
+                return (
+                  <div key={i}>
+                    <h1>{a}</h1>
+                    {group ? group.links.map((g,x) => (
+                      <a key={x} className="blocklink" href={g.url}>{g.title}</a>
+                    )): <div>No data</div>}
+                  </div>
+                );
+              })}
+
             </Container>
         </Layout>
     );
@@ -25,6 +42,17 @@ export const query = graphql`
         url
         description
         branch
+      }
+      groupLinks: group(field: alphaChar) {
+        totalCount
+        fieldValue
+        links: nodes {
+          title
+          url
+          description
+          branch
+          alphaChar
+        }
       }
     }
   }
