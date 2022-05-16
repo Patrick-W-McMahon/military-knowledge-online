@@ -10,7 +10,7 @@
         "network": "DoD"
     },
     {
-        "title": " Anti-Terrorism Enterprise Portal",
+        "title": "Anti-Terrorism Enterprise Portal",
         "url": "https://army.deps.mil/army/sites/PMG/prog/ATEP/default.aspx",
         "description": "Anti-Terrorism Enterprise Portal gives you resources on how to spot and report possible terrorist activity."
     },
@@ -100,7 +100,7 @@
         "description": "Provides access to the Army's web mail portal for \"mail.mil\" web address."
     },
     {
-        "title": " Army Enterprise Service Desk (AESD)",
+        "title": "Army Enterprise Service Desk (AESD)",
         "url": "https://snpro.aesd-w.army.mil/",
         "description": "The Army Enterprise Service Desk is the Army's help desk. Submit a ticket through them if a web site is not working properly."
     },
