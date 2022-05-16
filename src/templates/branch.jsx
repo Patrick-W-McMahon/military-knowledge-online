@@ -18,8 +18,8 @@ const Branch = ({ data }) => {
 }
 
 export const query = graphql`
-  {
-    allLinksData(filter: {branch: {eq: "army"}}) {
+  query PageQuery($branch: String){
+    allLinksData(filter: {branch: {eq: $branch}}) {
       links: nodes {
         title
         url
