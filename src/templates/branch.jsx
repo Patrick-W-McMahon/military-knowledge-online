@@ -2,8 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import { Container } from "react-bootstrap";
+import { abc } from '../libs/common';
 
-const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 const Branch = ({ data }) => {
     const { allLinksData } = data;
