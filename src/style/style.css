@@ -11,6 +11,7 @@ body {
 
 .navbar {
     background-color: rgb(var(--army-primary-clr))!important;
+    z-index: 1;
 }
 
 .navbar a {
@@ -56,6 +57,12 @@ body {
     margin-top: 20px;
 }
 
-.blocklink {
-    display: block;
+.link-container>details details,
+.link-container>details div {
+    margin: 4px 0 4px 20px;
+}
+
+.link-container>details details>p {
+    margin: 5px 0 5px 18px;
+    font-size: 0.85em;
 }

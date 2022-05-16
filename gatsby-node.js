@@ -27,9 +27,6 @@ links = links.map(link => {
 });
 const LINKS_DATA = links;
 
-
-
-
 exports.createPages = async({ actions }) => {
     const { createPage } = actions
     createPage({

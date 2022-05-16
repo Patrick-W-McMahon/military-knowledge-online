@@ -8,6 +8,7 @@ import { abc } from '../libs/common';
 const Branch = ({ data }) => {
     const { allLinksData } = data;
     const { groupLinks, links } = allLinksData;
+    console.log('groupLinks: ', groupLinks);
     return (
         <Layout>
             <Container className="link-container">
@@ -18,20 +19,22 @@ const Branch = ({ data }) => {
                 */}
               {abc.map((a,i) => {
                 const group = groupLinks.find(g => g.fieldValue === a);
+                console.log(a, group);
                 return (
-                  <div key={i}>
-                    <h1>{a}</h1>
+                  <details key={i} open>
+                    <summary><b> - {a.toUpperCase()} - </b></summary>
                     {group ? group.links.map((g,x) => (
-                      <a key={x} className="blocklink" href={g.url}>{g.title}</a>
+                      <details>
+                        <summary><a key={x} rel="noreferrer" target="_blank" href={g.url}>{g.title}</a></summary>
+                        <p>{g.description}</p>
+                      </details>
                     )): <div>No data</div>}
-                  </div>
+                  </details>
                 );
               })}
-
             </Container>
         </Layout>
     );
-    
 }
 
 export const query = graphql`
