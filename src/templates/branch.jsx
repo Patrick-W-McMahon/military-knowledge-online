@@ -8,7 +8,6 @@ import { abc } from '../libs/common';
 const Branch = ({ data }) => {
     const { allLinksData } = data;
     const { groupLinks, links } = allLinksData;
-    console.log('groupLinks: ', groupLinks);
     return (
         <Layout>
             <Container className="link-container">
@@ -23,7 +22,6 @@ const Branch = ({ data }) => {
                 */}
               {abc.map((a,i) => {
                 const group = groupLinks.find(g => g.fieldValue === a);
-                console.log(a, group);
                 return (
                   <details key={i} open>
                     <summary><b> - {a.toUpperCase()} - </b></summary>
