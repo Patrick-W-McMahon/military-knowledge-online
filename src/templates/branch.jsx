@@ -11,10 +11,12 @@ const Branch = ({ data }) => {
     return (
         <Layout>
             <Container className="link-container">
+              {/*
               <div className="btn-group btn-group-toggle">
                 <button className="btn btn-outline-primary"><i className="fas fa-grip-horizontal fa-3x"></i></button>
                 <button className="btn btn-outline-primary"><i className="fas fa-grip-lines fa-3x"></i></button>
               </div>
+              */}
               {/*
                 {links.map((link, index) => (
                     <a key={index} href={link.url}>{link.title}</a>

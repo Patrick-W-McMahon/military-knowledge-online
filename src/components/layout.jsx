@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
         <Header siteTitle={site.siteMetadata?.title || `Title`} militaryBranches={allBranch.nodes || []} />
         <div className="page-wrapper">
           <div className="main-content">{children}</div>
-          <footer>©{new Date().getFullYear()}&middot; Built with <a href="https://www.gatsbyjs.com">Gatsby</a></footer>
+          {/*<footer>©{new Date().getFullYear()}&middot; Built with <a href="https://www.gatsbyjs.com">Gatsby</a></footer>*/}
         </div>
       </Fragment>
     );

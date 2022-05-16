@@ -9,7 +9,9 @@ const Header = ({ siteTitle, militaryBranches }) => (
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
+        {/*
         <Nav.Link href="/cards">Cards</Nav.Link>
+        */}
         {/*
         <NavDropdown title="Branches" id="basic-nav-dropdown">
           {militaryBranches.length > 0 ? militaryBranches.map((branch, index) => <NavDropdown.Item key={index} href={`branch/${branch.name}`}>{branch.name}</NavDropdown.Item>): null}
