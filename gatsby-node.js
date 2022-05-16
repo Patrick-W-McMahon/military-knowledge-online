@@ -17,10 +17,17 @@ const LinkSources = {
     space_force: LINKS_SPACE_FORCE
 };
 var links = [];
+const getFirstLetter = (str) => str[0].toLowerCase();
 BRANCH_DATA.forEach(branch => {
     LinkSources[branch.path].forEach(link => links.push({...link, branch: branch.path }));
 });
+links = links.map(link => {
+    const alphaChar = getFirstLetter(link.title);
+    return {...link, alphaChar };
+});
 const LINKS_DATA = links;
+
+
 
 
 exports.createPages = async({ actions }) => {
