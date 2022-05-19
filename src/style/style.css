@@ -66,3 +66,56 @@ body {
     margin: 5px 0 5px 18px;
     font-size: 0.85em;
 }
+
+.card {
+    border: 3px solid rgb(var(--army-primary-clr));
+    background: rgb(var(--army-primary-clr));
+    padding: 0;
+    margin: 8px;
+    width: 24rem;
+}
+
+.card img,
+.card-body,
+.card-body * {
+    padding: 0;
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.card .card-title {
+    background: rgb(var(--army-primary-clr));
+    padding: 1px 0 1px 3px;
+    margin: -20px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+.card-title a {
+    align-content: center;
+    flex-grow: 4;
+}
+
+.card-title button {
+    align-content: flex-end;
+    width: 40px;
+    font-size: 0.65em;
+}
+
+.card-title button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
