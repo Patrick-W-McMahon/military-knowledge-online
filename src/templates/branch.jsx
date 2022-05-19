@@ -2,41 +2,28 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import { Container } from "react-bootstrap";
-import { abc } from '../libs/common';
-
+import LinkList from "../components/linkList";
+import CardGrid from "../components/CardGrid";
+import Workspace from "../components/workspace";
 
 const Branch = ({ data }) => {
     const { allLinksData } = data;
     const { groupLinks, links } = allLinksData;
+    //const validCards = links.filter(l => l.cardId !== null);
     return (
         <Layout>
-            <Container className="link-container">
-              {/*
-              <div className="btn-group btn-group-toggle">
-                <button className="btn btn-outline-primary"><i className="fas fa-grip-horizontal fa-3x"></i></button>
-                <button className="btn btn-outline-primary"><i className="fas fa-grip-lines fa-3x"></i></button>
-              </div>
-              */}
-              {/*
-                {links.map((link, index) => (
-                    <a key={index} href={link.url}>{link.title}</a>
-                ))}
-                */}
-              {abc.map((a,i) => {
-                const group = groupLinks.find(g => g.fieldValue === a);
-                return (
-                  <details key={i} open>
-                    <summary><b> - {a.toUpperCase()} - </b></summary>
-                    {group ? group.links.map((g,x) => (
-                      <details>
-                        <summary><a key={x} rel="noreferrer" target="_blank" href={g.url}>{g.title}</a></summary>
-                        <p>{g.description}</p>
-                      </details>
-                    )): <div>No data</div>}
-                  </details>
-                );
-              })}
-            </Container>
+          <Workspace>
+            {/*
+            <Workspace.Panel title={'Cards'}>
+              <CardGrid cards={validCards} />
+            </Workspace.Panel>
+            */}
+            <Workspace.Panel title={'Link List'}>
+              <Container className="link-container">
+                <LinkList links={groupLinks} />
+              </Container>
+            </Workspace.Panel>
+          </Workspace>
         </Layout>
     );
 }
@@ -49,6 +36,7 @@ export const query = graphql`
         url
         description
         branch
+        cardId
       }
       groupLinks: group(field: alphaChar) {
         totalCount
