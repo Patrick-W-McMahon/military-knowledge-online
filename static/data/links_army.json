@@ -422,7 +422,8 @@
     {
         "title": "GI Suicide Prevention",
         "url": "https://www.armyresilience.army.mil/suicide-prevention/index.html",
-        "description": "The Army Suicide Prevention Program (ASPP), provides resources for suicide prevention, intervention skills, and support to those impacted by the loss of a loved one to suicide to develop healthy and resilient Soldiers, reduce stigma, and build awareness of suicide and related behaviors."
+        "description": "The Army Suicide Prevention Program (ASPP), provides resources for suicide prevention, intervention skills, and support to those impacted by the loss of a loved one to suicide to develop healthy and resilient Soldiers, reduce stigma, and build awareness of suicide and related behaviors.",
+        "cardId": 5
     },
     {
         "title": "Global Combat Support System - Army (GCSS-Army)",
