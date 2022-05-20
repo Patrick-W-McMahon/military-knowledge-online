@@ -2,11 +2,29 @@
     --army-primary-clr: 255, 193, 7;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+html,
+body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     background-image: url('../style/img/Army-Background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 
 .navbar {
