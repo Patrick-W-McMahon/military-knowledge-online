@@ -52,6 +52,35 @@ body {
     width: 80px;
 }
 
+@media (max-width: 990px) {
+    .military-branch-select>a>div {
+        display: block;
+        border-bottom: 1px solid gray;
+    }
+    .military-branch-select>a:hover>div {
+        background: rgba(255, 255, 255, 0.25);
+    }
+    .military-branch-select>a>div>* {
+        display: inline-block;
+    }
+    .military-branch-select>a>div>img {
+        width: 40px!important;
+        height: 40px!important;
+        margin: 0;
+        padding: 0;
+    }
+    .military-branch-select>a>div>span {
+        border-bottom: 0;
+        position: relative;
+        margin: 0 0 0 20px;
+        padding: 10px 0 5px 0;
+        text-align: left;
+    }
+    .military-branch-select div:hover span {
+        display: inline-block;
+    }
+}
+
 .link-container {
     background-color: white;
     margin-top: 20px;
@@ -68,6 +97,7 @@ body {
 }
 
 .card {
+    display: inline-flex;
     border: 3px solid rgb(var(--army-primary-clr));
     background: rgb(var(--army-primary-clr));
     padding: 0;
@@ -85,6 +115,7 @@ body {
 .card img {
     width: 100%;
     object-fit: cover;
+    max-height: 140px;
 }
 
 .card .card-title {
@@ -94,6 +125,7 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    font-size: 0.98em;
 }
 
 .card a {
