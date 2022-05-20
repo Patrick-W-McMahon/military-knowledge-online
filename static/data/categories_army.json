@@ -1,0 +1,128 @@
+[{
+        "label": "Favorites",
+        "action": {
+            "obj": "profile-action",
+            "func": "getSavedLinks"
+        }
+    },
+    {
+        "label": "Quick Links",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["quick-links"]
+        }
+    },
+    {
+        "label": "All Web Sites A-Z",
+        "action": {
+            "obj": "links-action",
+            "func": "getAllLinks",
+            "val": true
+        }
+    },
+    {
+        "label": "Army Web Sites",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["army"]
+        }
+    },
+    {
+        "label": "Combat Readiness",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["combat-readiness"]
+        }
+    },
+    {
+        "label": "DOD Resources",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["DOD"]
+        }
+    },
+    {
+        "label": "Education - Civilian",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["education-civilian"]
+        }
+    },
+    {
+        "label": "Education - Military",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["education-military"]
+        }
+    },
+    {
+        "label": "Family",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["family"]
+        }
+    },
+    {
+        "label": "Finance",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["finance"]
+        }
+    },
+    {
+        "label": "Health Resources",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["health"]
+        }
+    },
+    {
+        "label": "Human Resources",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["HR"]
+        }
+    },
+    {
+        "label": "Legal Resources",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["legal"]
+        }
+    },
+    {
+        "label": "Professional Development",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["professional-development"]
+        }
+    },
+    {
+        "label": "Resources/Information Technology",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["resources", "info-tech"]
+        }
+    },
+    {
+        "label": "US Gov Web Sites",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["US-Gov"]
+        }
+    }
+]
