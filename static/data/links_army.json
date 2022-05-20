@@ -1,423 +1,506 @@
 [{
         "title": "Air Force Weather Agency",
         "url": "https://weather.af.mil/",
-        "description": "Air Force Weather Agency is the weather presented by the Air Force."
+        "description": "Air Force Weather Agency is the weather presented by the Air Force.",
+        "cardId": 23
     },
     {
         "title": "AMEDD Command Management System",
         "url": "https://cms.mods.army.mil/cms/",
         "description": "The Command Management System now hosts tri-service metrics gathered from various MHS and service-specific systems Carepoint, TOC, CARA, MRRS, and DMHRSi to name a few – empowering users to compare location performance, report trending, leverage customizable charting, create formatted reports, and tailor the site with favorites in a highly available, DIACAP-approved, load balanced cluster at the Pentagon as part of the MODS system",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 47
     },
     {
         "title": "Anti-Terrorism Enterprise Portal",
         "url": "https://army.deps.mil/army/sites/PMG/prog/ATEP/default.aspx",
-        "description": "Anti-Terrorism Enterprise Portal gives you resources on how to spot and report possible terrorist activity."
+        "description": "Anti-Terrorism Enterprise Portal gives you resources on how to spot and report possible terrorist activity.",
+        "cardId": 4
     },
     {
         "title": "Antivirus Home Use Program (AV HUP)",
         "url": "http://disa.mil/Cybersecurity/Network-Defense/Antivirus/Home-Use",
-        "description": "The DoD Antivirus Software License Agreement from McAfee allows active DoD employees and authorized government contractors to utilize the antivirus software for personal device protection. Home use of the antivirus products will not only protect personal PCs, but will also potentially lessen the likelihood of malicious threats being introduced to the workplace and compromising DoD networks. DISA Home Use is now being offered to government employees and defense contractors with an approved .mil email address."
+        "description": "The DoD Antivirus Software License Agreement from McAfee allows active DoD employees and authorized government contractors to utilize the antivirus software for personal device protection. Home use of the antivirus products will not only protect personal PCs, but will also potentially lessen the likelihood of malicious threats being introduced to the workplace and compromising DoD networks. DISA Home Use is now being offered to government employees and defense contractors with an approved .mil email address.",
+        "cardId": 54
     },
     {
         "title": "Army 365 Azure Portal",
         "url": "https://portal.azure.us/#home",
-        "description": "Azure, is Microsoft's public cloud computing platform. It provides a range of cloud services, including compute, analytics, storage and networking. Please note that not all Soldier will have access to this."
+        "description": "Azure, is Microsoft's public cloud computing platform. It provides a range of cloud services, including compute, analytics, storage and networking. Please note that not all Soldier will have access to this.",
+        "cardId": 133
     },
     {
         "title": "Army 365 Home",
         "url": "https://www.ohome.apps.mil/",
-        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives."
+        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives.",
+        "cardId": 140
     },
     {
         "title": "Army 365 Information Hub",
         "url": "https://armyeitaas.sharepoint-mil.us/",
-        "description": "Milsuite but with Microsoft 365."
+        "description": "Milsuite but with Microsoft 365.",
+        "cardId": 90
     },
     {
         "title": "Army 365 Teams",
         "url": "https://dod.teams.microsoft.us/",
-        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives."
+        "description": "Army 365, which leverages Microsoft 365 capabilities, provides the Army with an enduring capability to collaborate across the force. The system hosts a range of resources to include video and voice teleconferencing, email, instant messaging, and access to shared drives.",
+        "cardId": 137
     },
     {
         "title": "Army Accident Reporting System",
         "url": "https://reportit.safety.army.mil/",
-        "description": "ReportIt is the centralized mechanism for collecting injury, illness and loss reports to help the Army meet its applicable regulatory requirements and effectively manage its safety and occupational health program. Army Safety Management Information System Revised (ASMIS‐R), is necessary to reduce accidental loss. This automated incident reporting system will meet the functional needs of both command organizations and users. It will also improve regulatory compliance by offering a single, standard, and efficient process for reporting incidents."
+        "description": "ReportIt is the centralized mechanism for collecting injury, illness and loss reports to help the Army meet its applicable regulatory requirements and effectively manage its safety and occupational health program. Army Safety Management Information System Revised (ASMIS‐R), is necessary to reduce accidental loss. This automated incident reporting system will meet the functional needs of both command organizations and users. It will also improve regulatory compliance by offering a single, standard, and efficient process for reporting incidents.",
+        "cardId": 33
     },
     {
         "title": "Army Acquisition Support Center",
         "url": "https://asc.army.mil/web/",
-        "description": "The U.S. Army Acquisition Support Center (USAASC) is a Direct Reporting Unit of the Assistant Secretary of the Army for Acquisition, Logistics, and Technology responsible for providing oversight of the Army Acquisition Corps (AAC) and the 40,000-strong Army Acquisition Workforce. USAASC supports the program executive offices in the areas of human resources, resource management (manpower and budget), program structure, and acquisition information management."
+        "description": "The U.S. Army Acquisition Support Center (USAASC) is a Direct Reporting Unit of the Assistant Secretary of the Army for Acquisition, Logistics, and Technology responsible for providing oversight of the Army Acquisition Corps (AAC) and the 40,000-strong Army Acquisition Workforce. USAASC supports the program executive offices in the areas of human resources, resource management (manpower and budget), program structure, and acquisition information management.",
+        "cardId": 121
     },
     {
         "title": "Army Benefits Center",
         "url": "https://wr.acpol.army.mil/abc/",
-        "description": "Army Benefits Center provides advisory services and process transactions for: \n- Federal Employees’ Health Benefits (FEHB)\n- Federal Employees’ Group Life Insurance (FEGLI)\n- Thrift Savings Plan (TSP)\n- Retirement (FERS & CSRS)\n- Survivorship (Death Claim Processing)"
+        "description": "Army Benefits Center provides advisory services and process transactions for: \n- Federal Employees’ Health Benefits (FEHB)\n- Federal Employees’ Group Life Insurance (FEGLI)\n- Thrift Savings Plan (TSP)\n- Retirement (FERS & CSRS)\n- Survivorship (Death Claim Processing)",
+        "cardId": 48
     },
     {
         "title": "Army Career Tracker",
         "url": "https://actnow.army.mil/",
-        "description": "The Army Career Tracker is an Army leadership development web-based tool developed by U.S. Army Training and Doctrine Command's Institute for Non-Commissioned Officer Professional Development."
+        "description": "The Army Career Tracker is an Army leadership development web-based tool developed by U.S. Army Training and Doctrine Command's Institute for Non-Commissioned Officer Professional Development.",
+        "cardId": 67
     },
     {
         "title": "Army Combat Readiness Center",
         "url": "https://safety.army.mil/",
-        "description": "The U.S. Army Combat Readiness Center preserves Army readiness through analysis, training, and the development of systems that prevent accidental loss of our people and resources."
+        "description": "The U.S. Army Combat Readiness Center preserves Army readiness through analysis, training, and the development of systems that prevent accidental loss of our people and resources.",
+        "cardId": 30
     },
     {
         "title": "Army Community Service Staff System",
         "url": "https://acsstaff.armyfamilywebportal.com/",
-        "description": "The Army Community Service (ACS) Staff Application serves as the primary tool for the documentation and tracking of ACS clients, cases, and other services overseen by ACS Staff Members."
+        "description": "The Army Community Service (ACS) Staff Application serves as the primary tool for the documentation and tracking of ACS clients, cases, and other services overseen by ACS Staff Members.",
+        "cardId": 12
     },
     {
         "title": "Army Credentialing Opportunities On-Line (COOL)",
         "url": "https://www.cool.osd.mil/army/",
-        "description": "The Army COOL contain a variety of service-specific information about certifications and licenses related to military occupations. Use Army COOL to:\n- get background information about civilian licensure and certification in general and specific information on individual credentials, including eligibility and testing requirements and resources to prepare for an exam.\n- identify licenses and certifications relevant to individual military occupations.\n- learn how to fill gaps between military training and experience and civilian credentialing requirements.\n- learn about resources available to Service members that can help them gain civilian job credentials."
+        "description": "The Army COOL contain a variety of service-specific information about certifications and licenses related to military occupations. Use Army COOL to:\n- get background information about civilian licensure and certification in general and specific information on individual credentials, including eligibility and testing requirements and resources to prepare for an exam.\n- identify licenses and certifications relevant to individual military occupations.\n- learn how to fill gaps between military training and experience and civilian credentialing requirements.\n- learn about resources available to Service members that can help them gain civilian job credentials.",
+        "cardId": 84
     },
     {
         "title": "Army Criminal Investigation Command",
         "url": "https://www.cid.army.mil/",
-        "description": "It is up to the Army Criminal Investigation Command to investigate and deter serious crimes in which the Army has an interest. CID collects, analyzes, processes and disseminates criminal intelligence; conducts protective service operations; provides forensic laboratory support to all DoD investigative agencies, and maintains Army criminal records. CID also provides criminal investigative support to all U.S. Army elements and deploys on short notice in support of contingency operations worldwide."
+        "description": "It is up to the Army Criminal Investigation Command to investigate and deter serious crimes in which the Army has an interest. CID collects, analyzes, processes and disseminates criminal intelligence; conducts protective service operations; provides forensic laboratory support to all DoD investigative agencies, and maintains Army criminal records. CID also provides criminal investigative support to all U.S. Army elements and deploys on short notice in support of contingency operations worldwide.",
+        "cardId": 124
     },
     {
         "title": "Army Disaster Personnel Accountability and Assessment System (ADPAAS)",
         "url": "https://adpaas.army.mil/",
-        "description": "Army Disaster Personnel Accountability and Assessment System (ADPAAS) standardizes a method for the Army to account, assess, manage, and monitor the recovery process for personnel and their families affected and/or scattered by a wide-spread catastrophic event. ADPAAS provides valuable information to all levels of the Army chain of command, allowing commanders to make strategic decisions which facilitate a return to stability."
+        "description": "Army Disaster Personnel Accountability and Assessment System (ADPAAS) standardizes a method for the Army to account, assess, manage, and monitor the recovery process for personnel and their families affected and/or scattered by a wide-spread catastrophic event. ADPAAS provides valuable information to all levels of the Army chain of command, allowing commanders to make strategic decisions which facilitate a return to stability.",
+        "cardId": 120
     },
     {
         "title": "Army E-Learning",
         "url": "https://www.dls.army.mil/Army_e-Learning.html",
-        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport."
+        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport.",
+        "cardId": 31
     },
     {
         "title": "Army Email (@army.mil)",
         "url": "https://webmail.apps.mil",
-        "description": "Provides access to the Army's web mail portal for \"army.mil\" web address. Use your army.mil when prompted for an email address."
+        "description": "Provides access to the Army's web mail portal for \"army.mil\" web address. Use your army.mil when prompted for an email address.",
+        "cardId": 89
     },
     {
         "title": "Army Email (@mail.mil)",
         "url": "https://web.mail.mil",
-        "description": "Provides access to the Army's web mail portal for \"mail.mil\" web address."
+        "description": "Provides access to the Army's web mail portal for \"mail.mil\" web address.",
+        "cardId": 89
     },
     {
         "title": "Army Enterprise Service Desk (AESD)",
         "url": "https://snpro.aesd-w.army.mil/",
-        "description": "The Army Enterprise Service Desk is the Army's help desk. Submit a ticket through them if a web site is not working properly."
+        "description": "The Army Enterprise Service Desk is the Army's help desk. Submit a ticket through them if a web site is not working properly.",
+        "cardId": 92
     },
     {
         "title": "Army Enterprise Systems Integration Program",
         "url": "https://login.aesip.army.mil",
-        "description": "Army Enterprise Systems Integration Program Hub improves Army information readiness and data agility by providing timely and data-relevant information to fully enable fact-based and resource-informed decision-making by Soldiers."
+        "description": "Army Enterprise Systems Integration Program Hub improves Army information readiness and data agility by providing timely and data-relevant information to fully enable fact-based and resource-informed decision-making by Soldiers.",
+        "cardId": 119
     },
     {
         "title": "Army Family and Moral, Welfare and Recreation Programs",
         "url": "https://www.armymwr.com/",
-        "description": "G9 integrates and delivers Family and Morale, Welfare and Recreation programs and services enabling readiness and resilience for a globally-responsive Army."
+        "description": "G9 integrates and delivers Family and Morale, Welfare and Recreation programs and services enabling readiness and resilience for a globally-responsive Army.",
+        "cardId": 55
     },
     {
         "title": "Army Family Readiness Group (FRG)",
         "url": "https://vsfrg.armyfamilywebportal.com/",
-        "description": "Army Family Readiness Group (FRG) is a command-sponsored organization of family members, volunteers, soldiers, and civilian employees associated with a particular unit within the United States Army, the United States Army Reserve, and the Army National Guard communities."
+        "description": "Army Family Readiness Group (FRG) is a command-sponsored organization of family members, volunteers, soldiers, and civilian employees associated with a particular unit within the United States Army, the United States Army Reserve, and the Army National Guard communities.",
+        "cardId": 29
     },
     {
         "title": "Army Fit",
         "url": "https://armyfit.army.mil/",
-        "description": "ArmyFit is a web-based application that stores, tracks, and integrates data from personal fitness devices and provides feedback so users can measure their progress toward fitness objectives."
+        "description": "ArmyFit is a web-based application that stores, tracks, and integrates data from personal fitness devices and provides feedback so users can measure their progress toward fitness objectives.",
+        "cardId": 86
     },
     {
         "title": "Army Housing Online User Services",
         "url": "https://www.housing.army.mil/",
-        "description": "Army Housing Online User Services is the Army's official website for Soldiers and Families to look for information regarding Army Family Housing (Privatized & Government Owned), Unaccompanied Housing (UH), or Off-Post Housing. It includes detailed reference information and quick links for Army installations all over the world. Inside you will find floorplans and housing policies that pertain to your next duty station."
+        "description": "Army Housing Online User Services is the Army's official website for Soldiers and Families to look for information regarding Army Family Housing (Privatized & Government Owned), Unaccompanied Housing (UH), or Off-Post Housing. It includes detailed reference information and quick links for Army installations all over the world. Inside you will find floorplans and housing policies that pertain to your next duty station.",
+        "cardId": 69
     },
     {
         "title": "Army Human Resources Command",
         "url": "https://www.hrc.army.mil/",
-        "description": "Army Human Resources Command is responsible for U.S. Army Human Resources programs, processes, and services. The advantage of the combined Human Resources Command is that it enables every soldier in the U.S. Army to manage their entire career from basic training until retirement and later through one office. Most HR related links can be found scattered across their site as well as current and past milper messages."
+        "description": "Army Human Resources Command is responsible for U.S. Army Human Resources programs, processes, and services. The advantage of the combined Human Resources Command is that it enables every soldier in the U.S. Army to manage their entire career from basic training until retirement and later through one office. Most HR related links can be found scattered across their site as well as current and past milper messages.",
+        "cardId": 60
     },
     {
         "title": "Army Ideas for Innovation (AI2)",
         "url": "https://www.milsuite.mil/book/community/spaces/ai2",
-        "description": "The Army Ideas for Innovation (AI2) is a venue for Army Soldiers and civilians to share innovative ideas and creative solutions that positively affect the Army through cost savings, increased productivity, and process improvement."
+        "description": "The Army Ideas for Innovation (AI2) is a venue for Army Soldiers and civilians to share innovative ideas and creative solutions that positively affect the Army through cost savings, increased productivity, and process improvement.",
+        "cardId": 58
     },
     {
         "title": "Army Learning Management System (ALMS)",
         "url": "https://www.lms.army.mil/",
-        "description": "The Army Learning Management System (ALMS) is an online training and education system for Soldiers and civilians. Through U.S. Army Training and Doctrine Command's Combined Arms Center - Training, the ALMS increases readiness and provides training flexibility. Soldiers can achieve many training objectives online."
+        "description": "The Army Learning Management System (ALMS) is an online training and education system for Soldiers and civilians. Through U.S. Army Training and Doctrine Command's Combined Arms Center - Training, the ALMS increases readiness and provides training flexibility. Soldiers can achieve many training objectives online.",
+        "cardId": 62
     },
     {
         "title": "Army Maintenance Application (ArMA)",
         "url": "https://www.armymaintenance.com/arma",
-        "description": "The Army Maintenance Application (ArMA), allows Soldiers and their families to instantly interact with public works clerks to submit work orders instead of making walk-in appointments or phone calls."
+        "description": "The Army Maintenance Application (ArMA), allows Soldiers and their families to instantly interact with public works clerks to submit work orders instead of making walk-in appointments or phone calls.",
+        "cardId": 94
     },
     {
         "title": "Army National Guard GI Personnel Gateway",
         "url": "https://arngg1.ngb.army.mil/SelfService/CareerCenter/Home.aspx",
-        "description": "The Army National Guard G1 Personnel Gateway is a one-stop shop for human resource information. For Guard Soldiers and Families, the Gateway provides information on medical, educational and financial programs and benefits. The site also features deployment support and readiness resources."
+        "description": "The Army National Guard G1 Personnel Gateway is a one-stop shop for human resource information. For Guard Soldiers and Families, the Gateway provides information on medical, educational and financial programs and benefits. The site also features deployment support and readiness resources.",
+        "cardId": 13
     },
     {
         "title": "Army Publications Directorate",
         "url": "https://armypubs.army.mil/",
-        "description": "Army Publication Directorate is an online repository for all current Army Regulations, Directives, Policy and Guidance."
+        "description": "Army Publication Directorate is an online repository for all current Army Regulations, Directives, Policy and Guidance.",
+        "cardId": 18
     },
     {
         "title": "Army Public Health Center",
         "url": "https://phc.amedd.army.mil/Pages/default.aspx/",
-        "description": "The Army Public Health Center enhances Army readiness by identifying and assessing current and emerging health threats, developing and communicating public health solutions, and assuring the quality and effectiveness of the Army's Public Health Enterprise."
+        "description": "The Army Public Health Center enhances Army readiness by identifying and assessing current and emerging health threats, developing and communicating public health solutions, and assuring the quality and effectiveness of the Army's Public Health Enterprise.",
+        "cardId": 57
     },
     {
         "title": "Army Readiness Assessment Program",
         "url": "https://earap.safety.army.mil/",
-        "description": "Army Readiness Assessment Program (ARAP) is a Web-based resource that provides battalion-level commanders with data on their formation's readiness posture through seven categories:\n- Common Core\n- Organizational Processes\n- Organizational Climate\n- Resources\n- Safety Programs\n- Open Ended"
+        "description": "Army Readiness Assessment Program (ARAP) is a Web-based resource that provides battalion-level commanders with data on their formation's readiness posture through seven categories:\n- Common Core\n- Organizational Processes\n- Organizational Climate\n- Resources\n- Safety Programs\n- Open Ended",
+        "cardId": 74
     },
     {
         "title": "Army Records Information Management System (ARIMS)",
         "url": "https://www.arims.army.mil/arims/Login.aspx",
-        "description": "Army Records Information Management System (ARIMS) focuses on the management of long-term and permanent records and allows the business process to manage short-term records. It addresses only the record copy of information; all other copies of the same information may be disposed of when no longer needed for business not to exceed the time that the record copy is kept. The ARIMS simplifies record keeping; shifts retention and disposition burdens to records holding areas; improves records processing for deployed units in contingency operations (CONOPS); and provides a host of support services and automated tools on the Web."
+        "description": "Army Records Information Management System (ARIMS) focuses on the management of long-term and permanent records and allows the business process to manage short-term records. It addresses only the record copy of information; all other copies of the same information may be disposed of when no longer needed for business not to exceed the time that the record copy is kept. The ARIMS simplifies record keeping; shifts retention and disposition burdens to records holding areas; improves records processing for deployed units in contingency operations (CONOPS); and provides a host of support services and automated tools on the Web.",
+        "cardId": 1
     },
     {
         "title": "Army Senior Leadership",
         "url": "https://www.army.mil/leaders/sa/",
-        "description": "Secretary of the Army's official web page, including a biography, news, photos and videos related to the U.S. Army senior leader."
+        "description": "Secretary of the Army's official web page, including a biography, news, photos and videos related to the U.S. Army senior leader.",
+        "cardId": 1
     },
     {
         "title": "Army SkillSoft",
         "url": "https://usarmy.skillport.com/",
-        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport."
+        "description": "With Army e-Learning you have access over 3,500 web-based courses in Information Technology, Business Leadership and Personal Development. These can be accessed through Skillport.",
+        "cardId": 31
     },
     {
         "title": "Army Substance Abuse Program (ASAP)",
         "url": "https://sr2.army.mil/",
-        "description": "The Army Substance Abuse Program is an anti-substance abuse program in the United States Army, operated by the Army Center for Substance Abuse Programs."
+        "description": "The Army Substance Abuse Program is an anti-substance abuse program in the United States Army, operated by the Army Center for Substance Abuse Programs.",
+        "cardId": 78
     },
     {
         "title": "Army Sustainment",
         "url": "https://alu.army.mil/alog/",
-        "description": "A quarterly publication, prepared at the Army Logistics University and published by the Army Combined Support Command at Fort Lee, Virginia. It publishes timely, authoritative information on Army and DOD sustainment plans, programs, policies, operations, procedures, and doctrine for the benefit of all Army personnel."
+        "description": "A quarterly publication, prepared at the Army Logistics University and published by the Army Combined Support Command at Fort Lee, Virginia. It publishes timely, authoritative information on Army and DOD sustainment plans, programs, policies, operations, procedures, and doctrine for the benefit of all Army personnel.",
+        "cardId": 95
     },
     {
         "title": "Army Training and Certification Tracking System",
         "url": "https://atc.us.army.mil/iastar/",
-        "description": "The Army Training and Certification Tracking System provides managers at all levels a capability to report and manage their IA Workforce and General User population training and certification statistics and a summary report of certification voucher distribution."
+        "description": "The Army Training and Certification Tracking System provides managers at all levels a capability to report and manage their IA Workforce and General User population training and certification statistics and a summary report of certification voucher distribution.",
+        "cardId": 32
     },
     {
         "title": "Army Training Information System",
         "url": "https://www.atis.army.mil/Index.html",
-        "description": "The Army Training Information System is a fully automated, centralized system providing a Common Operating Picture (COP) for all Army component Soldiers, Leaders, and Civilians to plan, prepare, execute, and assess training."
+        "description": "The Army Training Information System is a fully automated, centralized system providing a Common Operating Picture (COP) for all Army component Soldiers, Leaders, and Civilians to plan, prepare, execute, and assess training.",
+        "cardId": 52
     },
     {
         "title": "Army Training Network",
         "url": "https://atn.army.mil/",
-        "description": "The Army Training Network (ATN) is a secure, web-based portal that provides access to training and education resources. It is the Army's primary delivery platform for training and training management: doctrine, tools, products, and services."
+        "description": "The Army Training Network (ATN) is a secure, web-based portal that provides access to training and education resources. It is the Army's primary delivery platform for training and training management: doctrine, tools, products, and services.",
+        "cardId": 71
     },
     {
         "title": "Army Training Requirements and Resources System (ATRRS)",
         "url": "https://www.atrrs.army.mil/",
         "description": "The Army Training Requirements and Resources System is a system part of the United States Army that keeps a record of student participation, manages class schedules, designates class quotas, and makes seat reservations.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 73
     },
     {
         "title": "Army Veterinary Corps",
         "url": "https://medcoe.army.mil/amedd-veterinary-corps",
-        "description": "The U.S. Army Veterinary Corps is a staff corps of the U.S. Army Medical Department consisting of commissioned veterinary officers and Health Professions Scholarship Program veterinary students."
+        "description": "The U.S. Army Veterinary Corps is a staff corps of the U.S. Army Medical Department consisting of commissioned veterinary officers and Health Professions Scholarship Program veterinary students.",
+        "cardId": 5
     },
     {
         "title": "Assignment Satisfaction Key",
         "url": "https://www.ask.army.mil/ask",
         "description": "The Assignment Satisfaction Key provides Soldiers the capability for Soldiers to get their hopes up in selecting their assignment only to have their satisfaction fully dissatisfied and their branch manager an idea of where exactly not to send them.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 8
     },
     {
         "title": "Automated Personal Clothing Request",
         "url": "https://da3078.natick.army.mil/",
-        "description": "The Automated Personal Clothing Request is a system for processing the DA Form 3078 electronically. It is used to request and authorize clothing bag items not issued during initial Entry Training, as well as replacements, exchanges, gratuitous issue, supplemental issue, and special issue clothing items."
+        "description": "The Automated Personal Clothing Request is a system for processing the DA Form 3078 electronically. It is used to request and authorize clothing bag items not issued during initial Entry Training, as well as replacements, exchanges, gratuitous issue, supplemental issue, and special issue clothing items.",
+        "cardId": 2
     },
     {
         "title": "Career Acquisition Management Portal",
         "url": "https://apps.asc.army.mil/camp",
-        "description": "CAMP is the Career Acquisition Management Portal, housing all of the Army DACM Office Applications in one convenient location, and using a single login."
+        "description": "CAMP is the Career Acquisition Management Portal, housing all of the Army DACM Office Applications in one convenient location, and using a single login.",
+        "cardId": 122
     },
     {
         "title": "Center for the Army Profession and Leadership (CAPL)",
         "url": "https://capl.army.mil/",
-        "description": "Center for the Army Profession and Leadership (CAPL) supports the Army profession, leadership and leader development with studies, doctrine, products, services and personnel lifecycle integration in order to strengthen the Army profession and enhance leader and unit performance at all echelons."
+        "description": "Center for the Army Profession and Leadership (CAPL) supports the Army profession, leadership and leader development with studies, doctrine, products, services and personnel lifecycle integration in order to strengthen the Army profession and enhance leader and unit performance at all echelons.",
+        "cardId": 40
     },
     {
         "title": "Central Army Registry (CAR)",
         "url": "https://atiam.train.army.mil/catalog/dashboard",
-        "description": "Central Army Registry (CAR) is your single access point to Army training resources, such as Field Manuals, Training Support Packages, Individual and Collective Tasks, Drills, Courseware and more."
+        "description": "Central Army Registry (CAR) is your single access point to Army training resources, such as Field Manuals, Training Support Packages, Individual and Collective Tasks, Drills, Courseware and more.",
+        "cardId": 96
     },
     {
         "title": "Combined Arms Center",
         "url": "https://usacac.army.mil/organizations/cace/cgsc/cgss",
-        "description": "The US Army Combined Arms Center (CAC) is the force modernization proponent for unified land operations, combined arms operations at echelons above brigade (Division, Corps and Theater Army), mission command, airspace control, information operations, irregular warfare, knowledge management, personnel recovery, OPSEC, military deception, security force assistance, UAP interoperability, and the Army Profession. CAC is made up of more than 34,000 Soldiers and Army Civilian Corps employees stationed throughout the United States, Europe, Korea, and SW Asia and nine centers of excellence, 20 branch schools, and seven non-branch schools. The Combined Arms Center synchronizes 37 US Army schools through Army University educating and training more than 300,000 students annually, including nearly 5,000 students from 130 separate nations and more than 10,000 sailors, airmen, and Marines from the Joint Force."
+        "description": "The US Army Combined Arms Center (CAC) is the force modernization proponent for unified land operations, combined arms operations at echelons above brigade (Division, Corps and Theater Army), mission command, airspace control, information operations, irregular warfare, knowledge management, personnel recovery, OPSEC, military deception, security force assistance, UAP interoperability, and the Army Profession. CAC is made up of more than 34,000 Soldiers and Army Civilian Corps employees stationed throughout the United States, Europe, Korea, and SW Asia and nine centers of excellence, 20 branch schools, and seven non-branch schools. The Combined Arms Center synchronizes 37 US Army schools through Army University educating and training more than 300,000 students annually, including nearly 5,000 students from 130 separate nations and more than 10,000 sailors, airmen, and Marines from the Joint Force.",
+        "cardId": 123
     },
     {
         "title": "Comprehensive Soldier and Family Fitness",
         "url": "https://www.usar.army.mil/CSF/",
-        "description": "Comprehensive Soldier and Family Fitness uses individual assessments, tailored virtual training, classroom training and embedded resilience experts to provide the critical skills our Soldiers, Family members and Army Civilians need."
+        "description": "Comprehensive Soldier and Family Fitness uses individual assessments, tailored virtual training, classroom training and embedded resilience experts to provide the critical skills our Soldiers, Family members and Army Civilians need.",
+        "cardId": 24
     },
     {
         "title": "Computer Hardware Enterprise Software and Solutions (CHESS)",
         "url": "https://chess.army.mil/",
-        "description": "Computer Hardware Enterprise Software and Solutions (CHESS) is the Army's designated Primary Source for commercial IT. CHESS provides a no-fee flexible procurement strategy through which an Army user may procure commercial off the shelf (COTS) IT hardware, software and services."
+        "description": "Computer Hardware Enterprise Software and Solutions (CHESS) is the Army's designated Primary Source for commercial IT. CHESS provides a no-fee flexible procurement strategy through which an Army user may procure commercial off the shelf (COTS) IT hardware, software and services.",
+        "cardId": 70
     },
     {
         "title": "Cyber Awareness Challenge",
         "url": "https://cs.signal.army.mil",
-        "description": "The Cyber Awareness Challenge provides an overview of cybersecurity threats and best practices to keep information and information systems secure."
+        "description": "The Cyber Awareness Challenge provides an overview of cybersecurity threats and best practices to keep information and information systems secure.",
+        "cardId": 93
     },
     {
         "title": "Defense Acquisition University",
         "url": "https://www.dau.mil/",
-        "description": "The Defense Acquisition University is a corporate university of the United States Department of Defense offering \"acquisition, technology, and logistics\" training to military and Federal civilian staff and Federal contractors."
+        "description": "The Defense Acquisition University is a corporate university of the United States Department of Defense offering \"acquisition, technology, and logistics\" training to military and Federal civilian staff and Federal contractors.",
+        "cardId": 122
     },
     {
         "title": "Defense Civilian Personnel Data System",
         "url": "https://www.dcpas.osd.mil/",
-        "description": "The Defense Civilian Personnel Advisory Service is a multifunction, web-based civilian HR information management and transaction processing system. The core DCPDS system (based on the Oracle HR custom of the-shelf solution (COTS) product), is customized for Defense environments, and provides personnel transaction processing using Oracle Federal HR for appropriated fund, non-appropriated fund, local national and National Guard employees."
+        "description": "The Defense Civilian Personnel Advisory Service is a multifunction, web-based civilian HR information management and transaction processing system. The core DCPDS system (based on the Oracle HR custom of the-shelf solution (COTS) product), is customized for Defense environments, and provides personnel transaction processing using Oracle Federal HR for appropriated fund, non-appropriated fund, local national and National Guard employees.",
+        "cardId": 130
     },
     {
         "title": "Defense Enrollment Eligibility Readiness",
         "url": "https://www.tricare.mil/DEERS/",
-        "description": "Defense Enrollment Eligibility Reporting System (DEERS) is a computerized database for United States Service members, military retirees, 100% VA Disabled Veterans, dependents, DoD active Contractors, and others worldwide who are entitled to Public Key Infrastructure and TRICARE eligibility."
+        "description": "Defense Enrollment Eligibility Reporting System (DEERS) is a computerized database for United States Service members, military retirees, 100% VA Disabled Veterans, dependents, DoD active Contractors, and others worldwide who are entitled to Public Key Infrastructure and TRICARE eligibility.",
+        "cardId": 68
     },
     {
         "title": "Defense Finance and Accounting Service (DFAS)",
         "url": "https://www.dfas.mil/",
-        "description": "Defense Finance and Accounting Service (DFAS) manage the finance and accounting serves for the U.S. Army."
+        "description": "Defense Finance and Accounting Service (DFAS) manage the finance and accounting serves for the U.S. Army.",
+        "cardId": 61
     },
     {
         "title": "Defense Information Systems Agency",
         "url": "https://disa.deps.mil/ext/cop/mae/SitePages/Programs.aspx",
-        "description": "Defense Information Systems Agency enable mission operations by providing assured communications through the delivery of optimized cyber infrastructure solutions for our global partners."
+        "description": "Defense Information Systems Agency enable mission operations by providing assured communications through the delivery of optimized cyber infrastructure solutions for our global partners.",
+        "cardId": 37
     },
     {
         "title": "Defense Logistics Agency",
         "url": "https://business.dla.mil/landing/index.html",
-        "description": "The Defense Logistics Agency is the Department of Defense's combat logistics support agency. DLA provides the Army, Marine Corps, Navy, Air Force, other federal agencies and partner nation armed forces with a full spectrum of logistics, acquisition and technical services. DLA sources and provides nearly all of the consumable items America's military forces need to operate - from food, fuel and energy to uniforms, medical supplies and construction material."
+        "description": "The Defense Logistics Agency is the Department of Defense's combat logistics support agency. DLA provides the Army, Marine Corps, Navy, Air Force, other federal agencies and partner nation armed forces with a full spectrum of logistics, acquisition and technical services. DLA sources and provides nearly all of the consumable items America's military forces need to operate - from food, fuel and energy to uniforms, medical supplies and construction material.",
+        "cardId": 115
     },
     {
         "title": "Defense Manpower Data Center",
         "url": "https://dwp.dmdc.osd.mil/dwp/app/main",
-        "description": "Defense Manpower Data Center is the leader in joint information sharing and support on DoD human resource issues, the central source for identifying, authenticating, authorizing, and providing information on personnel during and after their affiliation with DoD and the one, central access point for information and assistance on DoD entitlements, benefits, and medical readiness for uniformed service members, veterans, and their families."
+        "description": "Defense Manpower Data Center is the leader in joint information sharing and support on DoD human resource issues, the central source for identifying, authenticating, authorizing, and providing information on personnel during and after their affiliation with DoD and the one, central access point for information and assistance on DoD entitlements, benefits, and medical readiness for uniformed service members, veterans, and their families.",
+        "cardId": 34
     },
     {
         "title": "Defense Travel Management System",
         "url": "https://www.defensetravel.dod.mil/",
-        "description": "The Defense Travel System (DTS) is a fully integrated, automated, end-to-end travel management system that enables DoD travelers to create authorizations (TDY travel orders), prepare reservations, receive approvals, generate travel vouchers, and receive a split reimbursement between their bank accounts and the Government Travel Charge Card (GTCC) vendor."
+        "description": "The Defense Travel System (DTS) is a fully integrated, automated, end-to-end travel management system that enables DoD travelers to create authorizations (TDY travel orders), prepare reservations, receive approvals, generate travel vouchers, and receive a split reimbursement between their bank accounts and the Government Travel Charge Card (GTCC) vendor.",
+        "cardId": 35
     },
     {
         "title": "Defense Travel System",
         "url": "https://www.defensetravel.osd.mil/",
-        "description": "Defense Travel System is an integrated, automated, end-to-end travel management system that enables DOD travelers to create travel orders, prepare reservations, receive approvals, generate travel vouchers, and receive split disbursement between their bank accounts and the Government Travel Charge Card vendor."
+        "description": "Defense Travel System is an integrated, automated, end-to-end travel management system that enables DOD travelers to create travel orders, prepare reservations, receive approvals, generate travel vouchers, and receive split disbursement between their bank accounts and the Government Travel Charge Card vendor.",
+        "cardId": 44
     },
     {
         "title": "Department of the Army Photo Management Information System (DAPMIS)",
         "url": "https://dapmis.hrc.army.mil/ImageAcceptProlog.action",
-        "description": "The Department of the Army Photograph Management Information System (DAPMIS) is a web-enabled, e-business system that receives digitized official photographs from DOD worldwide photo studios."
+        "description": "The Department of the Army Photograph Management Information System (DAPMIS) is a web-enabled, e-business system that receives digitized official photographs from DOD worldwide photo studios.",
+        "cardId": 2
     },
     {
         "title": "Deployed Digital Training Campus (DDTC)",
         "url": "https://www.atis.army.mil/DDTC.html",
-        "description": "The Deployed Digital Training Campus is a deployable networked classroom enabling group or individual instruction through Video Tele-training (VTT), interactive multi-media (IMI), web-based instruction, individual collaboration, and professional development training. This is includes access to current Distributed Learning (DL) products and constructive simulations. The DDTC provides a means for the current institutional training base to deliver proponent approved dL training products and services to deployed forces worldwide and to provide a flexible means to meet surge training requirements to deploying or redeploying forces."
+        "description": "The Deployed Digital Training Campus is a deployable networked classroom enabling group or individual instruction through Video Tele-training (VTT), interactive multi-media (IMI), web-based instruction, individual collaboration, and professional development training. This is includes access to current Distributed Learning (DL) products and constructive simulations. The DDTC provides a means for the current institutional training base to deliver proponent approved dL training products and services to deployed forces worldwide and to provide a flexible means to meet surge training requirements to deploying or redeploying forces.",
+        "cardId": 72
     },
     {
         "title": "Deployment Health Assessment Program (DHAP)",
         "url": "https://www.usar.army.mil/DHAP/",
-        "description": "The Deployment Health Assessment Program (DHAP) allows you to take proactive steps to protect your health and well-being and to ensure your military readiness. DHAP provides early identification of emerging deployment related health conditions and serves as a gateway to care and treatment."
+        "description": "The Deployment Health Assessment Program (DHAP) allows you to take proactive steps to protect your health and well-being and to ensure your military readiness. DHAP provides early identification of emerging deployment related health conditions and serves as a gateway to care and treatment.",
+        "cardId": 36
     },
     {
         "title": "Digital Training Facility (DTF)",
         "url": "https://www.atis.army.mil/DTF.html",
-        "description": "A Digital Training Facility is a computer lab located on Army installations and Reserve sites worldwide. Units use DTFs to conduct training that improves individual and unit readiness. Using high-speed internet access, computer based training and Video Tele-Training (VTT) equipment, Soldiers and civilians can train when it fits their professional needs and personal schedules."
+        "description": "A Digital Training Facility is a computer lab located on Army installations and Reserve sites worldwide. Units use DTFs to conduct training that improves individual and unit readiness. Using high-speed internet access, computer based training and Video Tele-Training (VTT) equipment, Soldiers and civilians can train when it fits their professional needs and personal schedules.",
+        "cardId": 39
     },
     {
         "title": "Digital Training Management System (DTMS)",
         "url": "https://dtms.army.mil/",
-        "description": "Digital Training Management System (DTMS) provides streamlined access to the Individual Tasks, Collective Task Training and Evaluation Outlines (T&EO), Headquarters, Department of the Army (HQDA) Standard Mission Essential Task List (METL) and Combined Arms Training Strategy (CATS) that form the building blocks for unit training and achieving readiness."
+        "description": "Digital Training Management System (DTMS) provides streamlined access to the Individual Tasks, Collective Task Training and Evaluation Outlines (T&EO), Headquarters, Department of the Army (HQDA) Standard Mission Essential Task List (METL) and Combined Arms Training Strategy (CATS) that form the building blocks for unit training and achieving readiness.",
+        "cardId": 80
     },
     {
         "title": "DoD Automated Time Attendance and Production System",
         "url": "https://ataaps.csd.disa.mil/",
-        "description": "The Automated Time Attendance and Production System (ATAAPS) is used by civilian employees to accurately record time and attendance (e.g. leave, overtime, compensatory time off, wellness), while capturing labor hours by job order."
+        "description": "The Automated Time Attendance and Production System (ATAAPS) is used by civilian employees to accurately record time and attendance (e.g. leave, overtime, compensatory time off, wellness), while capturing labor hours by job order.",
+        "cardId": 126
     },
     {
         "title": "DOD CAC Reference Center",
         "url": "http://www.cac.mil/",
-        "description": "DoD ID Card Reference Center"
+        "description": "DoD ID Card Reference Center",
+        "cardId": 15
     },
     {
         "title": "DOD MWR Libraries Overdrive",
         "url": "https://dod.overdrive.com/dod-armymwr/content",
-        "description": "Army MWR Digital Library (Sign up at your on post library)"
+        "description": "Army MWR Digital Library (Sign up at your on post library)",
+        "cardId": 143
     },
     {
         "title": "DS Login Registration",
         "url": "https://myaccess.dmdc.osd.mil/identitymanagement/registration.do?execution=e1s1",
-        "description": "Defense Self Service Logon makes it easy for you to access your information contained across DoD and VA partner websites. By signing up for a free account, you can view your financial and benefits information; Personally Identifiable Information (PII); personal Health Information (PHI); claim statuses and records."
+        "description": "Defense Self Service Logon makes it easy for you to access your information contained across DoD and VA partner websites. By signing up for a free account, you can view your financial and benefits information; Personally Identifiable Information (PII); personal Health Information (PHI); claim statuses and records.",
+        "cardId": 7
     },
     {
         "title": "EagleCash",
         "url": "https://fiscal.treasury.gov/eaglecash/",
-        "description": "The EagleCash card is an alternative to cash, Debit cards, credit cards, and checks. EagleCash is a \"stored value card\" that serves as a cash management tool. Funds are loaded to an EagleCash card, linked to the cardholder's personal account at a financial institution, using a self-service kiosk. Funds may be added or removed from the card at any time."
+        "description": "The EagleCash card is an alternative to cash, Debit cards, credit cards, and checks. EagleCash is a \"stored value card\" that serves as a cash management tool. Funds are loaded to an EagleCash card, linked to the cardholder's personal account at a financial institution, using a self-service kiosk. Funds may be added or removed from the card at any time.",
+        "cardId": 14
     },
     {
         "title": "eBenefits",
         "url": "https://www.ebenefits.va.gov/ebenefits",
-        "description": "eBenefits is the result of a collaboration between the Department of Veterans Affairs (VA) and the Department of Defense (DoD). We serve Veterans, Service members, Wounded Warriors, their family members, and their authorized caregivers. They offer:\nA secure environment where you can safely access your personal information and perform self-service tasks.\nApplications (online and PDF) for disability compensation and various benefits.\nEmployment resources.\nA personalized Dashboard that you can customize to suit your preferences and information needs.\nAccess to the National Resource Directory, which enables you to find links to resource based on subjects that interest you."
+        "description": "eBenefits is the result of a collaboration between the Department of Veterans Affairs (VA) and the Department of Defense (DoD). We serve Veterans, Service members, Wounded Warriors, their family members, and their authorized caregivers. They offer:\nA secure environment where you can safely access your personal information and perform self-service tasks.\nApplications (online and PDF) for disability compensation and various benefits.\nEmployment resources.\nA personalized Dashboard that you can customize to suit your preferences and information needs.\nAccess to the National Resource Directory, which enables you to find links to resource based on subjects that interest you.",
+        "cardId": 51
     },
     {
         "title": "electronic Financial Liability Investigations of Property Loss",
         "url": "https://eflipl.army.mil",
-        "description": "Financial Liability Investigation of Property Loss, or FLIPL, is the procedure the Army uses to recover the cost of lost or damaged property. However, in certain cases, such as the loss of personal arms or equipment, or damage to government housing, a Soldier can be held liable for the entire loss."
+        "description": "Financial Liability Investigation of Property Loss, or FLIPL, is the procedure the Army uses to recover the cost of lost or damaged property. However, in certain cases, such as the loss of personal arms or equipment, or damage to government housing, a Soldier can be held liable for the entire loss.",
+        "cardId": 118
     },
     {
         "title": "eMILPO",
         "url": "https://emilpo.ahrs.army.mil/",
-        "description": "eMILPO is the system of records for Army personnel and keeps track of all Soldiers within a particular unit, keeps track of Soldiers' individual records, and in general houses every Soldier's record in the active duty Army."
+        "description": "eMILPO is the system of records for Army personnel and keeps track of all Soldiers within a particular unit, keeps track of Soldiers' individual records, and in general houses every Soldier's record in the active duty Army.",
+        "cardId": 88
     },
     {
         "title": "Evaluation Entry System",
         "url": "https://evaluations.hrc.army.mil/",
-        "description": "Evaluation Entry System (EES) is the Army's forms system for Army Officer Evaluation Reports (OERs) and NonCommissioned Officer Evaluation Reports (NCOERs)."
+        "description": "Evaluation Entry System (EES) is the Army's forms system for Army Officer Evaluation Reports (OERs) and NonCommissioned Officer Evaluation Reports (NCOERs).",
+        "cardId": 53
     },
     {
         "title": "Federal Voting Assistance Program",
         "url": "https://www.fvap.gov/",
-        "description": "The Federal Voting Assistance Program (FVAP) works to ensure Service members, their eligible family members, and overseas citizens are aware of their right to vote and have the tools and resources to successfully do so - from anywhere in the world."
+        "description": "The Federal Voting Assistance Program (FVAP) works to ensure Service members, their eligible family members, and overseas citizens are aware of their right to vote and have the tools and resources to successfully do so - from anywhere in the world.",
+        "cardId": 114
     },
     {
         "title": "FEDLOG",
         "url": "https://www.us.army.mil/common/fedlog/FEDLOG.ZIP",
         "description": "Federal Logistics (FED LOG) data provides users the ability to access Federal Logistics Information System (FLIS) data during instances when internet connectivity is non-available. FED LOG provides essential information about items of supply to include the National Stock Number (NSN), the Approved Item Name, Manufacturers and Distributors information (to include Part Numbers), Freight Data, Hazardous Materiel Indicators, Interchangeable and Substitutable data, Acquisition Advice Code (AAC) and Unit Price, Physical and Performance Characteristics along with service specific management data.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 100
     },
     {
         "title": "FEDLOG LITE",
         "url": "https://www.us.army.mil/common/fedlog/FEDLOGLITE.ZIP",
         "description": "Federal Logistics (FED LOG) data provides users the ability to access Federal Logistics Information System (FLIS) data during instances when internet connectivity is non-available. FED LOG provides essential information about items of supply to include the National Stock Number (NSN), the Approved Item Name, Manufacturers and Distributors information (to include Part Numbers), Freight Data, Hazardous Materiel Indicators, Interchangeable and Substitutable data, Acquisition Advice Code (AAC) and Unit Price, Physical and Performance Characteristics along with service specific management data.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 100
     },
     {
         "title": "FEDMALL",
         "url": "https://www.fedmall.mil/index.html",
-        "description": "FedMall is the premier government e-commerce acquisition platform providing an optimal experience for customers which include the United States military services, federal, state and authorized local governmental agencies. Customers are able to quickly search and purchase items online whatever the need may be from wherever you are."
+        "description": "FedMall is the premier government e-commerce acquisition platform providing an optimal experience for customers which include the United States military services, federal, state and authorized local governmental agencies. Customers are able to quickly search and purchase items online whatever the need may be from wherever you are.",
+        "cardId": 107
     },
     {
         "title": "Financial Disclosure Management",
         "url": "https://www.fdm.army.mil/",
-        "description": "Financial Disclosure Management (FDM) is a secure, Army electronic filing (e-filing) system for its authorized users to file and maintain required financial interest reports anywhere via a Web browser."
+        "description": "Financial Disclosure Management (FDM) is a secure, Army electronic filing (e-filing) system for its authorized users to file and maintain required financial interest reports anywhere via a Web browser.",
+        "cardId": 20
     },
     {
         "title": "Force Management System (FMSWeb)",
         "url": "https://fmsweb.fms.army.mil/",
-        "description": "An Army System that allows users to access, compare and save unit Modification Tables of Organization and Equipment, or MTOEs. It provides multiple ways to search for information and multiple ways for the user to save the information to their systems."
+        "description": "An Army System that allows users to access, compare and save unit Modification Tables of Organization and Equipment, or MTOEs. It provides multiple ways to search for information and multiple ways for the user to save the information to their systems.",
+        "cardId": 98
     },
     {
         "title": "General Fund Enterprise Business System",
         "url": "https://prodep.gfebs-erp.army.mil",
         "description": "General Fund Enterprise Business Systems (GFEBS) employs a Commercial-Off-The-Shelf (COTS), web-based Enterprise Resource Planning (ERP) solution to integrate financial, real property and other asset, cost and performance data. GFEBS standardizes business processes and transactions across the active Army, the Army National Guard (ARNG) and the United States Army Reserve (USAR) at over 200 locations. GFEBS provides real-time visibility of transactions, as well as historical data, to provide an integrated, analytic foundation for decision-making.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 83
     },
     {
         "title": "GI Suicide Prevention",
@@ -428,397 +511,475 @@
     {
         "title": "Global Combat Support System - Army (GCSS-Army)",
         "url": "https://www.gcss-army.army.mil/irj/portal",
-        "description": "Global Combat Support System - Army (GCSS-Army) is one program with two components. The first component, GCSS-Army Enterprise Resource Planning (ERP) Solution, is an automated information system that serves as the primary tactical logistics enabler supporting Army and joint transformation for sustainment. The program re-engineers current business processes to achieve end-to-end logistics and integration with applicable command and control (C2) and joint systems.\nThe second component, Army Enterprise Systems Integration Program (AESIP), integrates Army business functions by providing a single source for enterprise hub services, master data and business intelligence. GCSS-Army uses Commercial Off-The-Shelf ERP software products to support rapid force projection in the battlefield functional areas of arming, fixing, fueling, sustaining and tactical logistics financial processes."
+        "description": "Global Combat Support System - Army (GCSS-Army) is one program with two components. The first component, GCSS-Army Enterprise Resource Planning (ERP) Solution, is an automated information system that serves as the primary tactical logistics enabler supporting Army and joint transformation for sustainment. The program re-engineers current business processes to achieve end-to-end logistics and integration with applicable command and control (C2) and joint systems.\nThe second component, Army Enterprise Systems Integration Program (AESIP), integrates Army business functions by providing a single source for enterprise hub services, master data and business intelligence. GCSS-Army uses Commercial Off-The-Shelf ERP software products to support rapid force projection in the battlefield functional areas of arming, fixing, fueling, sustaining and tactical logistics financial processes.",
+        "cardId": 112
     },
     {
         "title": "Global Electronic Approval Routing System (GEARS Purple)",
         "url": "https://army.deps.mil/netcom/sites/GEARS/Live",
-        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes.",
+        "cardId": 110
     },
     {
         "title": "Global Electronic Approval Routing System 5 (GEARS Yellow)",
         "url": "https://army.deps.mil/netcom/sites/GEARS5/Live",
-        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes.",
+        "cardId": 108
     },
     {
         "title": "Global Electronic Approval Routing System V (GEARS Red)",
         "url": "https://army.deps.mil/netcom/sites/GEARSV/Live",
-        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes."
+        "description": "GEARS is an automated packet/document routing and tracking system built on SharePoint that implements global management of business processes.",
+        "cardId": 109
     },
     {
         "title": "Green To Gold Access Portal",
         "url": "https://gtg.usarmyrotc.com/",
-        "description": "The Green to Gold Active Duty Option Program is a two-year program that provides eligible, Active Duty enlisted Soldiers an opportunity to complete a baccalaureate degree or a two-year graduate degree and earn a commission as an Army Officer. You can apply and monitor your application here."
+        "description": "The Green to Gold Active Duty Option Program is a two-year program that provides eligible, Active Duty enlisted Soldiers an opportunity to complete a baccalaureate degree or a two-year graduate degree and earn a commission as an Army Officer. You can apply and monitor your application here.",
+        "cardId": 132
     },
     {
         "title": "Ground Risk Assessment Tool (GRAT)",
         "url": "https://grat.safety.army.mil/GRAT/",
         "description": "Ground Risk Assessment Tool (GRAT) is a mission planning tool developed to augment the military decision-making process. Consisting of five integral parts, it assists users in identifying potential hazards and controls for specified ground missions or activities, both on and off duty.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 19
     },
     {
         "title": "Guard Knowledge Online (GKO)",
         "url": "https://gko.portal.ng.mil/SitePages/Home.aspx",
-        "description": "A National Guard Bureau-wide Sharepoint site allowing for document storage and collaboration."
+        "description": "A National Guard Bureau-wide Sharepoint site allowing for document storage and collaboration.",
+        "cardId": 99
     },
     {
         "title": "Health.mil",
         "url": "https://health.mil/jmesi",
-        "description": "The Military Health System (MHS) is a form of nationalized health care operated within the United States Department of Defense that provides health care to active duty, Reserve component and retired U.S. Military personnel and their dependents."
+        "description": "The Military Health System (MHS) is a form of nationalized health care operated within the United States Department of Defense that provides health care to active duty, Reserve component and retired U.S. Military personnel and their dependents.",
+        "cardId": 43
     },
     {
         "title": "Identity, Credentialing and Access Management (ICAM) Portal",
         "url": "https://icamportal.us.army.mil",
-        "description": "Identity, Credentialing and Access Management (ICAM) Portal provides account and group functions formerly provided by AKO Classic. The ICAM portal also provides EAMS-A information. This has replaced Identity Management (IDM) Portal."
+        "description": "Identity, Credentialing and Access Management (ICAM) Portal provides account and group functions formerly provided by AKO Classic. The ICAM portal also provides EAMS-A information. This has replaced Identity Management (IDM) Portal.",
+        "cardId": 66
     },
     {
         "title": "IgnitED",
         "url": "https://www.armyignited.com/app/",
-        "description": "ArmyIgnitED is a tailored, intuitive resource that empowers you to achieve your educational goals. Whether you’re at home or abroad, you’ll have unlimited access to educational opportunities, support, and guidance throughout your desired Education Path, Civilian Path, Credential, or Army ROTC scholarship program. Sign up for TA or CA here."
+        "description": "ArmyIgnitED is a tailored, intuitive resource that empowers you to achieve your educational goals. Whether you’re at home or abroad, you'll have unlimited access to educational opportunities, support, and guidance throughout your desired Education Path, Civilian Path, Credential, or Army ROTC scholarship program. Sign up for TA or CA here.",
+        "cardId": 87
     },
     {
         "title": "Installation Support Module",
         "url": "https://ism.army.mil/ism/guest/login.jsp",
-        "description": "Installation Support Modules (ISM) is standardized software applications that perform business functions at the installation level for the Army."
+        "description": "Installation Support Modules (ISM) is standardized software applications that perform business functions at the installation level for the Army.",
+        "cardId": 131
     },
     {
         "title": "Integrated Personnel and Pay System - Army",
         "url": "https://ipps-a.army.mil/training",
-        "description": "A web-based human resources system that provides integrated personnel and pay capabilities and a comprehensive HR record for all Soldiers in each component."
+        "description": "A web-based human resources system that provides integrated personnel and pay capabilities and a comprehensive HR record for all Soldiers in each component.",
+        "cardId": 49
     },
     {
         "title": "iPerms",
         "url": "https://iperms.hrc.army.mil/",
-        "description": "An online information management system used for storing and managing military personnel records. It electronically stores evaluation reports, some medical documents, college and military transcripts, awards, diplomas, and more."
+        "description": "An online information management system used for storing and managing military personnel records. It electronically stores evaluation reports, some medical documents, college and military transcripts, awards, diplomas, and more.",
+        "cardId": 27
     },
     {
         "title": "iSALUTE",
         "url": "https://www.inscom.army.mil/isalute/",
-        "description": "iSALUTE is an Army counterintelligence reporting program to assist in preventing espionage, sabotage, subversion, and international terrorism. The program supports the Army's counterintelligence policy established in AR 381‐12, Threat Awareness and Reporting Program"
+        "description": "iSALUTE is an Army counterintelligence reporting program to assist in preventing espionage, sabotage, subversion, and international terrorism. The program supports the Army's counterintelligence policy established in AR 381-12, Threat Awareness and Reporting Program",
+        "cardId": 125
     },
     {
         "title": "JAG Corps",
         "url": "https://www.goarmy.com/jag.html",
-        "description": "The U.S. Army Judge Advocate General's Corps is a government organization that operates like a court system. Its practitioners, referred to as Judge Advocates, are licensed attorneys qualified to represent the Army and Army Soldiers in military legal matters."
+        "description": "The U.S. Army Judge Advocate General's Corps is a government organization that operates like a court system. Its practitioners, referred to as Judge Advocates, are licensed attorneys qualified to represent the Army and Army Soldiers in military legal matters.",
+        "cardId": 10
     },
     {
         "title": "JAG University",
         "url": "https://jagu.army.mil/",
-        "description": "The online learning home of the Judge Advocate General's corps"
+        "description": "The online learning home of the Judge Advocate General's corps",
+        "cardId": 9
     },
     {
         "title": "Joint Improvised Treat Defeat Organization",
         "url": "https://www.dtra.mil/Mission/JIDO",
-        "description": "The Joint Improvised-Threat Defeat Organization (JIDO) is a combat support organization of the U.S. Department of Defense (DoD) organization under the Defense Threat Reduction Agency that deals with improvised threats such as the improvised explosive device (IEDs) and small unmanned aerial systems. JIDO was born from the Joint IED Defeat Organization established in 2006, which focused on IEDs. JIDO's mission is to \"enable Department of Defense actions to counter improvised threats with tactical responsiveness and anticipatory acquisition in support of combatant commanders' efforts to prepare for, and adapt to, battlefield surprise.\" This mission supports counter-terrorism, counter-insurgency and other related mission areas including Counter-IED."
+        "description": "The Joint Improvised-Threat Defeat Organization (JIDO) is a combat support organization of the U.S. Department of Defense (DoD) organization under the Defense Threat Reduction Agency that deals with improvised threats such as the improvised explosive device (IEDs) and small unmanned aerial systems. JIDO was born from the Joint IED Defeat Organization established in 2006, which focused on IEDs. JIDO's mission is to \"enable Department of Defense actions to counter improvised threats with tactical responsiveness and anticipatory acquisition in support of combatant commanders' efforts to prepare for, and adapt to, battlefield surprise.\" This mission supports counter-terrorism, counter-insurgency and other related mission areas including Counter-IED.",
+        "cardId": 38
     },
     {
         "title": "Joint Knowledge Online (JKO)",
         "url": "https://jkodirect.jten.mil/",
-        "description": "JKO provides continuous, career-long development of joint knowledge and joint readiness for individuals, staffs, Combatant Commands, Combat Support Agencies, and the Services."
+        "description": "JKO provides continuous, career-long development of joint knowledge and joint readiness for individuals, staffs, Combatant Commands, Combat Support Agencies, and the Services.",
+        "cardId": 56
     },
     {
         "title": "Joint Risk Assessment Tool",
         "url": "https://jrat.safety.army.mil/",
-        "description": "The Joint Risk Assessment Tool (JRAT) is an interactive, easy-to-use, automated system designed to assist users with the application of risk management in accordance with Joint Publication 3-0, Joint Operations, and Service-specific publications."
+        "description": "The Joint Risk Assessment Tool (JRAT) is an interactive, easy-to-use, automated system designed to assist users with the application of risk management in accordance with Joint Publication 3-0, Joint Operations, and Service-specific publications.",
+        "cardId": 116
     },
     {
         "title": "Joint Service Transcript (JST)",
         "url": "https://jst.doded.mil/jst/",
-        "description": "Joint Services Transcript is an academically accepted document approved by the American Council on Education (ACE) to validate a service members military occupational experience and training along with the corresponding ACE college credit recommendations."
+        "description": "Joint Services Transcript is an academically accepted document approved by the American Council on Education (ACE) to validate a service members military occupational experience and training along with the corresponding ACE college credit recommendations.",
+        "cardId": 113
     },
     {
         "title": "LandWarNet eUniversity",
         "url": "https://lwn.army.mil",
-        "description": "LandWarNet (LWN) is the United States Army's contribution to the Global Information Grid that consists of all globally interconnected, end-to-end set of Army information capabilities, associated processes, and personnel for collecting, processing, storing, disseminating, and managing information on demand supporting warfighters, policy makers, and support personnel. It includes all Army (owned and leased) and leveraged Department of Defense (DOD)/Joint communications and computing systems and services, software (including applications), data security services, and other associated services. LandWarNet exists to enable the warfighter through Mission Command, previously described as Battle Command."
+        "description": "LandWarNet (LWN) is the United States Army's contribution to the Global Information Grid that consists of all globally interconnected, end-to-end set of Army information capabilities, associated processes, and personnel for collecting, processing, storing, disseminating, and managing information on demand supporting warfighters, policy makers, and support personnel. It includes all Army (owned and leased) and leveraged Department of Defense (DOD)/Joint communications and computing systems and services, software (including applications), data security services, and other associated services. LandWarNet exists to enable the warfighter through Mission Command, previously described as Battle Command.",
+        "cardId": 138
     },
     {
         "title": "LHI Appointment Scheduling",
         "url": "https://lhi.care/start/",
-        "description": "LHI is the federal health services business of both Optum and UnitedHealth Group (NYSE: UNH). It brings together the vast resources and clinical insights of UnitedHealthcare's unique health services, along with the innovation, technology and scalability of Optum."
+        "description": "LHI is the federal health services business of both Optum and UnitedHealth Group (NYSE: UNH). It brings together the vast resources and clinical insights of UnitedHealthcare's unique health services, along with the innovation, technology and scalability of Optum.",
+        "cardId": 50
     },
     {
         "title": "Medical Operational Data System",
         "url": "https://www.mods.army.mil/",
-        "description": "Medical Operational Data System (MODS) is designed to provide the provide Army Medical Department (AMEDD) leadership with an integrated system to manage AMEDD human resources (HR), logistics, education, manpower, and Army medical readiness programs. MODS is an integrated automation system that supports all phases of the AMEDD Human Resource Life-Cycle management processes in both peacetime and mobilization."
+        "description": "Medical Operational Data System (MODS) is designed to provide the provide Army Medical Department (AMEDD) leadership with an integrated system to manage AMEDD human resources (HR), logistics, education, manpower, and Army medical readiness programs. MODS is an integrated automation system that supports all phases of the AMEDD Human Resource Life-Cycle management processes in both peacetime and mobilization.",
+        "cardId": 106
     },
     {
         "title": "MEDLine Plus",
         "url": "https://medlineplus.gov/",
         "description": "MedlinePlus is an online health information resource for patients and their families and friends. It is a service of the National Library of Medicine (NLM), the world's largest medical library, and a part of the National Institutes of Health (NIH).",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 59
     },
     {
         "title": "MEDPROS (ADMINS)",
         "url": "https://medpros.mods.army.mil/MEDPROSNew/",
-        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit."
+        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit.",
+        "cardId": 6
     },
     {
         "title": "MHS Genesis",
         "url": "https://patientportal.mhsgenesis.health.mil/",
-        "description": "MHS GENESIS is the new electronic health record for the Military Health System (MHS), provides enhanced, secure technology to manage your health information. MHS GENESIS integrates inpatient and outpatient solutions that will connect medical and dental information across the continuum of care, from point of injury to the military treatment facility. This includes garrison, operational, and en route care, increasing efficiencies for beneficiaries and health care professionals."
+        "description": "MHS GENESIS is the new electronic health record for the Military Health System (MHS), provides enhanced, secure technology to manage your health information. MHS GENESIS integrates inpatient and outpatient solutions that will connect medical and dental information across the continuum of care, from point of injury to the military treatment facility. This includes garrison, operational, and en route care, increasing efficiencies for beneficiaries and health care professionals.",
+        "cardId": 117
     },
     {
         "title": "milConnect",
         "url": "https://milconnect.dmdc.osd.mil/milconnect/",
-        "description": "MilConnect provides a convenient self-service portal that allows DOD affiliates and beneficiaries to manage their benefits and records, offering secure access to personal and personnel records held in the Defense Enrollment Eligibility Reporting System."
+        "description": "MilConnect provides a convenient self-service portal that allows DOD affiliates and beneficiaries to manage their benefits and records, offering secure access to personal and personnel records held in the Defense Enrollment Eligibility Reporting System.",
+        "cardId": 34
     },
     {
         "title": "MILGAMING",
         "url": "https://milgaming.army.mil/",
-        "description": "MilGaming provides news, training events, online instruction, technical support, expert forums and training scenarios. It offers links to products such as Virtual Battlespace 2, known as VBS2, VBS2 Fires and Moral Combat."
+        "description": "MilGaming provides news, training events, online instruction, technical support, expert forums and training scenarios. It offers links to products such as Virtual Battlespace 2, known as VBS2, VBS2 Fires and Moral Combat.",
+        "cardId": 28
     },
     {
         "title": "Military Auxiliary Radio System",
         "url": "https://netcom.army.mil/MARS/default.aspx",
-        "description": "Army Military Auxiliary Radio System is a Department of Defense sponsored program which utilizes Amateur Radio operators to contribute to the mission of the Department of the Army. Army MARS members must have access to HF radio equipment, file a monthly report, and participate a minimum of 12 hours total, including a minimum 6 hours on HF radio each quarter."
+        "description": "Army Military Auxiliary Radio System is a Department of Defense sponsored program which utilizes Amateur Radio operators to contribute to the mission of the Department of the Army. Army MARS members must have access to HF radio equipment, file a monthly report, and participate a minimum of 12 hours total, including a minimum 6 hours on HF radio each quarter.",
+        "cardId": 127
     },
     {
         "title": "Military Child Care",
         "url": "https://public.militarychildcare.csd.disa.mil/mccu/ui/",
-        "description": "MilitaryChildCare.com provides a gateway to comprehensive information on military-operated or military-approved child care programs worldwide."
+        "description": "MilitaryChildCare.com provides a gateway to comprehensive information on military-operated or military-approved child care programs worldwide.",
+        "cardId": 141
     },
     {
         "title": "Military OneSource",
         "url": "http://www.militaryonesource.mil/",
-        "description": "Military OneSource is your 24/7 connection to information, answers and support to help you reach your goals, overcome challenges and thrive. As a member of our military family, you are eligible to use this Department of Defense-funded program anytime, anywhere. Military OneSource offers assistance with tax services, spouse employment help, webinars and online training, relocation and deployment tools, and much more."
+        "description": "Military OneSource is your 24/7 connection to information, answers and support to help you reach your goals, overcome challenges and thrive. As a member of our military family, you are eligible to use this Department of Defense-funded program anytime, anywhere. Military OneSource offers assistance with tax services, spouse employment help, webinars and online training, relocation and deployment tools, and much more.",
+        "cardId": 63
     },
     {
         "title": "MilitaryCAC",
         "url": "https://militarycac.com/",
         "description": "MilitaryCAC provides CAC installation assistance; Find information regarding the Department of Defense Common Access Card (CAC)",
-        "network": "non-DoD"
+        "network": "non-DoD",
+        "cardId": 101
     },
     {
         "title": "MilSuite",
         "url": "https://www.milsuite.mil/",
-        "description": "MilSuite provides a collection of social business tools for DOD personnel that facilitates professional networking, learning, and innovation through knowledge sharing and collaboration."
+        "description": "MilSuite provides a collection of social business tools for DOD personnel that facilitates professional networking, learning, and innovation through knowledge sharing and collaboration.",
+        "cardId": 76
     },
     {
         "title": "MOBCOP",
         "url": "https://mobcop.aoc.army.pentagon.mil/",
         "description": "MOBCOP is an internet site where Reserve Component Soldiers (USAR, IRR, ARNG, IMA) can find and volunteer for active duty tours. Any command that has positions or missions that could be filled by a RC Soldier can post those jobs on Tour of Duty. TOD allows commands to build and validate their positions so the vacancies can be searched by Soldiers seeking active duty. The positions in TOD must be validated by the command that owns the position or mission before they can be listed. Soldiers can find positions that match their grade and skills and then request the hiring command consider them for the job.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 105
     },
     {
         "title": "Mobile Digital Training Facility (MDTF)",
         "url": "https://www.atis.army.mil/MDTF.html",
-        "description": "The Mobile Digital Training Facility (MDTF) is a wireless networked classroom of 10 notebook PCs designed to be connected to the unit's local wireless network for use wherever and whenever access to distributed learning is needed. It will deliver individual and collective training to Soldiers and DA Civilians anywhere and anytime."
+        "description": "The Mobile Digital Training Facility (MDTF) is a wireless networked classroom of 10 notebook PCs designed to be connected to the unit's local wireless network for use wherever and whenever access to distributed learning is needed. It will deliver individual and collective training to Soldiers and DA Civilians anywhere and anytime.",
+        "cardId": 17
     },
     {
         "title": "myPay",
         "url": "https://mypay.dfas.mil/mypay.aspx",
-        "description": "The Defense Department's online payroll and accounting system, providing access to view one's pay account, view travel claims, make changes to withholding and allotments, and chance Thrift Savings Plan contributions."
+        "description": "The Defense Department's online payroll and accounting system, providing access to view one's pay account, view travel claims, make changes to withholding and allotments, and chance Thrift Savings Plan contributions.",
+        "cardId": 45
     },
     {
         "title": "My Army Benefits",
         "url": "https://myarmybenefits.us.army.mil/",
-        "description": "MyArmyBenefits is the Official Army Benefits Website. Forecast Your Retirement Benefits. Calculate Estimates of Your Survivor and Survivor Education Benefits. Browse Over 150 Fact Sheets for Benefit Eligibility and Highlights"
+        "description": "MyArmyBenefits is the Official Army Benefits Website. Forecast Your Retirement Benefits. Calculate Estimates of Your Survivor and Survivor Education Benefits. Browse Over 150 Fact Sheets for Benefit Eligibility and Highlights",
+        "cardId": 1
     },
     {
         "title": "My Clothing Record",
         "url": "https://ism.army.mil/ism/SelfServiceServlet?nav.nav_id=ssMyClothing",
-        "description": "An online portal allowing Soldiers to manage their organizational clothing and individual equipment."
+        "description": "An online portal allowing Soldiers to manage their organizational clothing and individual equipment.",
+        "cardId": 2
     },
     {
         "title": "My Enlisted Record Brief (ERB)",
         "url": "https://myerb.ahrs.army.mil/soldierLogin.do",
-        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!",
+        "cardId": 81
     },
     {
         "title": "My Enlisted/Officer Record Brief (National Guard)",
         "url": "https://arngg1.ngb.army.mil/SelfService/CareerCenter/Home.aspx",
-        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!",
+        "cardId": 81
     },
     {
         "title": "My Enlisted/Officer Record Brief (Reserve)",
         "url": "https://selfservice.rcms.usar.army.mil/SelfService/home/selfservice",
-        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!",
+        "cardId": 81
     },
     {
         "title": "MyMEB",
         "url": "https://cms.mods.army.mil/cms/protected/report/soldierDashboard.aspx",
-        "description": "MyMEB was developed by medical, information-management and administrative specialists to address a perceived need for Soldiers to know more about the MEB process and how it affects them."
+        "description": "MyMEB was developed by medical, information-management and administrative specialists to address a perceived need for Soldiers to know more about the MEB process and how it affects them.",
+        "cardId": 6
     },
     {
         "title": "My MEDPROS Medical Readiness Portal",
         "url": "https://medpros.mods.army.mil/portal",
-        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit."
+        "description": "MEDPROS is the Army's automated database designed to meet Department of Defense requirements in maintaining unit and individual medical readiness. It is designed to provide commanders with a real-time, world-wide operational system to manage the medical readiness and deployability of their unit.",
+        "cardId": 6
     },
     {
         "title": "My Officer Record Brief (ORB)",
         "url": "https://myorb.hrc.army.mil/",
-        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!"
+        "description": "The Soldier Record Brief (SRB/ORB/ERB) is a new multi-Component report that provides a snapshot of a Soldier's military career information. It details a Soldiers career in the military by listing all courses taken, duty stations, ASVAB scores and much more!",
+        "cardId": 26
     },
     {
         "title": "My RFO (Request for Orders)",
         "url": "https://aim.hrc.army.mil/",
         "description": "Assignment Interactive Module 2.0 (AIM 2) is a web based information system designed to enhance the effectiveness and efficiency of the officer management process, and facilitate communication between Soldiers (e.g. officers & warrant officers with talents), Units (e.g. commanders with requirements) and the Officer Personnel Management Directorate (OPMD)",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 25
     },
     {
         "title": "My Training Tab",
         "url": "https://atiam.train.army.mil/mthp/",
-        "description": "My Training Tab (MT2) original available to users at Army Knowledge Online (AKO) , pulls together all web-based training resources on a single, customizable page. Still functional after AKOs was taken down."
+        "description": "My Training Tab (MT2) original available to users at Army Knowledge Online (AKO) , pulls together all web-based training resources on a single, customizable page. Still functional after AKOs was taken down.",
+        "cardId": 42
     },
     {
         "title": "NCO Leader Center for Excellence",
         "url": "http://ncolcoe.armylive.dodlive.mil/",
-        "description": "NCO Leader Center for Excellence provides professional military education that develops holistically fit, disciplined, well-educated professionals capable of meeting the challenges of large-scale combat operations in a multi-domain environment."
+        "description": "NCO Leader Center for Excellence provides professional military education that develops holistically fit, disciplined, well-educated professionals capable of meeting the challenges of large-scale combat operations in a multi-domain environment.",
+        "cardId": 3
     },
     {
         "title": "NCO Worldwide",
         "url": "https://www.ncoworldwide.army.mil/",
-        "description": "NCO Worldwide is an academic portal is to design a student centric, centralized, web-based educational platform to enhance the lifelong learning experience for Soldiers across the globe."
+        "description": "NCO Worldwide is an academic portal is to design a student centric, centralized, web-based educational platform to enhance the lifelong learning experience for Soldiers across the globe.",
+        "cardId": 111
     },
     {
         "title": "NETCOM",
         "url": "https://netcom.army.mil/",
-        "description": "NETCOM leads global operations for the Army's portion of the DODIN, ensuring freedom of action in cyberspace while denying the same to our adversaries."
+        "description": "NETCOM leads global operations for the Army's portion of the DODIN, ensuring freedom of action in cyberspace while denying the same to our adversaries.",
+        "cardId": 128
     },
     {
         "title": "Office of Personnel Management",
         "url": "https://www.opm.gov/",
-        "description": "The U.S. Office of Personnel Management (OPM) serves as the chief human resources agency and personnel policy manager for the Federal Government. OPM provides human resources leadership and support to Federal agencies and helps the Federal workforce achieve their aspirations as they serve the American people. OPM directs human resources and employee management services, administers retirement benefits, manages healthcare and insurance programs, oversees merit-based and inclusive hiring into the civil service, and provides a secure employment process."
+        "description": "The U.S. Office of Personnel Management (OPM) serves as the chief human resources agency and personnel policy manager for the Federal Government. OPM provides human resources leadership and support to Federal agencies and helps the Federal workforce achieve their aspirations as they serve the American people. OPM directs human resources and employee management services, administers retirement benefits, manages healthcare and insurance programs, oversees merit-based and inclusive hiring into the civil service, and provides a secure employment process.",
+        "cardId": 102
     },
     {
         "title": "Preventative Maintenance Monthly (P.S. Magazine)",
         "url": "https://www.psmagazine.army.mil/",
-        "description": "Preventative Maintenance Monthly is intended to enhance materiel readiness by emphasizing preventive maintenance and promoting proper maintenance and supply procedures. Review of PS Magazine will be a regular part of unit readiness initiatives. A reader service is available to answer maintenance and supply questions."
+        "description": "Preventative Maintenance Monthly is intended to enhance materiel readiness by emphasizing preventive maintenance and promoting proper maintenance and supply procedures. Review of PS Magazine will be a regular part of unit readiness initiatives. A reader service is available to answer maintenance and supply questions.",
+        "cardId": 104
     },
     {
         "title": "Procurement Integrated Enterprise Environment (PIEE)",
         "url": "https://wawf.eb.mil/",
-        "description": "The Procurement Integrated Enterprise Environment (PIEE) is the primary enterprise procure-to-pay (P2P) application for the Department of Defense and its supporting agencies and is trusted by companies reporting over $7.1 billion in spending."
+        "description": "The Procurement Integrated Enterprise Environment (PIEE) is the primary enterprise procure-to-pay (P2P) application for the Department of Defense and its supporting agencies and is trusted by companies reporting over $7.1 billion in spending.",
+        "cardId": 103
     },
     {
         "title": "Protected Internet eXchange (PiX)",
         "url": "https://pixtoday.net/",
-        "description": "The Protected Internet eXchange (PiX), is a US government-sponsored program to assist with unclassified information sharing among US government agencies and military, as well as with foreign partners. PiX helps people working on similar problem sets connect with each other in a secure space."
+        "description": "The Protected Internet eXchange (PiX), is a US government-sponsored program to assist with unclassified information sharing among US government agencies and military, as well as with foreign partners. PiX helps people working on similar problem sets connect with each other in a secure space.",
+        "cardId": 136
     },
     {
         "title": "Promotion Point Worksheet",
         "url": "https://www.hrcapps.army.mil/PPW/",
-        "description": "Pulls your Promotion Point Worksheet from HRC. The Promotion Point Worksheet displays your current promotion point brake down for promotions to SGT and SSG."
+        "description": "Pulls your Promotion Point Worksheet from HRC. The Promotion Point Worksheet displays your current promotion point brake down for promotions to SGT and SSG.",
+        "cardId": 8
     },
     {
         "title": "Psychological Health Center of Excellence",
         "url": "http://www.pdhealth.mil/",
-        "description": "The Psychological Health Center of Excellence (PHCoE) is one of the Centers of Excellence within the Research and Development Directorate of the Defense Health Agency (DHA). PHCoE collaborates across the Department of Defense (DOD) and with the Department of Veterans Affairs and other agencies to provide leadership and expertise to inform policy and drive improvements in psychological health outcomes."
+        "description": "The Psychological Health Center of Excellence (PHCoE) is one of the Centers of Excellence within the Research and Development Directorate of the Defense Health Agency (DHA). PHCoE collaborates across the Department of Defense (DOD) and with the Department of Veterans Affairs and other agencies to provide leadership and expertise to inform policy and drive improvements in psychological health outcomes.",
+        "cardId": 77
     },
     {
         "title": "RAPIDS Appointment Scheduler",
         "url": "https://idco.dmdc.osd.mil/idco/",
-        "description": "RAPIDS ID Card Office allows you to schedule any CAC or ID card services appointment as well as manage some of your CAC information (Such as current address)."
+        "description": "RAPIDS ID Card Office allows you to schedule any CAC or ID card services appointment as well as manage some of your CAC information (Such as current address).",
+        "cardId": 142
     },
     {
         "title": "Risk Management Information System (RMIS)",
         "url": "https://rmis.safety.army.mil/",
         "description": "A risk management information system (RMIS) is an information system that assists in consolidating property values, claims, policy, and exposure information and providing the tracking and management reporting capabilities to enable the user to monitor and control the overall cost of risk management.",
-        "network": "DoD"
+        "network": "DoD",
+        "cardId": 79
     },
     {
         "title": "S1Net",
         "url": "https://www.milsuite.mil/book/community/spaces/apf/s1net",
-        "description": "S1Net connects HR professionals with a common focus of solving critical problems faced by the professional in the field, and in doing so, develop and archive the tools, insights and approaches needed by members."
+        "description": "S1Net connects HR professionals with a common focus of solving critical problems faced by the professional in the field, and in doing so, develop and archive the tools, insights and approaches needed by members.",
+        "cardId": 8
     },
     {
         "title": "Service members' Group Life Insurance (SGLI)",
         "url": "https://milconnect-pki.dmdc.osd.mil/milconnect/public/goto/soes",
-        "description": "Servicemembers' Group Life Insurance (SGLI) offers low-cost term coverage to eligible service members. If you're a service member who meets certain criteria, we'll automatically sign you up. You are automatically insured for the maximum coverage of $400,000, unless you have reduced, canceled, or declined coverage."
+        "description": "Servicemembers' Group Life Insurance (SGLI) offers low-cost term coverage to eligible service members. If you're a service member who meets certain criteria, we'll automatically sign you up. You are automatically insured for the maximum coverage of $400,000, unless you have reduced, canceled, or declined coverage.",
+        "cardId": 34
     },
     {
         "title": "Sexual Harassment Assault Response and Prevention",
         "url": "https://www.armyresilience.army.mil/sharp/",
-        "description": "The Army's Sexual Harassment/Assault Response and Prevention program, known as SHARP, exists so the Army can prevent sexual harassment and sexual assaults before they occur. Their goal is to eliminate sexual assaults and sexual harassment by creating a climate that respects the dignity of every member of the Army family. Additionally, they strive to:\n1) Reduce the stigma of reporting\n2) Protect the victim\n3) Increase prevention, investigation, prosecution and victim care capabilities\n4) Increase training and resources\n5) Refine and sustain response capability"
+        "description": "The Army's Sexual Harassment/Assault Response and Prevention program, known as SHARP, exists so the Army can prevent sexual harassment and sexual assaults before they occur. Their goal is to eliminate sexual assaults and sexual harassment by creating a climate that respects the dignity of every member of the Army family. Additionally, they strive to:\n1) Reduce the stigma of reporting\n2) Protect the victim\n3) Increase prevention, investigation, prosecution and victim care capabilities\n4) Increase training and resources\n5) Refine and sustain response capability",
+        "cardId": 64
     },
     {
         "title": "Soldier Enhancement Program",
         "url": "http://www.peosoldier.army.mil/Resources/Soldier-Enhancement-Program/",
-        "description": "The Soldier Enhancement Program (SEP) is an enduring process designed to help the Army move at \"the Speed of Industry\" to evaluate and type classify existing prototypes or commercially available items that will enhance Soldiers' ability to execute their combat mission."
+        "description": "The Soldier Enhancement Program (SEP) is an enduring process designed to help the Army move at \"the Speed of Industry\" to evaluate and type classify existing prototypes or commercially available items that will enhance Soldiers' ability to execute their combat mission.",
+        "cardId": 46
     },
     {
         "title": "Soldier For life",
         "url": "https://soldierforlife.army.mil/",
-        "description": "The latest news, images, videos, career information, and links from US Army Soldier For Life."
+        "description": "The latest news, images, videos, career information, and links from US Army Soldier For Life.",
+        "cardId": 135
     },
     {
         "title": "Transition Assistance Program (TAP)",
         "url": "https://www.sfl-tap.army.mil/",
-        "description": "Army Transition Assistance Program (TAP) is a Commander's Program and a Soldier's responsibility. The program provides transition assistance services to eligible Soldiers with at least 180 or more continuous days of Title 10 active duty service, except for those in a training status. TAP helps all eligible transitioning Soldiers discover knowledge, skills, and resources necessary to be competitive and successful in the global workforce. TAP helps Soldiers make informed career decisions through counseling and employment assistance, building upon lessons learned in the Initial and Service phases of the Soldier Life Cycle."
+        "description": "Army Transition Assistance Program (TAP) is a Commander's Program and a Soldier's responsibility. The program provides transition assistance services to eligible Soldiers with at least 180 or more continuous days of Title 10 active duty service, except for those in a training status. TAP helps all eligible transitioning Soldiers discover knowledge, skills, and resources necessary to be competitive and successful in the global workforce. TAP helps Soldiers make informed career decisions through counseling and employment assistance, building upon lessons learned in the Initial and Service phases of the Soldier Life Cycle.",
+        "cardId": 97
     },
     {
         "title": "Supply and Maintenance Assistance Review Team (SMART)",
         "url": "https://www.milsuite.mil/book/docs/DOC-101393",
-        "description": "Supply and Maintenance Assistance Review Team (SMART) is made to streamline and improve unit level logistics support through a single source logistics suggestion program. Submit a suggestion with them to receive help on unit level logistics."
+        "description": "Supply and Maintenance Assistance Review Team (SMART) is made to streamline and improve unit level logistics support through a single source logistics suggestion program. Submit a suggestion with them to receive help on unit level logistics.",
+        "cardId": 11
     },
     {
         "title": "Survivor OutReach Services (SOS)",
         "url": "https://www.armymwr.com/programs-and-services/personal-assistance/survivor-outreach",
-        "description": "Survivor Outreach Services is part of the Army Casualty Continuum of Care. It’s designed to provide long-term support to surviving Families of Fallen Soldiers. Their goal is to reassure Survivors that they remain valued members of the Army Family."
+        "description": "Survivor Outreach Services is part of the Army Casualty Continuum of Care. It’s designed to provide long-term support to surviving Families of Fallen Soldiers. Their goal is to reassure Survivors that they remain valued members of the Army Family.",
+        "cardId": 55
     },
     {
-        "title": "Thrift Savings Plan",
+        "title": "Thrift Savings Plan (TSP)",
         "url": "https://www.tsp.gov/",
-        "description": "The Thrift Savings Plan (TSP) is a retirement savings and investment plan for Federal employees and members of the uniformed services, including the Ready Reserve. It was established by Congress in the Federal Employees’ Retirement System Act of 1986 and offers the same types of savings and tax benefits that many private corporations offer their employees under 401(k) plans."
+        "description": "The Thrift Savings Plan (TSP) is a retirement savings and investment plan for Federal employees and members of the uniformed services, including the Ready Reserve. It was established by Congress in the Federal Employees’ Retirement System Act of 1986 and offers the same types of savings and tax benefits that many private corporations offer their employees under 401(k) plans.",
+        "cardId": 65
     },
     {
         "title": "TRADOC Application GateWay (TAG)",
         "url": "https://public.tag.army.mil/catalog/tag/home",
-        "description": "The TRADOC Application Gateway (TAG) is a site to host and track mobile apps. The TAG offers both Public and restricted access to apps and iBooks. Mobile applications public and restricted appear on the TAG."
+        "description": "The TRADOC Application Gateway (TAG) is a site to host and track mobile apps. The TAG offers both Public and restricted access to apps and iBooks. Mobile applications public and restricted appear on the TAG.",
+        "cardId": 41
     },
     {
         "title": "Travel Risk Planing System (TRiPS)",
         "url": "https://trips.safety.army.mil/",
-        "description": "Travel Risk Planing System is an online, survey-style risk-assessment tool that helps service members recognize and manage the risks they face while driving long distances. When a risk assessment is submitted, the designated supervisor receives an email informing him or her that there is a risk assessment to review."
+        "description": "Travel Risk Planing System is an online, survey-style risk-assessment tool that helps service members recognize and manage the risks they face while driving long distances. When a risk assessment is submitted, the designated supervisor receives an email informing him or her that there is a risk assessment to review.",
+        "cardId": 16
     },
     {
         "title": "Trial Defense Service",
         "url": "http://www.mdwhome.mdw.army.mil/sja_nav/trial-defense",
-        "description": "The United States Army Trial Defense Service's mission is to provide a full-range of defense legal services to Soldiers. These services include:\nRepresenting Soldiers charged with violations of the Uniform Code of Military Justice (UCMJ) at courts-martial and Article 32 pretrial investigations;\nRepresenting Soldiers during criminal investigations and before elimination or grade reduction boards;\nCounseling Soldiers regarding pretrial restraint, nonjudicial punishment (Article 15s), and various adverse administrative actions taken pursuant to military regulations."
+        "description": "The United States Army Trial Defense Service's mission is to provide a full-range of defense legal services to Soldiers. These services include:\nRepresenting Soldiers charged with violations of the Uniform Code of Military Justice (UCMJ) at courts-martial and Article 32 pretrial investigations;\nRepresenting Soldiers during criminal investigations and before elimination or grade reduction boards;\nCounseling Soldiers regarding pretrial restraint, nonjudicial punishment (Article 15s), and various adverse administrative actions taken pursuant to military regulations.",
+        "cardId": 21
     },
     {
         "title": "Tricare Dental Readiness",
         "url": "https://tricare.mil/CoveredServices/Dental/NGRDental/DentalReadiness",
-        "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans."
+        "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
+        "cardId": 68
     },
     {
         "title": "Tricare Online",
         "url": "https://tricare.mil/",
-        "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans."
+        "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
+        "cardId": 68
     },
     {
         "title": "Trusted End Node Security (TENS)",
         "url": "https://www.spi.dod.mil/lipose.htm",
-        "description": "Trusted End Node Security (TENS) creates a secure end node from trusted media on almost any Intel-based computer (PC or Mac). TENS boots a thin Linux operating system from removable media without mounting a local hard drive. Administrator privileges are not required; nothing is installed. TENS turns an untrusted system (such as a home computer) into a trusted network client. No trace of work activity or malware can be written to the local computer. Simply plug in your USB smart card reader to access CAC and PIV-restricted US government websites."
+        "description": "Trusted End Node Security (TENS) creates a secure end node from trusted media on almost any Intel-based computer (PC or Mac). TENS boots a thin Linux operating system from removable media without mounting a local hard drive. Administrator privileges are not required; nothing is installed. TENS turns an untrusted system (such as a home computer) into a trusted network client. No trace of work activity or malware can be written to the local computer. Simply plug in your USB smart card reader to access CAC and PIV-restricted US government websites.",
+        "cardId": 91
     },
     {
         "title": "U.S. Armed Forces Legal Assistance (AFLASS)",
         "url": "https://legalassistance.law.af.mil/",
-        "description": "U.S. Armed Forces Legal Assistance (AFLASS) will locate all legal offices and their contact information on military posts."
+        "description": "U.S. Armed Forces Legal Assistance (AFLASS) will locate all legal offices and their contact information on military posts.",
+        "cardId": 75
     },
     {
         "title": "Unit Commander's Finance Report (UCFR)",
         "url": "https://lt-apps-priv.dfas.mil/ucfr/",
-        "description": "Unit Commander's Finance Report (UCFR) is an extremely valuable management tool provided to unit commanders once a month. The report provides the unit commander a one-line rollup of a Soldier's monthly pay account status making it easier to review the Soldier's pay. All available documents in the battalion S-1 or the unit PAC should be used to verify data on the UCFR (e.g. unit rosters, AAA-162 Unit Personnel Accountability Report, (eMILPO), DA Form 4187s, AWOL files, Article15 files, etc.)."
+        "description": "Unit Commander's Finance Report (UCFR) is an extremely valuable management tool provided to unit commanders once a month. The report provides the unit commander a one-line rollup of a Soldier's monthly pay account status making it easier to review the Soldier's pay. All available documents in the battalion S-1 or the unit PAC should be used to verify data on the UCFR (e.g. unit rosters, AAA-162 Unit Personnel Accountability Report, (eMILPO), DA Form 4187s, AWOL files, Article15 files, etc.).",
+        "cardId": 1
     },
     {
         "title": "United Services Military Apprenticeship Program (USMAP)",
         "url": "https://usmap.osd.mil/index.htm",
-        "description": "The United Services Military Apprenticeship Program (USMAP) provides enlisted Sailors (AC, FTS) the opportunity to complete civilian apprenticeship requirements while on Active duty and earn a U.S. Department of Labor \"Certificate of Completion\" and Journeyman card."
+        "description": "The United Services Military Apprenticeship Program (USMAP) provides enlisted Sailors (AC, FTS) the opportunity to complete civilian apprenticeship requirements while on Active duty and earn a U.S. Department of Labor \"Certificate of Completion\" and Journeyman card.",
+        "cardId": 139
     },
     {
         "title": "Volunteer Management Information System (VMIS)",
         "url": "https://vmis.armyfamilywebportal.com/",
-        "description": "The Volunteer Management Information System (VMIS) assists the Army Volunteer Corps and Organization Point of Contact (OPOC) in managing these dedicated volunteers and allows volunteers a way track their hours, awards, trainings and certificates. Volunteers can apply for volunteer opportunities, record and track volunteer hours, and manage their volunteer service record."
+        "description": "The Volunteer Management Information System (VMIS) assists the Army Volunteer Corps and Organization Point of Contact (OPOC) in managing these dedicated volunteers and allows volunteers a way track their hours, awards, trainings and certificates. Volunteers can apply for volunteer opportunities, record and track volunteer hours, and manage their volunteer service record.",
+        "cardId": 85
     },
     {
         "title": "Visual Information Ordering Site",
         "url": "https://vios.army.mil/",
-        "description": "Visual Information Ordering Site is used to set up an appointment to have a DA Photo taken."
+        "description": "Visual Information Ordering Site is used to set up an appointment to have a DA Photo taken.",
+        "cardId": 129
     },
     {
         "title": "Yellow Ribbon Reintegration Program (YRRP)",
         "url": "https://www.yellowribbon.mil/",
-        "description": "The Yellow Ribbon Reintegration Program (YRRP) is a Department of Defense-wide effort to promote the well-being of National Guard and Reserve members, their families and communities by connecting them with valuable resources."
+        "description": "The Yellow Ribbon Reintegration Program (YRRP) is a Department of Defense-wide effort to promote the well-being of National Guard and Reserve members, their families and communities by connecting them with valuable resources.",
+        "cardId": 134
     }
 ]

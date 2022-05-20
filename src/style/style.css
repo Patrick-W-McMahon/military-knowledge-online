@@ -151,3 +151,11 @@ body {
 .hidden {
     display: none;
 }
+
+.workspace-panel {
+    display: none;
+}
+
+.workspace-panel.active {
+    display: block;
+}

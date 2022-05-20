@@ -9,19 +9,24 @@ import Workspace from "../components/workspace";
 const Branch = ({ data }) => {
     const { allLinksData } = data;
     const { groupLinks, links } = allLinksData;
-    //const validCards = links.filter(l => l.cardId !== null);
+    const validCards = links.filter(l => l.cardId !== null);
+    console.log('test: ', groupLinks);
     return (
         <Layout>
           <Workspace>
-            {/*
             <Workspace.Panel title={'Cards'}>
-              <CardGrid cards={validCards} />
+              {validCards.length === 0 ? (
+                <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+              ): <CardGrid cards={validCards} />}
             </Workspace.Panel>
-            */}
             <Workspace.Panel title={'Link List'}>
-              <Container className="link-container">
-                <LinkList links={groupLinks} />
-              </Container>
+              {groupLinks.length === 0 ? (
+                <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
+              ): (
+                <Container className="link-container">
+                  <LinkList links={groupLinks} />
+                </Container>
+              )}
             </Workspace.Panel>
           </Workspace>
         </Layout>
