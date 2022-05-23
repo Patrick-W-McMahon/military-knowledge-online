@@ -28,7 +28,7 @@ links = links.map(link => {
     return {...link, alphaChar };
 });
 const LINKS_DATA = links;
-
+/*
 module.exports.onCreateNode = ({ node, actions }) => {
     const { createNodeField } = actions;
     if (node.internal.type === 'MarkdownRemark') {
@@ -40,7 +40,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
         })
     }
 };
-
+*/
 exports.createPages = async({ actions }) => {
     const { createPage } = actions
     createPage({
