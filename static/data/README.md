@@ -44,6 +44,8 @@ This file provides quick catigories that will show up in the drop down menu to b
             "func": "getSavedLinks"
         }
     },
-    {}
+    {...}
 ]
 ````
+
+The categories file calls an action that requires an system obj to be targeted with a corisponding function call on that object. 
