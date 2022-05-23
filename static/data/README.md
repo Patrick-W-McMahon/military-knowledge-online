@@ -1,4 +1,4 @@
-When editing a link file 'link_(branch name).json' the format is as followed.
+When editing a link file 'link_(branch name).json' the format is as followed. ONLY EDIT LINKS FOR YOUR BRANCH.
 
 ```` json
 [
