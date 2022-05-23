@@ -172,6 +172,10 @@ body {
     cursor: pointer;
 }
 
+.email-link {
+    margin: 0;
+}
+
 .hidden {
     display: none;
 }
