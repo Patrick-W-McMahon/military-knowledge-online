@@ -27,6 +27,12 @@ body {
     min-height: 100vh;
 }
 
+p {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
 .navbar,
 .footer {
     background-color: rgb(var(--army-primary-clr))!important;

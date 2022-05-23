@@ -1,3 +1,5 @@
+const path = require('path');
+
 const BRANCH_DATA = require('./static/data/branches.json');
 const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
 const LINKS_ARMY = require('./static/data/links_army.json');
@@ -26,6 +28,18 @@ links = links.map(link => {
     return {...link, alphaChar };
 });
 const LINKS_DATA = links;
+
+module.exports.onCreateNode = ({ node, actions }) => {
+    const { createNodeField } = actions;
+    if (node.internal.type === 'MarkdownRemark') {
+        const slug = path.basename(node.fileAbsolutePath, '.md');
+        createNodeField({
+            node,
+            name: 'slug',
+            value: slug
+        })
+    }
+};
 
 exports.createPages = async({ actions }) => {
     const { createPage } = actions

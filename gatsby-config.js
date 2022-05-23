@@ -7,6 +7,7 @@ module.exports = {
     },
     plugins: [
         `gatsby-plugin-no-sourcemaps`,
+        "gatsby-plugin-slug",
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -20,6 +21,21 @@ module.exports = {
             options: {
                 name: `pages`,
                 path: `${__dirname}/src/pages/`,
+            }
+        },
+        {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    'gatsby-remark-relative-images',
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 750,
+                            linkImagesToOriginal: false
+                        }
+                    }
+                ]
             }
         }
     ]
