@@ -39,6 +39,10 @@ p {
     z-index: 1;
 }
 
+.nav-link {
+    font-size: 1.4em;
+}
+
 .main-content {
     display: block;
     min-height: calc(100vh - 140px);
