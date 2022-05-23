@@ -48,4 +48,4 @@ This file provides quick catigories that will show up in the drop down menu to b
 ]
 ````
 
-The categories file calls an action that requires an system obj to be targeted with a corisponding function call on that object. 
+The categories file calls an action that requires an system obj to be targeted with a corresponding function call on that object. 
