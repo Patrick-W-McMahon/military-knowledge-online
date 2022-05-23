@@ -20,6 +20,30 @@ The text attribute is displayed for the link. The url property is the url you wo
 # branches.json
 The branches.json file holds an array of all the branches of the military. This will only need to be edited when the military adds or removes a branch.
 
+```` json
+[
+    {
+        "name": "Air Force",
+        "seal": "air_force.png",
+        "path": "air_force"
+    },
+    {...}
+]
+````
+
 
 # categories_(branch name).json
 This file provides quick catigories that will show up in the drop down menu to bring up links based on a catigory. ONLY EDIT THE FILE FOR YOUR BRANCH.
+
+```` json
+[
+    {
+        "label": "Favorites",
+        "action": {
+            "obj": "profile-action",
+            "func": "getSavedLinks"
+        }
+    },
+    {}
+]
+````
