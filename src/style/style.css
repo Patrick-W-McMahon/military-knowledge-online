@@ -27,9 +27,15 @@ body {
     min-height: 100vh;
 }
 
-.navbar {
+.navbar,
+.footer {
     background-color: rgb(var(--army-primary-clr))!important;
     z-index: 1;
+}
+
+.main-content {
+    display: block;
+    min-height: calc(100vh - 140px);
 }
 
 .navbar a {
@@ -176,4 +182,13 @@ body {
 
 .workspace-panel.active {
     display: block;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+}
+
+.footer p {
+    max-width: 100%;
 }
