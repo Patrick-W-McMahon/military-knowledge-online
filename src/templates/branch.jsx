@@ -1,18 +1,20 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from '../components/layout';
+import Seo from "../components/seo";
 import { Container } from "react-bootstrap";
 import LinkList from "../components/linkList";
 import CardGrid from "../components/CardGrid";
 import Workspace from "../components/workspace";
 
-const Branch = ({ data }) => {
+const Branch = ({ data, pageContext }) => {
     const { allLinksData } = data;
+    const { branch } = pageContext; 
     const { groupLinks, links } = allLinksData;
     const validCards = links.filter(l => l.cardId !== null);
-    console.log('test: ', groupLinks);
     return (
         <Layout>
+          <Seo title={`${branch} links`} />
           <Workspace>
             <Workspace.Panel title={'Cards'}>
               {validCards.length === 0 ? (
