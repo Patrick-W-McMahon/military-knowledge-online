@@ -32,7 +32,7 @@
         "url": "http://disa.mil/Cybersecurity/Network-Defense/Antivirus/Home-Use",
         "description": "The DoD Antivirus Software License Agreement from McAfee allows active DoD employees and authorized government contractors to utilize the antivirus software for personal device protection. Home use of the antivirus products will not only protect personal PCs, but will also potentially lessen the likelihood of malicious threats being introduced to the workplace and compromising DoD networks. DISA Home Use is now being offered to government employees and defense contractors with an approved .mil email address.",
         "cardId": 54,
-        "catigories": ["resources_info_tech"]
+        "catigories": ["resources_info_tech", "us_gov_website"]
     },
     {
         "title": "Army 365 Azure Portal",
@@ -537,7 +537,7 @@
         "url": "https://fiscal.treasury.gov/eaglecash/",
         "description": "The EagleCash card is an alternative to cash, Debit cards, credit cards, and checks. EagleCash is a \"stored value card\" that serves as a cash management tool. Funds are loaded to an EagleCash card, linked to the cardholder's personal account at a financial institution, using a self-service kiosk. Funds may be added or removed from the card at any time.",
         "cardId": 14,
-        "catigories": ["finance"]
+        "catigories": ["finance", "us_gov_website"]
     },
     {
         "title": "eBenefits",
@@ -572,7 +572,7 @@
         "url": "https://www.fvap.gov/",
         "description": "The Federal Voting Assistance Program (FVAP) works to ensure Service members, their eligible family members, and overseas citizens are aware of their right to vote and have the tools and resources to successfully do so - from anywhere in the world.",
         "cardId": 114,
-        "catigories": []
+        "catigories": ["us_gov_website"]
     },
     {
         "title": "FEDLOG",
@@ -723,7 +723,7 @@
         "url": "https://www.inscom.army.mil/isalute/",
         "description": "iSALUTE is an Army counterintelligence reporting program to assist in preventing espionage, sabotage, subversion, and international terrorism. The program supports the Army's counterintelligence policy established in AR 381-12, Threat Awareness and Reporting Program",
         "cardId": 125,
-        "catigories": ["army_website", "dod_resource"]
+        "catigories": ["army_website", "dod_resource", "us_gov_website"]
     },
     {
         "title": "JAG Corps",
@@ -794,7 +794,7 @@
         "description": "MedlinePlus is an online health information resource for patients and their families and friends. It is a service of the National Library of Medicine (NLM), the world's largest medical library, and a part of the National Institutes of Health (NIH).",
         "network": "DoD",
         "cardId": 59,
-        "catigories": ["health_resources"]
+        "catigories": ["health_resources", "us_gov_website"]
     },
     {
         "title": "MEDPROS (ADMINS)",
@@ -1007,7 +1007,7 @@
         "url": "https://pixtoday.net/",
         "description": "The Protected Internet eXchange (PiX), is a US government-sponsored program to assist with unclassified information sharing among US government agencies and military, as well as with foreign partners. PiX helps people working on similar problem sets connect with each other in a secure space.",
         "cardId": 136,
-        "catigories": ["dod_resource"]
+        "catigories": ["dod_resource", "us_gov_website"]
     },
     {
         "title": "Promotion Point Worksheet",
@@ -1099,7 +1099,7 @@
         "url": "https://www.tsp.gov/",
         "description": "The Thrift Savings Plan (TSP) is a retirement savings and investment plan for Federal employees and members of the uniformed services, including the Ready Reserve. It was established by Congress in the Federal Employees’ Retirement System Act of 1986 and offers the same types of savings and tax benefits that many private corporations offer their employees under 401(k) plans.",
         "cardId": 65,
-        "catigories": ["finance"]
+        "catigories": ["finance", "us_gov_website"]
     },
     {
         "title": "TRADOC Application GateWay (TAG)",
@@ -1169,7 +1169,7 @@
         "url": "https://usmap.osd.mil/index.htm",
         "description": "The United Services Military Apprenticeship Program (USMAP) provides enlisted Sailors (AC, FTS) the opportunity to complete civilian apprenticeship requirements while on Active duty and earn a U.S. Department of Labor \"Certificate of Completion\" and Journeyman card.",
         "cardId": 139,
-        "catigories": ["education_civilian", "professional_development"]
+        "catigories": ["education_civilian", "professional_development", "us_gov_website"]
     },
     {
         "title": "Volunteer Management Information System (VMIS)",
