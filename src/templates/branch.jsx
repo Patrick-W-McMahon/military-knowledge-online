@@ -15,7 +15,7 @@ const Branch = ({ data, pageContext }) => {
     return (
         <Layout>
           <Seo title={`${branch} links`} />
-          <Workspace>
+          <Workspace filterGroups={[]}>
             <Workspace.Panel title={'Cards'}>
               {validCards.length === 0 ? (
                 <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>

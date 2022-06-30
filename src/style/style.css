@@ -206,3 +206,29 @@ p {
 .footer p {
     max-width: 100%;
 }
+
+.workspace-toolbar {
+    background: rgba(var(--army-primary-clr), 0.75);
+    margin-top: 10px;
+    padding: 4px;
+}
+
+.workspace-toolbar .btn-outline-primary {
+    border: 1px solid black;
+    color: black;
+}
+
+.workspace-toolbar .btn-outline-primary:hover {
+    background-color: rgba(var(--army-primary-clr), 0.85);
+}
+
+.workspace-toolbar .btn {
+    margin-right: 5px;
+}
+
+.workspace-toolbar .dropdown-toggle {
+    background: transparent;
+    border-color: black;
+    color: black;
+    font-size: 1.4em;
+}
