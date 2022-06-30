@@ -935,6 +935,12 @@
         "cardId": 68
     },
     {
+        "title": "Tricare Online (Patient Portal)",
+        "url": "https://tricareonline.com",
+        "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
+        "cardId": 68
+    },
+    {
         "title": "Tricare Online",
         "url": "https://tricare.mil/",
         "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
