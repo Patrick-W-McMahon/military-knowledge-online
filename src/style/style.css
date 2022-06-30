@@ -232,3 +232,65 @@ p {
     color: black;
     font-size: 1.4em;
 }
+
+.info-dialogBox {
+    position: fixed;
+    top: 6%;
+    left: 20%;
+    right: 20%;
+    display: block;
+}
+
+.modal-content {
+    border: 1px solid rgb(var(--army-primary-clr));
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.modal-content img {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid black;
+}
+
+.modal-header {
+    background-color: rgb(var(--army-primary-clr));
+    border-radius: 0;
+    margin: 0;
+}
+
+.modal-title {
+    max-width: 85%;
+}
+
+.btn-close {
+    height: 40px;
+    width: 40px;
+    font-size: 1.4em;
+    padding: 3;
+    color: white;
+    margin-top: -18px;
+    margin-right: -8px;
+    background: rgb(108, 17, 17);
+    background: linear-gradient(0deg, rgba(108, 17, 17, 1) 0%, rgba(185, 44, 44, 1) 50%, rgba(255, 62, 62, 1) 100%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.btn-close:hover {
+    cursor: pointer;
+}
+
+.backdrop {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1000;
+}

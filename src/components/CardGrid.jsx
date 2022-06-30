@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import LinkCard from "./linkCard";
 
-const CardGrid = ({ cards }) => (
+const CardGrid = ({ cards, showInfo }) => (
     <Fragment>
-        {cards.map((card, index) => <LinkCard key={`card-${index}`} card={card} />)}
+        {cards.map((card, index) => <LinkCard key={`card-${index}`} card={card} showInfo={showInfo} />)}
     </Fragment>
 );
 
