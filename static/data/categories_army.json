@@ -99,7 +99,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["legal"]
+            "val": ["legal_resources"]
         }
     },
     {
