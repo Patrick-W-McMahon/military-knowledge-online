@@ -1,4 +1,5 @@
 const path = require('path');
+const crypto = require('crypto');
 
 const BRANCH_DATA = require('./static/data/branches.json');
 const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
@@ -8,6 +9,10 @@ const LINKS_MARINE_CORPS = require('./static/data/links_marine_corps.json');
 const LINKS_NATIONAL_GUARD = require('./static/data/links_national_guard.json');
 const LINKS_NAVY = require('./static/data/links_navy.json');
 const LINKS_SPACE_FORCE = require('./static/data/links_space_force.json');
+const CATEGORIES_ARMY = require('./static/data/categories_army.json');
+
+let links = [];
+let categories = [];
 
 const LinkSources = {
     air_force: LINKS_AIR_FORCE,
@@ -18,16 +23,30 @@ const LinkSources = {
     navy: LINKS_NAVY,
     space_force: LINKS_SPACE_FORCE
 };
-var links = [];
+
+const categoriesSources = {
+    air_force: [],
+    army: CATEGORIES_ARMY,
+    cost_guard: [],
+    marine_corps: [],
+    national_guard: [],
+    navy: [],
+    space_force: []
+};
+
 const getFirstLetter = (str) => str[0].toLowerCase();
 BRANCH_DATA.forEach(branch => {
     LinkSources[branch.path].forEach(link => links.push({...link, branch: branch.path }));
+    categoriesSources[branch.path].forEach(category => categories.push({...category, branch: branch.path }));
 });
 links = links.map(link => {
     const alphaChar = getFirstLetter(link.title);
     return {...link, alphaChar };
 });
+
 const LINKS_DATA = links;
+const CATEGORIES_DATA = categories;
+
 /*
 module.exports.onCreateNode = ({ node, actions }) => {
     const { createNodeField } = actions;
@@ -62,9 +81,11 @@ exports.createPages = async({ actions }) => {
 
 exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) => {
 
+    const sha256 = x => crypto.createHash('sha256').update(x, 'utf8').digest('hex');
     const dataArrSetup = (dataSet, id, type) => {
         dataSet.forEach((data, index) => {
             createNode({
+                hash: sha256(JSON.stringify(data)),
                 ...data,
                 id: `${id}-${index}`,
                 internal: {
@@ -92,4 +113,5 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
 
     dataArrSetup(BRANCH_DATA, 'branches', 'branch');
     dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
+    dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
 }

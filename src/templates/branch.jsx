@@ -6,7 +6,8 @@ import Seo from "../components/seo";
 import { Container } from "react-bootstrap";
 import LinkList from "../components/linkList";
 import CardGrid from "../components/CardGrid";
-import Workspace from "../components/workspace";
+import WorkspaceView from "../components/workspaceView";
+import WorkspaceContainer from "../containers/workspaceContainer";
 
 const initalState = {
   title: null,
@@ -15,43 +16,51 @@ const initalState = {
   cardId: null
 };
 
+const PageView = ({ showInfo, validCards, groupLinks, filterGroups, setTab, selectFilter, selectedTab }) => {
+  return (
+    <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab}>
+      <WorkspaceView.Panel title={'Cards'}>
+        {validCards.length === 0 ? (
+          <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+        ): <CardGrid cards={validCards} showInfo={showInfo} />}
+      </WorkspaceView.Panel>
+      <WorkspaceView.Panel title={'Link List'}>
+        {groupLinks.length === 0 ? (
+          <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
+        ): (
+          <Container className="link-container">
+            <LinkList links={groupLinks} />
+          </Container>
+        )}
+      </WorkspaceView.Panel>
+    </WorkspaceView>
+  );
+};
+
 const Branch = ({ data, pageContext }) => {
   const [ state, setState] = useState(initalState);
-  const { allLinksData } = data;
+  const { allLinksData, allCategoriesData } = data;
   const { branch } = pageContext; 
   const { groupLinks, links } = allLinksData;
+  const { categories } = allCategoriesData;
   const validCards = links.filter(l => l.cardId !== null);
 
   const showInfo = ({ title, url, description, cardId }) => {
-    console.log('clicked');
     setState({ title, url, description, cardId });
   }
 
   const handleClose = () => {
-    console.log('close');
     setState(initalState);
   }
-  console.log('test', state.url !== null);
+
   return (
     <Fragment>
       <Layout>
         <Seo title={`${branch} links`} />
-        <Workspace filterGroups={[]}>
-          <Workspace.Panel title={'Cards'}>
-            {validCards.length === 0 ? (
-              <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
-            ): <CardGrid cards={validCards} showInfo={showInfo} />}
-          </Workspace.Panel>
-          <Workspace.Panel title={'Link List'}>
-            {groupLinks.length === 0 ? (
-              <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
-            ): (
-              <Container className="link-container">
-                <LinkList links={groupLinks} />
-              </Container>
-            )}
-          </Workspace.Panel>
-        </Workspace>
+        <WorkspaceContainer categories={categories} groupLinks={groupLinks} validCards={validCards} >
+          <PageView showInfo={showInfo} />
+        </WorkspaceContainer>
+        
       </Layout>
       {state.url !== null ? (
         <div className="backdrop">
@@ -84,8 +93,11 @@ export const query = graphql`
         title
         url
         description
+        categories
         branch
         cardId
+        id
+        hash
       }
       groupLinks: group(field: alphaChar) {
         totalCount
@@ -94,8 +106,25 @@ export const query = graphql`
           title
           url
           description
+          categories
           branch
+          cardId
           alphaChar
+          id
+          hash
+        }
+      }
+    }
+    allCategoriesData(filter: {branch: {eq: $branch}}) {
+      categories: nodes {
+        branch
+        hash
+        id
+        label
+        action {
+          func
+          obj
+          val
         }
       }
     }

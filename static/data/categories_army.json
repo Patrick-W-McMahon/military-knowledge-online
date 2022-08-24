@@ -2,7 +2,8 @@
         "label": "Favorites",
         "action": {
             "obj": "profile-action",
-            "func": "getSavedLinks"
+            "func": "getSavedLinks",
+            "val": null
         }
     },
     {
@@ -10,7 +11,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["quick-links"]
+            "val": ["quick_links"]
         }
     },
     {
@@ -18,7 +19,7 @@
         "action": {
             "obj": "links-action",
             "func": "getAllLinks",
-            "val": true
+            "val": null
         }
     },
     {
@@ -26,7 +27,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["army"]
+            "val": ["army_website"]
         }
     },
     {
@@ -34,7 +35,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["combat-readiness"]
+            "val": ["combat_readiness"]
         }
     },
     {
@@ -42,7 +43,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["DOD"]
+            "val": ["dod_resource"]
         }
     },
     {
@@ -50,7 +51,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["education-civilian"]
+            "val": ["education_civilian"]
         }
     },
     {
@@ -58,7 +59,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["education-military"]
+            "val": ["education_military"]
         }
     },
     {
@@ -82,7 +83,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["health"]
+            "val": ["health_resources"]
         }
     },
     {
@@ -90,7 +91,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["HR"]
+            "val": ["human_resources"]
         }
     },
     {
@@ -106,7 +107,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["professional-development"]
+            "val": ["professional_development"]
         }
     },
     {
@@ -114,7 +115,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["resources", "info-tech"]
+            "val": ["resources", "resources_info_tech"]
         }
     },
     {
@@ -122,7 +123,7 @@
         "action": {
             "obj": "links-action",
             "func": "getLinksByTags",
-            "val": ["US-Gov"]
+            "val": ["us_gov_website"]
         }
     }
 ]
