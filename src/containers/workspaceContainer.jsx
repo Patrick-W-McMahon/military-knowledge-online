@@ -24,8 +24,10 @@ class WorkspaceContainer extends React.Component {
     componentDidMount() {
         const { categories } = this.props;
         const catigory = getCategoryByHash(categories, this.state.selectedFilter);
-        const { func, val } = catigory.action;
-        this[func](val);
+        if(categories.action){
+            const { func, val } = catigory.action;
+            this[func](val);
+        }
     }
 
     setTab(tabId) {
