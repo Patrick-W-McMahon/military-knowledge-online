@@ -16,26 +16,7 @@ const initalState = {
   cardId: null
 };
 
-const PageView = ({ showInfo, validCards, groupLinks, filterGroups, setTab, selectFilter, selectedTab }) => {
-  return (
-    <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab}>
-      <WorkspaceView.Panel title={'Cards'}>
-        {validCards.length === 0 ? (
-          <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
-        ): <CardGrid cards={validCards} showInfo={showInfo} />}
-      </WorkspaceView.Panel>
-      <WorkspaceView.Panel title={'Link List'}>
-        {groupLinks.length === 0 ? (
-          <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
-        ): (
-          <Container className="link-container">
-            <LinkList links={groupLinks} />
-          </Container>
-        )}
-      </WorkspaceView.Panel>
-    </WorkspaceView>
-  );
-};
+
 
 const Branch = ({ data, pageContext }) => {
   const [ state, setState] = useState(initalState);
@@ -53,14 +34,34 @@ const Branch = ({ data, pageContext }) => {
     setState(initalState);
   }
 
+  const PageView = ({ validCards, groupLinks, filterGroups, setTab, selectFilter, selectedTab }) => {
+    return (
+      <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab}>
+        <WorkspaceView.Panel title={'Cards'}>
+          {validCards.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+          ): <CardGrid cards={validCards} showInfo={showInfo} />}
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Link List'}>
+          {groupLinks.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
+          ): (
+            <Container className="link-container">
+              <LinkList links={groupLinks} />
+            </Container>
+          )}
+        </WorkspaceView.Panel>
+      </WorkspaceView>
+    );
+  };
+
   return (
     <Fragment>
       <Layout>
         <Seo title={`${branch} links`} />
         <WorkspaceContainer categories={categories} groupLinks={groupLinks} validCards={validCards} >
-          <PageView showInfo={showInfo} />
+          <PageView />
         </WorkspaceContainer>
-        
       </Layout>
       {state.url !== null ? (
         <div className="backdrop">
