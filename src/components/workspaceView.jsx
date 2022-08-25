@@ -25,7 +25,7 @@ class WorkspaceView extends React.Component {
         return (
             <Container fluid="md">
                 <Row className="justify-content-md-center">
-                    <Col xs lg="10">
+                    <Col xs lg="11">
                         <ButtonToolbar aria-label="Workspace Toolbar" className="workspace-toolbar">
                             <ButtonGroup aria-label="Display Select">
                                 <button className="btn btn-outline-primary" onClick={() => setTab(0)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-3x"></i></button>
@@ -40,7 +40,7 @@ class WorkspaceView extends React.Component {
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center">
-                    <Col xs lg="10">
+                    <Col xs lg="11">
                         <div className="workspace-content">{this.renderPanels()}</div>
                     </Col>
                 </Row>
