@@ -23,9 +23,9 @@ class WorkspaceContainer extends React.Component {
 
     componentDidMount() {
         const { categories } = this.props;
-        const catigory = getCategoryByHash(categories, this.state.selectedFilter);
-        if(categories.action){
-            const { func, val } = catigory.action;
+        const category = getCategoryByHash(categories, this.state.selectedFilter);
+        if(category){
+            const { func, val } = category.action;
             this[func](val);
         }
     }
