@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 //import PropTypes from 'prop-types';
 import { ActionImportProfile } from '../state/reducers/authReducer';
 
-const defaultFilter = "8d266a6f9c9aced0b789f4ffa2ed07e8bbc177104b3b3f1e3c48f63f217e69a0";
+const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
 
 const getCategoryByHash = (categories, hash) => categories.find(c => c.hash === hash);
 
