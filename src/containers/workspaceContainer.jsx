@@ -19,16 +19,25 @@ class WorkspaceContainer extends React.Component {
         this.selectFilter = this.selectFilter.bind(this);
     }
 
-    componentWillMount() {
-        const { categories, linksList, loadCategories, loadLinksList, branch } = this.props;
+    UNSAFE_componentWillMount() {
+        const { categories, linksList, loadCategories, loadLinksList, branch, setGroupFilter, workspace } = this.props;
         const LoadData = async() => {
             await loadLinksList(branch, linksList);
             await loadCategories(branch, categories);
+            await setGroupFilter(branch, categories, linksList, workspace.selectedFilter);
             
         }
-        LoadData()
+        LoadData();
+        /*
+        const setDefaultConfig = async() => {
+            const { categories, linksList, selectedFilter } = workspace;
+            await setGroupFilter(branch, categories, linksList, selectedFilter);
+        }
+        setDefaultConfig();
+        */
     }
-
+    
+    /*
     componentDidMoun() {
         const { setGroupFilter, branch, workspace  } = this.props;
         const { categories, linksList, selectedFilter } = workspace;
@@ -37,7 +46,7 @@ class WorkspaceContainer extends React.Component {
         }
         setDefaultConfig();
     }
-
+    */
     setTab(tabId) {
         this.setState({ selectedTab: tabId });
     }

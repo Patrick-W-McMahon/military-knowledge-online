@@ -1,4 +1,4 @@
-import * as initialState from '../../../static/data/system/workspace_initial_state.json';
+import * as initialState from '../../../static/system/workspace_initial_state.json';
 import branches from '../../../static/data/branches.json';
 
 
@@ -118,8 +118,8 @@ export const ActionSelectWorkspaceTab = (dispatch, tabId) => {
 
 export const ActionSetGroupFilter = async(dispatch, branch, categories, linksList, groupFilterHash) => {
     //const category = getCategoryByHash(categories, groupFilterHash);
+    console.log('select filter: ', groupFilterHash);
     await dispatch({ type: SET_CATEGORY_FILTER, branch, groupFilterHash });
-    console.log('bob', linksList)
     await ActionFilterLinks(dispatch, branch, categories, linksList, groupFilterHash);
 
     return dispatch({ type: CATEGORY_FILTER_SET_SUCESS });
@@ -128,6 +128,7 @@ export const ActionSetGroupFilter = async(dispatch, branch, categories, linksLis
 export const ActionFilterLinks = (dispatch, branch, categories, linksList, groupFilterHash) => {
     let newlinksList = [];
     const category = getCategoryByHash(categories, groupFilterHash);
+    console.log('changing filter links', category, categories, groupFilterHash);
     if (category) {
         const { func, val } = category.action;
         switch (func) {
@@ -142,6 +143,6 @@ export const ActionFilterLinks = (dispatch, branch, categories, linksList, group
                 break;
         }
     }
-    console.log('links list updated: ', newlinksList);
+    //console.log('links list updated: ', newlinksList);
     return dispatch({ type: Filtered_LINKS_LIST_SUCCESS, branch, linksList: newlinksList });
 }

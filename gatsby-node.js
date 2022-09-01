@@ -2,7 +2,8 @@
 const crypto = require('crypto');
 
 const BRANCH_DATA = require('./static/data/branches.json');
-const BASE_GROUP_FILTERS = require('./static/data/system/base_group_filters.json');
+const BASE_GROUP_FILTERS = require('./static/system/base_group_filters.json');
+
 const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
 const LINKS_ARMY = require('./static/data/links_army.json');
 const LINKS_COAST_GUARD = require('./static/data/links_coast_guard.json');
@@ -10,11 +11,13 @@ const LINKS_MARINE_CORPS = require('./static/data/links_marine_corps.json');
 const LINKS_NATIONAL_GUARD = require('./static/data/links_national_guard.json');
 const LINKS_NAVY = require('./static/data/links_navy.json');
 const LINKS_SPACE_FORCE = require('./static/data/links_space_force.json');
+
 const CATEGORIES_ARMY = require('./static/data/categories_army.json');
 
 let links = [];
 let categories = [];
 
+const sha256 = x => crypto.createHash('sha256').update(x, 'utf8').digest('hex');
 const setupCategories = (categories) => {
     let categoryList = [];
     let order = 0;
@@ -105,7 +108,6 @@ exports.createPages = async({ actions }) => {
 
 exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) => {
 
-    const sha256 = x => crypto.createHash('sha256').update(x, 'utf8').digest('hex');
     const dataArrSetup = (dataSet, id, type) => {
         dataSet.forEach((data, index) => {
             createNode({
