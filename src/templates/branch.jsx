@@ -8,12 +8,15 @@ import LinkList from "../components/linkList";
 import CardGrid from "../components/CardGrid";
 import WorkspaceView from "../components/workspaceView";
 import WorkspaceContainer from "../containers/workspaceContainer";
+import WorkspaceSettingsForm from "../forms/workspaceSettingsForm";
 
 const initalState = {
   title: null,
   url: null,
   description: null,
-  cardId: null
+  cardId: null,
+  showConfigWindow: false,
+  linkEditMode: false
 };
 
 
@@ -24,19 +27,41 @@ const Branch = ({ data, pageContext }) => {
   const { branch } = pageContext; 
   const { groupLinks: linksList } = allLinksData;
   const { categories } = allCategoriesData;
-  //const validCards = links.filter(l => l.cardId !== null);
 
   const showInfo = ({ title, url, description, cardId }) => {
-    setState({ title, url, description, cardId });
+    setState({...state, title, url, description, cardId });
+  }
+
+  const showWorkspaceConfigWindow = val => {
+    setState({...state, showConfigWindow: val });
   }
 
   const handleClose = () => {
-    setState(initalState);
+    setState({...initalState, linkEditMode: state.linkEditMode});
+  }
+
+  const handleSettingsChange = (name, val) => {
+    console.log('handleSettingsChange', name, val);
+    switch(name) {
+      case "linkEditMode":
+        //console.log('link edit mode state', val);
+        setState({...state, linkEditMode: true});
+        setTimeout(() => {
+          alert("edit mode in next update.");
+        }, 500);
+        setTimeout(() => {
+          setState({...state, linkEditMode: false});
+        }, 1500);
+      break;
+      default:
+
+    }
+    setState({...state, linkEditMode: !state.linkEditMode});
   }
 
   const PageView = ({ linksList, linksListFlatten, filterGroups, setTab, selectFilter, selectedTab }) => {
     return (
-      <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab}>
+      <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab} configBtnAction={showWorkspaceConfigWindow}>
         <WorkspaceView.Panel title={'Cards'}>
           {linksListFlatten.length === 0 ? (
             <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
@@ -63,6 +88,19 @@ const Branch = ({ data, pageContext }) => {
           <PageView />
         </WorkspaceContainer>
       </Layout>
+      {state.showConfigWindow ? (
+        <div className="backdrop">
+          <Modal.Dialog size="lg" centered backdrop="static" className="info-dialogBox modal-120w" show={true} animation={true}>
+            <Modal.Header>
+              <Modal.Title><i aria-label="workspace config" className="fas fa-cogs fa-1x"></i> Workspace Configuration</Modal.Title>
+              <button type="button" class="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
+            </Modal.Header>
+            <Modal.Body>
+              <WorkspaceSettingsForm settingChanged={(name, val) => handleSettingsChange(name, val)} linkEditMode={state.linkEditMode}/>
+            </Modal.Body>
+          </Modal.Dialog>
+        </div>
+      ) : null}
       {state.url !== null ? (
         <div className="backdrop">
           <Modal.Dialog size="lg" centered backdrop="static" className="info-dialogBox modal-120w" show={(state.url !== null).toString()} animation={true}>

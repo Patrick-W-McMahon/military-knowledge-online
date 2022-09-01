@@ -1,7 +1,8 @@
 import * as initialState from '../../../static/system/workspace_initial_state.json';
 import branches from '../../../static/data/branches.json';
 
-
+export const SAVE_FAVORITES_LINKS = 'workspace/save_favorites_links';
+export const LOAD_FAVORITES_LINKS = 'workspace/load_favorites_links';
 export const LOAD_LINKS_LIST = 'workspace/load_links_list';
 export const LOAD_CATEGORIES = 'workspace/load_categories';
 export const SET_CATEGORY_FILTER = 'workspace/change_category_filter';
@@ -96,6 +97,19 @@ export default function workspaceReducer(state = workspaceInitialState, action) 
                     }
                 }
             };
+        case LOAD_FAVORITES_LINKS:
+            return {...state,
+                branches: {
+                    ...state.branches,
+                    [action.branch]: {
+                        ...state.branches[action.branch],
+                        workspace: {
+                            ...state.branches[action.branch].workspace,
+                            favoriteLinks: action.favoriteLinks
+                        }
+                    }
+                }
+            };
         case CATEGORY_FILTER_SET_SUCESS:
             return {...state };
         default:
@@ -145,4 +159,24 @@ export const ActionFilterLinks = (dispatch, branch, categories, linksList, group
     }
     //console.log('links list updated: ', newlinksList);
     return dispatch({ type: Filtered_LINKS_LIST_SUCCESS, branch, linksList: newlinksList });
+}
+
+export const ActionSaveFavoritesLinks = (dispatch, branch, favoritesLinks) => {
+    console.log('ActionSaveFavoritesLinks', branch, favoritesLinks);
+    favoritesLinks.forEach(l => {
+        localStorage.setItem(`${branch}_favorites_links`, JSON.stringify(l));
+    });
+    return dispatch({ type: SAVE_FAVORITES_LINKS, branch, favoritesLinks });
+}
+
+export const ActionLoadFavoritesLinks = (dispatch, branch) => {
+    console.log('ActionLoadFavoritesLinks', branch);
+    const data = JSON.parse(localStorage.getItem(`${branch}_favorites_links`));
+    console.log('data check: ', data);
+    if (data) {
+        data.forEach(l => {
+            console.log('favorite link: ', l);
+        });
+    }
+    return dispatch({ type: LOAD_FAVORITES_LINKS, branch, favoriteLinks: [] });
 }

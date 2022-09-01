@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import { ActionLoadCategories, ActionLoadLinksList, ActionSelectWorkspaceTab, ActionSetGroupFilter } from '../state/reducers/workspaceReducer';
+import { ActionLoadCategories, ActionLoadFavoritesLinks, ActionLoadLinksList, ActionSaveFavoritesLinks, ActionSelectWorkspaceTab, ActionSetGroupFilter } from '../state/reducers/workspaceReducer';
 import { flattenLinksList, filterActiveLinks } from '../libs/common';
 
 //const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
@@ -20,12 +20,12 @@ class WorkspaceContainer extends React.Component {
     }
 
     UNSAFE_componentWillMount() {
-        const { categories, linksList, loadCategories, loadLinksList, branch, setGroupFilter, workspace } = this.props;
+        const { categories, linksList, loadCategories, loadLinksList, branch, setGroupFilter, workspace, loadFavoriteLinks } = this.props;
         const LoadData = async() => {
             await loadLinksList(branch, linksList);
             await loadCategories(branch, categories);
             await setGroupFilter(branch, categories, linksList, workspace.selectedFilter);
-            
+            await loadFavoriteLinks(branch);
         }
         LoadData();
         /*
@@ -95,6 +95,8 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = dispatch => ({
     loadCategories: (branch, categories) => ActionLoadCategories(dispatch, branch, categories),
     loadLinksList: (branch, linksList) => ActionLoadLinksList(dispatch, branch, linksList),
+    loadFavoriteLinks: branch => ActionLoadFavoritesLinks(dispatch, branch),
+    saveFavoriteLinks: (branch, links) => ActionSaveFavoritesLinks(dispatch, branch, links),
     selectWorkspaceTab: (branch, tabId) => ActionSelectWorkspaceTab(dispatch, branch, tabId),
     setGroupFilter: (branch, categories, linksList, hash) => ActionSetGroupFilter(dispatch, branch, categories, linksList, hash)
 });
