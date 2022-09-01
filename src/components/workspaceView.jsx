@@ -32,7 +32,7 @@ class WorkspaceView extends React.Component {
                                 <button className="btn btn-outline-primary" onClick={() => setTab(1)}><i aria-label="List View" className="fas fa-grip-lines fa-3x"></i></button>
                             </ButtonGroup>
                             <InputGroup>
-                                <DropdownButton as={ButtonGroup} title="Filter Category" id="filter-dropdown">
+                                <DropdownButton as={ButtonGroup} title="Filter Category" id="filter-dropdown" style={{ margin: 0 }}>
                                     {filterGroups.map((f, i) => <Dropdown.Item as="button" key={`filter_${i}`} onClick={() => selectFilter(f.hash)}>{f.label}</Dropdown.Item>)}
                                 </DropdownButton>
                             </InputGroup>
