@@ -6,10 +6,11 @@ const LinkList = ({ links }) => (
     <Fragment>
         {links[0]?.links ? abc.map((a,i) => {
             const group = links.find(g => g.fieldValue === a);
+            console.log('list test: ', group);
             return (
                 <details key={`link-${i}`} open>
                     <summary><b> - {a.toUpperCase()} - </b></summary>
-                    {group ? group.links.map((link,index) => (
+                    {group && group.links && group.links.length ? group.links.map((link,index) => (
                         <LinkCmp key={index} link={link} />
                     )): <div>No data</div>}
                 </details>
