@@ -22,9 +22,9 @@ const Branch = ({ data, pageContext }) => {
   const [ state, setState] = useState(initalState);
   const { allLinksData, allCategoriesData } = data;
   const { branch } = pageContext; 
-  const { groupLinks, links } = allLinksData;
+  const { groupLinks: linksList } = allLinksData;
   const { categories } = allCategoriesData;
-  const validCards = links.filter(l => l.cardId !== null);
+  //const validCards = links.filter(l => l.cardId !== null);
 
   const showInfo = ({ title, url, description, cardId }) => {
     setState({ title, url, description, cardId });
@@ -34,20 +34,20 @@ const Branch = ({ data, pageContext }) => {
     setState(initalState);
   }
 
-  const PageView = ({ validCards, groupLinks, filterGroups, setTab, selectFilter, selectedTab }) => {
+  const PageView = ({ linksList, linksListFlatten, filterGroups, setTab, selectFilter, selectedTab }) => {
     return (
       <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab}>
         <WorkspaceView.Panel title={'Cards'}>
-          {validCards.length === 0 ? (
+          {linksListFlatten.length === 0 ? (
             <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
-          ): <CardGrid cards={validCards} showInfo={showInfo} />}
+          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} />}
         </WorkspaceView.Panel>
         <WorkspaceView.Panel title={'Link List'}>
-          {groupLinks.length === 0 ? (
+          {linksList.length === 0 ? (
             <Container><div className="alert alert-info" role="alert">no data for links</div></Container>
           ): (
             <Container className="link-container">
-              <LinkList links={groupLinks} />
+              <LinkList links={linksList} />
             </Container>
           )}
         </WorkspaceView.Panel>
@@ -59,7 +59,7 @@ const Branch = ({ data, pageContext }) => {
     <Fragment>
       <Layout>
         <Seo title={`${branch} links`} />
-        <WorkspaceContainer categories={categories} groupLinks={groupLinks} validCards={validCards} >
+        <WorkspaceContainer branch={branch} categories={categories} linksList={linksList} >
           <PageView />
         </WorkspaceContainer>
       </Layout>
@@ -99,6 +99,7 @@ export const query = graphql`
         cardId
         id
         hash
+        active
       }
       groupLinks: group(field: alphaChar) {
         totalCount
@@ -108,20 +109,20 @@ export const query = graphql`
           url
           description
           categories
-          branch
           cardId
           alphaChar
           id
           hash
+          active
         }
       }
     }
     allCategoriesData(filter: {branch: {eq: $branch}}) {
       categories: nodes {
-        branch
         hash
         id
         label
+        order
         action {
           func
           obj

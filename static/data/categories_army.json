@@ -1,28 +1,4 @@
 [{
-        "label": "Favorites",
-        "action": {
-            "obj": "profile-action",
-            "func": "getSavedLinks",
-            "val": null
-        }
-    },
-    {
-        "label": "Quick Links",
-        "action": {
-            "obj": "links-action",
-            "func": "getLinksByTags",
-            "val": ["quick_links"]
-        }
-    },
-    {
-        "label": "All Web Sites A-Z",
-        "action": {
-            "obj": "links-action",
-            "func": "getAllLinks",
-            "val": null
-        }
-    },
-    {
         "label": "Army Web Sites",
         "action": {
             "obj": "links-action",

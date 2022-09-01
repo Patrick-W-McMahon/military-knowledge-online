@@ -1,0 +1,28 @@
+[{
+        "label": "Favorites",
+        "order": 0,
+        "action": {
+            "obj": "profile-action",
+            "func": "getSavedLinks",
+            "val": null
+        }
+    },
+    {
+        "label": "Quick Links",
+        "order": 1,
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["quick_links"]
+        }
+    },
+    {
+        "label": "All Web Sites A-Z",
+        "order": 2,
+        "action": {
+            "obj": "links-action",
+            "func": "getAllLinks",
+            "val": null
+        }
+    }
+]

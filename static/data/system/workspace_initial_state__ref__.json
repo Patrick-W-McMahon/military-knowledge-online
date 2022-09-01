@@ -1,0 +1,82 @@
+{
+    "branches": {
+        "air_force": {
+            "name": "Air Force",
+            "seal": "air_force.png",
+            "path": "air_force",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "army": {
+            "name": "Army",
+            "seal": "army.png",
+            "path": "army",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103",
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "cost_guard": {
+            "name": "Coast Guard",
+            "seal": "coast_guard.png",
+            "path": "cost_guard",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "marine_corps": {
+            "name": "Marine Corps",
+            "seal": "marine_corps.png",
+            "path": "marine_corps",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "national_guard": {
+            "name": "National Guard",
+            "seal": "national_guard.png",
+            "path": "national_guard",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "navy": {
+            "name": "Navy",
+            "seal": "navy.png",
+            "path": "navy",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        },
+        "space_force": {
+            "name": "Space Force",
+            "seal": "space_force.png",
+            "path": "space_force",
+            "workspace": {
+                "activeWorkspaceTab": 0,
+                "selectedFilter": null,
+                "linksList": [],
+                "categories": []
+            }
+        }
+    },
+    "error": ""
+}

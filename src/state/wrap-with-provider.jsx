@@ -2,10 +2,12 @@ import React from "react";
 import { createStore, combineReducers } from 'redux';
 import { Provider } from "react-redux";
 import auth from './reducers/authReducer';
+import workspace from './reducers/workspaceReducer';
 
 
 const myReducer = combineReducers({
-  auth
+  auth,
+  workspace
 });
 
  const wrapWithProps = ({ element }) => {

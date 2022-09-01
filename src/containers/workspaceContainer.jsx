@@ -1,33 +1,41 @@
 import React, { Fragment } from 'react';
 import { connect } from "react-redux";
-//import PropTypes from 'prop-types';
-import { ActionImportProfile } from '../state/reducers/authReducer';
+import PropTypes from 'prop-types';
+import { ActionLoadCategories, ActionLoadLinksList, ActionSelectWorkspaceTab, ActionSetGroupFilter } from '../state/reducers/workspaceReducer';
+import { flattenLinksList, filterActiveLinks } from '../libs/common';
 
-const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
-
-const getCategoryByHash = (categories, hash) => categories.find(c => c.hash === hash);
-
+//const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
 
 class WorkspaceContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedTab: 0,
-            selectedFilter: defaultFilter,
-            filteredValidCards: [],
-            filteredGroupLinks: []
+            //selectedFilter: defaultFilter,
+            //filteredValidCards: [],
+            //filteredGroupLinks: []
         };
         this.setTab = this.setTab.bind(this);
         this.selectFilter = this.selectFilter.bind(this);
     }
 
-    componentDidMount() {
-        const { categories } = this.props;
-        const category = getCategoryByHash(categories, this.state.selectedFilter);
-        if(category){
-            const { func, val } = category.action;
-            this[func](val);
+    componentWillMount() {
+        const { categories, linksList, loadCategories, loadLinksList, branch } = this.props;
+        const LoadData = async() => {
+            await loadLinksList(branch, linksList);
+            await loadCategories(branch, categories);
+            
         }
+        LoadData()
+    }
+
+    componentDidMoun() {
+        const { setGroupFilter, branch, workspace  } = this.props;
+        const { categories, linksList, selectedFilter } = workspace;
+        const setDefaultConfig = async() => {
+            await setGroupFilter(branch, categories, linksList, selectedFilter);
+        }
+        setDefaultConfig();
     }
 
     setTab(tabId) {
@@ -38,63 +46,16 @@ class WorkspaceContainer extends React.Component {
         alert('Will be added in next update.');
     }
 
-    getLinksByTags(tags) {
-        const { groupLinks, validCards } = this.props;
-        const filteredGroupLinks = [];
-        groupLinks.forEach(g => {
-            let gp = {fieldValue: g.fieldValue, links: [], totalCount: 0 };
-            g.links.forEach(l => {
-                let foundMatch = false;
-                [...tags].forEach(t => {
-                    if(l.categories !== null && l.categories.includes(t)) {
-                        foundMatch=true;
-                    }
-                });
-                if(foundMatch) {
-                    gp.links.push(l);
-                    gp.totalCount++;
-                }
-            });
-            filteredGroupLinks.push(gp);
-        });
-        const filteredValidCards = [];
-        validCards.forEach(l => {
-            let foundMatch = false;
-            [...tags].forEach(t => {
-                if(l.categories !== null && l.categories.includes(t)) {
-                    foundMatch=true;
-                }
-            });
-            if(foundMatch) {
-                filteredValidCards.push(l);
-            }
-        });
-        this.setState({ filteredGroupLinks, filteredValidCards });
-    }
-
-    getAllLinks() {
-        const { groupLinks, validCards } = this.props;
-        this.setState({ filteredGroupLinks: groupLinks, filteredValidCards: validCards });
-    }
-
     selectFilter(hash) {
-        const { categories } = this.props;
-        const catigory = getCategoryByHash(categories, hash);
-        switch(catigory.action.obj) {
-            case 'profile-action':
-                this[catigory.action.func]();
-            break;
-            case 'links-action':
-                this[catigory.action.func](catigory.action.val);
-            break;
-            default:
-                console.log('err: unknown action');
-        }
+        const { branch, categories, linksList, setGroupFilter } = this.props;
+        setGroupFilter(branch, categories, linksList, hash);
     }
 
     render() {
-        const { ImportProfile, children, categories, showInfo } = this.props;
-        const { selectedTab, filteredGroupLinks, filteredValidCards } = this.state;
+        const { ImportProfile, children, categories, showInfo, workspace } = this.props;
+        const { linksList } = workspace;
+        const activeLinksList = filterActiveLinks(linksList);
+        const { selectedTab } = this.state;
         const injectionProps = {
             ImportProfile,
             setTab: this.setTab,
@@ -102,26 +63,31 @@ class WorkspaceContainer extends React.Component {
             filterGroups: categories,
             selectFilter: this.selectFilter,
             showInfo,
-            validCards: filteredValidCards,
-            groupLinks: filteredGroupLinks
+            linksList: activeLinksList,
+            linksListFlatten: flattenLinksList(activeLinksList)
         };
         const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, injectionProps));
         return <Fragment>{childrenWithProps}</Fragment>;
     }
 };
-/*
-WorkspaceContainer.PropTypes = {
-    favoriteLinks: PropTypes.arrayOf(PropTypes.string)
+
+WorkspaceContainer.propTypes = {
+    branch: PropTypes.string,
+    categories: PropTypes.array,
+    linksList: PropTypes.array
 };
-*/
-const mapStateToProps = (state) => {
-    const { auth} = state;
-    const {  error } = auth;
-    return { error };
+
+const mapStateToProps = (state, props) => {
+    const { error } = state.workspace;
+    const { workspace } = state.workspace.branches[props.branch];
+    return { workspace, error };
 };
 
 const mapDispatchToProps = dispatch => ({
-    ImportProfile: profileData => ActionImportProfile(dispatch, profileData)
+    loadCategories: (branch, categories) => ActionLoadCategories(dispatch, branch, categories),
+    loadLinksList: (branch, linksList) => ActionLoadLinksList(dispatch, branch, linksList),
+    selectWorkspaceTab: (branch, tabId) => ActionSelectWorkspaceTab(dispatch, branch, tabId),
+    setGroupFilter: (branch, categories, linksList, hash) => ActionSetGroupFilter(dispatch, branch, categories, linksList, hash)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkspaceContainer);

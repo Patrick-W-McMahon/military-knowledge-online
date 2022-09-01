@@ -1,7 +1,8 @@
-const path = require('path');
+//const path = require('path');
 const crypto = require('crypto');
 
 const BRANCH_DATA = require('./static/data/branches.json');
+const BASE_GROUP_FILTERS = require('./static/data/system/base_group_filters.json');
 const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
 const LINKS_ARMY = require('./static/data/links_army.json');
 const LINKS_COAST_GUARD = require('./static/data/links_coast_guard.json');
@@ -14,6 +15,29 @@ const CATEGORIES_ARMY = require('./static/data/categories_army.json');
 let links = [];
 let categories = [];
 
+const setupCategories = (categories) => {
+    let categoryList = [];
+    let order = 0;
+    const orderedCategories = categories.sort((a, b) => {
+        if (a.label < b.label) {
+            return -1;
+        }
+        if (a.label > b.label) {
+            return 1;
+        }
+        return 0;
+    });
+    BASE_GROUP_FILTERS.forEach(f => {
+        categoryList.push(f);
+        order++;
+    });
+    orderedCategories.forEach(f => {
+        categoryList.push({...f, order });
+        order++;
+    });
+    return categoryList;
+}
+
 const LinkSources = {
     air_force: LINKS_AIR_FORCE,
     army: LINKS_ARMY,
@@ -25,15 +49,15 @@ const LinkSources = {
 };
 
 const categoriesSources = {
-    air_force: [],
-    army: CATEGORIES_ARMY,
-    cost_guard: [],
-    marine_corps: [],
-    national_guard: [],
-    navy: [],
-    space_force: []
+    air_force: setupCategories([]),
+    army: setupCategories(CATEGORIES_ARMY),
+    cost_guard: setupCategories([]),
+    marine_corps: setupCategories([]),
+    national_guard: setupCategories([]),
+    navy: setupCategories([]),
+    space_force: setupCategories([])
 };
-
+//console.log('category test', categoriesSources);
 const getFirstLetter = (str) => str[0].toLowerCase();
 BRANCH_DATA.forEach(branch => {
     LinkSources[branch.path].forEach(link => links.push({...link, branch: branch.path }));
@@ -41,7 +65,7 @@ BRANCH_DATA.forEach(branch => {
 });
 links = links.map(link => {
     const alphaChar = getFirstLetter(link.title);
-    return {...link, alphaChar };
+    return {...link, alphaChar, active: true };
 });
 
 const LINKS_DATA = links;
@@ -95,7 +119,7 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
             });
         });
     };
-
+    /*
     const dataPointSetup = (dataSet, id) => {
         Object.keys(dataSet).forEach((key, index) => {
             const dataPoint = dataSet[key];
@@ -110,7 +134,7 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
             });
         });
     };
-
+    */
     dataArrSetup(BRANCH_DATA, 'branches', 'branch');
     dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
     dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
