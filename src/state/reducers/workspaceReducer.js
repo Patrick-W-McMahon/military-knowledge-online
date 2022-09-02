@@ -163,15 +163,16 @@ export const ActionFilterLinks = (dispatch, branch, categories, linksList, group
 
 export const ActionSaveFavoritesLinks = (dispatch, branch, favoritesLinks) => {
     console.log('ActionSaveFavoritesLinks', branch, favoritesLinks);
-    favoritesLinks.forEach(l => {
-        localStorage.setItem(`${branch}_favorites_links`, JSON.stringify(l));
-    });
+    //favoritesLinks.forEach(l => {
+    //    localStorage.setItem(`${branch}_favorites_links`, JSON.stringify(l));
+    //});
     return dispatch({ type: SAVE_FAVORITES_LINKS, branch, favoritesLinks });
 }
 
 export const ActionLoadFavoritesLinks = (dispatch, branch) => {
     console.log('ActionLoadFavoritesLinks', branch);
-    const data = JSON.parse(localStorage.getItem(`${branch}_favorites_links`));
+    const data = [];
+    //const data = JSON.parse(localStorage.getItem(`${branch}_favorites_links`));
     console.log('data check: ', data);
     if (data) {
         data.forEach(l => {
