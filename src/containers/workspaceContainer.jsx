@@ -7,17 +7,17 @@ import { flattenLinksList, filterActiveLinks } from '../libs/common';
 //const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
 
 const loadFavData = (branch, linksList) => {
+    let dataStore = [];
     if(typeof window !== `undefined`) {
-        const dataStore = JSON.parse(window.localStorage.getItem(`favLinks${branch}`));
-        const linksListWithFav = linksList.map(g => {
-            let links = g.links.map(l => {
-                return {...l, fav: dataStore?.includes(l.id) || []};
-            });
-            return {...g, links};
-        });
-        return linksListWithFav;
+        dataStore = JSON.parse(window.localStorage.getItem(`favLinks${branch}`));
     }
-    return linksList;
+    const linksListWithFav = linksList.map(g => {
+        let links = g.links.map(l => {
+            return {...l, fav: dataStore?.includes(l.id)};
+        });
+        return {...g, links};
+    });
+    return linksListWithFav;
 }
 
 const saveFavData = (branch, linksList, id) => {
