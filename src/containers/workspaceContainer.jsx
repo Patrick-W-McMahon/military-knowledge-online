@@ -17,7 +17,7 @@ const loadFavData = (branch, linksList) => {
         });
         return linksListWithFav;
     }
-    return [];
+    return linksList;
 }
 
 const saveFavData = (branch, linksList, id) => {
