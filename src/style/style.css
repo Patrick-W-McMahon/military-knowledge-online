@@ -324,6 +324,33 @@ p {
     font-weight: 600;
 }
 
+.favBtn {
+    color: black;
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 4px 2px 2px 2px;
+    background: rgba(255, 255, 255, 0.35);
+    border-bottom-left-radius: 8px;
+    border-color: black;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+}
+
+.fas.favBtn {
+    color: rgb(var(--army-primary-clr));
+    border-color: black;
+}
+
+.favBtn:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.55);
+}
+
 
 /* The switch - the box around the slider */
 

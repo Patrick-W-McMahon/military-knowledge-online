@@ -48,7 +48,7 @@ class WorkspaceView extends React.Component {
             </Container>
         );
     }
-  }
+}
 
 WorkspaceView.Panel = Panel;
 

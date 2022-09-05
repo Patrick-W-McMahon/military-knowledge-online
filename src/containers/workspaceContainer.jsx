@@ -1,10 +1,34 @@
 import React, { Fragment } from 'react';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import { ActionLoadCategories, ActionLoadFavoritesLinks, ActionLoadLinksList, ActionSaveFavoritesLinks, ActionSelectWorkspaceTab, ActionSetGroupFilter } from '../state/reducers/workspaceReducer';
+import { ActionLoadCategories, ActionLoadFavoritesLinks, ActionLoadLinksList, ActionSaveFavoritesLinks, ActionSelectWorkspaceTab, ActionSetGroupFilter, ActionToggleLinkFav } from '../state/reducers/workspaceReducer';
 import { flattenLinksList, filterActiveLinks } from '../libs/common';
 
 //const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
+
+const loadFavData = (branch, linksList) => {
+    const dataStore = JSON.parse(window.localStorage.getItem(`favLinks${branch}`));
+    const linksListWithFav = linksList.map(g => {
+        let links = g.links.map(l => {
+            return {...l, fav: dataStore.includes(l.id)};
+        });
+        return {...g, links};
+    });
+    return linksListWithFav;
+}
+
+const saveFavData = (branch, linksList, id) => {
+    let savedLinks = [];
+    linksList.forEach(g => {
+        g.links.forEach(l => {
+            if((l.id !== id && l.fav) || (l.id === id && !l.fav)) {
+                savedLinks.push(l.id);
+            }
+        });
+    });
+    const dataStore = JSON.stringify(savedLinks);
+    window.localStorage.setItem(`favLinks${branch}`, dataStore);
+}
 
 class WorkspaceContainer extends React.Component {
     constructor(props) {
@@ -17,14 +41,16 @@ class WorkspaceContainer extends React.Component {
         };
         this.setTab = this.setTab.bind(this);
         this.selectFilter = this.selectFilter.bind(this);
+        this.toggleFavLink = this.toggleFavLink.bind(this);
     }
 
     UNSAFE_componentWillMount() {
         const { categories, linksList, loadCategories, loadLinksList, branch, setGroupFilter, workspace, loadFavoriteLinks } = this.props;
         const LoadData = async() => {
-            await loadLinksList(branch, linksList);
+            const linksListWithFav = loadFavData(branch, linksList);
+            await loadLinksList(branch, linksListWithFav);
             await loadCategories(branch, categories);
-            await setGroupFilter(branch, categories, linksList, workspace.selectedFilter);
+            await setGroupFilter(branch, categories, linksListWithFav, workspace.selectedFilter);
             await loadFavoriteLinks(branch);
         }
         LoadData();
@@ -51,17 +77,21 @@ class WorkspaceContainer extends React.Component {
         this.setState({ selectedTab: tabId });
     }
 
-    getSavedLinks() {
-        alert('Will be added in next update.');
-    }
-
     selectFilter(hash) {
-        const { branch, categories, linksList, setGroupFilter } = this.props;
+        const { branch, categories, setGroupFilter, workspace } = this.props;
+        const { linksList } = workspace;
         setGroupFilter(branch, categories, linksList, hash);
     }
 
+    toggleFavLink(id) {
+        const { toggleFavLink, branch, workspace } = this.props;
+        const { linksList } = workspace;
+        saveFavData(branch, linksList, id);
+        toggleFavLink(branch, linksList, id);
+    }
+
     render() {
-        const { ImportProfile, children, categories, showInfo, workspace } = this.props;
+        const { ImportProfile, children, categories, showInfo, workspace, workspaceConfig } = this.props;
         const { linksList } = workspace;
         const activeLinksList = filterActiveLinks(linksList);
         const { selectedTab } = this.state;
@@ -73,7 +103,9 @@ class WorkspaceContainer extends React.Component {
             selectFilter: this.selectFilter,
             showInfo,
             linksList: activeLinksList,
-            linksListFlatten: flattenLinksList(activeLinksList)
+            linksListFlatten: flattenLinksList(activeLinksList),
+            workspaceConfig,
+            toggleFavLink: this.toggleFavLink
         };
         const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, injectionProps));
         return <Fragment>{childrenWithProps}</Fragment>;
@@ -87,9 +119,9 @@ WorkspaceContainer.propTypes = {
 };
 
 const mapStateToProps = (state, props) => {
-    const { error } = state.workspace;
+    const { error, config } = state.workspace;
     const { workspace } = state.workspace.branches[props.branch];
-    return { workspace, error };
+    return { workspace, error, workspaceConfig: config };
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -98,7 +130,8 @@ const mapDispatchToProps = dispatch => ({
     loadFavoriteLinks: branch => ActionLoadFavoritesLinks(dispatch, branch),
     saveFavoriteLinks: (branch, links) => ActionSaveFavoritesLinks(dispatch, branch, links),
     selectWorkspaceTab: (branch, tabId) => ActionSelectWorkspaceTab(dispatch, branch, tabId),
-    setGroupFilter: (branch, categories, linksList, hash) => ActionSetGroupFilter(dispatch, branch, categories, linksList, hash)
+    setGroupFilter: (branch, categories, linksList, hash) => ActionSetGroupFilter(dispatch, branch, categories, linksList, hash),
+    toggleFavLink: (branch, linksList, id) => ActionToggleLinkFav(dispatch, id, linksList, branch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WorkspaceContainer);

@@ -10,6 +10,14 @@ export const flattenLinksList = linksList => {
     return flatList;
 }
 
+export const filterFavLinks = linksList => linksList.map(g => {
+    let links = [];
+    if (g !== undefined && g.links !== undefined) {
+        links = g.links.filter(l => l.fav);
+    }
+    return {...g, links };
+});
+
 export const filterActiveLinks = linksList => linksList.map(g => {
     let links = [];
     if (g !== undefined && g.links !== undefined) {

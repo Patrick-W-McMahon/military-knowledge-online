@@ -3,7 +3,7 @@
         "order": 0,
         "action": {
             "obj": "profile-action",
-            "func": "getSavedLinks",
+            "func": "getFavLinks",
             "val": null
         }
     },

@@ -1,9 +1,15 @@
 {
-    "workspace": {
-        "activeWorkspaceTab": 0,
-        "selectedFilter": "ad60a8c37e7269baa4d772a57b0ac5df6933653e38a1bebf3d6e74636e8366dc",
-        "linksList": [],
-        "categories": [],
-        "favoriteLinks": []
+    "branchState": {
+        "workspace": {
+            "activeWorkspaceTab": 0,
+            "selectedFilter": "ad60a8c37e7269baa4d772a57b0ac5df6933653e38a1bebf3d6e74636e8366dc",
+            "linksList": [],
+            "categories": []
+        }
+    },
+    "workspaceBaseState": {
+        "config": {
+            "linkEditMode": false
+        }
     }
 }
