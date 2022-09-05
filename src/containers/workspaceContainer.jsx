@@ -11,7 +11,7 @@ const loadFavData = (branch, linksList) => {
         const dataStore = JSON.parse(window.localStorage.getItem(`favLinks${branch}`));
         const linksListWithFav = linksList.map(g => {
             let links = g.links.map(l => {
-                return {...l, fav: dataStore.includes(l.id)};
+                return {...l, fav: dataStore?.includes(l.id) || []};
             });
             return {...g, links};
         });
