@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import BranchSelect from './branchSelect';
 
 const Header = ({ siteTitle, militaryBranches }) => (
-  <Navbar bg="light" expand="lg">
+  <Navbar bg="light" expand="lg" fixed="top">
     <Navbar.Brand href="/">{siteTitle}</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

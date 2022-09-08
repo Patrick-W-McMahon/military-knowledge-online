@@ -28,9 +28,9 @@ class WorkspaceView extends React.Component {
                     <Col xs lg="11">
                         <ButtonToolbar aria-label="Workspace Toolbar" className="workspace-toolbar">
                             <ButtonGroup aria-label="Display Select">
-                                <button className="btn btn-outline-primary" onClick={() => configBtnAction(true)}><i aria-label="workspace config" className="fas fa-cogs fa-3x"></i></button>
-                                <button className="btn btn-outline-primary" onClick={() => setTab(0)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-3x"></i></button>
-                                <button className="btn btn-outline-primary" onClick={() => setTab(1)}><i aria-label="List View" className="fas fa-grip-lines fa-3x"></i></button>
+                                <button className="btn btn-outline-primary" onClick={() => configBtnAction(true)}><i aria-label="workspace config" className="fas fa-cogs fa-2x"></i></button>
+                                <button className="btn btn-outline-primary" onClick={() => setTab(0)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-2x"></i></button>
+                                <button className="btn btn-outline-primary" onClick={() => setTab(1)}><i aria-label="List View" className="fas fa-grip-lines fa-2x"></i></button>
                             </ButtonGroup>
                             <InputGroup>
                                 <DropdownButton as={ButtonGroup} title="Filter Category" id="filter-dropdown" style={{ margin: 0 }}>
