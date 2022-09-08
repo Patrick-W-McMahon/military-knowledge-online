@@ -24,6 +24,11 @@ body {
     overflow-x: hidden;
 }
 
+.fa,
+.fas {
+    padding-top: 3px;
+}
+
 body {
     background-image: url('../style/img/Army-Background.jpg');
     background-repeat: no-repeat;
