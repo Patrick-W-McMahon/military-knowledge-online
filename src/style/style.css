@@ -37,10 +37,21 @@ body {
     min-height: 100vh;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 4px;
+}
+
 p {
     display: block;
     width: 100%;
     max-width: 100%;
+    padding: 2px;
+    font-weight: 500;
 }
 
 .navbar,
