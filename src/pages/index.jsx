@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { Modal} from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { getEventMessage } from '../libs/common';
 
 const message = getEventMessage();
