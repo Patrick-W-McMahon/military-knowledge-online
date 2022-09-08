@@ -1,4 +1,4 @@
-import * as initialState from '../../../static/system/workspace_initial_state.json';
+import initialState from '../../../static/system/workspace_initial_state.json';
 import branches from '../../../static/data/branches.json';
 
 export const SAVE_FAVORITES_LINKS = 'workspace/save_favorites_links';
