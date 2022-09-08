@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from 'gatsby';
-import { Container, Row, Col } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { sourtContentBySlug } from '../libs/system';
@@ -19,20 +19,16 @@ const AboutPage = () => {
             }
         }
     `);
-    const { allMarkdownRemark } = data;
-    const { mdNodes } = allMarkdownRemark;
-    const MdContent = sourtContentBySlug(mdNodes);
-    console.log(MdContent);
+    const MdContent = sourtContentBySlug(data.allMarkdownRemark.mdNodes);
     return ( 
         <Layout>
             <Seo title="About" />
-            <Container className="link-container">
-                <Row>
-                    <Col style={{ padding: "12px" }}>
-                        <div dangerouslySetInnerHTML={{ __html: MdContent['/about'].html }}></div>
-                    </Col>
-                </Row>
-            </Container>
+            <Modal.Dialog size="lg">
+                <Modal.Header>
+                    <Modal.Title>About Military Knowledge Online</Modal.Title>
+                </Modal.Header>
+                <Modal.Body><div dangerouslySetInnerHTML={{ __html: MdContent['/about'].html }}></div></Modal.Body>
+            </Modal.Dialog>
         </Layout>
     );
 }
