@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+//import ListEditView from "../components/editorComponents/ListEditView";
 
 const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, defaultGroupFilterHash }) => (
     <Fragment>
@@ -16,6 +17,11 @@ const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, def
                         <option value={f.hash}>{f.label}</option>
                     ))}
                 </select>
+                {/*
+                <ListEditView>
+
+                </ListEditView>
+                */}
             </div>
         </seciton>
     </Fragment>
