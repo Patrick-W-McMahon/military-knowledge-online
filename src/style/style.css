@@ -171,6 +171,11 @@ p {
     width: 23rem;
 }
 
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
+}
+
 .card img,
 .card-body,
 .card-body * {
