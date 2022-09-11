@@ -12,6 +12,20 @@ const initalState = {
     linkEditMode: false
 };
 
+const loadDefaultGroupFilter = (branch) => {
+    console.log('load default group filter', branch);
+    let dataStore = false;
+    if(typeof window !== `undefined`) {
+        dataStore = window.localStorage.getItem(`defaultGroupFilter-${branch}`);
+    }
+    return dataStore;
+}
+
+const saveDefaultGroupFilter = (branch, groupFilterHash) => {
+    console.log('change default filter to ', branch, groupFilterHash);
+    window.localStorage.setItem(`defaultGroupFilter-${branch}`, groupFilterHash);
+}
+
 class WorkspaceModelContainer extends React.Component {
     constructor(props) {
         super(props);
@@ -23,24 +37,30 @@ class WorkspaceModelContainer extends React.Component {
     componentDidMoun() {}
 
     handleSettingsChange(name, val) {
-        const { setLinkEditMode, workspace } = this.props;
+        const { branch, setLinkEditMode, workspace } = this.props;
         const { config } = workspace;
         const { linkEditMode } = config
         switch(name) {
             case "linkEditMode":
                 setLinkEditMode(!linkEditMode);
             break;
+            case "set-default-group-filter":
+                saveDefaultGroupFilter(branch, val);
+                break;
             default:
         }
         this.setState({...this.state, linkEditMode: !this.state.linkEditMode});
     }
 
     render() {
-        const { children, workspace } = this.props;
+        const { children, branch, workspace, categories } = this.props;
+        const defaultFilter = loadDefaultGroupFilter(branch);
         const injectionProps = {
             handleSettingsChange: this.handleSettingsChange,
             handleClose: this.handleClose,
-            workspaceConfig: workspace.config
+            workspaceConfig: workspace.config,
+            filterGroups: categories,
+            defaultGroupFilterHash: defaultFilter
         };
         const childrenWithProps = React.Children.map(children, child => React.cloneElement(child, injectionProps));
         return <Fragment>{childrenWithProps}</Fragment>;

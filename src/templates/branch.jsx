@@ -62,7 +62,7 @@ const Branch = ({ data, pageContext }) => {
     );
   };
 
-  const ModelView = ({ handleSettingsChange, workspaceConfig }) => {
+  const ModelView = ({ handleSettingsChange, workspaceConfig, filterGroups, defaultGroupFilterHash }) => {
     return (
       <Fragment>
         {state.showConfigWindow ? (
@@ -73,7 +73,11 @@ const Branch = ({ data, pageContext }) => {
                 <button type="button" class="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
               </Modal.Header>
               <Modal.Body>
-                <WorkspaceSettingsForm settingChanged={(name, val) => handleSettingsChange(name, val)} linkEditMode={workspaceConfig.linkEditMode}/>
+                <WorkspaceSettingsForm  settingChanged={(name, val) => handleSettingsChange(name, val)} 
+                                        linkEditMode={workspaceConfig.linkEditMode}
+                                        groupFilters={filterGroups}
+                                        defaultGroupFilterHash={defaultGroupFilterHash || "ad60a8c37e7269baa4d772a57b0ac5df6933653e38a1bebf3d6e74636e8366dc"}
+                />
               </Modal.Body>
             </Modal.Dialog>
           </div>
@@ -110,7 +114,7 @@ const Branch = ({ data, pageContext }) => {
           <PageView />
         </WorkspaceContainer>
       </Layout>
-      <WorkspaceModelContainer branch={branch}>
+      <WorkspaceModelContainer branch={branch} categories={categories} linksList={linksList}>
         <ModelView />
       </WorkspaceModelContainer>
     </Fragment>

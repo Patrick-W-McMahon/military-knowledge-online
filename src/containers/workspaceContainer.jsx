@@ -6,6 +6,15 @@ import { flattenLinksList, filterActiveLinks } from '../libs/common';
 
 //const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
 
+const loadDefaultGroupFilter = (branch) => {
+    console.log('load default group filter', branch);
+    let dataStore = false;
+    if(typeof window !== `undefined`) {
+        dataStore = window.localStorage.getItem(`defaultGroupFilter-${branch}`);
+    }
+    return dataStore;
+}
+
 const loadFavData = (branch, linksList) => {
     let dataStore = [];
     if(typeof window !== `undefined`) {
@@ -53,7 +62,8 @@ class WorkspaceContainer extends React.Component {
             const linksListWithFav = loadFavData(branch, linksList);
             await loadLinksList(branch, linksListWithFav);
             await loadCategories(branch, categories);
-            await setGroupFilter(branch, categories, linksListWithFav, workspace.selectedFilter);
+            const defaultFilter = loadDefaultGroupFilter(branch);
+            await setGroupFilter(branch, categories, linksListWithFav, defaultFilter || workspace.selectedFilter);
             await loadFavoriteLinks(branch);
         }
         LoadData();
