@@ -91,9 +91,9 @@ const Branch = ({ data, pageContext }) => {
               </Modal.Header>
               <img src={`/img/cards/Card-${String(state.cardId).padStart(3, '0')}.png`} alt={state.title} />
               <Modal.Body>
-                <h5>Link Description:</h5>
+                <h4>Link Description:</h4>
                 <p>{state.description}</p>
-                <h6>Link URL:</h6>
+                <h4>Link URL:</h4>
                 <p>{state.url}</p>
               </Modal.Body>
               <Modal.Footer>
