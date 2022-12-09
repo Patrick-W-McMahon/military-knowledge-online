@@ -310,12 +310,27 @@ p {
 .workspace-toolbar.sub-bar {
     margin-top: 0px!important;
     border-top: 1px solid black;
-    font-size: 0.98!important;
 }
 
 .workspace-toolbar .btn-outline-primary {
     border: 1px solid black;
     color: black;
+    font-weight: 600;
+}
+
+.workspace-toolbar.sub-bar .btn-outline-primary {
+    font-weight: 400;
+}
+
+.workspace-toolbar .btn-outline-primary.active {
+    background-color: rgb(var(--army-primary-clr))!important;
+    border-color: black!important;
+    color: black!important;
+}
+
+.workspace-toolbar .btn-outline-primary {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 .workspace-toolbar .btn-outline-primary:hover {
