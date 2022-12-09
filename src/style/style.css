@@ -73,6 +73,30 @@ p {
     margin-top: 0;
 }
 
+.nav-tabs .nav-link:hover {
+    cursor: pointer;
+    background-color: rgba(var(--army-primary-clr), 0.45);
+}
+
+.nav-tabs .active.nav-link:hover {
+    background-color: rgba(var(--army-primary-clr), 0.15);
+}
+
+#base-select {
+    position: absolute;
+    right: 20px;
+}
+
+#base-select .form-label {
+    font-weight: 800;
+    padding-right: 8px;
+}
+
+#base-select .form-select {
+    padding: 2px;
+    min-width: 300px;
+}
+
 .main-content {
     display: block;
     min-height: calc(100vh - 140px);
@@ -303,6 +327,10 @@ p {
 
 .modal-title {
     max-width: 85%;
+}
+
+.modal-content-tabs {
+    font-size: 0.85em;
 }
 
 .btn-close {
