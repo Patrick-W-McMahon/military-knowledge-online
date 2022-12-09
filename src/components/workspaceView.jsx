@@ -30,9 +30,9 @@ class WorkspaceView extends React.Component {
                             <ButtonGroup aria-label="Display Select">
                                 <button className="btn btn-outline-primary" onClick={() => configBtnAction(true)}><i aria-label="workspace config" className="fas fa-cogs fa-2x"></i></button>
                                 <DropdownButton as={ButtonGroup} title={<span><i aria-label="List View" className="fas fa-bars fa-1x"></i> View</span>} id="links-view">
-                                    <Dropdown.Item onClick={() => setTab(3)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-1x"></i> Cards Large</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => setTab(3)}><i aria-label="Cards View" className="fas fa-th-large fa-1x"></i> Cards Large</Dropdown.Item>
                                     <Dropdown.Item onClick={() => setTab(0)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-1x"></i> Cards Medium</Dropdown.Item>
-                                    <Dropdown.Item onClick={() => setTab(2)}><i aria-label="Cards View" className="fas fa-grip-horizontal fa-1x"></i> Cards Small</Dropdown.Item>
+                                    <Dropdown.Item onClick={() => setTab(2)}><i aria-label="Cards View" className="fas fa-th fa-1x"></i> Cards Small</Dropdown.Item>
                                     <Dropdown.Item onClick={() => setTab(1)}><i aria-label="List View" className="fas fa-grip-lines fa-1x"></i> List</Dropdown.Item>
                                 </DropdownButton>
                                 {/*
