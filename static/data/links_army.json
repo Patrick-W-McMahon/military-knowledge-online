@@ -1124,21 +1124,21 @@
     },
     {
         "title": "Tricare Dental Readiness",
-        "url": "https://tricare.mil/CoveredServices/Dental/NGRDental/DentalReadiness",
+        "url": "https://www.tricare.mil/CoveredServices/Dental/NGRDental/DentalReadiness",
         "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
         "cardId": 68,
         "categories": ["health_resources"]
     },
     {
         "title": "Tricare Online (Patient Portal)",
-        "url": "https://tricareonline.com",
+        "url": "https://www.tricareonline.com",
         "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
         "cardId": 68,
         "categories": ["quick_links", "family", "health_resources"]
     },
     {
         "title": "Tricare Online",
-        "url": "https://tricare.mil/",
+        "url": "https://www.tricare.mil/",
         "description": "TRICARE is the health care program for uniformed service members, retirees, and their families around the world. TRICARE provides comprehensive coverage to all beneficiaries, including: Health plans, Special programs, Prescriptions, Dental plans.",
         "cardId": 68,
         "categories": ["family", "health_resources"]
@@ -1191,5 +1191,17 @@
         "description": "The Yellow Ribbon Reintegration Program (YRRP) is a Department of Defense-wide effort to promote the well-being of National Guard and Reserve members, their families and communities by connecting them with valuable resources.",
         "cardId": 134,
         "categories": ["education_civilian", "human_resources", "professional_development"]
+    },
+    {
+        "title": "GPTChat",
+        "url": "https://chat.openai.com/chat",
+        "description": "GPTChat provides conversation modeling CLI based on GPT-2. This repository uses GPT-2 models provided by powerful and exciting OSS Transformers by HuggingFace.",
+        "cardId": 151
+    },
+    {
+        "title": "Menlo Security",
+        "url": "https://safe.menlosecurity.com/",
+        "description": "Menlo Security is a web security vendor providing secure, cloud-based internet isolation. Founded in 2013, in Palo Alto California, Menlo has taken a ‘Zero-Trust’ approach to web security and have built a platform that aims to eliminate 100% of web and email threats.",
+        "cardId": 152
     }
 ]
