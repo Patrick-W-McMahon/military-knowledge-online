@@ -195,6 +195,14 @@ p {
     width: 23rem;
 }
 
+.card.sm {
+    width: 15rem;
+}
+
+.card.lg {
+    width: 35rem;
+}
+
 .card:hover {
     cursor: pointer;
     box-shadow: 0 0 16px rgba(255, 255, 255, 0.6);
@@ -213,6 +221,14 @@ p {
     max-height: 140px;
 }
 
+.card.sm img {
+    max-height: 100px;
+}
+
+.card.lg img {
+    max-height: 200px;
+}
+
 .card .card-title {
     background: rgb(var(--army-primary-clr));
     padding: 4px 0 1px 3px;
@@ -221,6 +237,10 @@ p {
     flex-direction: row;
     width: 100%;
     font-size: 0.98em;
+}
+
+.card.sm .card-title {
+    font-size: 0.85em;
 }
 
 .card a {

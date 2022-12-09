@@ -58,6 +58,16 @@ const Branch = ({ data, pageContext }) => {
             </Container>
           )}
         </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Cards_Small'}>
+          {linksListFlatten.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="sm" />}
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Cards_large'}>
+          {linksListFlatten.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="lg" />}
+        </WorkspaceView.Panel>
       </WorkspaceView>
     );
   };

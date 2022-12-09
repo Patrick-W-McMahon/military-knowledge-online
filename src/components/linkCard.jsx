@@ -1,10 +1,10 @@
 import React from "react";
 
-const LinkCard = ({ card, showInfo, editMode, toggleFav }) => {
+const LinkCard = ({ card, showInfo, editMode, toggleFav, classProps }) => {
     const { id, title, url, description, cardId, fav } = card;
     const cardIdStr = String(cardId).padStart(3, '0');
     return (
-        <div className="card">
+        <div className={`card${classProps ? ` ${classProps}`: ''}`}>
             <a rel="noreferrer" target="_blank" href={url}>
                 <img src={`/img/cards/Card-${cardIdStr}.png`} alt={title} />
             </a>
