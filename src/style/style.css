@@ -322,13 +322,14 @@ p {
     font-weight: 400;
 }
 
+.dropdown-toggle.btn.btn-primary[aria-expanded=true],
 .workspace-toolbar .btn-outline-primary.active {
     background-color: rgb(var(--army-primary-clr))!important;
     border-color: black!important;
     color: black!important;
 }
 
-.workspace-toolbar .btn-outline-primary {
+.workspace-toolbar button {
     outline: none !important;
     box-shadow: none !important;
 }
