@@ -338,8 +338,11 @@ p {
     background-color: rgba(var(--army-primary-clr), 0.85);
 }
 
+.workspace-toolbar .btn .fas,
 .workspace-toolbar .btn {
-    margin-right: 5px;
+    margin-right: 3px;
+    font-size: 1.2rem;
+    padding: 1px 4px 1px 4px;
 }
 
 .workspace-toolbar .dropdown-toggle {
