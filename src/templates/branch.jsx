@@ -44,10 +44,25 @@ const Branch = ({ data, pageContext }) => {
   const PageView = ({ linksList, linksListFlatten, filterGroups, setTab, selectFilter, selectedTab, workspaceConfig, toggleFavLink }) => {
     return (
       <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab} configBtnAction={showWorkspaceConfigWindow}>
-        <WorkspaceView.Panel title={'Cards'}>
+        <WorkspaceView.Panel title={'Apps'}>
+          <Container className="app-tray" fluid>
+            <h1>This is the applications tray. This will be added soon.</h1>
+          </Container>
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Cards_large'}>
+          {linksListFlatten.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="lg" />}
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Cards_medium'}>
           {linksListFlatten.length === 0 ? (
             <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
           ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} />}
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Cards_Small'}>
+          {linksListFlatten.length === 0 ? (
+            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
+          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="sm" />}
         </WorkspaceView.Panel>
         <WorkspaceView.Panel title={'Link List'}>
           {linksList.length === 0 ? (
@@ -57,16 +72,6 @@ const Branch = ({ data, pageContext }) => {
               <LinkList links={linksList} editMode={workspaceConfig.linkEditMode} />
             </Container>
           )}
-        </WorkspaceView.Panel>
-        <WorkspaceView.Panel title={'Cards_Small'}>
-          {linksListFlatten.length === 0 ? (
-            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
-          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="sm" />}
-        </WorkspaceView.Panel>
-        <WorkspaceView.Panel title={'Cards_large'}>
-          {linksListFlatten.length === 0 ? (
-            <Container><div className="alert alert-info" role="alert">no data for cards</div></Container>
-          ): <CardGrid cards={linksListFlatten} showInfo={showInfo} editMode={workspaceConfig.linkEditMode} toggleFav={toggleFavLink} classProps="lg" />}
         </WorkspaceView.Panel>
       </WorkspaceView>
     );

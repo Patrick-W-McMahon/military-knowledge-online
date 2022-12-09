@@ -283,6 +283,18 @@ p {
     display: block;
 }
 
+.app-tray {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin-top: 5px;
+    min-height: 40vh;
+}
+
+.app-tray h1 {
+    color: black;
+    font-weight: 800;
+    font-size: 2em;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -293,6 +305,12 @@ p {
     background: rgba(var(--army-primary-clr), 0.75);
     margin-top: 10px;
     padding: 4px;
+}
+
+.workspace-toolbar.sub-bar {
+    margin-top: 0px!important;
+    border-top: 1px solid black;
+    font-size: 0.98!important;
 }
 
 .workspace-toolbar .btn-outline-primary {
