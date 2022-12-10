@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 //import { graphql } from "gatsby";
 import Layout from '../components/layout';
 import Seo from "../components/seo";

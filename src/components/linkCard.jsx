@@ -8,9 +8,7 @@ const LinkCard = ({ card, showInfo, editMode, toggleFav, classProps }) => {
             <a rel="noreferrer" target="_blank" href={url}>
                 <img src={`/img/cards/Card-${cardIdStr}.png`} alt={title} />
             </a>
-            {editMode ? (
-                <i onClick={() => toggleFav(id)} className={`favBtn fa${fav?'s':'r'} fa-star fa-2x`}></i>
-            ):null}
+            {editMode ? <i onClick={() => toggleFav(id)} role="link" aria-label={'link'} tabIndex={-1} onKeyDown={() => {}} className={`favBtn fa${fav?'s':'r'} fa-star fa-2x`}></i>:null}
             <div className="card-body">
                 <h5 className="card-title">
                     <a rel="noreferrer" target="_blank" href={url}>{title}</a>
