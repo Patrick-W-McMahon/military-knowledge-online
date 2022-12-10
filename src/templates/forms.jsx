@@ -56,7 +56,7 @@ const Forms = ({ data, pageContext }) => {
                       <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
                     </Col>
                   </Row>
-                  <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Submit Survey</button>
+                  <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Submit Form</button>
               </form>
             </Col>
           </Row>
