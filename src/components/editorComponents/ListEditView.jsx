@@ -66,11 +66,7 @@ const ListEditView = ({ data }) => {
     return (
         <div className={styles.ListEditView}>
             <div>
-                {data.map((elm, index) => (
-                    <Fragment>
-                        <BaseView elm={elm} index={index} />
-                    </Fragment>
-                ))}
+                {data.map((elm, index) => <BaseView key={index} elm={elm} index={index} />)}
             </div>
             <button>+</button>
         </div>

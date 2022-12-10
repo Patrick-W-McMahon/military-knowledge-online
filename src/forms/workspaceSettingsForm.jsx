@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import ListEditView from "../components/editorComponents/ListEditView";
-
+//import ListEditView from "../components/editorComponents/ListEditView";
+/*
 const testGroupData = [
     "hello world",
     "this is a test",
@@ -11,7 +11,7 @@ const testLinksData = [
     "link 1",
     "link 2"
 ];
-
+*/
 const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, defaultGroupFilterHash }) => (
     <Fragment>
         <seciton className="outlined-section">
@@ -28,10 +28,12 @@ const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, def
                         <option key={i} value={f.hash}>{f.label}</option>
                     ))}
                 </select>
+                {/*
                 <h4>User defined filters</h4>
                 <ListEditView data={testGroupData} />
                 <h4>User defined links</h4>
                 <ListEditView data={testLinksData} />
+                */}
             </div>
         </seciton>
     </Fragment>

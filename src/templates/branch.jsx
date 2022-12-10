@@ -94,7 +94,7 @@ const Branch = ({ data, pageContext }) => {
             <Modal.Dialog size="lg" centered backdrop="static" className="info-dialogBox modal-120w" show={true} animation={true}>
               <Modal.Header>
                 <Modal.Title><i aria-label="workspace config" className="fas fa-cogs fa-1x"></i> Workspace Configuration</Modal.Title>
-                <button type="button" class="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
+                <button type="button" className="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
               </Modal.Header>
               <Modal.Body>
                 <WorkspaceSettingsForm  settingChanged={(name, val) => handleSettingsChange(name, val)} 
@@ -111,7 +111,7 @@ const Branch = ({ data, pageContext }) => {
             <Modal.Dialog size="lg" centered backdrop="static" className="info-dialogBox modal-120w" show={(state.url !== null).toString()} animation={true}>
               <Modal.Header>
                   <Modal.Title>{state.title}</Modal.Title>
-                  <button type="button" class="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
+                  <button type="button" className="btn-close" aria-label="Close" onClick={() => handleClose()}><i className="fas fa-times"></i></button>
               </Modal.Header>
               <img src={`/img/cards/Card-${String(state.cardId).padStart(3, '0')}.png`} alt={state.title} />
               <Modal.Body>
