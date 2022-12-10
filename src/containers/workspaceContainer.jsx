@@ -7,7 +7,7 @@ import { flattenLinksList, filterActiveLinks } from '../libs/common';
 //const defaultFilter = "226a6f61db3c80a2ac5f6b4c1f1fb3dd1030ba9239c40cb367304c58eeac0103";
 
 const loadDefaultGroupFilter = (branch) => {
-    console.log('load default group filter', branch);
+    //console.log('load default group filter', branch);
     let dataStore = false;
     if(typeof window !== `undefined`) {
         dataStore = window.localStorage.getItem(`defaultGroupFilter-${branch}`);

@@ -13,7 +13,7 @@ const initalState = {
 };
 
 const loadDefaultGroupFilter = (branch) => {
-    console.log('load default group filter', branch);
+    //console.log('load default group filter', branch);
     let dataStore = false;
     if(typeof window !== `undefined`) {
         dataStore = window.localStorage.getItem(`defaultGroupFilter-${branch}`);
@@ -22,7 +22,7 @@ const loadDefaultGroupFilter = (branch) => {
 }
 
 const saveDefaultGroupFilter = (branch, groupFilterHash) => {
-    console.log('change default filter to ', branch, groupFilterHash);
+    //console.log('change default filter to ', branch, groupFilterHash);
     window.localStorage.setItem(`defaultGroupFilter-${branch}`, groupFilterHash);
 }
 
