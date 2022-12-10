@@ -289,10 +289,47 @@ p {
     min-height: 40vh;
 }
 
+.app-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 5px;
+    min-height: 40vh;
+}
+
+.app-form h1,
 .app-tray h1 {
     color: black;
     font-weight: 800;
     font-size: 2em;
+    text-align: center;
+    padding-top: 15px;
+    border-bottom: 1px solid black;
+}
+
+.survey_form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.survey_form label {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.35em;
+    font-weight: 600;
+}
+
+.survey_form textarea {
+    width: 100%;
+    min-height: 100px;
+}
+
+.survey_form button[type=submit] {
+    display: block;
+    margin-top: 8px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+    font-size: 2.15em;
 }
 
 .footer {
@@ -350,6 +387,26 @@ p {
     border-color: black;
     color: black;
     font-size: 1.2em;
+}
+
+.app-form-btn {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 5px;
+    background-color: rgba(var(--army-primary-clr), 0.6);
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+}
+
+.app-form-btn:hover {
+    cursor: pointer;
+    background-color: rgb(var(--army-primary-clr));
+    color: black;
+    text-decoration: none;
 }
 
 .info-dialogBox {

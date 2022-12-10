@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { Modal } from "react-bootstrap";
+import { Link } from "gatsby";
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { Container } from "react-bootstrap";
@@ -72,6 +73,14 @@ const Branch = ({ data, pageContext }) => {
               <LinkList links={linksList} editMode={workspaceConfig.linkEditMode} />
             </Container>
           )}
+        </WorkspaceView.Panel>
+        <WorkspaceView.Panel title={'Forms'}>
+          <Container className="app-tray" fluid>
+            <Link key={`form-00`} to={'/forms/hhd_survey'} className="app-form-btn">
+              <i className="fas fa-poll-h fa-4x"></i>
+              <div>HHD Survey</div> 
+            </Link>
+          </Container>
         </WorkspaceView.Panel>
       </WorkspaceView>
     );

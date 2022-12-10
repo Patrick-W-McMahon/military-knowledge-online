@@ -1,5 +1,16 @@
 import React, { Fragment } from "react";
-//import ListEditView from "../components/editorComponents/ListEditView";
+import ListEditView from "../components/editorComponents/ListEditView";
+
+const testGroupData = [
+    "hello world",
+    "this is a test",
+    { title: "new filter" }
+];
+
+const testLinksData = [
+    "link 1",
+    "link 2"
+];
 
 const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, defaultGroupFilterHash }) => (
     <Fragment>
@@ -14,14 +25,13 @@ const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, def
                 <h4>Default Group Filter</h4>
                 <select name="set-default-group-filter" value={defaultGroupFilterHash} onChange={e => settingChanged(e.target.name, e.target.value)}>
                     {groupFilters.map((f, i) => (
-                        <option value={f.hash}>{f.label}</option>
+                        <option key={i} value={f.hash}>{f.label}</option>
                     ))}
                 </select>
-                {/*
-                <ListEditView>
-
-                </ListEditView>
-                */}
+                <h4>User defined filters</h4>
+                <ListEditView data={testGroupData} />
+                <h4>User defined links</h4>
+                <ListEditView data={testLinksData} />
             </div>
         </seciton>
     </Fragment>

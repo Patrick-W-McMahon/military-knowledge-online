@@ -1,5 +1,4 @@
 import React from "react";
-import { Fragment } from "react";
 import { ButtonToolbar, ButtonGroup, InputGroup, DropdownButton, Dropdown, Container, Row, Col } from "react-bootstrap";
 import { findByType } from "../libs/comp";
 
@@ -58,10 +57,11 @@ class WorkspaceView extends React.Component {
                     <Col xs lg="11">
                         <ButtonToolbar aria-label="Workspace Toolbar" className="workspace-toolbar">
                             <button className="btn btn-outline-primary" onClick={() => configBtnAction(true)}><i aria-label="workspace config" className="fas fa-cogs fa-2x"></i></button>
-                            <button className={`btn btn-outline-primary${selectedTab > 0? ' active':''}`} onClick={() => setTab(2)}>My Links</button>
-                            <button className={`btn btn-outline-primary${selectedTab == 0? ' active':''}`} onClick={() => setTab(0)}>My Apps</button>
+                            <button className={`btn btn-outline-primary${selectedTab > 0 && selectedTab < 5 ? ' active':''}`} onClick={() => setTab(2)}>My Links</button>
+                            <button className={`btn btn-outline-primary${selectedTab === 0? ' active':''}`} onClick={() => setTab(0)}>My Apps</button>
+                            <button className={`btn btn-outline-primary${selectedTab === 5? ' active':''}`} onClick={() => setTab(5)}>Forms</button>
                         </ButtonToolbar>
-                        {selectedTab > 0 ? (
+                        {selectedTab > 0 && selectedTab < 5 ? (
                             <ToolPanelLinks setTab={setTab} filterGroups={filterGroups} selectFilter={selectFilter}/>
                         ) : null}
                     </Col>

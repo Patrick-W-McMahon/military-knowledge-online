@@ -14,6 +14,8 @@ const LINKS_SPACE_FORCE = require('./static/data/links_space_force.json');
 
 const CATEGORIES_ARMY = require('./static/data/categories_army.json');
 
+const APP_FORMS = require('./static/data/app_forms.json');
+
 let links = [];
 let categories = [];
 
@@ -101,6 +103,13 @@ exports.createPages = async({ actions }) => {
             path: `/branch/${branch.path}`,
             component: require.resolve("./src/templates/branch.jsx"),
             context: { branch: branch.path }
+        });
+    });
+    APP_FORMS.forEach(form => {
+        createPage({
+            path: `/forms/${form.path}`,
+            component: require.resolve("./src/templates/forms.jsx"),
+            context: { title: form.title, fields: form.fields }
         });
     });
 }
