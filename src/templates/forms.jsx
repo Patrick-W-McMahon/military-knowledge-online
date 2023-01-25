@@ -1,15 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 //import { graphql } from "gatsby";
-import { Model } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { Container, Row, Col } from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 
+const initalState = {
+  showModal: false
+}
+
 const Forms = ({ data, pageContext }) => {
-  this.state = {
-    showModal: false
-  };
+  const [ state, setState] = useState(initalState);
   console.log('data: ', data);
   console.log('pageContext: ', pageContext);
   const { title, fields } = pageContext;
@@ -19,8 +21,9 @@ const Forms = ({ data, pageContext }) => {
     alert("This form is still under development! Nothing is being submitted at this time.");
   }
 
-  const showSubmitModel = () => {
-    
+  const showSubmitModal = e => {
+    e.preventDefault();
+    setState({...state, showModal: true });
   }
 
   return (
@@ -32,42 +35,42 @@ const Forms = ({ data, pageContext }) => {
           <Row>
             <Col md={10}>
               <form className="survey_form">
-                  {fields.map((fData, index) => {
-                      switch(fData.fieldType) {
-                          case "rangeSlider":
-                              return (
-                                  <div key={`field-${index}`}>
-                                      <label htmlFor={fData.name}>{fData.label}</label>
-                                      <RangeSlider name={fData.name} min={0} value={5} max={10} step={1} onChange={e => console.log(e)} />
-                                  </div>
-                              );
-                          case "select":
-                              return (
-                                  <div key={`field-${index}`}>
-                                      <label htmlFor={fData.name}>{fData.label}</label>
-                                      <select name={fData.name}>{fData.values.map((opt, index) => <option key={index}>{opt}</option>)}</select>
-                                  </div>
-                              );
-                          case "textarea":
-                              return (
-                                  <div key={`field-${index}`}>
-                                      <label htmlFor={fData.name}>{fData.label}</label>
-                                      <textarea name={fData.name} />
-                                  </div>
-                              );
-                          default:
-                              return <div key={`field-${index}`}>Invalid Fields type</div>;
-                      }
-                  })}
-                  <button onClick={() => showSubmitModel()}>Submit Form</button>
-                  <Model>
-                    <Row className="justify-content-md-center">
-                      <Col md={9}>
-                        <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
-                      </Col>
-                    </Row>
-                    <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Continue</button>
-                  </Model>
+                {fields.map((fData, index) => {
+                    switch(fData.fieldType) {
+                        case "rangeSlider":
+                            return (
+                                <div key={`field-${index}`}>
+                                    <label htmlFor={fData.name}>{fData.label}</label>
+                                    <RangeSlider name={fData.name} min={0} value={5} max={10} step={1} onChange={e => console.log(e)} />
+                                </div>
+                            );
+                        case "select":
+                            return (
+                                <div key={`field-${index}`}>
+                                    <label htmlFor={fData.name}>{fData.label}</label>
+                                    <select name={fData.name}>{fData.values.map((opt, index) => <option key={index}>{opt}</option>)}</select>
+                                </div>
+                            );
+                        case "textarea":
+                            return (
+                                <div key={`field-${index}`}>
+                                    <label htmlFor={fData.name}>{fData.label}</label>
+                                    <textarea name={fData.name} />
+                                </div>
+                            );
+                        default:
+                            return <div key={`field-${index}`}>Invalid Fields type</div>;
+                    }
+                })}
+                <button onClick={() => showSubmitModal()}>Submit Form</button>
+                <Modal>
+                  <Row className="justify-content-md-center">
+                    <Col md={9}>
+                      <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
+                    </Col>
+                  </Row>
+                  <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Continue</button>
+                </Modal>
               </form>
             </Col>
           </Row>
