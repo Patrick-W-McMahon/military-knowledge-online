@@ -168,7 +168,6 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
     dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
 
     const appDir = await getDirectories('./src/applications/');
-    console.log('appDir', JSON.stringify(appDir));
     appDir.forEach(async(appDir, index) => {
         const appRootPath = `./src/applications/${appDir}`;
         const configFileName = 'info.json';
