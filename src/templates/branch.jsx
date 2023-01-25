@@ -84,14 +84,12 @@ const Branch = ({ data, pageContext }) => {
           )}
         </WorkspaceView.Panel>
         <WorkspaceView.Panel title={'Forms'}>
-          {/*
           <Container className="app-tray" fluid>
             <Link key={`form-00`} to={'/forms/hhd_survey'} className="app-form-btn">
               <i className="fas fa-poll-h fa-4x"></i>
               <div>HHD Survey</div> 
             </Link>
           </Container>
-          */}
         </WorkspaceView.Panel>
       </WorkspaceView>
     );
