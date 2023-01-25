@@ -25,10 +25,11 @@ const initalState = {
 
 const Branch = ({ data, pageContext }) => {
   const [ state, setState] = useState(initalState);
-  const { allLinksData, allCategoriesData } = data;
+  const { allLinksData, allCategoriesData, allApplication } = data;
   const { branch } = pageContext; 
   const { groupLinks: linksList } = allLinksData;
   const { categories } = allCategoriesData;
+  const { apps } = allApplication;
 
   const showInfo = ({ title, url, description, cardId }) => {
     setState({...state, title, url, description, cardId });
@@ -47,7 +48,15 @@ const Branch = ({ data, pageContext }) => {
       <WorkspaceView filterGroups={filterGroups} setTab={setTab} selectFilter={selectFilter} selectedTab={selectedTab} configBtnAction={showWorkspaceConfigWindow}>
         <WorkspaceView.Panel title={'Apps'}>
           <Container className="app-tray" fluid>
-            <h1>This is the applications tray. This will be added soon.</h1>
+            {apps.map((app, index) => {
+              const { app_icon } = app;
+              return (
+                <div key={index} className="appIcon" onClick={() => alert('apps not ready yet')}>
+                  <img src={`/img/appIcons/${app_icon}.png`} />
+                  <span>{app.app_name}</span>
+                </div>
+              );
+            })}
           </Container>
         </WorkspaceView.Panel>
         <WorkspaceView.Panel title={'Cards_large'}>
@@ -186,6 +195,17 @@ export const query = graphql`
           obj
           val
         }
+      }
+    }
+    allApplication(sort: {fields: dir, order: ASC}) {
+      apps: nodes {
+        appRootPath
+        app_name
+        app_icon
+        configFileName
+        dir
+        hash
+        id
       }
     }
   }

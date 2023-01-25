@@ -1,5 +1,9 @@
 //const path = require('path');
 const crypto = require('crypto');
+const fs = require('fs');
+const fse = require("fs-extra");
+const { readdir, stat } = require("fs").promises;
+const path = require('path');
 
 const BRANCH_DATA = require('./static/data/branches.json');
 const BASE_GROUP_FILTERS = require('./static/system/base_group_filters.json');
@@ -19,6 +23,19 @@ const APP_FORMS = require('./static/data/app_forms.json');
 let links = [];
 let categories = [];
 
+async function getDirectories(path) {
+    let filesAndDirectories = await fse.readdir(path);
+    let directories = [];
+    await Promise.all(
+        filesAndDirectories.map(name => {
+            return fse.stat(path + name)
+                .then(stat => {
+                    if (stat.isDirectory()) directories.push(name)
+                })
+        })
+    );
+    return directories;
+}
 const sha256 = x => crypto.createHash('sha256').update(x, 'utf8').digest('hex');
 const setupCategories = (categories) => {
     let categoryList = [];
@@ -149,4 +166,25 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
     dataArrSetup(BRANCH_DATA, 'branches', 'branch');
     dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
     dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
+
+    const appDir = await getDirectories('./src/applications/');
+    console.log('appDir', JSON.stringify(appDir));
+    appDir.forEach(async(appDir, index) => {
+        const appRootPath = `./src/applications/${appDir}`;
+        const configFileName = 'info.json';
+        const config = await fs.readFileSync(`${appRootPath}/${configFileName}`);
+
+        createNode({
+            hash: sha256(JSON.stringify(`${appDir}-${config}`)),
+            ...JSON.parse(config),
+            dir: appDir,
+            appRootPath,
+            configFileName,
+            id: `${appDir}-${index}`,
+            internal: {
+                type: 'application',
+                contentDigest: createContentDigest(config)
+            }
+        });
+    });
 }

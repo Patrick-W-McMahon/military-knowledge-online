@@ -285,14 +285,50 @@ p {
 
 .app-tray {
     background-color: rgba(255, 255, 255, 0.5);
-    margin-top: 5px;
+    margin-top: 8px;
     min-height: 40vh;
+    display: flexbox;
 }
 
 .app-form {
     background-color: rgba(255, 255, 255, 0.9);
     margin-top: 5px;
     min-height: 40vh;
+}
+
+.app-tray>* {
+    display: inline-block;
+}
+
+.appIcon {
+    width: 128px;
+    height: 160px;
+    margin: 3px;
+    font-size: 0.85em;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    vertical-align: top;
+}
+
+.appIcon img {
+    display: block;
+    width: 128px;
+    min-height: 128px;
+    height: auto;
+    max-height: 128px;
+    padding: 8px 8px;
+    border-bottom: 1px solid lightgray;
+}
+
+.appIcon>*:nth-child(2) {
+    display: inline-block;
+    padding-top: 3px;
+}
+
+.appIcon:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px 8px rgba(234, 255, 40, 0.65);
 }
 
 .app-form h1,
