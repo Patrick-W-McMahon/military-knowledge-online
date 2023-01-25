@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { Modal } from "react-bootstrap";
-//import { Link } from "gatsby";
+import { Link } from "gatsby";
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { Container } from "react-bootstrap";
