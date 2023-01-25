@@ -12,8 +12,8 @@ const initalState = {
 
 const Forms = ({ data, pageContext }) => {
   const [ state, setState] = useState(initalState);
-  console.log('data: ', data);
-  console.log('pageContext: ', pageContext);
+  //console.log('data: ', data);
+  //console.log('pageContext: ', pageContext);
   const { title, fields } = pageContext;
 
   const handleSubmit = e => {
@@ -24,6 +24,10 @@ const Forms = ({ data, pageContext }) => {
   const showSubmitModal = e => {
     e.preventDefault();
     setState({...state, showModal: true });
+  }
+
+  const hideSubmitModal = () => {
+    setState({...state, showModal: false });
   }
 
   return (
@@ -62,20 +66,26 @@ const Forms = ({ data, pageContext }) => {
                             return <div key={`field-${index}`}>Invalid Fields type</div>;
                     }
                 })}
-                <button onClick={() => showSubmitModal()}>Submit Form</button>
-                <Modal>
-                  <Row className="justify-content-md-center">
-                    <Col md={9}>
-                      <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
-                    </Col>
-                  </Row>
-                  <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Continue</button>
+                <button type="submit" className="btn btn-success" onClick={e => showSubmitModal(e)}>Submit Form</button>
+                <Modal show={state.showModal} onHide={() => hideSubmitModal()}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Form Submit</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Row className="justify-content-md-center">
+                      <Col md={9}>
+                        <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
+                      </Col>
+                    </Row>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Continue & Submit</button>
+                  </Modal.Footer>
                 </Modal>
               </form>
             </Col>
           </Row>
         </Container>
-        
       </Layout>
     </Fragment>
   );
