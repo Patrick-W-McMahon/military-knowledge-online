@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { Modal } from "react-bootstrap";
-import { Link } from "gatsby";
+//import { Link } from "gatsby";
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { Container } from "react-bootstrap";
@@ -49,11 +49,11 @@ const Branch = ({ data, pageContext }) => {
         <WorkspaceView.Panel title={'Apps'}>
           <Container className="app-tray" fluid>
             {apps.map((app, index) => {
-              const { app_icon } = app;
+              const { dir: app_dir, app_icon, app_name } = app;
               return (
-                <div key={index} className="appIcon" onClick={() => alert('apps not ready yet')}>
-                  <img src={`/img/appIcons/${app_icon}.png`} />
-                  <span>{app.app_name}</span>
+                <div key={index} role="button" tabIndex={index} className="appIcon" onClick={() => alert('apps not ready yet')} onKeyDown={() => {}}>
+                  <img alt={`app-${app_dir}`} src={`/img/appIcons/${app_icon}.png`} />
+                  <span>{app_name}</span>
                 </div>
               );
             })}
