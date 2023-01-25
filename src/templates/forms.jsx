@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 //import { graphql } from "gatsby";
+import { Model } from 'react-bootstrap';
 import Layout from '../components/layout';
 import Seo from "../components/seo";
 import { Container, Row, Col } from 'react-bootstrap';
 import RangeSlider from 'react-bootstrap-range-slider';
 
 const Forms = ({ data, pageContext }) => {
+  this.state = {
+    showModal: false
+  };
   console.log('data: ', data);
   console.log('pageContext: ', pageContext);
   const { title, fields } = pageContext;
@@ -13,6 +17,10 @@ const Forms = ({ data, pageContext }) => {
   const handleSubmit = e => {
     e.preventDefault();
     alert("This form is still under development! Nothing is being submitted at this time.");
+  }
+
+  const showSubmitModel = () => {
+    
   }
 
   return (
@@ -51,12 +59,15 @@ const Forms = ({ data, pageContext }) => {
                               return <div key={`field-${index}`}>Invalid Fields type</div>;
                       }
                   })}
-                  <Row className="justify-content-md-center">
-                    <Col md={9}>
-                      <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
-                    </Col>
-                  </Row>
-                  <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Submit Form</button>
+                  <button onClick={() => showSubmitModel()}>Submit Form</button>
+                  <Model>
+                    <Row className="justify-content-md-center">
+                      <Col md={9}>
+                        <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
+                      </Col>
+                    </Row>
+                    <button type="submit" className="btn btn-success" onClick={e => handleSubmit(e)}>Continue</button>
+                  </Model>
               </form>
             </Col>
           </Row>

@@ -29,6 +29,16 @@ class ToolPanelLinks extends React.Component {
     }
 }
 
+class ToolPanelForms extends React.Component {
+    render() {
+        return (
+            <ButtonToolbar aria-label="Workspace Toolbar" className="workspace-toolbar sub-bar">
+                <button className="btn btn-outline-primary" onClick={() => console.log('form editor')}>Form Editor</button>
+            </ButtonToolbar>
+        );
+    }
+}
+
 
 
 const Panel = () => null;
@@ -63,6 +73,9 @@ class WorkspaceView extends React.Component {
                         </ButtonToolbar>
                         {selectedTab > 0 && selectedTab < 5 ? (
                             <ToolPanelLinks setTab={setTab} filterGroups={filterGroups} selectFilter={selectFilter}/>
+                        ) : null}
+                        {selectedTab === 5 ? (
+                            <ToolPanelForms />
                         ) : null}
                     </Col>
                 </Row>

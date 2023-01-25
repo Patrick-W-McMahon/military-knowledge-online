@@ -6,6 +6,7 @@
     "author": "Patrick W. McMahon <patrick.w.mcmahon@gmail.com>",
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.5",
+        "axios": "^1.2.2",
         "bootstrap": "^5.2.3",
         "gatsby": "^4.14.1",
         "gatsby-plugin-gatsby-cloud": "^4.13.0",
