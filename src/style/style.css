@@ -462,6 +462,11 @@ p {
     font-size: 1.25em;
 }
 
+.subtext {
+    font-size: 0.95em;
+    text-decoration: underline;
+}
+
 .info-dialogBox {
     position: fixed;
     top: 6px;
