@@ -1,0 +1,207 @@
+{
+    "ranksList": [{
+            "paygrade": "E-1",
+            "insignia": null,
+            "rank": "Private",
+            "abbreviation": "PV1",
+            "classification": "Enlisted Soldier"
+        },
+        {
+            "paygrade": "E-2",
+            "insignia": "private-second-class.png",
+            "rank": "Private Second Class",
+            "abbreviation": "PV2",
+            "classification": "Enlisted Soldier"
+        },
+        {
+            "paygrade": "E-3",
+            "insignia": "private-first-class.png",
+            "rank": "Private First Class",
+            "abbreviation": "PFC",
+            "classification": "Enlisted Soldier"
+        },
+        {
+            "paygrade": "E-4",
+            "insignia": "specialist.png",
+            "rank": "Specialist",
+            "abbreviation": "SPC",
+            "classification": "Enlisted Soldier"
+        },
+        {
+            "paygrade": "E-4",
+            "insignia": "corporal.png",
+            "rank": "Corporal",
+            "abbreviation": "CPL",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-5",
+            "insignia": "sergeant.png",
+            "rank": "Sergeant",
+            "abbreviation": "SGT",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-6",
+            "insignia": "staff-sergeant.png",
+            "rank": "Staff Sergeant",
+            "abbreviation": "SSG",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-7",
+            "insignia": "",
+            "rank": "Sergeant First Class",
+            "abbreviation": "SFC",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-8",
+            "insignia": "",
+            "rank": "Master Sergeant",
+            "abbreviation": "MSG",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-8",
+            "insignia": "",
+            "rank": "First Sergeant",
+            "abbreviation": "1SG",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-9",
+            "insignia": "",
+            "ran": "Sergeant Major",
+            "abbreviation": "SGM",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-9",
+            "insignia": "",
+            "rank": "Command Sergeant Major",
+            "abbreviation": "CSM",
+            "classification": "Noncommissioned Officer"
+        },
+        {
+            "paygrade": "E-9",
+            "insignia": "",
+            "rank": "Sergeant Major of the Army",
+            "abbreviation": "SMA",
+            "classification": "Noncommissioned Officer (Special)"
+        },
+        {
+            "paygrade": "W-1",
+            "insignia": "",
+            "rank": "Warrant Officer 1",
+            "abbreviation": "WO1",
+            "classification": "Warrant Officer"
+        },
+        {
+            "paygrade": "W-2",
+            "insignia": "",
+            "rank": "Chief Warrant Officer 2",
+            "abbreviation": "CW2",
+            "classification": "Warrant Officer"
+        },
+        {
+            "paygrade": "W-3",
+            "insignia": "",
+            "rank": "Chief Warrant Officer 3",
+            "abbreviation": "CW3",
+            "classification": "Warrant Officer"
+        },
+        {
+            "paygrade": "W-4",
+            "insignia": "",
+            "rank": "Chief Warrant Officer 4",
+            "abbreviation": "CW4",
+            "classification": "Warrant Officer"
+        },
+        {
+            "paygrade": "W-5",
+            "insignia": "",
+            "rank": "Chief Warrant Officer 5",
+            "abbreviation": "CW5",
+            "classification": "Warrant Officer"
+        },
+        {
+            "paygrade": "O-1",
+            "insignia": "",
+            "rank": "Second Lieutenant",
+            "abbreviation": "2LT",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-2",
+            "insignia": "",
+            "rank": "First Lieutenant",
+            "abbreviation": "1LT",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-3",
+            "insignia": "",
+            "rank": "Captain",
+            "abbreviation": "CPT",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-4",
+            "insignia": "",
+            "rank": "Major",
+            "abbreviation": "MAJ",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-5",
+            "insignia": "",
+            "rank": "Lieutenant Colonel",
+            "abbreviation": "LTC",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-6",
+            "insignia": "",
+            "rank": "Colonel",
+            "abbreviation": "COL",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-7",
+            "insignia": "",
+            "rank": "Brigadier General",
+            "abbreviation": "BG",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-8",
+            "insignia": "",
+            "rank": "Major General",
+            "abbreviation": "MG",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-9",
+            "insignia": "",
+            "rank": "Lieutenant General",
+            "abbreviation": "LTG",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-10",
+            "insignia": "",
+            "rank": "General",
+            "abbreviation": "GEN",
+            "classification": "Commissioned Officer"
+        },
+        {
+            "paygrade": "O-10",
+            "insignia": "",
+            "rank": "General of the Army",
+            "abbreviation": "GA",
+            "classification": "Commissioned Officer"
+        }
+    ],
+    "branking": {}
+}
