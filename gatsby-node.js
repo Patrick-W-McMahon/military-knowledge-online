@@ -129,6 +129,20 @@ exports.createPages = async({ actions }) => {
             context: { title: form.title, fields: form.fields }
         });
     });
+    const appDir = await getDirectories('./src/applications/');
+    appDir.forEach(async(appDir, index) => {
+        const templatePath = `./src/applications/${appDir}/index.jsx`;
+        const appURI = `/apps/${appDir}`;
+        const appRootPath = `./src/applications/${appDir}`;
+        const configFileName = 'info.json';
+        const config = await fs.readFileSync(`${appRootPath}/${configFileName}`);
+
+        createPage({
+            path: appURI,
+            component: require.resolve(templatePath),
+            context: {...JSON.parse(config), dir: appDir, appRootPath, configFileName, id: `${appDir}-${index}`, hash: sha256(JSON.stringify(`${appDir}-${config}`)) }
+        });
+    });
 }
 
 
@@ -172,11 +186,13 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
         const appRootPath = `./src/applications/${appDir}`;
         const configFileName = 'info.json';
         const config = await fs.readFileSync(`${appRootPath}/${configFileName}`);
+        const appURI = `/apps/${appDir}`;
 
         createNode({
             hash: sha256(JSON.stringify(`${appDir}-${config}`)),
             ...JSON.parse(config),
             dir: appDir,
+            appURI,
             appRootPath,
             configFileName,
             id: `${appDir}-${index}`,

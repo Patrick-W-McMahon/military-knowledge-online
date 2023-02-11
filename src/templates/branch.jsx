@@ -49,12 +49,13 @@ const Branch = ({ data, pageContext }) => {
         <WorkspaceView.Panel title={'Apps'}>
           <Container className="app-tray" fluid>
             {apps.map((app, index) => {
-              const { dir: app_dir, app_icon, app_name } = app;
+              const { dir: app_dir, app_icon, app_name, appURI } = app;
+              console.log(appURI);
               return (
-                <div key={index} role="button" tabIndex={index} className="appIcon" onClick={() => alert('apps not ready yet')} onKeyDown={() => {}}>
+                <Link key={`app-${app_name}-${index}`} to={appURI} className="appIcon">
                   <img alt={`app-${app_dir}`} src={`/img/appIcons/${app_icon}.png`} />
                   <span>{app_name}</span>
-                </div>
+                </Link>
               );
             })}
           </Container>
@@ -200,12 +201,13 @@ export const query = graphql`
     allApplication(sort: {fields: dir, order: ASC}) {
       apps: nodes {
         appRootPath
-        app_name
         app_icon
+        app_name
         configFileName
         dir
         hash
         id
+        appURI
       }
     }
   }
