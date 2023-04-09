@@ -124,7 +124,8 @@ const AppView = () => {
                   <TreeMenu data={treeData} />
                 </Col>
                 <Col md="9">
-                  <AceEditor mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
+                  {typeof window !== 'undefined' ? (
+                    <AceEditor mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
                     name="page-editor" 
                     editorProps={{ $blockScrolling: true }} 
                     fontSize={14}
@@ -144,6 +145,7 @@ const AppView = () => {
                       tabSize: 2
                     }}
                   />
+                  ) : null} 
                 </Col>
               </Row>
             </Container>
