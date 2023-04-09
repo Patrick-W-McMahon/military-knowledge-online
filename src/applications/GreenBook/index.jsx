@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
-import AceEditor from "react-ace";
+//import AceEditor from "react-ace";
+import AceEditor from "./AceEditor";
 import TreeMenu from 'react-simple-tree-menu';
 import '../../../node_modules/react-simple-tree-menu/dist/main.css';
 //import { Alert } from 'react-bootstrap';
@@ -7,21 +8,11 @@ import Layout from '../../components/layout';
 import Seo from "../../components/seo";
 import { Container, Navbar, Nav, NavDropdown, ButtonToolbar, ButtonGroup, Button, Row, Col } from "react-bootstrap";
 
-import "ace-builds/src-noconflict/mode-java";
-import "ace-builds/src-noconflict/theme-github";
-import "ace-builds/src-noconflict/ext-language_tools";
 import './app.css';
 
 const AppView = () => {
   const [text, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
-  const [EditorComponent, setEditorComponent] = useState(null);
-
-  useEffect(() => {
-    import("react-ace").then((module) => {
-      setEditorComponent(() => module.default);
-    });
-  }, []);
 
   const [notes, setNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState('');
@@ -131,28 +122,27 @@ const AppView = () => {
                   <TreeMenu data={treeData} />
                 </Col>
                 <Col md="9">
-                 {EditorComponent ? <EditorComponent 
-                 mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
-                 name="page-editor" 
-                 editorProps={{ $blockScrolling: true }} 
-                 fontSize={14}
-                 style={{
-                   width: '100%',
-                   height: '400px',
-                 }}
-                 showPrintMargin={true}
-                 showGutter={true}
-                 highlightActiveLine={true} 
-                 setOptions={{
-                   useWorker: false,
-                   enableBasicAutocompletion: true,
-                   enableLiveAutocompletion: true,
-                   enableSnippets: false,
-                   showLineNumbers: true,
-                   tabSize: 2
-                 }}
-                 /> : null}
-                  
+                 <AceEditor 
+                    mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
+                    name="page-editor" 
+                    editorProps={{ $blockScrolling: true }} 
+                    fontSize={14}
+                    style={{
+                      width: '100%',
+                      height: '400px',
+                    }}
+                    showPrintMargin={true}
+                    showGutter={true}
+                    highlightActiveLine={true} 
+                    setOptions={{
+                      useWorker: false,
+                      enableBasicAutocompletion: true,
+                      enableLiveAutocompletion: true,
+                      enableSnippets: false,
+                      showLineNumbers: true,
+                      tabSize: 2
+                    }}
+                 />
                 </Col>
               </Row>
             </Container>
