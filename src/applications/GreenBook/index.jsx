@@ -16,6 +16,18 @@ const AppView = () => {
   const [text, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
+  const [notes, setNotes] = useState([]);
+  const [currentNote, setCurrentNote] = useState('');
+
+  useEffect(() => {
+    const savedNotes = JSON.parse(localStorage.getItem('app-greenbook')) || [];
+    setNotes(savedNotes);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('app-greenbook', JSON.stringify(notes));
+  }, [notes]);
+
   useEffect(() => {
     const savedText = localStorage.getItem('notepad-text');
     if (savedText) {
@@ -37,6 +49,18 @@ const AppView = () => {
     setText('');
     setCharacterCount(0);
     localStorage.removeItem('notepad-text');
+  }
+
+  function handleAddBook() {
+    handleError();
+  }
+
+  function handleAddSection() {
+    handleError();
+  }
+
+  function handleAddPage() {
+    handleError();
   }
 
   function handleError() {
@@ -71,9 +95,9 @@ const AppView = () => {
             <Navbar className="notepad-navbar">
               <Nav className="me-auto my-2 my-lg-0">
                 <NavDropdown title="File">
-                  <NavDropdown.Item onClick={handleError}>New Book</NavDropdown.Item>
-                  <NavDropdown.Item onClick={handleError}>New Group</NavDropdown.Item>
-                  <NavDropdown.Item onClick={handleError}>New Page</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleAddBook}>New Book</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleAddSection}>New Section</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleAddPage}>New Page</NavDropdown.Item>
                   <NavDropdown.Item onClick={handleSaveClick}>Save Page</NavDropdown.Item>
                   <NavDropdown.Item onClick={handleClearClick}>Clear Page</NavDropdown.Item>
                 </NavDropdown>
@@ -104,11 +128,15 @@ const AppView = () => {
                     name="page-editor" 
                     editorProps={{ $blockScrolling: true }} 
                     fontSize={14}
-                    width={'100%'}
+                    style={{
+                      width: '100%',
+                      height: '400px',
+                    }}
                     showPrintMargin={true}
                     showGutter={true}
                     highlightActiveLine={true} 
                     setOptions={{
+                      useWorker: false,
                       enableBasicAutocompletion: true,
                       enableLiveAutocompletion: true,
                       enableSnippets: false,
