@@ -15,6 +15,13 @@ import './app.css';
 const AppView = () => {
   const [text, setText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
+  const [EditorComponent, setEditorComponent] = useState(null);
+
+  useEffect(() => {
+    import("react-ace").then((module) => {
+      setEditorComponent(() => module.default);
+    });
+  }, []);
 
   const [notes, setNotes] = useState([]);
   const [currentNote, setCurrentNote] = useState('');
@@ -124,28 +131,28 @@ const AppView = () => {
                   <TreeMenu data={treeData} />
                 </Col>
                 <Col md="9">
-                  {typeof window !== 'undefined' ? (
-                    <AceEditor mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
-                    name="page-editor" 
-                    editorProps={{ $blockScrolling: true }} 
-                    fontSize={14}
-                    style={{
-                      width: '100%',
-                      height: '400px',
-                    }}
-                    showPrintMargin={true}
-                    showGutter={true}
-                    highlightActiveLine={true} 
-                    setOptions={{
-                      useWorker: false,
-                      enableBasicAutocompletion: true,
-                      enableLiveAutocompletion: true,
-                      enableSnippets: false,
-                      showLineNumbers: true,
-                      tabSize: 2
-                    }}
-                  />
-                  ) : null} 
+                 {EditorComponent ? <EditorComponent 
+                 mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
+                 name="page-editor" 
+                 editorProps={{ $blockScrolling: true }} 
+                 fontSize={14}
+                 style={{
+                   width: '100%',
+                   height: '400px',
+                 }}
+                 showPrintMargin={true}
+                 showGutter={true}
+                 highlightActiveLine={true} 
+                 setOptions={{
+                   useWorker: false,
+                   enableBasicAutocompletion: true,
+                   enableLiveAutocompletion: true,
+                   enableSnippets: false,
+                   showLineNumbers: true,
+                   tabSize: 2
+                 }}
+                 /> : null}
+                  
                 </Col>
               </Row>
             </Container>
