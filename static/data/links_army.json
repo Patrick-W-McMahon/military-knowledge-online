@@ -1203,5 +1203,12 @@
         "url": "https://safe.menlosecurity.com/",
         "description": "Menlo Security is a web security vendor providing secure, cloud-based internet isolation. Founded in 2013, in Palo Alto California, Menlo has taken a ‘Zero-Trust’ approach to web security and have built a platform that aims to eliminate 100% of web and email threats.",
         "cardId": 152
+    },
+    {
+        "title": "ipps-a",
+        "url": "https://ipps-a.army.mil/",
+        "description": "The Integrated Personnel and Pay System - Army (IPPS-A) is the Army’s online Human Resources (HR) solution to provide integrated HR capabilities across all bases.",
+        "cardId": 153,
+        "categories": ["quick_links", "human_resources", "professional_development", "us_gov_website", "finance"]
     }
 ]
