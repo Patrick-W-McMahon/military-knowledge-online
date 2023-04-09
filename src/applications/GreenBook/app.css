@@ -3,6 +3,7 @@
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
+    max-width: 1100px;
     min-height: 400px;
     margin: 20px auto;
     padding: 16px;
@@ -16,14 +17,14 @@
     justify-content: space-between;
     margin-bottom: 2px;
     background-color: #ccc;
+    z-index: 100;
+    position: absolute;
 }
 
 .notepad-body {
     background: #ccc;
     height: 100%;
     min-height: 400px;
-    padding: 3px;
-    display: block;
 }
 
 .notepad-navbar {
@@ -38,10 +39,23 @@
 .dropdown-menu {
     padding: 0;
     border-radius: 0;
+    z-index: 100;
+    position: absolute;
 }
 
 .notepad-navbar a.nav-link {
     color: white!important;
+}
+
+.rstm-tree-item {
+    padding-top: 1px!important;
+    padding-bottom: 1px!important;
+}
+
+.rstm-search {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
 }
 
 .character-count {

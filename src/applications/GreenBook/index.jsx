@@ -1,9 +1,15 @@
 import React, { Fragment, useState, useEffect } from "react";
+import AceEditor from "react-ace";
+import TreeMenu from 'react-simple-tree-menu';
+import '../../../node_modules/react-simple-tree-menu/dist/main.css';
 //import { Alert } from 'react-bootstrap';
 import Layout from '../../components/layout';
 import Seo from "../../components/seo";
-import { Container, Navbar, Nav, NavDropdown, ButtonToolbar, ButtonGroup, Button } from "react-bootstrap";
+import { Container, Navbar, Nav, NavDropdown, ButtonToolbar, ButtonGroup, Button, Row, Col } from "react-bootstrap";
 
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/ext-language_tools";
 import './app.css';
 
 const AppView = () => {
@@ -17,10 +23,9 @@ const AppView = () => {
     }
   }, []);
 
-  function handleTextChange(event) {
-    const newText = event.target.value;
-    setText(newText);
-    setCharacterCount(newText.length);
+  function handleTextChange(text) {
+    setText(text);
+    setCharacterCount(text.length);
   }
 
   function handleSaveClick() {
@@ -42,6 +47,21 @@ const AppView = () => {
   let totalPages = 1;
   let currentBook = 1;
   let totalBook = 1;
+
+  const treeData = [{
+    key: 'book01',
+    label: 'book 1',
+    nodes: [
+      {
+        key: 'section01',
+        label: 'section 1',
+        nodes: [{
+          key: 'page01',
+          label: 'page 1'
+        }]
+      },
+    ],
+  }];
 
   return (
       <Fragment>
@@ -74,9 +94,31 @@ const AppView = () => {
                 </ButtonToolbar>
               </Nav>
             </Navbar>
-            <div className="notepad-body">
-              <textarea className="notepad-textarea" value={text} onChange={handleTextChange} />
-            </div>
+            <Container fluid>
+              <Row className="notepad-body">
+                <Col md="3">
+                  <TreeMenu data={treeData} />
+                </Col>
+                <Col md="9">
+                  <AceEditor mode="markdown" theme="monokai" value={text} onChange={handleTextChange} 
+                    name="page-editor" 
+                    editorProps={{ $blockScrolling: true }} 
+                    fontSize={14}
+                    width={'100%'}
+                    showPrintMargin={true}
+                    showGutter={true}
+                    highlightActiveLine={true} 
+                    setOptions={{
+                      enableBasicAutocompletion: true,
+                      enableLiveAutocompletion: true,
+                      enableSnippets: false,
+                      showLineNumbers: true,
+                      tabSize: 2
+                    }}
+                  />
+                </Col>
+              </Row>
+            </Container>
           </Container>
         </Layout>
       </Fragment>

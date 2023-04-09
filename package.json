@@ -6,6 +6,7 @@
     "author": "Patrick W. McMahon <patrick.w.mcmahon@gmail.com>",
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.5",
+        "ace-builds": "^1.16.0",
         "axios": "^1.2.2",
         "bootstrap": "^5.2.3",
         "gatsby": "^4.14.1",
@@ -24,11 +25,13 @@
         "gatsby-transformer-sharp": "^4.13.0",
         "prop-types": "^15.8.1",
         "react": "^17.0.1",
+        "react-ace": "^10.1.0",
         "react-bootstrap": "^2.7.0",
         "react-bootstrap-range-slider": "^3.0.8",
         "react-dom": "^17.0.1",
         "react-helmet": "^6.1.0",
-        "react-redux": "^8.0.2"
+        "react-redux": "^8.0.2",
+        "react-simple-tree-menu": "^1.1.18"
     },
     "devDependencies": {
         "prettier": "^2.6.2"
