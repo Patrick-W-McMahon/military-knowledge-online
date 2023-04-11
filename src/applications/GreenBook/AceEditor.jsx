@@ -11,7 +11,7 @@ function AceEditor(props) {
         setEditorComponent(() => module.default);
     });
   }, []);
-  return EditorComponent ? <EditorComponent {...props} /> : null;
+  return EditorComponent ? <EditorComponent {...props} /> : <div className="loading-message">Loading Editor...</div>;
 }
 
 export default AceEditor;
