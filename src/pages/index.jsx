@@ -174,7 +174,7 @@ const IndexPage = (props) => {
     useEffect(() => {
         async function fetchData() {
             await GetSelectedFilter();
-            await LoadFavLinks();
+            await LoadFavLinks(allLinksData);
             const newState = {
                 selectedFilterHash: workspaceLinks.selectedFilterHash,
                 selectedTreeData: workspaceLinks.selectedTreeData
@@ -231,8 +231,8 @@ const IndexPage = (props) => {
 
     const handleToggleFavLink = async(event) => {
         const { ToggleFavLinks } = props;
-        ToggleFavLinks(event);
-        await LoadFavLinks();
+        ToggleFavLinks(event, allLinksData);
+        await LoadFavLinks(allLinksData);
     }
 
     if(typeof workspaceLinks === 'undefined' || typeof workspaceLinks.linksList === 'undefined') {
@@ -370,13 +370,13 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    const staticQuerys = Object.keys(ownProps.pageResources.staticQueryResults);
-    const { allLinksData } = ownProps.pageResources.staticQueryResults[staticQuerys[0]].data;
+    //const staticQuerys = Object.keys(ownProps.pageResources.staticQueryResults);
+    //const { allLinksData } = ownProps.pageResources.staticQueryResults[staticQuerys[0]].data;
     return ({
         SetSelectedFilter: (filter) => ActionSetSelectedFilter(dispatch, filter),
         GetSelectedFilter: () => ActionGetSelectedFilter(dispatch),
-        ToggleFavLinks: (hash) => ActionToggleFavoriteLinks(dispatch, hash, allLinksData),
-        LoadFavLinks: () => ActionLoadFavoriteLinks(dispatch, allLinksData)
+        ToggleFavLinks: (hash, allLinksData) => ActionToggleFavoriteLinks(dispatch, hash, allLinksData),
+        LoadFavLinks: (allLinksData) => ActionLoadFavoriteLinks(dispatch, allLinksData)
     });
 }
 
