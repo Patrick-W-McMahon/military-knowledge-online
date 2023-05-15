@@ -3,11 +3,15 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from "react-redux";
 import auth from './reducers/authReducer';
 import workspace from './reducers/workspaceReducer';
+import workspaceLinks from './reducers/webLinksReducer';
+import system from './reducers/mainLayoutReducer';
 
 
 const myReducer = combineReducers({
   auth,
-  workspace
+  workspace,
+  workspaceLinks,
+  system
 });
 
  const wrapWithProps = ({ element }) => {

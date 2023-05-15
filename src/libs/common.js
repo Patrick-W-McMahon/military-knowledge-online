@@ -10,6 +10,54 @@ export const flattenLinksList = linksList => {
     return flatList;
 }
 
+export const getActiveLinks = (allLinksData, selectedTreeData) => {
+    //console.log('>>allLinksData: ', allLinksData);
+    //console.log('>>selectedTreeData: ', selectedTreeData);
+    const { func, filter } = selectedTreeData.action;
+    if (func === 'getAllLinks') {
+        //console.log('all: ', allLinksData);
+        return allLinksData.filter(g => g.group === filter)[0] || { group: filter, groupLinks: [], links: [] };
+    }
+    const activeGroup = allLinksData.filter(g => g.group === filter)[0];
+    //console.log('activeGroup: ', activeGroup);
+    if (activeGroup === undefined) {
+        return { group: null, groupLinks: [], links: [] }
+    }
+    const { group, groupLinks, links } = activeGroup;
+    //console.table("links: ", links);
+    const activeGroupLinks = [];
+    /*groupLinks.map(g => {
+            const { fieldValue, links } = g;
+            const activeLinks = links.filter(l => l.categories.some(s => selectedTreeData.action.val.includes(s)));
+            return { fieldValue, links: activeLinks }
+        });*/
+    const filterLinksDataVal = selectedTreeData.action.val;
+    const activeLinks = links.filter(l => {
+        const { categories } = l;
+        if (categories === null) {
+            return false;
+        }
+        return filterLinksDataVal.some(f => [...categories].includes(f));
+    });
+    /*
+    let activeLinks = links.filter(l => {
+        [...l.categories].forEach(c => {
+            console.log('c: ', c);
+            [...c].forEach(i => {
+                if (filterLinksDataVal.includes(i)) {
+                    return true;
+                }
+            });
+        });
+        return false;
+    });*/
+    //links.filter(l => selectedTreeData.action.val.some(s => l.categories.includes(s)));
+    //links.filter(l => l.categories.findIndex(e => selectedTreeData.action.val.includes(e)) > -1);
+
+    //console.log('results: ', { group, groupLinks: activeGroupLinks, links: activeLinks });
+    return { group, groupLinks: [], links: activeLinks };
+}
+
 export const filterFavLinks = linksList => linksList.map(g => {
     let links = [];
     if (g !== undefined && g.links !== undefined) {

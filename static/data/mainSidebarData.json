@@ -1,0 +1,10 @@
+[
+    { "text": "Websites", "url": "/", "icon": "fa-th" },
+    { "text": "News", "url": "/news", "icon": "fa-newspaper" },
+    { "text": "Applications", "url": "/apps", "icon": "fa-toolbox" },
+    { "text": "Forms", "url": "/forms", "icon": "fa-clipboard-list" },
+    { "text": "Documents", "url": "/documents", "icon": "fa-file-alt" },
+    { "text": "Shop", "url": "/shop", "icon": "fa-tshirt" },
+    { "text": "Settings", "url": "/settings", "icon": "fa-user-cog" },
+    { "text": "About MKO", "url": "/about", "icon": "fa-info-circle" }
+]

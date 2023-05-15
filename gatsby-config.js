@@ -1,9 +1,12 @@
 module.exports = {
     siteMetadata: {
+        titleLong: `Military Knowledge Online`,
         title: `Military Knowledge Online`,
-        description: `Central knowledge hub for military web services`,
+        titleShort: `MKO`,
+        description: `Central knowledge hub & workspace for military web services`,
         author: `Patrick W. McMahon`,
         siteUrl: `https://github.com/Patrick-W-McMahon/military-knowledge-online`,
+        footerText: `DISCLAIMER! This is a Third Party Site. While most (not ALL) links on this website link to Official U.S. Military/Government websites; it is not endorsed or maintained by the U.S. Military/Government.`
     },
     plugins: [
         `gatsby-plugin-no-sourcemaps`,

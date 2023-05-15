@@ -7,6 +7,7 @@ const path = require('path');
 
 const BRANCH_DATA = require('./static/data/branches.json');
 const BASE_GROUP_FILTERS = require('./static/system/base_group_filters.json');
+const MAIN_SIDEBAR_DATA = require('./static/data/mainSidebarData.json');
 
 const LINKS_AIR_FORCE = require('./static/data/links_air_force.json');
 const LINKS_ARMY = require('./static/data/links_army.json');
@@ -22,6 +23,7 @@ const APP_FORMS = require('./static/data/app_forms.json');
 
 let links = [];
 let categories = [];
+let linksMenu = [];
 
 async function getDirectories(path) {
     let filesAndDirectories = await fse.readdir(path);
@@ -37,7 +39,7 @@ async function getDirectories(path) {
     return directories;
 }
 const sha256 = x => crypto.createHash('sha256').update(x, 'utf8').digest('hex');
-const setupCategories = (categories) => {
+const setupCategories = (categories, filter) => {
     let categoryList = [];
     let order = 0;
     const orderedCategories = categories.sort((a, b) => {
@@ -50,11 +52,15 @@ const setupCategories = (categories) => {
         return 0;
     });
     BASE_GROUP_FILTERS.forEach(f => {
-        categoryList.push(f);
+        const { func, obj, val } = f.action;
+        const fa = {...f, action: { func, obj, val, filter } };
+        categoryList.push(fa);
         order++;
     });
     orderedCategories.forEach(f => {
-        categoryList.push({...f, order });
+        const { func, obj, val } = f.action;
+        const fa = {...f, action: { func, obj, val, filter } };
+        categoryList.push({...fa, order });
         order++;
     });
     return categoryList;
@@ -70,14 +76,36 @@ const LinkSources = {
     space_force: LINKS_SPACE_FORCE
 };
 
+const setupFilters = (toplevel, categories, filter) => [
+    { key: sha256(`${toplevel}_quick_links`), label: `${toplevel} Quick Links`, action: { obj: "links-action", func: "getLinksByTags", val: ["quick_links"], filter } },
+    ...categories.map(l => ({ key: sha256(JSON.stringify(l)), label: l.label, action: {...l.action, filter } }))
+];
+
+let MilitaryBranchNodes = [
+    { key: sha256('air_force'), label: 'Air Force', nodes: setupFilters('Air Force', [], 'air_force'), action: { obj: "links-action", func: "getAllLinks", val: sha256('air_force'), filter: 'air_force' } },
+    { key: sha256('army'), label: 'Army', nodes: setupFilters('Army', CATEGORIES_ARMY, 'army'), action: { obj: "links-action", func: "getAllLinks", val: sha256('army'), filter: 'army' } },
+    { key: sha256('cost_guard'), label: 'Cost Guard', nodes: setupFilters('Cost Guard', [], 'cost_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('cost_guard'), filter: 'cost_guard' } },
+    { key: sha256('marine_corps'), label: 'Marine Corps', nodes: setupFilters('Marine Corps', [], 'marine_corps'), action: { obj: "links-action", func: "getAllLinks", val: sha256('marine_corps'), filter: 'marine_corps' } },
+    { key: sha256('national_guard'), label: 'National Guard', nodes: setupFilters('National Guard', [], 'national_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('national_guard'), filter: 'national_guard' } },
+    { key: sha256('navy'), label: 'Navy', nodes: setupFilters('Navy', [], 'navy'), action: { obj: "links-action", func: "getAllLinks", val: sha256('navy'), filter: 'navy' } },
+    { key: sha256('space_force'), label: 'Space Force', nodes: setupFilters('Space Force', [], 'space_force'), action: { obj: "links-action", func: "getAllLinks", val: sha256('space_force'), filter: 'space_force' } },
+];
+
+
+linksMenu = [
+    { key: sha256('favorites'), label: 'Favorites', action: { obj: "profile-action", func: "getFavLinks", val: '' } },
+    { key: sha256('all_branches'), label: 'Military', nodes: MilitaryBranchNodes, action: { obj: "links-action", func: "getAllBranches", val: '' } },
+    { key: sha256('civilian'), label: 'Civilian', nodes: [], action: { obj: "links-action", func: "getAllCivilian", val: '' } }
+];
+
 const categoriesSources = {
-    air_force: setupCategories([]),
-    army: setupCategories(CATEGORIES_ARMY),
-    cost_guard: setupCategories([]),
-    marine_corps: setupCategories([]),
-    national_guard: setupCategories([]),
-    navy: setupCategories([]),
-    space_force: setupCategories([])
+    air_force: setupCategories([], 'air_force'),
+    army: setupCategories(CATEGORIES_ARMY, 'army'),
+    cost_guard: setupCategories([], 'cost_gaurd'),
+    marine_corps: setupCategories([], 'marine_corps'),
+    national_guard: setupCategories([], 'national_guard'),
+    navy: setupCategories([], 'navy'),
+    space_force: setupCategories([], 'space_force')
 };
 //console.log('category test', categoriesSources);
 const getFirstLetter = (str) => str[0].toLowerCase();
@@ -106,6 +134,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
     }
 };
 */
+/*  //TODO: all of this needs to be reviewed as some of these pages will not exist anymore.
 exports.createPages = async({ actions }) => {
     const { createPage } = actions
     createPage({
@@ -144,6 +173,7 @@ exports.createPages = async({ actions }) => {
         });
     });
 }
+*/
 
 
 exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) => {
@@ -180,6 +210,21 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
     dataArrSetup(BRANCH_DATA, 'branches', 'branch');
     dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
     dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
+
+    linksMenu.forEach(async(linksMenuData, index) => {
+        createNode({
+            hash: sha256(JSON.stringify(`${linksMenuData}`)),
+            ...linksMenuData,
+            id: `${linksMenuData}-${index}`,
+            nodes: linksMenuData.nodes ? [...linksMenuData.nodes] : [],
+            internal: {
+                type: 'linkMenuData',
+                contentDigest: createContentDigest(linksMenuData)
+            }
+        });
+    });
+
+    dataArrSetup(MAIN_SIDEBAR_DATA, 'sidebarLinks', 'sidebarLink');
 
     const appDir = await getDirectories('./src/applications/');
     appDir.forEach(async(appDir, index) => {

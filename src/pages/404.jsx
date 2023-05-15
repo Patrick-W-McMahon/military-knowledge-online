@@ -1,23 +1,18 @@
-import * as React from "react";
-import { Modal } from "react-bootstrap";
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import React, { Fragment } from "react";
+import MainLayout from "../components/layout/MainLayout";
 
-const title = "404: Not found";
-const content = "You just hit a route that doesn't exist...";
+const FnfPage = () => {
+  return ( 
+      <MainLayout>
+          <Fragment>
+              <div className="body-page">
+                <h1>The page you requested could not be found.</h1>
+                <div>The page you requested may have moved.</div>
+                <div>{'  <= Look at the main menu'}</div>
+            </div>  
+          </Fragment>
+      </MainLayout>
+  );
+}
 
-const NotFoundPage = () => (
-  <Layout>
-    <Seo title={title} />
-    <Modal.Dialog size="lg">
-        <Modal.Header>
-            <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <p>{content}</p>
-        </Modal.Body>
-    </Modal.Dialog>
-  </Layout>
-)
-
-export default NotFoundPage;
+export default FnfPage;

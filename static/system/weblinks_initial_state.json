@@ -1,0 +1,19 @@
+{
+    "selectedFilterHash": "bc20a19c5afac1c28b8190edb90850c84365b9831effcc3039b9dec9c9909995",
+    "selectedTreeData": {
+        "index": 1,
+        "parent": "",
+        "level": 0,
+        "openNodes": [],
+        "searchTerm": "",
+        "key": "bc20a19c5afac1c28b8190edb90850c84365b9831effcc3039b9dec9c9909995",
+        "action": {
+            "func": "getAllBranches",
+            "obj": "links-action",
+            "val": ""
+        },
+        "label": "Military",
+        "hasNodes": true,
+        "isOpen": false
+    }
+}
