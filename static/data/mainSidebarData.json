@@ -1,10 +1,10 @@
 [
-    { "text": "Websites", "url": "/", "icon": "fa-th" },
-    { "text": "News", "url": "/news", "icon": "fa-newspaper" },
-    { "text": "Applications", "url": "/apps", "icon": "fa-toolbox" },
-    { "text": "Forms", "url": "/forms", "icon": "fa-clipboard-list" },
-    { "text": "Documents", "url": "/documents", "icon": "fa-file-alt" },
-    { "text": "Shop", "url": "/shop", "icon": "fa-tshirt" },
-    { "text": "Settings", "url": "/settings", "icon": "fa-user-cog" },
-    { "text": "About MKO", "url": "/about", "icon": "fa-info-circle" }
+    { "text": "Websites", "url": "/", "icon": "fa-th", "order": 0 },
+    { "text": "News", "url": "/news", "icon": "fa-newspaper", "order": 1 },
+    { "text": "Applications", "url": "/apps", "icon": "fa-toolbox", "order": 2 },
+    { "text": "Forms", "url": "/forms", "icon": "fa-clipboard-list", "order": 3 },
+    { "text": "Documents", "url": "/documents", "icon": "fa-file-alt", "order": 4 },
+    { "text": "Merchandise", "url": "/shop", "icon": "fa-tshirt", "order": 5 },
+    { "text": "Settings", "url": "/settings", "icon": "fa-user-cog", "order": 6 },
+    { "text": "About MKO", "url": "/about", "icon": "fa-info-circle", "order": 7 }
 ]
