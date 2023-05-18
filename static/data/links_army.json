@@ -1210,5 +1210,19 @@
         "description": "The Integrated Personnel and Pay System - Army (IPPS-A) is the Army’s online Human Resources (HR) solution to provide integrated HR capabilities across all bases.",
         "cardId": 153,
         "categories": ["quick_links", "human_resources", "professional_development", "us_gov_website", "finance"]
+    },
+    {
+        "title": "DLIFLC",
+        "url": "https://www.dliflc.edu/elearning/",
+        "description": "Basic language skill materials can be used for novice learners or those individuals who are getting ready to deploy or have been deployed. Military service members may complete the roughly 6-hour Rapport program to gain a pre-deployment certificate, while HeadStart2 provides about 100 hours of basic language training.",
+        "cardId": 154,
+        "categories": ["education_civilian", "professional_development", "education_military"]
+    },
+    {
+        "title": "Interagency Language Roundtable",
+        "url": "https://www.govtilr.org/",
+        "description": "Language resources",
+        "cardId": 155,
+        "categories": ["education_civilian", "professional_development", "education_military"]
     }
 ]
