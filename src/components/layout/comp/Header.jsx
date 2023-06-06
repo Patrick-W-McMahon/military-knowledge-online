@@ -1,23 +1,13 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
 
-const Header = ({ extended, titleLong, titleShort, mainSideMenu, appSideMenu, appTopMenu }) => {
+const Header = ({ extended, titleLong, titleShort, mainSideMenu, appSideMenu, appMenu, handleSidebarToggle }) => {
     return (
-        <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="/">{extended ? titleLong : titleShort }</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbar-nav" />
-            <Navbar.Collapse id="navbar-nav">
-                {/*
-                <Nav className="me-auto">
-                    <Nav.Link href="#">Home</Nav.Link>
-                    <Nav.Link href="#">Features</Nav.Link>
-                    <Nav.Link href="#">Pricing</Nav.Link>
-                </Nav>
-                <Nav>
-                    <Nav.Link href="#">Login</Nav.Link>
-                </Nav>
-                */}
-            </Navbar.Collapse>
+        <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar.Brand href="/"><span className='brand-lg'>{extended ? titleLong : titleShort }</span><span className='brand-sm'>{titleShort}</span></Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <button onClick={handleSidebarToggle} type="button" aria-label="Toggle main navigation" className="side-menu-btn"><i className="fas fa-ellipsis-v fa-lg"></i></button>
+            <Navbar.Collapse id="basic-navbar-nav">{appMenu ? appMenu : null}</Navbar.Collapse>
         </Navbar>
     );
 }

@@ -138,6 +138,21 @@ p {
     margin-top: 5px;
 }
 
+.rstm-tree-item--focused {
+    z-index: 0!important;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    z-index: 99999!important;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.dropdown-item:hover {
+    background-color: #179ed3;
+    color: white;
+}
+
 .body-page {
     background-color: rgba(255, 255, 255, 0.5);
     height: calc(100vh - 70px);

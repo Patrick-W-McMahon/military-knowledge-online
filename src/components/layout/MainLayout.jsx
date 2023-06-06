@@ -48,13 +48,16 @@ const MainLayout = (props) => {
         ToggleSideMenu(!extendedSideBar);
     }
 
+    const navigationComponent = React.Children.toArray(children).find(child => child.type === MainLayout.Navigation);
+    const contentComponents = React.Children.toArray(children).filter(child => child.type !== MainLayout.Navigation);
+
     return (
         <Fragment>
-            <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} />
+            <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} />
             <div className="main-body">
                 <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
                 <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
-                    <div className={`main-content${nonScroll ? ' no-scroll' : null}`}>{children}</div>
+                    <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
                     <Footer><p>{footerText}</p></Footer>
                 </div>
             </div>
@@ -66,6 +69,8 @@ MainLayout.propTypes = {
     children: PropTypes.node.isRequired,
     activePos: PropTypes.number.isRequired
 }
+
+MainLayout.Navigation = ({ children }) => children;
 
 const mapStateToProps = (state, props) => {
     const { side_menu } = state.system;

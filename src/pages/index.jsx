@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { useStaticQuery, graphql } from "gatsby";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Nav, NavDropdown } from 'react-bootstrap';
 import TreeMenu from 'react-simple-tree-menu';
 import '../../node_modules/react-simple-tree-menu/dist/main.css';
 //import Layout from "../components/layout";
@@ -168,7 +168,8 @@ const IndexPage = (props) => {
         selectedFilterHash: workspaceLinks.selectedFilterHash,
         selectedTreeData: workspaceLinks.selectedTreeData,
         websiteInfoModal: false,
-        dataLoaded: false
+        dataLoaded: false,
+        contentPanelSelected: 0
     };
     const [state, setState] = useState(initalState);
     useEffect(() => {
@@ -185,7 +186,7 @@ const IndexPage = (props) => {
     }, [ workspaceLinks.selectedFilterHash ]);
     
     let branchHashes = [];
-    const { selectedFilterHash, selectedTreeData, websiteInfoModal } = state;
+    const { selectedFilterHash, selectedTreeData, websiteInfoModal, contentPanelSelected } = state;
     let selectedFilterData = null;
     for(let x=0;x<allLinkMenuData.nodes.length;x++) {
         if(allLinkMenuData.nodes[x].key === ALL_MILITARY_BRANCHS_HASH) {
@@ -215,6 +216,11 @@ const IndexPage = (props) => {
             }
         }
     }
+
+    const toggleContentPanel = () => {
+        const newState = contentPanelSelected ? 0 : 1;
+        setState({...state, contentPanelSelected: newState });
+    }
     
     const handleMenuItemToggled = (item) => {
         //console.log('handleMenuItemToggled: ', item);
@@ -235,6 +241,10 @@ const IndexPage = (props) => {
         await LoadFavLinks(allLinksData);
     }
 
+    const changeLinkView = (value) => {
+        console.log("changeLinkView", value);
+    }
+
     if(typeof workspaceLinks === 'undefined' || typeof workspaceLinks.linksList === 'undefined') {
         return (
             <MainLayout activePos={0} nonScroll>
@@ -251,13 +261,31 @@ const IndexPage = (props) => {
         console.log('activeLinks: ', activeLinks);
     }
     
+    const viewMenu = [
+        {title: "Large Card", value: "large_card"},
+        {title: "Medium Card", value: "medium_card"},
+        {title: "Small Card", value: "small_card"},
+        {title: "Large Icons", value: "large_icons"},
+        {title: "Medium Icons", value: "medium_icons"},
+        {title: "Small Icons", value: "small_icons"},
+        {title: "Detailed List", value: "detailed_list"},
+        {title: "Basic List", value: "basic_list"}
+    ];
     
     return (
         <Fragment>
             <MainLayout activePos={0} nonScroll>
+                <MainLayout.Navigation>
+                    <Nav className="me-auto">
+                        <NavDropdown title="View">
+                            {viewMenu.map(item => <NavDropdown.Item onClick={() => changeLinkView(item.value)}>{item.title}</NavDropdown.Item>)}
+                        </NavDropdown>
+                    </Nav>
+                </MainLayout.Navigation>
+                <button onClick={() => toggleContentPanel()} className="content-panel-toggle-btn"><i className="fas fa-exchange-alt"></i></button>
                 <Container fluid>
                     <Row>
-                        <Col md="2" className="page-menu">
+                        <Col md="2" className={`page-menu${contentPanelSelected===0 ? ' active' : ''}`}>
                             <TreeMenu   data={allLinkMenuData.nodes} 
                                         initialOpenNodes={selectedTreeData.openNodes} 
                                         focusKey={selectedTreeData.key} 
@@ -266,7 +294,7 @@ const IndexPage = (props) => {
                                         onToggle={handleMenuItemToggled}
                             />
                         </Col>
-                        <Col md="10" className="body-page">
+                        <Col md="10" className={`body-page${contentPanelSelected===1 ? ' active' : ''}`}>
                             {selectedTreeData?.action?.func === 'getAllBranches' ? (
                                 <div className="list-menu-items-grid">
                                     {allBranch.nodes.map((branch,index) => {
