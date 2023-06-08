@@ -2,20 +2,20 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { ActionToggleSideMenu, ActionGetSideMenuMode } from '../../state/reducers/mainLayoutReducer';
+import { ActionToggleSideMenu, ActionGetSideMenuMode, ActionToggleContentPanel, ActionGetContentPanel } from '../../state/reducers/mainLayoutReducer';
 import './MainLayout.css';
 import Header from './comp/Header';
 import Sidebar from './comp/Sidebar';
 import Footer from './comp/Footer';
 
 const MainLayout = (props) => {
-    console.log('props: ', props);
-    const { children, activePos, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended } = props;
+    const { children, activePos, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended, ToggleContentPanel, GetContentPanel } = props;
     const [extendedSideBar, setExtendedSidebar] = useState(false);
     useEffect(() => {
         async function fetchData() {
             await GetSideMenuMode();
             setExtendedSidebar(menuExtended);
+            GetContentPanel();
         } 
         fetchData();
     });
@@ -53,7 +53,7 @@ const MainLayout = (props) => {
 
     return (
         <Fragment>
-            <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} />
+            <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
             <div className="main-body">
                 <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
                 <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
@@ -79,7 +79,9 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => ({
     ToggleSideMenu: (mode) => ActionToggleSideMenu(dispatch, mode),
-    GetSideMenuMode: () => ActionGetSideMenuMode(dispatch)
+    GetSideMenuMode: () => ActionGetSideMenuMode(dispatch),
+    ToggleContentPanel: () => ActionToggleContentPanel(dispatch),
+    GetContentPanel: () => ActionGetContentPanel(dispatch)
 });
 
 

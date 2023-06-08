@@ -12,7 +12,6 @@ import MainLayout from "../components/layout/MainLayout";
 //import LinkList from "../components/linkList";
 //import CardGrid from "../components/CardGrid";
 import { getActiveLinks, filterFavLinks } from '../libs/common';
-
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
 import { Fragment } from "react";
 
@@ -163,7 +162,7 @@ const IndexPage = (props) => {
         }
     `);
     const {  allBranch, allLinkMenuData, allLinksData } = data;
-    const { SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks } = props;
+    const { SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks, selectedContentPanel } = props;
     const initalState = {
         selectedFilterHash: workspaceLinks.selectedFilterHash,
         selectedTreeData: workspaceLinks.selectedTreeData,
@@ -186,7 +185,7 @@ const IndexPage = (props) => {
     }, [ workspaceLinks.selectedFilterHash ]);
     
     let branchHashes = [];
-    const { selectedFilterHash, selectedTreeData, websiteInfoModal, contentPanelSelected } = state;
+    const { selectedFilterHash, selectedTreeData, websiteInfoModal } = state;
     let selectedFilterData = null;
     for(let x=0;x<allLinkMenuData.nodes.length;x++) {
         if(allLinkMenuData.nodes[x].key === ALL_MILITARY_BRANCHS_HASH) {
@@ -217,10 +216,11 @@ const IndexPage = (props) => {
         }
     }
 
+    /*
     const toggleContentPanel = () => {
         const newState = contentPanelSelected ? 0 : 1;
         setState({...state, contentPanelSelected: newState });
-    }
+    }*/
     
     const handleMenuItemToggled = (item) => {
         //console.log('handleMenuItemToggled: ', item);
@@ -252,13 +252,9 @@ const IndexPage = (props) => {
             </MainLayout>
         );
     }
-    console.log(allLinksData);
-    console.log(workspaceLinks.linksList)
     let activeLinks = getActiveLinks(workspaceLinks.linksList, selectedTreeData);
     if(selectedTreeData?.action?.func === 'getFavLinks') {
-        
         activeLinks = filterFavLinks(workspaceLinks.linksList)[0];
-        console.log('activeLinks: ', activeLinks);
     }
     
     const viewMenu = [
@@ -278,14 +274,13 @@ const IndexPage = (props) => {
                 <MainLayout.Navigation>
                     <Nav className="me-auto">
                         <NavDropdown title="View">
-                            {viewMenu.map(item => <NavDropdown.Item onClick={() => changeLinkView(item.value)}>{item.title}</NavDropdown.Item>)}
+                            {viewMenu.map((item, index) => <NavDropdown.Item key={index} onClick={() => changeLinkView(item.value)}>{item.title}</NavDropdown.Item>)}
                         </NavDropdown>
                     </Nav>
                 </MainLayout.Navigation>
-                <button onClick={() => toggleContentPanel()} className="content-panel-toggle-btn"><i className="fas fa-exchange-alt"></i></button>
                 <Container fluid>
                     <Row>
-                        <Col md="2" className={`page-menu${contentPanelSelected===0 ? ' active' : ''}`}>
+                        <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
                             <TreeMenu   data={allLinkMenuData.nodes} 
                                         initialOpenNodes={selectedTreeData.openNodes} 
                                         focusKey={selectedTreeData.key} 
@@ -294,7 +289,7 @@ const IndexPage = (props) => {
                                         onToggle={handleMenuItemToggled}
                             />
                         </Col>
-                        <Col md="10" className={`body-page${contentPanelSelected===1 ? ' active' : ''}`}>
+                        <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
                             {selectedTreeData?.action?.func === 'getAllBranches' ? (
                                 <div className="list-menu-items-grid">
                                     {allBranch.nodes.map((branch,index) => {
@@ -394,7 +389,7 @@ const IndexPage = (props) => {
 IndexPage.propTypes = {};
 
 const mapStateToProps = (state, props) => {
-    return { workspaceLinks: state.workspaceLinks };
+    return { workspaceLinks: state.workspaceLinks, menuExtended: state.system.side_menu, selectedContentPanel: state.system.selectedContentPanel };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
