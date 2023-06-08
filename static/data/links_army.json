@@ -1224,5 +1224,12 @@
         "description": "Language resources",
         "cardId": 155,
         "categories": ["education_civilian", "professional_development", "education_military"]
+    },
+    {
+        "title": "Army E-Learning Percipio",
+        "url": "https://usarmy.percipio.com/",
+        "description": "The new Army E-Learning percipio login page.",
+        "cardId": 31,
+        "categories": ["education_military"]
     }
 ]
