@@ -339,7 +339,7 @@ const IndexPage = (props) => {
                                             <Row className="justify-content-md-center text-center">
                                                 <Col xs={8} md={8}>
                                                     <div className="alert alert-info" role="alert">
-                                                        <span>no link data found</span> <i class="far fa-folder-open fa-lg"></i>
+                                                        <span>no link data found</span> <i className="far fa-folder-open fa-lg"></i>
                                                         {selectedTreeData?.action?.func === 'getFavLinks' ? (
                                                             <div>
                                                                 <hr/>
