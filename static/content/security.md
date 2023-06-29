@@ -24,7 +24,7 @@ This document outlines the security measures and data use policy of the MKO web 
 ## SKIF and Data Classification:
 1. The MKO web application follows all requirements to run in a Secure Knowledge and Information Fusion (SKIF) environment.
 
-2. The MKO web application is authorized for only unclassified data. No other classifications are authorized on MKO.
+2. The MKO web application is authorized for only unclassified data. Other classifications and PII are not authorized on MKO.
 
 ## Conclusion:
 At MKO, we prioritize the privacy and security of our users. The MKO web application employs local storage of user preferences, does not track user usage, and ensures the secure transmission of data. We maintain appropriate security measures to protect our servers and respond swiftly to any potential security incidents. By using the MKO web application, users agree to abide by this security and data use policy. If you have any questions or require further clarification, please contact our support team.
