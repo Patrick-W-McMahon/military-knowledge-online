@@ -69,7 +69,7 @@ const setupCategories = (categories, filter) => {
 const LinkSources = {
     air_force: LINKS_AIR_FORCE,
     army: LINKS_ARMY,
-    cost_guard: LINKS_COAST_GUARD,
+    coast_guard: LINKS_COAST_GUARD,
     marine_corps: LINKS_MARINE_CORPS,
     national_guard: LINKS_NATIONAL_GUARD,
     navy: LINKS_NAVY,
@@ -84,7 +84,7 @@ const setupFilters = (toplevel, categories, filter) => [
 let MilitaryBranchNodes = [
     { key: sha256('air_force'), label: 'Air Force', nodes: setupFilters('Air Force', [], 'air_force'), action: { obj: "links-action", func: "getAllLinks", val: sha256('air_force'), filter: 'air_force' } },
     { key: sha256('army'), label: 'Army', nodes: setupFilters('Army', CATEGORIES_ARMY, 'army'), action: { obj: "links-action", func: "getAllLinks", val: sha256('army'), filter: 'army' } },
-    { key: sha256('cost_guard'), label: 'Cost Guard', nodes: setupFilters('Cost Guard', [], 'cost_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('cost_guard'), filter: 'cost_guard' } },
+    { key: sha256('coast_guard'), label: 'Coast Guard', nodes: setupFilters('Coast Guard', [], 'coast_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('coast_guard'), filter: 'coast_guard' } },
     { key: sha256('marine_corps'), label: 'Marine Corps', nodes: setupFilters('Marine Corps', [], 'marine_corps'), action: { obj: "links-action", func: "getAllLinks", val: sha256('marine_corps'), filter: 'marine_corps' } },
     { key: sha256('national_guard'), label: 'National Guard', nodes: setupFilters('National Guard', [], 'national_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('national_guard'), filter: 'national_guard' } },
     { key: sha256('navy'), label: 'Navy', nodes: setupFilters('Navy', [], 'navy'), action: { obj: "links-action", func: "getAllLinks", val: sha256('navy'), filter: 'navy' } },
@@ -101,7 +101,7 @@ linksMenu = [
 const categoriesSources = {
     air_force: setupCategories([], 'air_force'),
     army: setupCategories(CATEGORIES_ARMY, 'army'),
-    cost_guard: setupCategories([], 'cost_gaurd'),
+    coast_guard: setupCategories([], 'coast_gaurd'),
     marine_corps: setupCategories([], 'marine_corps'),
     national_guard: setupCategories([], 'national_guard'),
     navy: setupCategories([], 'navy'),

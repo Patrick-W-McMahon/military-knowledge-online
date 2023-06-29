@@ -6,14 +6,15 @@ import TreeMenu from 'react-simple-tree-menu';
 import { sourtContentBySlug } from '../libs/system';
 
 const treeData = [
-    { key: 'about_mko', label: 'About MKO' },
+    //{ key: 'about_mko', label: 'About MKO' },
+    { key: 'security', label: 'Security & Data Use Policy' },
     //{ key: 'about_team', label: 'The Team' }
 ];
 
 const AboutPage = () => {
     const data = useStaticQuery(graphql`
         query {
-            allMarkdownRemark(filter: { fields: { slug: { regex: "/(about)/" }}}) {
+            allMarkdownRemark(filter: { fields: { slug: { regex: "/(about)||(security)/" }}}) {
                 mdNodes: nodes {
                   fields {
                     slug
@@ -32,8 +33,9 @@ const AboutPage = () => {
                         <TreeMenu data={treeData} />
                     </Col>
                     <Col md="10" className="body-page">
-                        <h1>About Military Knowledge Online</h1>
-                        <div dangerouslySetInnerHTML={{ __html: MdContent['/about'].html }}></div>
+                        {/*<h1>About Military Knowledge Online</h1>
+                        <div dangerouslySetInnerHTML={{ __html: MdContent['/about'].html }}></div>*/}
+                        <div className="page-content" dangerouslySetInnerHTML={{ __html: MdContent['/security'].html }}></div>
                     </Col>
                 </Row>
             </Container>
