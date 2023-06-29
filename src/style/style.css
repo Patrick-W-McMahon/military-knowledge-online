@@ -813,7 +813,9 @@ input:checked+.slider:before {
     z-index: 9;
 }
 
-.card-panel .mini-side-panel>i {
+.card-panel .mini-side-panel>i,
+.card-panel .mini-side-panel>a>i {
+    color: white;
     padding-bottom: 6px;
     display: block;
 }
@@ -822,7 +824,8 @@ input:checked+.slider:before {
     display: inline-block;
 }
 
-.card-panel .mini-side-panel>i:hover {
+.card-panel .mini-side-panel>i:hover,
+.card-panel .mini-side-panel>a>i:hover {
     color: yellow;
 }
 

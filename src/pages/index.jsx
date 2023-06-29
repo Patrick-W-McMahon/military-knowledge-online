@@ -44,9 +44,10 @@ const LinkCard = ({ card, showInfo, toggleFav, classProps }) => {
                 </div>
             </div>
             <div className="mini-side-panel">
-                <i onClick={() => toggleFav(hash)} role="link" aria-label={'link'} tabIndex={-1} onKeyDown={() => {}} className={`fa${fav?'s':'r'} fa-star fa-1x`}></i>
-                <i onClick={() => alert('Menlo Security option not setup yet.')} role="link" aria-label={'Menlo Security'} tabIndex={-1} onKeyDown={() => {}} className={`fas fa-lock${menlo?null:'-open'} fa-1x`}></i>
-                <i onClick={() => showInfo({ title, url, description, cardId })} role="link" aria-label={'info'} tabIndex={-1} onKeyDown={() => {}} className={`fas fa-info-circle fa-1x`}></i>
+                <i onClick={() => toggleFav(hash)} role="link" aria-label={'link'} title="Add/Remove Favorite" tabIndex={-1} onKeyDown={() => {}} className={`fa${fav?'s':'r'} fa-star fa-1x`}></i>
+                <i onClick={() => alert('Menlo Security option not setup yet.')} title="Open with Menlo Security" role="link" aria-label={'Menlo Security'} tabIndex={-1} onKeyDown={() => {}} className={`fas fa-lock${menlo?null:'-open'} fa-1x`}></i>
+                <i onClick={() => showInfo({ title, url, description, cardId })} title="Info Card" role="link" aria-label={'info'} tabIndex={-1} onKeyDown={() => {}} className={`fas fa-info-circle fa-1x`}></i>
+                <a href="https://github.com/Patrick-W-McMahon/military-knowledge-online/issues/new" target="_blank"><i title="Report Broken Link" role="link" aria-label={'broken link'} tabIndex={-1} onKeyDown={() => {}} className={`fas fa-unlink fa-1x`}></i></a>
             </div>
         </div>
     );
