@@ -28,7 +28,7 @@ const MainLayout = (props) => {
                     footerText
                 }
             }
-            allSidebarLink(sort: {fields: order}) {
+            allSidebarLink(sort: {order: ASC}) {
                 sidebarLinks: nodes {
                     url
                     text
