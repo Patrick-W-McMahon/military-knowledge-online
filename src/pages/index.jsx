@@ -7,10 +7,7 @@ import '../../node_modules/react-simple-tree-menu/dist/main.css';
 //import Layout from "../components/layout";
 import MainLayout from "../components/layout/MainLayout";
 //import Seo from "../components/seo";
-///import { Modal, Tabs, Tab, Container, Form } from 'react-bootstrap';
 //import { getEventMessage } from '../libs/common';
-//import LinkList from "../components/linkList";
-//import CardGrid from "../components/CardGrid";
 import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
 import { Fragment } from "react";
@@ -173,7 +170,7 @@ const IndexPage = (props) => {
     };
     const [state, setState] = useState(initalState);
     useEffect(() => {
-        async function fetchData() {
+        (async () => {//fetch data
             await GetSelectedFilter();
             await LoadFavLinks(allLinksData);
             const newState = {
@@ -181,8 +178,7 @@ const IndexPage = (props) => {
                 selectedTreeData: workspaceLinks.selectedTreeData
             };
             setState({...state, ...newState});
-        } 
-        fetchData();
+        })(); 
     }, [ workspaceLinks.selectedFilterHash ]);
     
     let branchHashes = [];
