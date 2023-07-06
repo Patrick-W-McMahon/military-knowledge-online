@@ -56,111 +56,111 @@ const LinkCard = ({ card, showInfo, toggleFav, classProps }) => {
 
 const IndexPage = (props) => {
     const data = useStaticQuery(graphql `
-        query MyQuery {
-            allLinksData(filter: {active: {eq: true}}) {
-                group(field: branch) {
-                    group: fieldValue
-                    links: nodes {
-                        title
-                        url
-                        description
-                        categories
-                        branch
-                        cardId
-                        id
-                        hash
-                        active
-                    }
-                    groupLinks: group(field: alphaChar) {
-                        totalCount
-                        fieldValue
-                        links: nodes {
-                            title
-                            url
-                            description
-                            categories
-                            cardId
-                            alphaChar
-                            id
-                            hash
-                            active
-                        }
-                    }
-                }
+    query MyQuery {
+        allLinksData(filter: {active: {eq: true}}) {
+          group(field: {branch: SELECT}) {
+            group: fieldValue
+            links: nodes {
+              title
+              url
+              description
+              categories
+              branch
+              cardId
+              id
+              hash
+              active
             }
-            allCategoriesData {
-                group(field: branch) {
-                    fieldValue
-                    categories: edges {
-                        node {
-                            action {
-                                func
-                                obj
-                                val
-                                filter
-                            }
-                            hash
-                            id
-                            label
-                            branch
-                        }
-                    }
-                }
+            groupLinks: group(field: {alphaChar: SELECT}) {
+              totalCount
+              fieldValue
+              links: nodes {
+                title
+                url
+                description
+                categories
+                cardId
+                alphaChar
+                id
+                hash
+                active
+              }
             }
-            allBranch {
-                nodes {
-                    name
-                    path
-                    seal
-                }
-            }
-            allCategoriesData {
-                group(field: branch) {
-                    fieldValue
-                    nodes {
-                        label
-                        hash
-                        action {
-                            func
-                            obj
-                            val
-                            filter
-                        }
-                    }
-                }
-            }
-            allLinkMenuData {
-                nodes {
-                    key
-                    label
-                    action {
-                        func
-                        obj
-                        val
-                    }
-                    nodes {
-                        key
-                        label
-                        action {
-                            func
-                            obj
-                            val
-                            filter
-                        }
-                        nodes {
-                            key
-                            label
-                            action {
-                                func
-                                obj
-                                val
-                                filter
-                            }
-                        }
-                    }
-                }
-            }
+          }
         }
+        allCategoriesData {
+          group(field: {branch: SELECT}) {
+            fieldValue
+            categories: edges {
+              node {
+                action {
+                  func
+                  obj
+                  val
+                  filter
+                }
+                hash
+                id
+                label
+                branch
+              }
+            }
+          }
+        }
+        allBranch {
+          nodes {
+            name
+            path
+            seal
+          }
+        }
+        allCategoriesData {
+          group(field: {branch: SELECT}) {
+            fieldValue
+            nodes {
+              label
+              hash
+              action {
+                func
+                obj
+                val
+                filter
+              }
+            }
+          }
+        }
+        allLinkMenuData {
+          nodes {
+            key
+            label
+            action {
+              func
+              obj
+              val
+            }
+            nodes {
+              key
+              label
+              action {
+                func
+                obj
+                val
+                filter
+              }
+              nodes {
+                key
+                label
+                action {
+                  func
+                  obj
+                  val
+                  filter
+                }
+              }
+            }
+          }
+        }
+      }
     `);
     const {  allBranch, allLinkMenuData, allLinksData } = data;
     const { SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks, selectedContentPanel } = props;
