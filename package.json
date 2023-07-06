@@ -4,6 +4,10 @@
     "description": "Military Knowledge Online website",
     "version": "0.1.0",
     "author": "Patrick W. McMahon <patrick.w.mcmahon@gmail.com>",
+    "engines" : { 
+        "npm" : ">=9.7.2",
+        "node" : ">=18.16.0"
+    },
     "dependencies": {
         "@reduxjs/toolkit": "^1.8.5",
         "ace-builds": "^1.23.1",
