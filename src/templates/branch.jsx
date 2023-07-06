@@ -1,3 +1,4 @@
+/*
 import React, { Fragment, useState } from "react";
 import { graphql } from "gatsby";
 import { Modal } from "react-bootstrap";
@@ -214,3 +215,4 @@ export const query = graphql`
 `
 
 export default Branch;
+*/
