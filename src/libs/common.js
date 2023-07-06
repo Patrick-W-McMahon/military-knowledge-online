@@ -23,9 +23,9 @@ export const getActiveLinks = (allLinksData, selectedTreeData) => {
     if (activeGroup === undefined) {
         return { group: null, groupLinks: [], links: [] }
     }
-    const { group, groupLinks, links } = activeGroup;
+    const { group, links } = activeGroup; //groupLinks,
     //console.table("links: ", links);
-    const activeGroupLinks = [];
+    //const activeGroupLinks = [];
     /*groupLinks.map(g => {
             const { fieldValue, links } = g;
             const activeLinks = links.filter(l => l.categories.some(s => selectedTreeData.action.val.includes(s)));
