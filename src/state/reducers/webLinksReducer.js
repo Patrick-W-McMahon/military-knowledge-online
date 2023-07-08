@@ -50,6 +50,10 @@ export const ActionGetSelectedFilter = (dispatch) => {// TODO: update this to us
 
 export const ActionLoadFavoriteLinks = (dispatch, linksList) => {
     //const dataStore = LocalStore.getItem(DATASTORE.FAVORITE_LINKS);
+    if(linksList === undefined) {
+        console.error('Error: in ActionLoadFavoriteLinks linksList undefined');
+        return;
+    }
     let dataStore = [];
     if(typeof window !== `undefined`) {
         dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.FAVORITE_LINKS));
