@@ -919,3 +919,27 @@ input:checked+.slider:before {
     padding: 4px 5px 4px 20px!important;
 
 }
+
+.sidemenu-section {
+    margin: 15px 5px 15px 5px;
+    padding: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
+
+.sidemenu-section.h100 > div { max-height: 100px; }
+.sidemenu-section.h200 > div { max-height: 200px; }
+.sidemenu-section.h250 > div { max-height: 250px; }
+.sidemenu-section.h300 > div { max-height: 300px; }
+.sidemenu-section.h400 > div { max-height: 400px; }
+.sidemenu-section.h500 > div { max-height: 500px; }
+
+.sidemenu-section h2 {
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 0;
+    padding: 5px 15px 5px 15px;
+}
+
+.sidemenu-section > div {
+    padding: 8px;
+    overflow-y: scroll;
+}
