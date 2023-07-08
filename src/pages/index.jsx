@@ -12,10 +12,6 @@ import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
 import { Fragment } from "react";
 
-const ALL_MILITARY_BRANCHS_HASH = 'bc20a19c5afac1c28b8190edb90850c84365b9831effcc3039b9dec9c9909995';
-//const ALL_CIVILIAN_HASH = '748f556ff0b046ce31fa364eae4c0b80930f71750431b6722b145f3629f3ff54';
-//const USER_FAVORITES_HASH = 'f42d0f9e4b0ec07df97f58277cd5e5ae2cde973c0bf96ae598827e4da1c3bad1';
-
 const CardGrid = ({ cards, showInfo, toggleFav, classProps }) => (
     <Fragment>
         {cards.length && cards.map((card, index) => (
@@ -51,9 +47,12 @@ const LinkCard = ({ card, showInfo, toggleFav, classProps }) => {
 };
 
 
-const IndexPage = (props) => {
-    const data = useStaticQuery(graphql `
+const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks, selectedContentPanel, ToggleFavLinks }) => {
+    const {  allBranch, allLinkMenuData, allLinksData, ALL_MILITARY_BRANCHS } = useStaticQuery(graphql `
     query MyQuery {
+        ALL_MILITARY_BRANCHS: allLinkMenuData( filter: {label: {eq: "Military"}}) {
+            hash: distinct(field: {hash: SELECT})
+        }
         allLinksData(filter: {active: {eq: true}}) {
           group(field: {branch: SELECT}) {
             group: fieldValue
@@ -159,8 +158,7 @@ const IndexPage = (props) => {
         }
       }
     `);
-    const {  allBranch, allLinkMenuData, allLinksData } = data;
-    const { SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks, selectedContentPanel } = props;
+
     const initalState = {
         selectedFilterHash: workspaceLinks.selectedFilterHash,
         selectedTreeData: workspaceLinks.selectedTreeData,
@@ -184,43 +182,54 @@ const IndexPage = (props) => {
     let branchHashes = [];
     const { selectedFilterHash, selectedTreeData, websiteInfoModal } = state;
     let selectedFilterData = null;
-    for(let x=0;x<allLinkMenuData.nodes.length;x++) {
-        if(allLinkMenuData.nodes[x].key === ALL_MILITARY_BRANCHS_HASH) {
-            allLinkMenuData.nodes[x].nodes.forEach(n => {
-                branchHashes.push({
-                    hash: n.key,
-                    label: n.label
+    if(allLinkMenuData !== undefined && allLinkMenuData?.nodes !== undefined) {
+        for(let x=0;x<allLinkMenuData.nodes.length;x++) {
+            if(allLinkMenuData.nodes[x].key === ALL_MILITARY_BRANCHS.hash) {
+                allLinkMenuData.nodes[x].nodes.forEach(n => {
+                    branchHashes.push({
+                        hash: n.key,
+                        label: n.label
+                    });
                 });
-            });
-        }
-        if(allLinkMenuData.nodes[x].key === selectedFilterHash) {
-            selectedFilterData= allLinkMenuData[x];
-            break;
-        } else {
-            for(let y=0;y<allLinkMenuData.nodes[x].nodes.length;y++) {
-                if(allLinkMenuData.nodes[x].nodes[y].key === selectedFilterHash) {
-                    selectedFilterData= allLinkMenuData.nodes[x].nodes[y];
-                    break;
-                } else {
-                    for(let z=0;z<allLinkMenuData.nodes[x].nodes[y].nodes.length;z++) {
-                        if(allLinkMenuData.nodes[x].nodes[y].nodes[z].key === selectedFilterHash) {
-                            selectedFilterData= allLinkMenuData.nodes[x].nodes[y].nodes[z];
-                            break;
+            }
+            if(allLinkMenuData.nodes[x].key === selectedFilterHash) {
+                selectedFilterData= allLinkMenuData[x];
+                break;
+            } else {
+                for(let y=0;y<allLinkMenuData.nodes[x].nodes.length;y++) {
+                    if(allLinkMenuData.nodes[x].nodes[y].key === selectedFilterHash) {
+                        selectedFilterData= allLinkMenuData.nodes[x].nodes[y];
+                        break;
+                    } else {
+                        for(let z=0;z<allLinkMenuData.nodes[x].nodes[y].nodes.length;z++) {
+                            if(allLinkMenuData.nodes[x].nodes[y].nodes[z].key === selectedFilterHash) {
+                                selectedFilterData= allLinkMenuData.nodes[x].nodes[y].nodes[z];
+                                break;
+                            }
                         }
                     }
                 }
             }
         }
+    } else {
+        console.error('Error: in allLinkMenuData is undefined', allLinkMenuData);
+        return (
+            <MainLayout activePos={0} nonScroll>
+                <div className="alert alert-info" role="alert">Something went wrong with data request. please standby attempting to fix.</div>
+            </MainLayout>
+        );
     }
 
-    /*
-    const toggleContentPanel = () => {
-        const newState = contentPanelSelected ? 0 : 1;
-        setState({...state, contentPanelSelected: newState });
-    }*/
+    if(typeof workspaceLinks === 'undefined' || typeof workspaceLinks.linksList === 'undefined') {
+        return (
+            <MainLayout activePos={0} nonScroll>
+                <div className="alert alert-info" role="alert">Loading Page</div>
+            </MainLayout>
+        );
+    }
     
     const handleMenuItemToggled = (item) => {
-        //console.log('handleMenuItemToggled: ', item);
+        console.log('handleMenuItemToggled: ', item);
     }
 
     const handleMenuItemSelected = (item) => {
@@ -233,7 +242,6 @@ const IndexPage = (props) => {
     }
 
     const handleToggleFavLink = async(event) => {
-        const { ToggleFavLinks } = props;
         ToggleFavLinks(event, allLinksData);
         await LoadFavLinks(allLinksData);
     }
@@ -242,13 +250,6 @@ const IndexPage = (props) => {
         console.log("changeLinkView", value);
     }
 
-    if(typeof workspaceLinks === 'undefined' || typeof workspaceLinks.linksList === 'undefined') {
-        return (
-            <MainLayout activePos={0} nonScroll>
-                <div className="alert alert-info" role="alert">Loading Page</div>
-            </MainLayout>
-        );
-    }
     let activeLinks = getActiveLinks(workspaceLinks.linksList, selectedTreeData);
     if(selectedTreeData?.action?.func === 'getFavLinks') {
         activeLinks = filterFavLinks(workspaceLinks.linksList)[0];
@@ -293,9 +294,9 @@ const IndexPage = (props) => {
                                         return (
                                             <div key={index} tabIndex={index} role="button" onKeyDown={() => {}} onClick={() => handleMenuItemSelected({
                                                 index: 1, 
-                                                parent: ALL_MILITARY_BRANCHS_HASH, 
-                                                key: `${ALL_MILITARY_BRANCHS_HASH}/${branchHashes[index].hash}`,
-                                                openNodes: [ALL_MILITARY_BRANCHS_HASH],
+                                                parent: ALL_MILITARY_BRANCHS.hash, 
+                                                key: `${ALL_MILITARY_BRANCHS.hash}/${branchHashes[index].hash}`,
+                                                openNodes: [ALL_MILITARY_BRANCHS.hash],
                                                 searchTerm: '',
                                                 action:{
                                                     func:'getAllLinks',
@@ -390,8 +391,6 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    //const staticQuerys = Object.keys(ownProps.pageResources.staticQueryResults);
-    //const { allLinksData } = ownProps.pageResources.staticQueryResults[staticQuerys[0]].data;
     return ({
         SetSelectedFilter: (filter) => ActionSetSelectedFilter(dispatch, filter),
         GetSelectedFilter: () => ActionGetSelectedFilter(dispatch),
@@ -401,60 +400,3 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
-
-/*const toggleFavLink = (id) => {
-        const { toggleFavLink, branch, workspace } = this.props;
-        const { linksList } = workspace;
-        saveFavData(branch, linksList, id);
-        toggleFavLink(branch, linksList, id);
-    }*/
-
-/*
-    if(selectedFilterHash !== 'all_branches' && selectedFilterHash !== 'favorites') {
-        for(let x=0;x<allCategoriesData.group.length;x++) {
-            const { nodes } = allCategoriesData.group[x];
-            for(let y=0;y<nodes.length;y++) {
-                if(nodes[y].hash === selectedFilterHash) {
-                    selectedFilterData=nodes[y];
-                }
-            }
-        }
-    } else if(selectedFilterHash === 'favorites') {
-        selectedFilterData = allCategoriesData.group[0].nodes[0];
-    }*/
-
-/*
-<CardGrid cards={activeLinks.links} showInfo={false} editMode={false} toggleFav={false} classProps=""/>
-: selectedTreeData?.action?.func === 'getFavLinks' ? (
-                            <div>
-                                <div>Favorites</div>
-                                <div>Event Data: {JSON.stringify(selectedTreeData)}</div>
-                                <br/>
-                                <div>Selected Filter: {selectedFilterHash.toString()}</div>
-                                <div>data: {JSON.stringify(selectedFilterData)}</div>
-                                <div>
-                                    <div>Label: {selectedTreeData?.label}</div>
-                                    <div>hash: {selectedTreeData?.key}</div>
-                                    <div>action func: {selectedTreeData?.action?.func}</div>
-                                    <div>action obj: {selectedTreeData?.action?.obj}</div>
-                                    <div>action val: {selectedTreeData?.action?.val}</div>
-                                </div>
-                            </div>
-                        ) : (
-                            <div>
-                                <div>filter</div>
-                                <div>Event Data: {JSON.stringify(selectedTreeData)}</div>
-                                <br/>
-                                <div>Selected Filter: {selectedFilterHash.toString()}</div>
-                                <div>data: {JSON.stringify(selectedFilterData)}</div>
-                                <div>
-                                    <div>Label: {selectedTreeData?.label}</div>
-                                    <div>hash: {selectedTreeData?.key}</div>
-                                    <div>action func: {selectedTreeData?.action?.func}</div>
-                                    <div>action obj: {selectedTreeData?.action?.obj}</div>
-                                    <div>action val: {selectedTreeData?.action?.val}</div>
-                                    <div>action filter: {selectedTreeData?.action?.filter}</div>
-                                </div>
-                            </div>
-
-*/
