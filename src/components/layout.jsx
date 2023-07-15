@@ -1,15 +1,16 @@
-import React, { Fragment } from "react";
+//import React, { Fragment } from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
+//import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "./header";
-import Footer from "./footer";
+//import Header from "./header";
+//import Footer from "./footer";
 import '../style/bootstrap.min.css';
 import '../style/fontawesome-free-5.15.4-web/css/all.min.css';
 import './layout.css';
 import '../style/style.css';
 
 const Layout = ({ children }) => {
+  /*
     const data = useStaticQuery(graphql `
       query {
         site {
@@ -37,6 +38,7 @@ const Layout = ({ children }) => {
         </div>
       </Fragment>
     );
+    */
 }
 
 Layout.propTypes = {

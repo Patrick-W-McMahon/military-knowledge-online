@@ -12,6 +12,13 @@ import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
 import { Fragment } from "react";
 
+const branchesFlattener = (all_military_branches_obj) => {
+    return {
+        hash: all_military_branches_obj.hash[0],
+        branches: all_military_branches_obj.branches[0].nodes
+    }
+}
+
 const CardGrid = ({ cards, showInfo, toggleFav, classProps }) => (
     <Fragment>
         {cards.length && cards.map((card, index) => (
@@ -48,11 +55,8 @@ const LinkCard = ({ card, showInfo, toggleFav, classProps }) => {
 
 
 const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspaceLinks, selectedContentPanel, ToggleFavLinks }) => {
-    const {  allBranch, allLinkMenuData, allLinksData, ALL_MILITARY_BRANCHS } = useStaticQuery(graphql `
+    const { allLinkMenuData, allLinksData, ALL_MILITARY_BRANCHS: ALL_MILITARY_BRANCHS_SOURCE } = useStaticQuery(graphql `
     query MyQuery {
-        ALL_MILITARY_BRANCHS: allLinkMenuData( filter: {label: {eq: "Military"}}) {
-            hash: distinct(field: {hash: SELECT})
-        }
         allLinksData(filter: {active: {eq: true}}) {
           group(field: {branch: SELECT}) {
             group: fieldValue
@@ -103,31 +107,22 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
             }
           }
         }
-        allBranch {
-          nodes {
-            name
-            path
-            seal
-          }
-        }
-        allCategoriesData {
-          group(field: {branch: SELECT}) {
-            fieldValue
-            nodes {
-              label
-              hash
-              action {
-                func
-                obj
-                val
-                filter
-              }
+        ALL_MILITARY_BRANCHS: allLinkMenuData( filter: {label: {eq: "Military"}}) {
+            hash: distinct(field: {hash: SELECT})
+            branches: nodes {
+                nodes {
+                    label
+                    seal
+                    hash
+                    action {
+                        filter
+                    }
+                }
             }
-          }
         }
         allLinkMenuData {
           nodes {
-            key
+            key: hash
             label
             action {
               func
@@ -135,29 +130,30 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
               val
             }
             nodes {
-              key
-              label
-              action {
-                func
-                obj
-                val
-                filter
-              }
-              nodes {
-                key
+                key: hash
                 label
                 action {
-                  func
-                  obj
-                  val
-                  filter
+                    func
+                    obj
+                    val
+                    filter
                 }
-              }
+                nodes {
+                    key: hash
+                    label
+                    action {
+                        func
+                        obj
+                        val
+                        filter
+                    }
+                }
             }
           }
         }
       }
     `);
+    const ALL_MILITARY_BRANCHS = branchesFlattener(ALL_MILITARY_BRANCHS_SOURCE);
 
     const initalState = {
         selectedFilterHash: workspaceLinks.selectedFilterHash,
@@ -179,30 +175,21 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
         })(); 
     }, [ workspaceLinks.selectedFilterHash ]);
     
-    let branchHashes = [];
     const { selectedFilterHash, selectedTreeData, websiteInfoModal } = state;
     let selectedFilterData = null;
     if(allLinkMenuData !== undefined && allLinkMenuData?.nodes !== undefined) {
         for(let x=0;x<allLinkMenuData.nodes.length;x++) {
-            if(allLinkMenuData.nodes[x].key === ALL_MILITARY_BRANCHS.hash) {
-                allLinkMenuData.nodes[x].nodes.forEach(n => {
-                    branchHashes.push({
-                        hash: n.key,
-                        label: n.label
-                    });
-                });
-            }
-            if(allLinkMenuData.nodes[x].key === selectedFilterHash) {
+            if(allLinkMenuData.nodes[x].hash === selectedFilterHash) {
                 selectedFilterData= allLinkMenuData[x];
                 break;
             } else {
                 for(let y=0;y<allLinkMenuData.nodes[x].nodes.length;y++) {
-                    if(allLinkMenuData.nodes[x].nodes[y].key === selectedFilterHash) {
+                    if(allLinkMenuData.nodes[x].nodes[y].hash === selectedFilterHash) {
                         selectedFilterData= allLinkMenuData.nodes[x].nodes[y];
                         break;
                     } else {
                         for(let z=0;z<allLinkMenuData.nodes[x].nodes[y].nodes.length;z++) {
-                            if(allLinkMenuData.nodes[x].nodes[y].nodes[z].key === selectedFilterHash) {
+                            if(allLinkMenuData.nodes[x].nodes[y].nodes[z].hash === selectedFilterHash) {
                                 selectedFilterData= allLinkMenuData.nodes[x].nodes[y].nodes[z];
                                 break;
                             }
@@ -281,8 +268,8 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
                         <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
                             <TreeMenu   data={allLinkMenuData.nodes} 
                                         initialOpenNodes={selectedTreeData.openNodes} 
-                                        focusKey={selectedTreeData.key} 
-                                        activeKey={selectedTreeData.key} 
+                                        focusKey={selectedTreeData.hash} 
+                                        activeKey={selectedTreeData.hash} 
                                         onClickItem={handleMenuItemSelected} 
                                         onToggle={handleMenuItemToggled}
                             />
@@ -290,26 +277,28 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
                         <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
                             {selectedTreeData?.action?.func === 'getAllBranches' ? (
                                 <div className="list-menu-items-grid">
-                                    {allBranch.nodes.map((branch,index) => {
+                                    {ALL_MILITARY_BRANCHS.branches.map((branch,index) => {
+                                        const { label, seal, hash, action } = branch;
+                                        const { filter } = action;
                                         return (
                                             <div key={index} tabIndex={index} role="button" onKeyDown={() => {}} onClick={() => handleMenuItemSelected({
                                                 index: 1, 
                                                 parent: ALL_MILITARY_BRANCHS.hash, 
-                                                key: `${ALL_MILITARY_BRANCHS.hash}/${branchHashes[index].hash}`,
+                                                key: `${ALL_MILITARY_BRANCHS.hash}/${hash}`,
                                                 openNodes: [ALL_MILITARY_BRANCHS.hash],
                                                 searchTerm: '',
                                                 action:{
                                                     func:'getAllLinks',
                                                     obj:'links-action',
-                                                    val: branchHashes[index].hash,
-                                                    filter: branch.path
+                                                    val: hash,
+                                                    filter
                                                 },
-                                                label: branch.name,
+                                                label,
                                                 hasNodes:true,
                                                 isOpen:false
                                             })}>
-                                                <img src={`/img/insignia/128/${branch.seal}`} alt={branch.name} />
-                                                <span>{branch.name}</span>
+                                                <img src={`/img/insignia/128/${seal}`} alt={label} />
+                                                <span>{label}</span>
                                             </div>
                                         );
                                     })}

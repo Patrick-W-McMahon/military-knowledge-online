@@ -19,11 +19,23 @@ const LINKS_SPACE_FORCE = require('./static/data/links_space_force.json');
 
 const CATEGORIES_ARMY = require('./static/data/categories_army.json');
 
+const ARMY_DOCUMENTS = require('./static/data/documents/army_documents.json');
+
 const APP_FORMS = require('./static/data/app_forms.json');
 
 let links = [];
 let categories = [];
 let linksMenu = [];
+
+function getFileExtension(str) {
+    var regex = /\.[^.\\/:*?"<>|\r\n]+$/;  // Regular expression for file extension
+    var match = regex.exec(str);  // Execute the regex on the string
+    if (match !== null) {
+      return match[0].substring(1); // Return the matched file extension
+    } else {
+      return null; // No file extension found
+    }
+}
 
 async function getDirectories(path) {
     let filesAndDirectories = await fse.readdir(path);
@@ -76,12 +88,27 @@ const LinkSources = {
     space_force: LINKS_SPACE_FORCE
 };
 
+const categories_sources = {
+    air_force: [],
+    army: CATEGORIES_ARMY,
+    coast_guard: [],
+    marine_corps: [],
+    national_guard: [],
+    navy: [],
+    space_force: []
+}
+
 const setupFilters = (toplevel, categories, filter) => [
-    { key: sha256(`${toplevel}_quick_links`), label: `${toplevel} Quick Links`, action: { obj: "links-action", func: "getLinksByTags", val: ["quick_links"], filter } },
-    ...categories.map(l => ({ key: sha256(JSON.stringify(l)), label: l.label, action: {...l.action, filter } }))
+    { hash: sha256(`${toplevel}_quick_links`), label: `${toplevel} Quick Links`, action: { obj: "links-action", func: "getLinksByTags", val: ["quick_links"], filter } },
+    ...categories.map(l => ({ hash: sha256(JSON.stringify(l)), label: l.label, action: {...l.action, filter } }))
 ];
 
-let MilitaryBranchNodes = [
+let MilitaryBranchNodes = BRANCH_DATA.map(branch => {
+    const { name, seal, path } = branch;
+    return { hash: sha256(path), label: name, seal, nodes: setupFilters(name, categories_sources[path], path), action: { obj: "links-action", func: "getAllLinks", val: sha256(path), filter: path } };
+});
+
+/*let MilitaryBranchNodes = [
     { key: sha256('air_force'), label: 'Air Force', nodes: setupFilters('Air Force', [], 'air_force'), action: { obj: "links-action", func: "getAllLinks", val: sha256('air_force'), filter: 'air_force' } },
     { key: sha256('army'), label: 'Army', nodes: setupFilters('Army', CATEGORIES_ARMY, 'army'), action: { obj: "links-action", func: "getAllLinks", val: sha256('army'), filter: 'army' } },
     { key: sha256('coast_guard'), label: 'Coast Guard', nodes: setupFilters('Coast Guard', [], 'coast_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('coast_guard'), filter: 'coast_guard' } },
@@ -89,13 +116,13 @@ let MilitaryBranchNodes = [
     { key: sha256('national_guard'), label: 'National Guard', nodes: setupFilters('National Guard', [], 'national_guard'), action: { obj: "links-action", func: "getAllLinks", val: sha256('national_guard'), filter: 'national_guard' } },
     { key: sha256('navy'), label: 'Navy', nodes: setupFilters('Navy', [], 'navy'), action: { obj: "links-action", func: "getAllLinks", val: sha256('navy'), filter: 'navy' } },
     { key: sha256('space_force'), label: 'Space Force', nodes: setupFilters('Space Force', [], 'space_force'), action: { obj: "links-action", func: "getAllLinks", val: sha256('space_force'), filter: 'space_force' } },
-];
+];*/
 
 
 linksMenu = [
-    { key: sha256('favorites'), label: 'Favorites', action: { obj: "profile-action", func: "getFavLinks", val: '' } },
-    { key: sha256('all_branches'), label: 'Military', nodes: MilitaryBranchNodes, action: { obj: "links-action", func: "getAllBranches", val: '' } },
-    { key: sha256('civilian'), label: 'Civilian', nodes: [], action: { obj: "links-action", func: "getAllCivilian", val: '' } }
+    { hash: sha256('favorites'), label: 'Favorites', action: { obj: "profile-action", func: "getFavLinks", val: '' } },
+    { hash: sha256('all_branches'), label: 'Military', nodes: MilitaryBranchNodes, action: { obj: "links-action", func: "getAllBranches", val: '' } },
+    { hash: sha256('civilian'), label: 'Civilian', nodes: [], action: { obj: "links-action", func: "getAllCivilian", val: '' } }
 ];
 
 const categoriesSources = {
@@ -120,6 +147,7 @@ links = links.map(link => {
 
 const LINKS_DATA = links;
 const CATEGORIES_DATA = categories;
+
 
 /*
 module.exports.onCreateNode = ({ node, actions }) => {
@@ -207,19 +235,92 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
         });
     };
     */
-    dataArrSetup(BRANCH_DATA, 'branches', 'branch');
+
+    //dataArrSetup(BRANCH_DATA, 'branches', 'branch');
     dataArrSetup(LINKS_DATA, 'links_data', 'links_data');
     dataArrSetup(CATEGORIES_DATA, 'categories_data', 'categories_data');
 
-    linksMenu.forEach(async(linksMenuData, index) => {
+    ARMY_DOCUMENTS.forEach(async(doc, index) => {
+        let docType = null;
+        let fileType = '';
+        let docError = false;
+        let errorMsg = '';
+        switch(doc.pdfLink.substring(0, 4)) {
+            case 'http':
+                docType = 'document-link';
+                const fileExt = getFileExtension(doc.pdfLink);
+                switch(fileExt) {
+                    case 'pdf':
+                        fileType = fileExt.toUpperCase();
+                    break;
+                    default:
+                        fileType = 'unknown';
+                    break;
+                }
+            break;
+            case 'CERT':
+            case 'CCER':
+            case 'EGA':
+            case 'CD':
+            case 'BKST':
+            case 'PDST':
+            case 'CTN':
+            case 'PK10':
+            case 'CS':
+            case 'EN':
+            case 'TGST':
+            case 'CSST':
+            case 'TCBX':
+            case 'CDWF':
+            case 'CSTG':
+            case 'EFIL':
+            case 'BKL':
+            case 'SG':
+            case 'FL':
+            case 'CSFL':
+            case 'BK':
+            case 'CSCT':
+            case 'TG':
+            case 'ENFL':
+            case 'CARD':
+                docType = doc.pdfLink;
+            break;
+            default:
+                docError = true;
+                errorMsg = 'unknown document';
+                docType=doc.pdfLink === "" ? 'missing' : doc.pdfLink;
+            break;
+        }
+        let document = docError ? {...doc, pdfLink: null} : doc;
         createNode({
-            hash: sha256(JSON.stringify(`${linksMenuData}`)),
-            ...linksMenuData,
-            id: `${linksMenuData}-${index}`,
-            nodes: linksMenuData.nodes ? [...linksMenuData.nodes] : [],
+            hash: sha256(JSON.stringify(document)),
+            ...document,
+            nav: 'military/army',
+            id: `document-army-${index}`,
+            type: docType,
+            fileType,
+            docError: {
+                error: docError,
+                message: errorMsg
+            },
+            internal: {
+                type: 'document',
+                contentDigest: createContentDigest(document)
+            }
+        });
+    });
+
+
+    linksMenu.forEach(async(data, index) => {
+        createNode({
+            index,
+            hash: sha256(JSON.stringify(data)),
+            ...data,
+            id: `${sha256(JSON.stringify(data))}-${index}`,
+            nodes: data.nodes ? [...data.nodes] : [],
             internal: {
                 type: 'linkMenuData',
-                contentDigest: createContentDigest(linksMenuData)
+                contentDigest: createContentDigest(data)
             }
         });
     });

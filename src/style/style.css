@@ -159,6 +159,23 @@ p {
     padding: 3px;
 }
 
+.body-page > table {
+    display: block;
+    width: 96%;
+    margin: 3px;
+}
+
+.icon-link {
+    color: black;
+    text-align: center;
+    display: block;
+}
+
+td:hover > .icon-link {
+    color: white;
+    background-color: black;
+}
+
 .page-menu {
     background-color: rgba(0, 0, 0, 0.5);
     color: white!important;
@@ -934,9 +951,35 @@ input:checked+.slider:before {
 .sidemenu-section.h500 > div { max-height: 500px; }
 
 .sidemenu-section h2 {
-    background-color: rgba(255, 255, 255, 0.25);
     margin: 0;
     padding: 5px 15px 5px 15px;
+}
+
+.sidemenu-section h2,
+.sidemenu-section .accordion-header {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-weight: 900;
+}
+
+.sidemenu-section .accordion-header:hover,
+.sidemenu-section .accordion-header button {
+    cursor: pointer;
+}
+
+.sidemenu-section .accordion-header button {
+    background-color: transparent;
+    border: 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    color: white;
+    font-weight: 400;
+}
+
+.sidemenu-section .accordion-header button:focus {
+    outline: none;
 }
 
 .sidemenu-section > div {
