@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { connect } from "react-redux";
 import { useStaticQuery, graphql } from "gatsby";
 import { Container, Row, Col, Nav, NavDropdown } from 'react-bootstrap';
@@ -10,7 +10,6 @@ import MainLayout from "../components/layout/MainLayout";
 //import { getEventMessage } from '../libs/common';
 import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
-import { Fragment } from "react";
 
 const branchesFlattener = (all_military_branches_obj) => {
     return {
