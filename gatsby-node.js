@@ -21,7 +21,7 @@ const CATEGORIES_ARMY = require('./static/data/categories_army.json');
 
 const ARMY_DOCUMENTS = require('./static/data/documents/army_documents.json');
 
-const APP_FORMS = require('./static/data/app_forms.json');
+const FORMS_LIST = require('./static/data/forms_list.json');
 
 let links = [];
 let categories = [];
@@ -179,7 +179,7 @@ exports.createPages = async({ actions }) => {
             context: { branch: branch.path }
         });
     });
-    APP_FORMS.forEach(form => {
+    FORMS_LIST.forEach(form => {
         createPage({
             path: `/forms/${form.path}`,
             component: require.resolve("./src/templates/forms.jsx"),
@@ -345,6 +345,21 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
             internal: {
                 type: 'application',
                 contentDigest: createContentDigest(config)
+            }
+        });
+    });
+
+    FORMS_LIST.forEach(async(formItem, index) => {
+        if(formItem.type === 'internal') {
+            return;
+        }
+        createNode({
+            hash: sha256(JSON.stringify(`${formItem} - ${index}`)),
+            ...formItem,
+            id: `form-item-${index}`,
+            internal: {
+                type: 'formItems',
+                contentDigest: createContentDigest(formItem)
             }
         });
     });

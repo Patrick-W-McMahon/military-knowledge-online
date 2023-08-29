@@ -1,0 +1,16 @@
+[
+    {
+        "title": "Udemy (digitalu)",
+        "url": "https://digitalu.udemy.com/",
+        "description": "Udemy is a platform where you can learn and teach online. It has courses on many topics and languages, and you can study at your own pace. Udemy helps you gain new skills or improve your existing ones.",
+        "cardId": 156,
+        "categories": ["online_education"]
+    },
+    {
+        "title": "Brilliant",
+        "url": "https://brilliant.org/",
+        "description": "Brilliant.org is a website that offers interactive learning and problem-solving in math, science, and computer science. You can explore various topics, practice your skills, and challenge yourself with fun puzzles. Brilliant.org aims to inspire and educate people of all ages and backgrounds to enjoy learning and discover new ways of thinking.",
+        "cardId": 157,
+        "categories": ["online_education"]
+    }
+]
