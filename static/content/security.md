@@ -21,8 +21,8 @@ This document outlines the security measures and data use policy of the MKO web 
 
 3. **Data Breach Reporting:** MKO is committed to promptly reporting any data breaches or unauthorized access incidents to the relevant authorities. We will also inform the brigade of the source of the breach, enabling appropriate actions to be taken.
 
-## SKIF and Data Classification:
-1. The MKO web application follows all requirements to run in a Secure Knowledge and Information Fusion (SKIF) environment.
+## SCIF and Data Classification:
+1. The MKO web application follows all requirements to run in a Sensitive Compartmented Information Facility (SCIF) environment.
 
 2. The MKO web application is authorized for only unclassified data. Other classifications and PII are not authorized on MKO.
 
