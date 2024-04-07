@@ -398,7 +398,7 @@ td:hover>.icon-link {
 
 .appIcon {
     width: auto;
-    height: 140px;
+    height: auto;
     font-size: 0.85em;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.35);
@@ -414,10 +414,9 @@ td:hover>.icon-link {
 
 .appIcon img {
     display: block;
-    width: auto;
+    width: 100%;
     min-height: 64px;
     height: auto;
-    max-height: 128px;
     padding: 8px 8px;
     border-bottom: 1px solid lightgray;
     background-color: white;
