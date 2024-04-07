@@ -1,4 +1,5 @@
 {
     "app_name": "Day Planner",
-    "app_icon": "day_planner"
+    "app_icon": "day_planner",
+    "active": false
 }

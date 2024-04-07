@@ -148,6 +148,30 @@ links = links.map(link => {
 const LINKS_DATA = links;
 const CATEGORIES_DATA = categories;
 
+const getApplicationData = async() => {
+    const appDir = await getDirectories('./src/applications/');
+    let applications = [];
+    appDir.forEach(async(appDir, index) => {
+        const templatePath = `./src/applications/${appDir}/index.jsx`;
+        const appURI = `/apps/${appDir}`;
+        const appRootPath = `./src/applications/${appDir}`;
+        const configFileName = 'info.json';
+        const config = await fs.readFileSync(`${appRootPath}/${configFileName}`);
+
+        applications.push({
+            hash: sha256(JSON.stringify(`${appDir}-${config}`)),
+            config,
+            appDir,
+            appURI,
+            appRootPath,
+            configFileName,
+            id: `${appDir}-${index}`,
+            templatePath
+        });
+    });
+    return applications;
+}
+
 
 /*
 module.exports.onCreateNode = ({ node, actions }) => {
@@ -162,9 +186,10 @@ module.exports.onCreateNode = ({ node, actions }) => {
     }
 };
 */
-/*  //TODO: all of this needs to be reviewed as some of these pages will not exist anymore.
+//TODO: all of this needs to be reviewed as some of these pages will not exist anymore.
 exports.createPages = async({ actions }) => {
-    const { createPage } = actions
+    const { createPage } = actions;
+    /*
     createPage({
         path: "/using-dsg",
         component: require.resolve("./src/templates/using-dsg.js"),
@@ -200,8 +225,18 @@ exports.createPages = async({ actions }) => {
             context: {...JSON.parse(config), dir: appDir, appRootPath, configFileName, id: `${appDir}-${index}`, hash: sha256(JSON.stringify(`${appDir}-${config}`)) }
         });
     });
+    */
+   const appData =  await getApplicationData();
+   console.log('appData', appData);
+   appData.forEach(async(application, index) => {
+        const { appURI, templatePath, config, appDir, appRootPath, configFileName } = application;
+        createPage({
+            path: appURI,
+            component: require.resolve(templatePath),
+            context: {...JSON.parse(config), dir: appDir, appRootPath, configFileName, id: `${appDir}-${index}`, hash: sha256(JSON.stringify(`${appDir}-${config}`)) }
+        });
+    });
 }
-*/
 
 
 exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) => {
@@ -327,6 +362,24 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
 
     dataArrSetup(MAIN_SIDEBAR_DATA, 'sidebarLinks', 'sidebarLink');
 
+    const appData = await getApplicationData();
+    appData.forEach(async(application, index) => {
+        const { appURI, config, appDir, appRootPath, configFileName, id } = application;
+        createNode({
+            hash: sha256(JSON.stringify(`${appDir}-${config}`)),
+            ...JSON.parse(config),
+            dir: appDir,
+            appURI,
+            appRootPath,
+            configFileName,
+            id,
+            internal: {
+                type: 'application',
+                contentDigest: createContentDigest(config)
+            }
+        });
+    });
+    /*
     const appDir = await getDirectories('./src/applications/');
     appDir.forEach(async(appDir, index) => {
         const appRootPath = `./src/applications/${appDir}`;
@@ -348,7 +401,7 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
             }
         });
     });
-
+    */
     FORMS_LIST.forEach(async(formItem, index) => {
         if(formItem.type === 'internal') {
             return;

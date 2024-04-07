@@ -4,7 +4,7 @@ import AceEditor from "./AceEditor";
 import TreeMenu from 'react-simple-tree-menu';
 import '../../../node_modules/react-simple-tree-menu/dist/main.css';
 //import { Alert } from 'react-bootstrap';
-import Layout from '../../components/layout';
+import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container, Navbar, Nav, NavDropdown, ButtonToolbar, ButtonGroup, Button, Row, Col } from "react-bootstrap";
 
@@ -87,7 +87,7 @@ const AppView = () => {
 
   return (
       <Fragment>
-        <Layout>
+        <MainLayout activePos={2} nonScroll>
           <Seo title={`greenbook`} />
           <Container fluid className="notepad">
             <Navbar className="notepad-navbar">
@@ -147,7 +147,7 @@ const AppView = () => {
               </Row>
             </Container>
           </Container>
-        </Layout>
+        </MainLayout>
       </Fragment>
     );
 }

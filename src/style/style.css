@@ -390,29 +390,40 @@ td:hover>.icon-link {
     min-height: 40vh;
 }
 
-.app-tray>* {
-    display: inline-block;
+.app-tray {
+    padding: 4px;
+    background-color: transparent;
+    max-width: 90%;
 }
 
 .appIcon {
-    width: 128px;
-    height: 160px;
-    margin: 3px;
+    width: auto;
+    height: 140px;
     font-size: 0.85em;
     text-align: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.35);
     border-radius: 8px;
     vertical-align: top;
+    margin: 3px;
+}
+
+.appIcon a {
+    text-decoration: none;
+    color: black;
 }
 
 .appIcon img {
     display: block;
-    width: 128px;
-    min-height: 128px;
+    width: auto;
+    min-height: 64px;
     height: auto;
     max-height: 128px;
     padding: 8px 8px;
     border-bottom: 1px solid lightgray;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .appIcon>*:nth-child(2) {
@@ -422,7 +433,7 @@ td:hover>.icon-link {
 
 .appIcon:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 8px rgba(234, 255, 40, 0.65);
+    background-color: rgba(255, 255, 255, 0.55);
 }
 
 .app-form h1,

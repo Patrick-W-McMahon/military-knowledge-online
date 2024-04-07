@@ -1,4 +1,5 @@
 {
     "app_name": "Phrase Finder",
-    "app_icon": "phrase_finder"
+    "app_icon": "phrase_finder",
+    "active": true
 }

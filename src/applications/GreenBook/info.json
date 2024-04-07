@@ -1,4 +1,5 @@
 {
     "app_name": "Green book",
-    "app_icon": "green_book"
+    "app_icon": "green_book",
+    "active": true
 }

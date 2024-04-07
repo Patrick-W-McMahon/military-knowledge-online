@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import Layout from '../../components/layout';
+import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container } from "react-bootstrap";
 
@@ -44,7 +44,7 @@ const AppView = () => {
 
     return (
         <Fragment>
-          <Layout>
+          <MainLayout activePos={2} nonScroll>
             <Seo title={`Phrase Finder`} />
             <Container className="app-form">
                 <div>
@@ -62,7 +62,7 @@ const AppView = () => {
                     <textarea id="results" rows="20" value={state.results} readOnly={true}></textarea>
                 </form>
             </Container>
-          </Layout>
+          </MainLayout>
         </Fragment>
     );
 }
