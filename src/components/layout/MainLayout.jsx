@@ -54,13 +54,23 @@ const MainLayout = (props) => {
     return (
         <Fragment>
             <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
-            <div className="main-body">
-                <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
-                <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
-                    <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
-                    <Footer><p>{footerText}</p></Footer>
+            {activePos !== null ? (
+                <div className="main-body">
+                    <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
+                    <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
+                        <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
+                        <Footer><p>{footerText}</p></Footer>
+                    </div>
                 </div>
-            </div>
+            ) : (
+                <div className="main-body">
+                    <div className={`content-wrapper full`}>
+                        <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
+                        <Footer><p>{footerText}</p></Footer>
+                    </div>
+                </div>
+            )}
+            
         </Fragment>
     );
 }

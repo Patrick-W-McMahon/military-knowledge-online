@@ -190,6 +190,11 @@ body {
     flex: 10;
 }
 
+.content-wrapper.full {
+    display: block;
+    width: 100vw;
+}
+
 .content-wrapper > footer {
     margin-top: auto;
     height: 35px;

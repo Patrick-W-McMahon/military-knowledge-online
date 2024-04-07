@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Fragment } from "react";
-import { connect } from "react-redux";
+import React from "react";
+//import { connect } from "react-redux";
 import { useStaticQuery, graphql } from "gatsby";
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import MainLayout from "../components/layout/MainLayout";
