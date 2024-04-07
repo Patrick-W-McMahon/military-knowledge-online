@@ -13,6 +13,11 @@ const initalState = {
     results: ""
 }
 
+function countOccurrences(str, value) {
+    var regExp = new RegExp(value, "gi");
+    return (str.match(regExp) || []).length;
+  }
+
 const AppView = () => {
     const [ state, setState] = useState(initalState);
     //const { } = pageContext; { pageContext }
@@ -31,17 +36,16 @@ const AppView = () => {
     }
 
     const generateResults = () => {
-        let results = "";
+        let results = {};
         const { phrases, sourceData } = state;
         const lowSD = sourceData.toLowerCase();
         phrases.forEach(phrase => {
             const lp = phrase.toLowerCase();
             if(lowSD.includes(lp)) {
-                results+=`${phrase}\n`;
+                results[phrase]=countOccurrences(lowSD, lp);
             }
         });
-        console.log("results",results);
-        setState({...state, results });
+        setState({...state, results: (Object.keys(results)||[]).map(key => `${key}: ${results[key]}`).join("\n") });
     }
 
     return (
