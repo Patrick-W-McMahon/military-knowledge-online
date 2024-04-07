@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { connect } from "react-redux";
 import { graphql } from "gatsby";
 import { Container, Row, Col } from 'react-bootstrap';
@@ -85,6 +85,10 @@ const FormsPage = ({ selectedContentPanel, data: { allFormItems } }) => {
                                                             <sub>{description}</sub>
                                                         </a>
                                                     ); 
+                                                } else {
+                                                    return (//NOTE: future items need to be made.
+                                                        <div></div>
+                                                    );
                                                 }
                                             })}
                                         </div>
