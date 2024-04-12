@@ -23,6 +23,8 @@ const ARMY_DOCUMENTS = require('./static/data/documents/army_documents.json');
 
 const FORMS_LIST = require('./static/data/forms_list.json');
 
+const SHOPS_LIST = require('./static/data/shops.json');
+
 let links = [];
 let categories = [];
 let linksMenu = [];
@@ -361,6 +363,7 @@ exports.sourceNodes = async({ actions: { createNode }, createContentDigest }) =>
     });
 
     dataArrSetup(MAIN_SIDEBAR_DATA, 'sidebarLinks', 'sidebarLink');
+    dataArrSetup(SHOPS_LIST, 'shopLinks', 'shopLink');
 
     const appData = await getApplicationData();
     appData.forEach(async(application, index) => {

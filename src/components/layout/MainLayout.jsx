@@ -9,7 +9,7 @@ import Sidebar from './comp/Sidebar';
 import Footer from './comp/Footer';
 
 const MainLayout = (props) => {
-    const { children, activePos, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended, ToggleContentPanel, GetContentPanel } = props;
+    const { children, activePos, subTitle, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended, ToggleContentPanel, GetContentPanel, noSidePanel } = props;
     const [extendedSideBar, setExtendedSidebar] = useState(false);
     useEffect(() => {
         async function fetchData() {
@@ -53,18 +53,18 @@ const MainLayout = (props) => {
 
     return (
         <Fragment>
-            <Header extended={extendedSideBar} titleLong={titleLong} titleShort={titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
-            {activePos !== null ? (
+            <Header extended={extendedSideBar} titleLong={subTitle? `${titleShort} | ${subTitle}` :titleLong} titleShort={subTitle? `${titleShort} | ${subTitle}`: titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
+            {noSidePanel ? (
                 <div className="main-body">
-                    <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
-                    <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
+                    <div className={`content-wrapper full`}>
                         <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
                         <Footer><p>{footerText}</p></Footer>
                     </div>
                 </div>
             ) : (
                 <div className="main-body">
-                    <div className={`content-wrapper full`}>
+                    <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
+                    <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
                         <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
                         <Footer><p>{footerText}</p></Footer>
                     </div>

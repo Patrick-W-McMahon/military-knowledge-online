@@ -1,18 +1,44 @@
 import React from "react";
+import { connect } from "react-redux";
+import { useStaticQuery, graphql } from "gatsby";
 import { Container, Row, Col } from 'react-bootstrap';
 import MainLayout from "../components/layout/MainLayout";
 
 const ShopPage = () => {
+   const { allShopLink } = useStaticQuery(graphql `
+        query ShopQuery {
+            allShopLink {
+                shops: nodes {
+                    nameShort
+                    name
+                    link
+                    img
+                    id
+                    hash
+                }
+            }
+        }
+    `);
+    const { shops } = allShopLink;
 
     return (
         <MainLayout activePos={5} nonScroll>
             <Container fluid>
-                <Row className="justify-content-md-center">
-                    <Col xs={6} md={6} className="alert alert-warning text-center">
-                        <h1 className="w-100 p-3"><i className="fas fa-tools fa-lg"></i> Page under construction <i className="fas fa-tools fa-lg"></i></h1>
-                        <hr/>
-                        <p>This page is under construction. Please check back later.</p>
-                        <p>The shop will have searchable clothing. This is for custom PT shirts and OCP undershirts along with other military clothing.</p>
+                <Row>
+                    <Col md="12" className={`body-page active`}>
+                        <Row>
+                            {shops.map((shop,index) => {
+                                const { name, nameShort, img, link } = shop;
+                                return (
+                                    <Col key={index} className="appIcon" xs={3} md={1} lg={1}>
+                                        <a className="" rel="noreferrer" target="_blank" href={link}>
+                                            <img src={`/img/shops/${img}`} alt={name} />
+                                            <span>{nameShort}</span>
+                                        </a>
+                                    </Col>
+                                );
+                            })}
+                        </Row>
                     </Col>
                 </Row>
             </Container>
@@ -20,4 +46,13 @@ const ShopPage = () => {
     );
 }
 
-export default ShopPage;
+
+ShopPage.propTypes = {};
+
+const mapStateToProps = (state, props) => {
+    return { selectedContentPanel: state.system.selectedContentPanel };
+};
+
+const mapDispatchToProps = null;
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
