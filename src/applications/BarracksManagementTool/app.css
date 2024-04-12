@@ -1,0 +1,111 @@
+.notepad {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1100px;
+    min-height: 400px;
+    margin: 20px auto;
+    padding: 16px;
+    position: relative;
+    background-color: #50c023;
+}
+
+.notepad-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    background-color: #ccc;
+    z-index: 100;
+    position: absolute;
+}
+
+.notepad-body {
+    background: #ccc;
+    height: 100%;
+    min-height: 400px;
+}
+
+.notepad-navbar {
+    background: linear-gradient(to bottom, #4b4e6d, #2b2e4a);
+    color: white;
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+    font-size: 0.85em;
+}
+
+.dropdown-menu {
+    padding: 0;
+    border-radius: 0;
+    z-index: 100;
+    position: absolute;
+}
+
+.notepad-navbar a.nav-link {
+    color: white!important;
+}
+
+.rstm-tree-item {
+    padding-top: 1px!important;
+    padding-bottom: 1px!important;
+}
+
+.rstm-search {
+    padding: 0.5rem;
+    display: block;
+    width: 100%;
+}
+
+.character-count {
+    background-color: #ccc;
+    padding: 7px 4px 0 4px;
+    margin: 0;
+    border-radius: 4px;
+    color: black;
+    min-width: 120px;
+    text-align: right;
+}
+
+.page-select {
+    background-color: transparent;
+    margin-left: 5px;
+}
+
+.page-select>div {
+    background-color: #ccc;
+    text-align: center;
+    font-size: 1.25em;
+    color: black;
+    padding: 6px 8px 0 8px;
+}
+
+.page-select button {
+    padding: 1px 4px;
+}
+
+.dropdown-item:hover {
+    background-color: #4b4e6d;
+    color: white;
+}
+
+.app-toolbar {
+    display: flex;
+}
+
+.notepad-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.notepad-textarea {
+    width: 100%;
+    min-height: 395px;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+}

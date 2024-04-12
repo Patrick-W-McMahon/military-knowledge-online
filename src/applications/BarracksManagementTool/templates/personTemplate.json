@@ -1,0 +1,12 @@
+{
+    "name": {
+        "first": "",
+        "middle": "",
+        "last": ""
+    },
+    "rank": "",
+    "housing": {
+        "buildingId": -1,
+        "roomId": -1
+    }
+}
