@@ -51,7 +51,7 @@ const AppView = () => {
     return (
         <Fragment>
             <Seo title={`Phrase Finder`} />
-            <MainLayout activePos={null} nonScroll>
+            <MainLayout activePos={null} nonScroll noSidePanel>
                 <MainLayout.Navigation>
                     <Nav className="me-auto">
                         <NavDropdown title="File">

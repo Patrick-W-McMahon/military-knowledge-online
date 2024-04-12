@@ -87,7 +87,7 @@ const AppView = () => {
 
   return (
       <Fragment>
-        <MainLayout activePos={null} nonScroll>
+        <MainLayout activePos={null} nonScroll noSidePanel>
           <Seo title={`greenbook`} />
           <Container fluid className="notepad">
             <Navbar className="notepad-navbar">
