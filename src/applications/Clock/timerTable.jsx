@@ -62,7 +62,7 @@ const TimerTable = ({ timers, onDeleteTimer }) => {
                 </tr>
             </thead>
             <tbody>
-                {timers.map((timer,i) => {
+                {(timers || []).map((timer,i) => {
                     const display = getTimerDisplay(todayDate, timer);
                     const { timerType, year, month, day, hours, minutes, seconds } = timer;
                     return (

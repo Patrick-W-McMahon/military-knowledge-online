@@ -47,10 +47,8 @@ export const ActionCreateTimer = (dispatch, timer, timers) => {
     if(typeof window !== `undefined`) {
         dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS)) || [];
     }
-    console.log('datastore: ', dataStore);
     dataStore.push(timer);
     window.localStorage.setItem(DATASTORE.APP_CLOCK_TIMERS, JSON.stringify(dataStore));
-    console.log('datastore dispatch: ', dataStore);
     return dispatch({ type: GET_TIMERS, timers: dataStore });
 }
 
