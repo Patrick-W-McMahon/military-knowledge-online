@@ -24,7 +24,7 @@ export default function appClockReducer(state = initialState, action) {
         case SET_TIMERS:
             return {...state, ...action };
         case GET_TIMERS:
-            return {...state, timers:[...action.timers] };
+            return {...state, timers:[...action.timers || []] };
         case LOAD_CLOCK_DATA: 
             return {...state, data: action};
         case EXPORT_CLOCK_DATA:

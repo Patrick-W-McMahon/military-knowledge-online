@@ -27,7 +27,9 @@ const initalState = {
 const applicationName = "Clock";
 const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, timers }) => {
   const [state, setState] = useState(initalState);
-  useEffect(() => GetTimers(), []);
+  useEffect(() => {
+    GetTimers();
+  }, []);
   
   const onFormFieldChange = e => {
     let formData = state.formData;
