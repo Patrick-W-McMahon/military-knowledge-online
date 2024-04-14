@@ -75,7 +75,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, ti
             <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
               <form>
                 <label>Label<input name="label" type="text" value={state.formData.label} onChange={(e) => onFormFieldChange(e)}/></label>
-                <label>Finish Message<input name="finishMessage" type="text" value={state.formData.finishMessage} onChange={(e) => onFormFieldChange(e)}/></label>
+                <label>End Message<input name="finishMessage" type="text" value={state.formData.finishMessage} onChange={(e) => onFormFieldChange(e)}/></label>
                 <label>Type
                   <select name="timerType" value={state.formData.timerType} onChange={(e) => onFormFieldChange(e)}>{timerTypes.map((e,i) => <option key={i} value={e}>{e}</option>)}</select>
                 </label>
