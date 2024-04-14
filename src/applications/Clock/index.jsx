@@ -103,7 +103,6 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, ti
 AppView.propTypes = {};
 
 const mapStateToProps = (state, props) => {
-  console.log('state: ',state);
   const { timers } = state.appClock;
   return { timers };
 };
