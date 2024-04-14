@@ -47,7 +47,6 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     }
     const headerData = "MKOAPP|CLOCK|PM24\n"
     const blobObj = new Blob([headerData, JSON.stringify(data)], { type: "application/json" });
-    console.log('blogObj: ', blobObj);
     const blobUrl = window.URL.createObjectURL(blobObj);
     const anchor = window.document.createElement('a');
     anchor.download = filename;
