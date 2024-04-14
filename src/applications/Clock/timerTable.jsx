@@ -33,7 +33,8 @@ function getTimerDisplay(todayDate, timer) {
         display = diff < 0 ? timer.finishMessage : `${pad(hh,2)}:${pad(mm,2)}:${pad(ss,2)}`;
       break;
       case "Date Countdown":
-        display='not working yet';
+        const distance = new Date(`${timer.month} ${timer.day}, ${timer.year} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
+        display=distance < 0? timer.finishMessage : `${getDays(distance)}d ${getHours(distance)}h ${getMinutes(distance)}m ${getSeconds(distance)}s `;
       break;
       default:
         console.log('ERROR: unsupported timer type ', timer.timerType);
