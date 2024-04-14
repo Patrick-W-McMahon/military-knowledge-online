@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col, Button } from "react-bootstrap";
-import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionClearClockData } from '../../state/reducers/appClockReducer';
+import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionLoadClockData, ActionClearClockData } from '../../state/reducers/appClockReducer';
 import TimerTable from './timerTable';
 
 import './app.css';
@@ -25,7 +25,7 @@ const initalState = {
 }
 
 const applicationName = "Clock";
-const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockData, GetTimers, timers }) => {
+const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockData, LoadClockData, GetTimers, timers }) => {
   const [state, setState] = useState(initalState);
   useEffect(() => {
     GetTimers();
@@ -45,7 +45,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     if (!window) {
       return;
     }
-    const headerData = "MKOAPP|CLOCK|PM24\n"
+    const headerData = "MKOAPP|CLOCK|PM24\n";
     const blobObj = new Blob([headerData, JSON.stringify(data)], { type: "application/json" });
     const blobUrl = window.URL.createObjectURL(blobObj);
     const anchor = window.document.createElement('a');
@@ -54,6 +54,25 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     anchor.click();
     window.URL.revokeObjectURL(blobUrl);
   };
+
+  const handleFileUpload = () => {
+    console.log('handleFileUpload');
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.style.display = 'none';
+    fileInput.addEventListener('change', handleFileInputChange);
+    fileInput.click();
+  }
+  const handleFileInputChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      LoadClockData(e.target.result);
+    };
+
+    reader.readAsText(file);
+  }
 
   const createTimer = () => {
     const { label, finishMessage, timerType, year, month, day, hours, minutes, seconds } = state.formData;
@@ -79,7 +98,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
           <Nav className="me-auto">
               <NavDropdown title="File">
                   <NavDropdown.Item onClick={() => ClearClockData()}>Clear Clock Data</NavDropdown.Item>
-                  <NavDropdown.Item onClick={() => null}>Load Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleFileUpload}>Load Clock Data</NavDropdown.Item>
                   <NavDropdown.Item  onClick={() => download(timers, 'MKO_APP_Clock.dat')}>Export Clock Data</NavDropdown.Item>
               </NavDropdown>
           </Nav>
@@ -127,7 +146,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     GetTimers: () => ActionGetTimers(dispatch),
     CreateTimer: (timer, timers) => ActionCreateTimer(dispatch, timer, timers),
     DeleteTimer: (index, timers) => ActionDeleteTimer(dispatch, index, timers),
-    ClearClockData: () => ActionClearClockData(dispatch)
+    ClearClockData: () => ActionClearClockData(dispatch),
+    LoadClockData: (data) => ActionLoadClockData(dispatch, data)
 });
 }
 
