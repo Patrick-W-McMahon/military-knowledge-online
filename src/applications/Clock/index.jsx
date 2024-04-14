@@ -41,11 +41,14 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     DeleteTimer(index, timers);
   }
 
-  const download = (blob, filename) => {
+  const download = (data, filename) => {
     if (!window) {
       return;
     }
-    const blobUrl = window.URL.createObjectURL(blob);
+    const headerData = "MKOAPP|CLOCK|PM24\n"
+    const blobObj = new Blob([headerData, JSON.stringify(data)], { type: "application/json" });
+    console.log('blogObj: ', blobObj);
+    const blobUrl = window.URL.createObjectURL(blobObj);
     const anchor = window.document.createElement('a');
     anchor.download = filename;
     anchor.href = blobUrl;
@@ -78,7 +81,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
               <NavDropdown title="File">
                   <NavDropdown.Item onClick={() => ClearClockData()}>Clear Clock Data</NavDropdown.Item>
                   <NavDropdown.Item onClick={() => null}>Load Clock Data</NavDropdown.Item>
-                  <NavDropdown.Item  onClick={() => download({ timers }, 'MKO_APP_Clock.dat')}>Export Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item  onClick={() => download(timers, 'MKO_APP_Clock.dat')}>Export Clock Data</NavDropdown.Item>
               </NavDropdown>
           </Nav>
         </MainLayout.Navigation>
