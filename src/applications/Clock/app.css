@@ -21,6 +21,11 @@ form button {
     margin-top: 8px;
 }
 
+table {
+    background-color: rgba(0,0,0,0.6)!important;
+    color: white;
+}
+
 table thead tr th:nth-child(1){
     width: 50px!important;
 }

@@ -5,13 +5,15 @@ import auth from './reducers/authReducer';
 import workspace from './reducers/workspaceReducer';
 import workspaceLinks from './reducers/webLinksReducer';
 import system from './reducers/mainLayoutReducer';
+import appClock from './reducers/appClockReducer';
 
 
 const myReducer = combineReducers({
   auth,
   workspace,
   workspaceLinks,
-  system
+  system,
+  appClock
 });
 
  const wrapWithProps = ({ element }) => {
