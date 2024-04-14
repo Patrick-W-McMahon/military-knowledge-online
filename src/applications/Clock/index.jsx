@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col, Button } from "react-bootstrap";
-import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer } from '../../state/reducers/appClockReducer';
+import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionClearClockData } from '../../state/reducers/appClockReducer';
 import TimerTable from './timerTable';
 
 import './app.css';
@@ -25,7 +25,7 @@ const initalState = {
 }
 
 const applicationName = "Clock";
-const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, timers }) => {
+const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockData, GetTimers, timers }) => {
   const [state, setState] = useState(initalState);
   useEffect(() => {
     GetTimers();
@@ -56,7 +56,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, ti
     }
     CreateTimer(timer, timers);
   }
-
+  
   return (
     <Fragment>
       <Seo title={applicationName} />
@@ -64,7 +64,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, ti
         <MainLayout.Navigation>
           <Nav className="me-auto">
               <NavDropdown title="File">
-                  <NavDropdown.Item onClick={() => null}>Clear Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => ClearClockData()}>Clear Clock Data</NavDropdown.Item>
                   <NavDropdown.Item onClick={() => null}>Load Clock Data</NavDropdown.Item>
                   <NavDropdown.Item  onClick={() => null}>Export Clock Data</NavDropdown.Item>
               </NavDropdown>
@@ -112,7 +112,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     SetTimers: (timers) => ActionSetTimers(dispatch, timers),
     GetTimers: () => ActionGetTimers(dispatch),
     CreateTimer: (timer, timers) => ActionCreateTimer(dispatch, timer, timers),
-    DeleteTimer: (index, timers) => ActionDeleteTimer(dispatch, index, timers)
+    DeleteTimer: (index, timers) => ActionDeleteTimer(dispatch, index, timers),
+    ClearClockData: () => ActionClearClockData(dispatch)
 });
 }
 

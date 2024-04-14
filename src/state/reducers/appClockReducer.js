@@ -83,3 +83,8 @@ export const ActionGetTimers = (dispatch) => {
     }
     dispatch({ type: GET_TIMERS, timers: dataStore.timers });
 }
+
+export const ActionClearClockData = (dispatch) => {
+    window.localStorage.setItem(DATASTORE.APP_CLOCK_TIMERS, JSON.stringify([]));
+    dispatch({ type: GET_TIMERS, timers: [] });
+}
