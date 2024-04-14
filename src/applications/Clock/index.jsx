@@ -41,6 +41,18 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     DeleteTimer(index, timers);
   }
 
+  const download = (blob, filename) => {
+    if (!window) {
+      return;
+    }
+    const blobUrl = window.URL.createObjectURL(blob);
+    const anchor = window.document.createElement('a');
+    anchor.download = filename;
+    anchor.href = blobUrl;
+    anchor.click();
+    window.URL.revokeObjectURL(blobUrl);
+  };
+
   const createTimer = () => {
     const { label, finishMessage, timerType, year, month, day, hours, minutes, seconds } = state.formData;
     let timer = null;
@@ -66,7 +78,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
               <NavDropdown title="File">
                   <NavDropdown.Item onClick={() => ClearClockData()}>Clear Clock Data</NavDropdown.Item>
                   <NavDropdown.Item onClick={() => null}>Load Clock Data</NavDropdown.Item>
-                  <NavDropdown.Item  onClick={() => null}>Export Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item  onClick={() => download({ timers }, 'MKO_APP_Clock.dat')}>Export Clock Data</NavDropdown.Item>
               </NavDropdown>
           </Nav>
         </MainLayout.Navigation>
