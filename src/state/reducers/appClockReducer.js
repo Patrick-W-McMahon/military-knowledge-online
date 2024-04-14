@@ -77,11 +77,9 @@ export const ActionSetTimer = (dispatch, timers) => {
 }
 
 export const ActionGetTimers = (dispatch) => {
-    let dataStore = {
-        timers: initialState.timers
-    };
+    let dataStore = initialState;
     if (typeof window !== `undefined`) {
-        dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS));
+        dataStore.timers = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS)) || [];
     }
-    dispatch({ type: GET_TIMERS, timers: dataStore });
+    dispatch({ type: GET_TIMERS, timers: dataStore.timers });
 }
