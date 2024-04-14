@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
-import { Container, Nav, NavDropdown, Row, Col, Button, Table } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Row, Col, Button } from "react-bootstrap";
 import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer } from '../../state/reducers/appClockReducer';
 import TimerTable from './timerTable';
 
@@ -29,7 +29,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, GetTimers, ti
   const [state, setState] = useState(initalState);
   useEffect(() => {
     GetTimers();
-  }, []);
+  }, [GetTimers]);
   
   const onFormFieldChange = e => {
     let formData = state.formData;
