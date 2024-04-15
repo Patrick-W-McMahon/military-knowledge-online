@@ -8,6 +8,10 @@ function pad(num, size) {
     return num;
 }
 
+function getDaysExact(diff) {
+    return Math.round(diff / (1000 * 60 * 60 * 24));
+}
+
 function getDays(diff) {
     return Math.floor(diff / (1000 * 60 * 60 * 24));
 }
@@ -19,6 +23,20 @@ function getMinutes(diff) {
 }
 function getSeconds(diff) {
     return Math.floor((diff % (1000 * 60)) / 1000);
+}
+
+function getTimerSetDisplay(timer) {
+    const { timerType, year, month, day, hours, minutes, seconds } = timer;
+    switch(timerType) {
+        case "Day Timer":
+            return `[Day]: ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+        case "Date Countdown":
+            return `[Date]: ${month}/${pad(day, 2)}/${pad(year, 4)} - ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+        case "Annual Countdown":
+            return `[Annual]: ${month}/${pad(day, 2)} - ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`;
+        default:
+            console.log('Error: not supported timer type.');
+    }
 }
 
 function getTimerDisplay(todayDate, timer) {
@@ -35,6 +53,19 @@ function getTimerDisplay(todayDate, timer) {
       case "Date Countdown":
         const distance = new Date(`${timer.month} ${timer.day}, ${timer.year} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
         display=distance < 0? timer.finishMessage : `${getDays(distance)}d ${getHours(distance)}h ${getMinutes(distance)}m ${getSeconds(distance)}s `;
+      break;
+      case "Annual Countdown":
+        const d = new Date(`${timer.month} ${timer.day}, ${todayDate.getFullYear()} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
+        if(getDaysExact(d) === 0) {
+            display = timer.finishMessage;
+            return;
+        }
+        let year = todayDate.getFullYear();
+        if(getDaysExact(d) < -1) {
+            year++;
+        }
+        const df = new Date(`${timer.month} ${timer.day}, ${year} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
+        display =  `${getDays(df)}d ${getHours(df)}h ${getMinutes(df)}m ${getSeconds(df)}s`;
       break;
       default:
         console.log('ERROR: unsupported timer type ', timer.timerType);
@@ -64,14 +95,12 @@ const TimerTable = ({ timers, onDeleteTimer }) => {
             </thead>
             <tbody>
                 {(timers || []).map((timer,i) => {
-                    const display = getTimerDisplay(todayDate, timer);
-                    const { timerType, year, month, day, hours, minutes, seconds } = timer;
                     return (
                         <tr key={i}>
                             <td>{i+1}</td>
                             <td>{timer.label}</td>
-                            <td>{display}</td>
-                            <td>{timerType === 'Day Timer'? `[Day] | ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`: `[Date] | ${month}/${pad(day, 2)}/${pad(year, 4)} - ${pad(hours, 2)}:${pad(minutes, 2)}:${pad(seconds, 2)}`}</td>
+                            <td>{getTimerDisplay(todayDate, timer)}</td>
+                            <td>{getTimerSetDisplay(timer)}</td>
                             <td><Button variant="danger" onClick={() => onDeleteTimer(i)}>Delete</Button></td>
                         </tr>
                     );

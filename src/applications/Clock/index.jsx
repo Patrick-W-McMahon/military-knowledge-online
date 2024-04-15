@@ -10,7 +10,7 @@ import TimerTable from './timerTable';
 import './app.css';
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const timerTypes = ["Day Timer", "Date Countdown"];
+const timerTypes = ["Day Timer", "Date Countdown", "Annual Countdown"];
 const initalState = {
   formData: {
     label: "",
@@ -51,6 +51,9 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
       case "Date Countdown":
         timer = { label, finishMessage, timerType, year, month, day, hours, minutes, seconds };
       break;
+      case "Annual Countdown":
+        timer = { label, finishMessage, timerType, year: null, month, day, hours, minutes, seconds };
+      break;
       default:
         console.log('ERROR: unsupported timer type ', timerType);
     }
@@ -79,7 +82,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
                 <label>Type
                   <select name="timerType" value={state.formData.timerType} onChange={(e) => onFormFieldChange(e)}>{timerTypes.map((e,i) => <option key={i} value={e}>{e}</option>)}</select>
                 </label>
-                <label>Year<input name="Year" type="number" value={state.formData.year} onChange={(e) => onFormFieldChange(e)} disabled={state.formData.timerType===timerTypes[0]}/></label>
+                <label>Year<input name="Year" type="number" value={state.formData.year} onChange={(e) => onFormFieldChange(e)} disabled={state.formData.timerType===timerTypes[0] || state.formData.timerType===timerTypes[2]}/></label>
                 <label>Month
                   <select name="month" value={state.formData.month} onChange={(e) => onFormFieldChange(e)} disabled={state.formData.timerType===timerTypes[0]}>{months.map((m,i) => <option key={i} value={m}>{m}</option>)}</select>
                 </label>
