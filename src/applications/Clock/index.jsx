@@ -57,6 +57,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
       default:
         console.log('ERROR: unsupported timer type ', timerType);
     }
+    setState({...state, formData: initalState.formData});
     CreateTimer(timer, timers);
   }
   
