@@ -90,23 +90,12 @@ export const ActionClearClockData = (dispatch) => {
 }
 
 export const ActionLoadClockData = (dispatch, data) => {
-    const lines = data.split('\n');
-    if (lines.length < 2) {
-        console.error('Invalid file format');
-        return;
-    }
-    const header = lines[0].trim();
-    if (header !== 'MKOAPP|CLOCK|PM24') {
-        console.error('Invalid file header');
-        return;
-    }
     try {
-        const parsedData = JSON.parse(lines[1]);
         let dataStore = [];
         if(typeof window !== `undefined`) {
             dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS)) || [];
         }
-        parsedData.forEach(timer => {
+        data.forEach(timer => {
             dataStore.push(timer);
         });
         window.localStorage.setItem(DATASTORE.APP_CLOCK_TIMERS, JSON.stringify(dataStore));

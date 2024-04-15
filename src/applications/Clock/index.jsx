@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col, Button } from "react-bootstrap";
+import localStore from '../../libs/localStore';
 import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionLoadClockData, ActionClearClockData } from '../../state/reducers/appClockReducer';
 import TimerTable from './timerTable';
 
@@ -25,11 +26,14 @@ const initalState = {
 }
 
 const applicationName = "Clock";
+const targetSystemCode = "CLOCK";
+const fileNameStr = "MKO_APP_Clock.dat";
 const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockData, LoadClockData, GetTimers, timers }) => {
   const [state, setState] = useState(initalState);
   useEffect(() => {
     GetTimers();
   }, [GetTimers]);
+  const fs = new localStore();
   
   const onFormFieldChange = e => {
     let formData = state.formData;
@@ -37,44 +41,7 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     setState({...state, formData });
   }
 
-  const onDeleteTimer = index => {
-    DeleteTimer(index, timers);
-  }
-
-  const download = (data, filename) => {
-    if (!window) {
-      return;
-    }
-    const headerData = "MKOAPP|CLOCK|PM24\n";
-    const blobObj = new Blob([headerData, JSON.stringify(data)], { type: "application/json" });
-    const blobUrl = window.URL.createObjectURL(blobObj);
-    const anchor = window.document.createElement('a');
-    anchor.download = filename;
-    anchor.href = blobUrl;
-    anchor.click();
-    window.URL.revokeObjectURL(blobUrl);
-  };
-
-  const handleFileUpload = () => {
-    console.log('handleFileUpload');
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.style.display = 'none';
-    fileInput.addEventListener('change', handleFileInputChange);
-    fileInput.click();
-  }
-  const handleFileInputChange = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-
-    reader.onload = function(e) {
-      LoadClockData(e.target.result);
-    };
-
-    reader.readAsText(file);
-  }
-
-  const createTimer = () => {
+  const onCreateTimer = () => {
     const { label, finishMessage, timerType, year, month, day, hours, minutes, seconds } = state.formData;
     let timer = null;
     switch(timerType){
@@ -98,8 +65,8 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
           <Nav className="me-auto">
               <NavDropdown title="File">
                   <NavDropdown.Item onClick={() => ClearClockData()}>Clear Clock Data</NavDropdown.Item>
-                  <NavDropdown.Item onClick={handleFileUpload}>Load Clock Data</NavDropdown.Item>
-                  <NavDropdown.Item  onClick={() => download(timers, 'MKO_APP_Clock.dat')}>Export Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item onClick={() => fs.importFile(LoadClockData, targetSystemCode)}>Load Clock Data</NavDropdown.Item>
+                  <NavDropdown.Item  onClick={() => fs.exportFile(timers, fileNameStr, targetSystemCode)}>Export Clock Data</NavDropdown.Item>
               </NavDropdown>
           </Nav>
         </MainLayout.Navigation>
@@ -120,11 +87,11 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
                 <label>Hours<input name="hours" value={state.formData.hours} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
                 <label>Minutes<input name="minutes" value={state.formData.minutes} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
                 <label>Seconds<input name="seconds" value={state.formData.seconds} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
-                <Button onClick={() => createTimer()} variant="success" size="lg">Create Timer</Button>
+                <Button onClick={() => onCreateTimer()} variant="success" size="lg">Create Timer</Button>
               </form>
             </Col>
             <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
-              <TimerTable timers={timers} onDeleteTimer={onDeleteTimer} />
+              <TimerTable timers={timers} onDeleteTimer={(timerIndex) => DeleteTimer(timerIndex, timers)} />
             </Col>
           </Row>
         </Container>
