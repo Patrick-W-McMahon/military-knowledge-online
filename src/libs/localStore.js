@@ -22,19 +22,17 @@ class LocalStore {
             const file = event.target.files[0];
             const reader = new FileReader();
         
-            reader.onload = function(e) {
-                const data = e.target.result;
-                const lines = data.split('\n');
+            reader.onload = e => {
+                const lines = e.target.result.split('\n');
                 if (lines.length < 2) {
                     console.error('Invalid file format');
+                    alert("Invalid file format");
                     return;
                 }
-                const header = lines[0].trim().split('|');
-                const fileType = header[0];
-                const targetSystem = header[1];
-                const exeValidation = header[2];
+                const [fileType, targetSystem, exeValidation, ...rest] = lines[0].trim().split('|');
                 if (fileType !== 'MKOAPP' || targetSystemCode !== targetSystem || exeValidation !== 'PM24') {//NOTE: should pass error codes in the future for troubleshooting
-                    console.error('Invalid file header');
+                    console.error('Invalid file header', fileType, targetSystem, exeValidation, ...rest);
+                    alert("Invalid file header");
                     return;
                 }
                 const parsedData = JSON.parse(lines[1]);
