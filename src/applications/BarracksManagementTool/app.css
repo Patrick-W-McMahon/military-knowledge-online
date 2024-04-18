@@ -109,3 +109,26 @@
     font-family: 'Arial', sans-serif;
     line-height: 1.5;
 }
+
+.newItemBtn {
+    width: 100%;
+    margin-top: 2px;
+}
+
+.nav-tabs .nav-item button {
+    font-size: 1.2em;
+    padding: 2px 4px 2px 4px;
+    margin: 2px 1px 0 2px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.65)!important;
+    border: none;
+    outline: none;
+    color: black;
+}
+
+.nav-tabs .nav-item button[aria-selected="true"],
+.nav-tabs .nav-item button:hover {
+    background-color: rgba(255, 255, 255, 0.85)!important;
+    color: black;
+}

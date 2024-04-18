@@ -6,6 +6,7 @@ import workspace from './reducers/workspaceReducer';
 import workspaceLinks from './reducers/webLinksReducer';
 import system from './reducers/mainLayoutReducer';
 import appClock from './reducers/appClockReducer';
+import appBarracksManagement from './reducers/appBarracksManagementReducer';
 
 
 const myReducer = combineReducers({
@@ -13,7 +14,8 @@ const myReducer = combineReducers({
   workspace,
   workspaceLinks,
   system,
-  appClock
+  appClock,
+  appBarracksManagement
 });
 
  const wrapWithProps = ({ element }) => {

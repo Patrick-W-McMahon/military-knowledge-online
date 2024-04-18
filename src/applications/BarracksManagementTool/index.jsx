@@ -1,8 +1,11 @@
 import React, { Fragment, useState } from "react";
+import { connect } from "react-redux";
 import '../../../node_modules/react-simple-tree-menu/dist/main.css';
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
-import { Container, Nav, NavDropdown, Row, Col } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Row, Col, Tab, Tabs, Button } from "react-bootstrap";
+//import localStore from '../../libs/localStore';
+import { ActionCreateBuilding } from '../../state/reducers/appBarracksManagementReducer';
 
 import datasetTemplete from './templates/datasetTemplete.json';
 //import personTemplate  from './templates/personTemplate.json';
@@ -17,12 +20,14 @@ const VMODES = {
 }
 
 const initalState = {
-  currentView: VMODES.WELCOME,
-  dataset: undefined
+  buildings: [],
+  people: [],
+  units: [],
+  selectedObj: null
 }
 
 const applicationName = "Barracks Management";
-const AppView = ({ selectedContentPanel }) => {
+const AppView = ({ selectedContentPanel, createBuilding }) => {
   const [ state, setState] = useState(initalState);
 
   const createNewDataset = () => {
@@ -32,8 +37,20 @@ const AppView = ({ selectedContentPanel }) => {
   const setSysView = newView => {
     setState({...state, currentView: newView });
   }
+
+  const handleCreateBtn = (e) => {
+    switch(e.target.name){
+      case "create new building":
+        setState({...state, selectedObj: {
+          type: "new-building"
+        }});
+      break;
+      default:
+        console.log("ERR: unsupported action ", e.target.name);
+    }
+  }
  
-  const { currentView, dataset } = state;
+  const { selectedObj } = state;
   return (
       <Fragment>
         <Seo title={applicationName} />
@@ -43,21 +60,41 @@ const AppView = ({ selectedContentPanel }) => {
                 <NavDropdown title="File">
                     <NavDropdown.Item onClick={() => createNewDataset()}>New Dataset</NavDropdown.Item>
                     <NavDropdown.Item onClick={() => null}>Load Dataset</NavDropdown.Item>
-                    <NavDropdown.Item disabled={dataset === undefined} onClick={() => null}>Export Dataset</NavDropdown.Item>
+                    <NavDropdown.Item disabled={false} onClick={() => null}>Export Dataset</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Edit">
-                    <NavDropdown.Item disabled={currentView !== VMODES.SOLDIER} onClick={() => null}>New Soldier</NavDropdown.Item>
-                    <NavDropdown.Item disabled={currentView !== VMODES.BUILDING} onClick={() => null}>New Building</NavDropdown.Item>
+                    <NavDropdown.Item disabled={false} onClick={() => null}>New Soldier</NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item disabled={false} onClick={() => null}>New Unit</NavDropdown.Item>
+                    <NavDropdown.Item disabled={false} name="create new building" onClick={handleCreateBtn}>New Building</NavDropdown.Item>
+                    <NavDropdown.Item disabled={selectedObj !== null && selectedObj.type === 'building'} onClick={() => null}>New Floor</NavDropdown.Item>
+                    <NavDropdown.Item disabled={false} onClick={() => null}>New Suite</NavDropdown.Item>
+                    <NavDropdown.Item disabled={false} onClick={() => null}>New Room</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="View">
-                  <NavDropdown.Item disabled={dataset === undefined} onClick={() => setSysView(VMODES.SOLDIER)}>Soldier Management</NavDropdown.Item>
-                  <NavDropdown.Item disabled={dataset === undefined} onClick={() => setSysView(VMODES.BUILDING)}>Buildings View</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => setSysView(VMODES.SOLDIER)}>Soldier Management</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => setSysView(VMODES.BUILDING)}>Buildings View</NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Reports">
                 </NavDropdown>
             </Nav>
           </MainLayout.Navigation>
           <Container fluid>
             <Row>
-              {currentView !== VMODES.WELCOME? (
+              <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
+                <Tabs defaultActiveKey="buildings" id="side_control_tabs" >
+                  <Tab eventKey="buildings" title="Buildings">
+                    <Button name="create new building" className="newItemBtn" variant="success" size="md" onClick={handleCreateBtn}>New Building</Button>
+                  </Tab>
+                  <Tab eventKey="people" title="People">
+                    <Button name="create new person" className="newItemBtn" variant="success" size="md" onClick={handleCreateBtn}>New Person</Button>
+                  </Tab>
+                  <Tab eventKey="units" title="Units">
+                    <Button name="create new unit" className="newItemBtn" variant="success" size="md" onClick={handleCreateBtn}>New Unit</Button>
+                  </Tab>
+                </Tabs>
+              </Col>
+              {/*currentView !== VMODES.WELCOME && false? (
                 <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
                   {currentView === VMODES.SOLDIER ? (
                     <div>Soldier Management</div>
@@ -66,9 +103,16 @@ const AppView = ({ selectedContentPanel }) => {
                     <div>Buildings View</div>
                   ):null}
                 </Col>
-              ):null }
-              <Col md={currentView === VMODES.WELCOME? 12: 10} className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
-                {currentView === VMODES.WELCOME ? (
+              ):null */}
+              <Col md={10} className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
+                {selectedObj !== null && selectedObj.type === "new-building" ? (
+                  <form>
+                    <h1>New Building</h1>
+                    <label>Building Name/Label: <input name="label" type="text"/></label>
+                    <label>Building Address: <input name="label" type="text"/></label>
+                  </form>
+                ):null}
+                {/*currentView === VMODES.WELCOME ? (
                   <Container>
                     <Row className="justify-content-md-center text-center">
                       <Col xs={8} md={8}>
@@ -80,13 +124,13 @@ const AppView = ({ selectedContentPanel }) => {
                       </Col>
                     </Row>
                   </Container>
-                ):null}
-                {currentView === VMODES.SOLDIER ? (
+                ):null*/}
+                {/*currentView === VMODES.SOLDIER ? (
                   <div>Soldier Management</div>
                 ):null}
                 {currentView === VMODES.BUILDING ? (
                   <div>Buildings View</div>
-                ):null}
+                ):null*/}
               </Col>
             </Row>
           </Container>
@@ -95,4 +139,17 @@ const AppView = ({ selectedContentPanel }) => {
     );
 }
 
-export default AppView;
+AppView.propTypes = {};
+
+const mapStateToProps = (state, props) => {
+  const { Buildings, people, units } = state.appBarracksManagement;
+  return { Buildings, people, units };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return ({
+    createBuilding: (label, address) => ActionCreateBuilding(dispatch, label, address)
+});
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppView);
