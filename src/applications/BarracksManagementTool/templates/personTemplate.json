@@ -1,12 +1,22 @@
 {
+    "dod": 0,
     "name": {
         "first": "",
         "middle": "",
         "last": ""
     },
     "rank": "",
+    "gender": "",
+    "deros": "",
+    "unitId": 0,
     "housing": {
         "buildingId": -1,
         "roomId": -1
-    }
-}
+    },
+    "contactInfo": {
+        "phones": [],
+        "emails": []
+    },
+    "notes": [],
+    "eventHistory":[]
+}   
