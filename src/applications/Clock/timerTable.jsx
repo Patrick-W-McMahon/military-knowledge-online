@@ -101,7 +101,7 @@ const TimerTable = ({ timers, onDeleteTimer }) => {
                             <td>{timer.label}</td>
                             <td>{getTimerDisplay(todayDate, timer)}</td>
                             <td>{getTimerSetDisplay(timer)}</td>
-                            <td><Button variant="danger" onClick={() => onDeleteTimer(i)}>Delete</Button></td>
+                            <td><Button variant="danger" size="sm" onClick={() => onDeleteTimer(i)}>Delete</Button></td>
                         </tr>
                     );
                 })}
