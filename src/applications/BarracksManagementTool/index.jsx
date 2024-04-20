@@ -6,6 +6,12 @@ import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col, Tab, Tabs, Button } from "react-bootstrap";
 //import localStore from '../../libs/localStore';
 import { ActionCreateBuilding } from '../../state/reducers/appBarracksManagementReducer';
+//import DockFrame from './components/dockPanel';
+import * as Dockable from "@hlorenzi/react-dockable";
+import Navigator from './components/panels/Navigator';
+import FloorView from "./components/panels/FloorView";
+import Inspector from "./components/panels/Inspector";
+import DbView from "./components/panels/DbView";
 
 import datasetTemplete from './templates/datasetTemplete.json';
 //import personTemplate  from './templates/personTemplate.json';
@@ -29,6 +35,19 @@ const initalState = {
 const applicationName = "Barracks Management";
 const AppView = ({ selectedContentPanel, createBuilding }) => {
   const [ state, setState] = useState(initalState);
+  const dockState = Dockable.useDockable(s => {
+    const { createDockedPanel, DockMode } = Dockable;
+    const { Full, Left, Right } = DockMode;
+    const { rootPanel } = s;
+    createDockedPanel(s, rootPanel, Full, <FloorView/>);
+    createDockedPanel(s, rootPanel, Full, <DbView/>);
+    createDockedPanel(s, rootPanel, Left, <Navigator/>);
+    createDockedPanel(s, rootPanel, Right, <Inspector/>);
+  });
+
+  const createPanel = (panel, mode) => {
+    Dockable.createDockedPanel(dockState, dockState.rootPanel, Dockable.DockMode[mode], panel);
+  }
 
   const createNewDataset = () => {
     setState({...state, dataset: datasetTemplete, currentView: VMODES.SOLDIER });
@@ -75,13 +94,19 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                   <NavDropdown.Item disabled={false} onClick={() => setSysView(VMODES.SOLDIER)}>Soldier Management</NavDropdown.Item>
                   <NavDropdown.Item disabled={false} onClick={() => setSysView(VMODES.BUILDING)}>Buildings View</NavDropdown.Item>
                 </NavDropdown>
+                <NavDropdown title="Window">
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Navigator />)}>Navigator</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Inspector />)}>Inspector</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <FloorView />)}>Floor Plan View</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <DbView />)}>Database Viewer</NavDropdown.Item>
+                </NavDropdown>
                 <NavDropdown title="Reports">
                 </NavDropdown>
             </Nav>
           </MainLayout.Navigation>
           <Container fluid>
             <Row>
-              <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
+              {/*<Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
                 <Tabs defaultActiveKey="buildings" id="side_control_tabs" >
                   <Tab eventKey="buildings" title="Buildings">
                     <Button name="create new building" className="newItemBtn" variant="success" size="md" onClick={handleCreateBtn}>New Building</Button>
@@ -93,7 +118,7 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                     <Button name="create new unit" className="newItemBtn" variant="success" size="md" onClick={handleCreateBtn}>New Unit</Button>
                   </Tab>
                 </Tabs>
-              </Col>
+              </Col>*/}
               {/*currentView !== VMODES.WELCOME && false? (
                 <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
                   {currentView === VMODES.SOLDIER ? (
@@ -104,14 +129,16 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                   ):null}
                 </Col>
               ):null */}
-              <Col md={10} className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
-                {selectedObj !== null && selectedObj.type === "new-building" ? (
+              <Col md={12} className={`body-page${selectedContentPanel===1 ? ' active' : ''} dock-frame`}>
+                <Dockable.Container state={ dockState }/>
+                {/*selectedObj !== null && selectedObj.type === "new-building" ? (
                   <form>
                     <h1>New Building</h1>
                     <label>Building Name/Label: <input name="label" type="text"/></label>
                     <label>Building Address: <input name="label" type="text"/></label>
                   </form>
-                ):null}
+                ):null*/}
+                {/*<DockFrame />*/}
                 {/*currentView === VMODES.WELCOME ? (
                   <Container>
                     <Row className="justify-content-md-center text-center">
