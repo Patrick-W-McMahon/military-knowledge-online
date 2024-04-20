@@ -28,7 +28,8 @@
         "react-dom": "^18.2.0",
         "react-helmet": "^6.1.0",
         "react-redux": "^8.0.2",
-        "react-simple-tree-menu": "^1.1.18"
+        "react-simple-tree-menu": "^1.1.18",
+        "styled-components": "^6.1.8"
     },
     "devDependencies": {
         "prettier": "^3.0.0"

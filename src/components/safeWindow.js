@@ -4,5 +4,5 @@ const serverWindow = {
     requestAnimationFrame() {}
 }
 
-const safeWindow = window !== undefined ? window : serverWindow;
+const safeWindow = typeof window !== `undefined` ? window : serverWindow;
 export default safeWindow;
