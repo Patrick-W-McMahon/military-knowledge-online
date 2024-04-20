@@ -1,4 +1,4 @@
-import * as React from "react";
+/*import * as React from "react";
 import * as Dockable from "@hlorenzi/react-dockable";
 
 function DockFrame() {
@@ -34,4 +34,4 @@ function Counter() {
     );
 }
 
-export default DockFrame;
+export default DockFrame;*/

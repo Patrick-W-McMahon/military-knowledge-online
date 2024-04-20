@@ -1,5 +1,6 @@
 import * as React from "react";
-import * as Dockable from "@hlorenzi/react-dockable";
+//import * as Dockable from "@hlorenzi/react-dockable";
+import * as Dockable from '../../../../components/DockableFrame';
 
 
 const Navigator = () => {
