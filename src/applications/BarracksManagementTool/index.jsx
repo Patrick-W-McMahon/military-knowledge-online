@@ -6,8 +6,6 @@ import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col } from "react-bootstrap";
 //import localStore from '../../libs/localStore';
 import { ActionCreateBuilding } from '../../state/reducers/appBarracksManagementReducer';
-//import DockFrame from './components/dockPanel';
-//import * as Dockable from "@hlorenzi/react-dockable";
 import * as Dockable from '../../components/DockableFrame';
 import Navigator from './components/panels/Navigator';
 import FloorView from "./components/panels/FloorView";
