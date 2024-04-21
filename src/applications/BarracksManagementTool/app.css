@@ -149,3 +149,8 @@
     border: 0!important;
     z-index: 0;
 }
+
+
+#NavigatorPanel .rstm-tree-item-group {
+    background-color: lightgrey!important;
+}
