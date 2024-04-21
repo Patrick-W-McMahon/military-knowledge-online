@@ -13,7 +13,7 @@ const rootData = [
     },
     {
         key: 'list_buildings',
-        label: 'buildings'
+        label: 'Buildings'
     }
 ];
 
@@ -25,7 +25,7 @@ const initalState = {
     activeKey:rootData[0].key
 };
 
-const Navigator = ({}) => {
+const Navigator = ({ onSelection }) => {
     const [ state, setState] = useState(initalState);
     const ctx = Dockable.useContentContext();
     ctx.setTitle(`Navigator`);
@@ -34,7 +34,7 @@ const Navigator = ({}) => {
     const handleNavItemSelect = (item) => {
         const data = item.key.split('/');
         const hash = data[data.length -1];
-        console.log({ selectedFilterHash: data[data.length -1], selectedTreeData: item });
+        onSelection({ hash });
         setState({ ...state, focusKey: hash, activeKey: hash });
     };
     const handleNavToggle = (item) => {

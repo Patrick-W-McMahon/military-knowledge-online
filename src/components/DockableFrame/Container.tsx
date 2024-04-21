@@ -263,35 +263,23 @@ export function Container(props: {
 function handleDraggedDivider(
     ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
     state: Dockable.RefState<Dockable.State>,
-    divider: Dockable.Divider)
-{
-    ev.preventDefault()
-
-    const onMouseMove = (ev: MouseEvent) =>
+    divider: Dockable.Divider) 
     {
-        const mouseX = ev.pageX
-        const mouseY = ev.pageY
+    ev.preventDefault();
 
-        divider.panel.splitSize =
-            Math.max(0.05,
-                Math.min(0.95,
-                    ((divider.vertical ? mouseY : mouseX) - divider.resizeMin) /
-                    (divider.resizeMax - divider.resizeMin)))
-
-        state.commit()
+    const onMouseMove = (ev) => {
+        const mouseX = ev.pageX;
+        const mouseY = ev.pageY;
+        divider.panel.splitSize = Math.max(0.05, Math.min(0.95, ((divider.vertical ? mouseY : mouseX) - divider.resizeMin) / (divider.resizeMax - divider.resizeMin)));
+        state.commit();
     }
 
     const onMouseUp = () => {
-
         safeWindow.removeEventListener("mousemove", onMouseMove);
-        safeWindow.removeEventListener("mouseup", onMouseUp);
-
-        
+        safeWindow.removeEventListener("mouseup", onMouseUp);        
     }
-
     safeWindow.addEventListener("mousemove", onMouseMove);
     safeWindow.addEventListener("mouseup", onMouseUp);
-
 }
 
 
@@ -299,29 +287,28 @@ function handleDraggedEdge(
     ev: React.MouseEvent<HTMLDivElement, MouseEvent>,
     state: Dockable.RefState<Dockable.State>,
     layout: React.MutableRefObject<Dockable.Layout>,
-    panel: Dockable.Panel)
-{
-    ev.preventDefault()
-    ev.stopPropagation()
+    panel: Dockable.Panel) 
+    {
+    ev.preventDefault();
+    ev.stopPropagation();
 
-    const startMouseX = ev.pageX
-    const startMouseY = ev.pageY
+    const startMouseX = ev.pageX;
+    const startMouseY = ev.pageY;
 
     const layoutPanel = layout.current.panelRects.find(p => p.panel === panel)!
-    const startPanelRect = layoutPanel.rect
+    const startPanelRect = layoutPanel.rect;
 
-    const onMouseMove = (ev: MouseEvent) =>
-    {
-        const mouseX = ev.pageX
-        const mouseY = ev.pageY
+    const onMouseMove = (ev) => {
+        const mouseX = ev.pageX;
+        const mouseY = ev.pageY;
 
         panel.rect = new Dockable.Rect(
             startPanelRect.x,
             startPanelRect.y,
             Math.max(150, startPanelRect.w + mouseX - startMouseX),
-            Math.max(50, startPanelRect.h + mouseY - startMouseY))
+            Math.max(50, startPanelRect.h + mouseY - startMouseY));
 
-        state.commit()
+        state.commit();
     }
 
     const onMouseUp = () => {
@@ -340,108 +327,96 @@ function handleDraggedHeader(
     layout: React.MutableRefObject<Dockable.Layout>,
     containerRect: React.MutableRefObject<Dockable.Rect>,
     draggedPanel: Dockable.Panel,
-    draggedTabIndex: number | null)
-{
-    ev.preventDefault()
-    ev.stopPropagation()
+    draggedTabIndex: number | null) 
+    {
+    ev.preventDefault();
+    ev.stopPropagation();
 
-    const startMouseX = ev.pageX
-    const startMouseY = ev.pageY
+    const startMouseX = ev.pageX;
+    const startMouseY = ev.pageY;
 
     const layoutPanel = layout.current.panelRects.find(p => p.panel === draggedPanel)!
-    let startPanelRect = layoutPanel.rect
+    let startPanelRect = layoutPanel.rect;
 
-    let dragLocked = true
+    let dragLocked = true;
 
 
-    const onMouseMove = (ev: MouseEvent) =>
-    {
-        const mouseX = ev.pageX
-        const mouseY = ev.pageY
+    const onMouseMove = (ev) => {
+        const mouseX = ev.pageX;
+        const mouseY = ev.pageY;
 
         // Start dragging only when mouse moves far enough, and
         // undock panel at this moment if originally docked
-        if (Math.abs(mouseX - startMouseX) > 10 ||
-            Math.abs(mouseY - startMouseY) > 10)
-        {
-            dragLocked = false
+        if (Math.abs(mouseX - startMouseX) > 10 || Math.abs(mouseY - startMouseY) > 10) {
+            dragLocked = false;
 
             const floatingRect = new Dockable.Rect(
                 mouseX - Math.min(draggedPanel.preferredWidth / 2, mouseX - startPanelRect.x),
                 mouseY - (mouseY - startPanelRect.y),
                 draggedPanel.preferredWidth,
-                draggedPanel.preferredHeight)
+                draggedPanel.preferredHeight);
                 
-            if (draggedTabIndex !== null && draggedPanel.contentList.length > 1)
-            {
+            if (draggedTabIndex !== null && draggedPanel.contentList.length > 1) {
                 // Remove single tab content from original panel and
                 // transfer it to a new floating panel
-                const content = draggedPanel.contentList[draggedTabIndex]
-                Dockable.removeContent(state.ref.current, draggedPanel, content.contentId)
+                const content = draggedPanel.contentList[draggedTabIndex];
+                Dockable.removeContent(state.ref.current, draggedPanel, content.contentId);
 
-                draggedPanel = Dockable.makePanel(state.ref.current)
-                Dockable.addContent(state.ref.current, draggedPanel, content)
+                draggedPanel = Dockable.makePanel(state.ref.current);
+                Dockable.addContent(state.ref.current, draggedPanel, content);
 
-                Dockable.coallesceEmptyPanels(state.ref.current)
+                Dockable.coallesceEmptyPanels(state.ref.current);
 
-                draggedPanel.rect = startPanelRect = floatingRect
-            }
-
-            else if (!draggedPanel.floating)
-            {
+                draggedPanel.rect = startPanelRect = floatingRect;
+            } else if (!draggedPanel.floating) {
                 // Remove original docked panel and
                 // transfer all content to a new floating panel
-                const contents = [...draggedPanel.contentList]
-                const originalTabIndex = draggedPanel.currentTabIndex
+                const contents = [...draggedPanel.contentList];
+                const originalTabIndex = draggedPanel.currentTabIndex;
                 for (const content of contents)
-                    Dockable.removeContent(state.ref.current, draggedPanel, content.contentId)
+                    Dockable.removeContent(state.ref.current, draggedPanel, content.contentId);
                 
-                draggedPanel = Dockable.makePanel(state.ref.current)
+                draggedPanel = Dockable.makePanel(state.ref.current);
                 for (const content of contents)
-                    Dockable.addContent(state.ref.current, draggedPanel, content)
+                    Dockable.addContent(state.ref.current, draggedPanel, content);
 
-                draggedPanel.currentTabIndex = originalTabIndex
-                Dockable.coallesceEmptyPanels(state.ref.current)
+                draggedPanel.currentTabIndex = originalTabIndex;
+                Dockable.coallesceEmptyPanels(state.ref.current);
 
-                draggedPanel.rect = startPanelRect = floatingRect
+                draggedPanel.rect = startPanelRect = floatingRect;
             }
 
-            state.ref.current.draggedPanel = draggedPanel
-            state.ref.current.showAnchors = true
-            state.commit()
+            state.ref.current.draggedPanel = draggedPanel;
+            state.ref.current.showAnchors = true;
+            state.commit();
         }
 
         // Handle actual dragging
-        if (!dragLocked)
-        {
+        if (!dragLocked) {
             // Move panel rect
-            draggedPanel.rect = startPanelRect.displace(mouseX - startMouseX, mouseY - startMouseY)
+            draggedPanel.rect = startPanelRect.displace(mouseX - startMouseX, mouseY - startMouseY);
             
             // Find nearest anchor
-            let nearestDistSqr = 50 * 50
-            state.ref.current.previewAnchor = null
+            let nearestDistSqr = 50 * 50;
+            state.ref.current.previewAnchor = null;
 
-            for (const anchor of layout.current.anchors)
-            {
+            for (const anchor of layout.current.anchors) {
                 if (anchor.panel === draggedPanel)
-                    continue
+                    continue;
 
-                const xx = anchor.x - mouseX
-                const yy = anchor.y - mouseY
-                const distSqr = xx * xx + yy * yy
-                if (distSqr < nearestDistSqr)
-                {
-                    nearestDistSqr = distSqr
-                    state.ref.current.previewAnchor = anchor
+                const xx = anchor.x - mouseX;
+                const yy = anchor.y - mouseY;
+                const distSqr = xx * xx + yy * yy;
+                if (distSqr < nearestDistSqr) {
+                    nearestDistSqr = distSqr;
+                    state.ref.current.previewAnchor = anchor;
                 }
             }
-
             state.commit()
         }
     }
 
     const onMouseUp = () => {
-
         safeWindow.removeEventListener("mousemove", onMouseMove);
         safeWindow.removeEventListener("mouseup", onMouseUp);
 
@@ -452,11 +427,11 @@ function handleDraggedHeader(
             Dockable.dock(state.ref.current, draggedPanel, panel, mode);
         }
 
-        Dockable.clampFloatingPanels(state.ref.current, containerRect.current)
-        state.ref.current.draggedPanel = null
-        state.ref.current.showAnchors = false
-        state.ref.current.previewAnchor = null
-        state.commit()
+        Dockable.clampFloatingPanels(state.ref.current, containerRect.current);
+        state.ref.current.draggedPanel = null;
+        state.ref.current.showAnchors = false;
+        state.ref.current.previewAnchor = null;
+        state.commit();
     }
 
     safeWindow.addEventListener("mousemove", onMouseMove);

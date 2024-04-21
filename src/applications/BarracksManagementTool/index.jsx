@@ -28,25 +28,33 @@ const initalState = {
   buildings: [],
   people: [],
   units: [],
-  selectedObj: null
+  selectedObjHash: null
 }
 
 const applicationName = "Barracks Management";
 const AppView = ({ selectedContentPanel, createBuilding }) => {
   const [ state, setState] = useState(initalState);
+
+  const onNavigatorSelection = ({ hash }) => {
+    console.log("hash: ", hash);
+    setState({...state, selectedObjHash: hash });
+  }
+
   const dockState = Dockable.useDockable(s => {
     const { createDockedPanel, DockMode } = Dockable;
     const { Full, Left, Right } = DockMode;
     const { rootPanel } = s;
     createDockedPanel(s, rootPanel, Full, <FloorView/>);
     createDockedPanel(s, rootPanel, Full, <DbView/>);
-    createDockedPanel(s, rootPanel, Left, <Navigator/>);
-    createDockedPanel(s, rootPanel, Right, <Inspector/>);
+    createDockedPanel(s, rootPanel, Left, <Navigator onSelection={onNavigatorSelection} />);
+    createDockedPanel(s, rootPanel, Right, <Inspector selectedObjHash={state.selectedObjHash} />);
   });
 
   const createPanel = (panel, mode) => {
     Dockable.createDockedPanel(dockState, dockState.rootPanel, Dockable.DockMode[mode], panel);
   }
+
+  
 
   const createNewDataset = () => {
     setState({...state, dataset: datasetTemplete, currentView: VMODES.SOLDIER });
@@ -68,7 +76,7 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
     }
   }
  
-  const { selectedObj } = state;
+  const { selectedObjHash } = state;
   return (
       <Fragment>
         <Seo title={applicationName} />
@@ -85,7 +93,7 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                     <NavDropdown.Divider />
                     <NavDropdown.Item disabled={false} onClick={() => null}>New Unit</NavDropdown.Item>
                     <NavDropdown.Item disabled={false} name="create new building" onClick={handleCreateBtn}>New Building</NavDropdown.Item>
-                    <NavDropdown.Item disabled={selectedObj !== null && selectedObj.type === 'building'} onClick={() => null}>New Floor</NavDropdown.Item>
+                    <NavDropdown.Item disabled={selectedObjHash === 'building'} onClick={() => null}>New Floor</NavDropdown.Item>
                     <NavDropdown.Item disabled={false} onClick={() => null}>New Suite</NavDropdown.Item>
                     <NavDropdown.Item disabled={false} onClick={() => null}>New Room</NavDropdown.Item>
                 </NavDropdown>
@@ -94,8 +102,8 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                   <NavDropdown.Item disabled={false} onClick={() => setSysView(VMODES.BUILDING)}>Buildings View</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Window">
-                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Navigator />)}>Navigator</NavDropdown.Item>
-                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Inspector />)}>Inspector</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Navigator onSelection={onNavigatorSelection} />)}>Navigator</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Inspector selectedObjHash={state.selectedObjHash} />)}>Inspector</NavDropdown.Item>
                   <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <FloorView />)}>Floor Plan View</NavDropdown.Item>
                   <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <DbView />)}>Database Viewer</NavDropdown.Item>
                 </NavDropdown>
