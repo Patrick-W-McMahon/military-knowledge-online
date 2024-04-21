@@ -150,7 +150,18 @@
     z-index: 0;
 }
 
+#NavigatorPanel,
+#NavigatorPanel .rstm-tree-item-group {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative; 
+    top: 0;
+    bottom: 0;
+    background-color: lightgrey!important;
+}
+
 
 #NavigatorPanel .rstm-tree-item-group {
-    background-color: lightgrey!important;
+    
 }
