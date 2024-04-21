@@ -8,6 +8,7 @@ const Inspector = ({ selectedObjHash }) => {
     const ctx = Dockable.useContentContext();
     ctx.setTitle(`Inspector`);
     ctx.setPreferredSize(200, 250);
+    console.log("Inspector: ", selectedObjHash);
 
     /*
     switch(selectedItemId) {
