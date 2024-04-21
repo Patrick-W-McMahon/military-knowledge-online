@@ -1,118 +1,102 @@
 import { Rect } from "./rect";
 
 
-export type PanelId = number
-export type ContentId = number
-export type ContentElement = JSX.Element
+export type PanelId = number;
+export type ContentId = number;
+export type ContentElement = JSX.Element;
 
 
-export interface State
-{
-    idNext: number
-    rootPanel: Panel
-    floatingPanels: Panel[]
-    activePanel: Panel | null
-
-    draggedPanel: Panel | null
-    showAnchors: boolean
-    previewAnchor: Anchor | null
+export interface State {
+    idNext: number;
+    rootPanel: Panel;
+    floatingPanels: Panel[];
+    activePanel: Panel | null;
+    draggedPanel: Panel | null;
+    showAnchors: boolean;
+    previewAnchor: Anchor | null;
 }
 
 
-export enum SplitMode
-{
+export enum SplitMode {
     LeftRight,
-    TopBottom,
+    TopBottom
 }
 
 
-export enum DockMode
-{
+export enum DockMode {
     Full,
     Left,
     Right,
     Top,
-    Bottom,
+    Bottom
 }
 
 
-export interface Panel
-{
-    id: PanelId
-    floating: boolean
-    rect: Rect
-
-    contentList: Content[]
-    currentTabIndex: number
-
-    splitPanels: Panel[]
-    splitMode: SplitMode
-    splitSize: number
-
-    preferredWidth: number
-    preferredHeight: number
-
-    ephemeral: boolean
+export interface Panel {
+    id: PanelId;
+    floating: boolean;
+    rect: Rect;
+    contentList: Content[];
+    currentTabIndex: number;
+    splitPanels: Panel[];
+    splitMode: SplitMode;
+    splitSize: number;
+    preferredWidth: number;
+    preferredHeight: number;
+    ephemeral: boolean;
 }
 
 
-export interface Content
-{
-    contentId: ContentId
-    title: string
-    element: JSX.Element
+export interface Content {
+    contentId: ContentId;
+    title: string;
+    element: JSX.Element;
 }
 
 
-export interface Divider
-{
-    panel: Panel
-    vertical: boolean
-    rect: Rect
-    resizeMin: number
-    resizeMax: number
+export interface Divider {
+    panel: Panel;
+    vertical: boolean;
+    rect: Rect;
+    resizeMin: number;
+    resizeMax: number;
 }
 
 
-export interface Anchor
-{
-    panel: Panel
-    x: number
-    y: number
-    mode: DockMode
-    previewRect: Rect
+export interface Anchor {
+    panel: Panel;
+    x: number;
+    y: number;
+    mode: DockMode;
+    previewRect: Rect;
 }
 
 
-export interface Layout
-{
-    panelRects: LayoutPanel[]
-    content: LayoutContent[]
-    dividers: Divider[]
-    anchors: Anchor[]
+export interface Layout {
+    panelRects: LayoutPanel[];
+    content: LayoutContent[];
+    dividers: Divider[];
+    anchors: Anchor[];
 }
 
 
-export interface LayoutPanel
-{
-    panel: Panel
-    rect: Rect
-    floating: boolean
-    zIndex: number
+export interface LayoutPanel {
+    panel: Panel;
+    rect: Rect;
+    floating: boolean;
+    zIndex: number;
 }
 
 
-export interface LayoutContent
-{
-    content: Content
-    tabIndex: number
-    panel: Panel
-    layoutPanel: LayoutPanel
+export interface LayoutContent {
+    content: Content;
+    tabIndex: number;
+    panel: Panel;
+    layoutPanel: LayoutPanel;
 }
 
 
-export function makeState(): State
-{
+export function makeState(): State {
     return {
         idNext: 2,
         rootPanel: {
@@ -124,52 +108,44 @@ export function makeState(): State
             splitPanels: [],
             splitMode: SplitMode.LeftRight,
             splitSize: 0.5,
-
             preferredWidth: 300,
             preferredHeight: 250,
-
             ephemeral: false,
         },
         floatingPanels: [],
         activePanel: null,
-
         draggedPanel: null,
         showAnchors: false,
-        previewAnchor: null,
-    }
+        previewAnchor: null
+    };
 }
 
 
-export function makePanel(state: State): Panel
-{
+export function makePanel(state: State): Panel {
     const id = state.idNext++
     const panel: Panel = {
         id,
         floating: true,
         rect: new Rect(0, 0, 0, 0),
-
         contentList: [],
         currentTabIndex: 0,
-
         splitPanels: [],
         splitMode: SplitMode.LeftRight,
         splitSize: 0.5,
-
         preferredWidth: 300,
         preferredHeight: 250,
-
-        ephemeral: false,
-    }
-    state.floatingPanels.push(panel)
-    return panel
+        ephemeral: false
+    };
+    state.floatingPanels.push(panel);
+    return panel;
 }
 
 
 export function createDockedPanel( state: State, dockIntoPanel: Panel, mode: DockMode, content: ContentElement) : Panel {
-    const panel = makePanel(state)
-    addNewContent(state, panel, content)
-    dock(state, panel, dockIntoPanel, mode)
-    return panel
+    const panel = makePanel(state);
+    addNewContent(state, panel, content);
+    dock(state, panel, dockIntoPanel, mode);
+    return panel;
 }
 
 
@@ -200,27 +176,29 @@ export function addContent(state: State, toPanel: Panel, content: Content) {
 
 export function removeContent(state: State, fromPanel: Panel, contentId: ContentId) {
     const index = fromPanel.contentList.findIndex(w => w.contentId === contentId);
-    if (index < 0)
+    if (index < 0) {
         return;
-    
+    }
     fromPanel.contentList.splice(index, 1);
     fromPanel.currentTabIndex = Math.max(0, Math.min(fromPanel.contentList.length - 1, fromPanel.currentTabIndex));
 }
 
 
 export function removeEphemerals(state: State) {
-    for (var i = 0; i < state.floatingPanels.length; i++) {
-        removeEphemeralsRecursive(state, state.floatingPanels[i]);
+    const { floatingPanels } = state;
+    for (var i = 0; i < floatingPanels.length; i++) {
+        removeEphemeralsRecursive(state, floatingPanels[i]);
     }
     coallesceEmptyPanels(state);
 }
 
 
 export function removeEphemeralsRecursive(state: State, fromPanel: Panel) {
-    for (var i = 0; i < fromPanel.splitPanels.length; i++){
-        coallesceEmptyPanelsRecursive(state, fromPanel.splitPanels[i]);
+    const { splitPanels, ephemeral } = fromPanel;
+    for (var i = 0; i < splitPanels.length; i++){
+        coallesceEmptyPanelsRecursive(state, splitPanels[i]);
     }
-    if (fromPanel.ephemeral) {
+    if (ephemeral) {
         fromPanel.contentList = [];
         fromPanel.currentTabIndex = 0;
     }

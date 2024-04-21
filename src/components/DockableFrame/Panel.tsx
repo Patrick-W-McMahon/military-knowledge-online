@@ -137,14 +137,14 @@ export function ContainerPanel(props: {
     onClickPanel: () => void,
     onClickTab: (tabNumber: number) => void,
     onCloseTab: (ev: React.MouseEvent<HTMLButtonElement, MouseEvent>, tabNumber: number) => void,
-    onDragHeader: (ev: React.MouseEvent<HTMLDivElement, MouseEvent>, tabNumber: number | null) => void,
-})
-{
-    const panelRect: Dockable.LayoutPanel = props.panelRect
+    onDragHeader: (ev: React.MouseEvent<HTMLDivElement, MouseEvent>, tabNumber: number | null) => void
+}) {
+    const panelRect: Dockable.LayoutPanel = props.panelRect;
 
-    const isActivePanel = props.state.ref.current.activePanel === panelRect.panel
+    const isActivePanel = props.state.ref.current.activePanel === panelRect.panel;
 
-    return <StyledPanelRoot
+    return (
+    <StyledPanelRoot
         style={{
             left: `${ panelRect.rect.x }px`,
             top: `${ panelRect.rect.y }px`,
@@ -187,12 +187,9 @@ export function ContainerPanel(props: {
                         </StyledCloseButton>
                     </StyledTab>
                 )}
-
                 <StyledTabRowEmptySpace/>
-
             </StyledTabRowInner>
-
         </StyledTabRow>
-
     </StyledPanelRoot>
+    );
 }
