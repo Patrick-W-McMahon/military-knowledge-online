@@ -176,7 +176,7 @@ export function Container(props: {
             }}>
                 <Dockable.ContentContext.Provider value={{ layoutContent, setTitle: (title) => setTitle(layoutContent, title), setPreferredSize: (w, h) => setPreferredSize(layoutContent, w, h) }}>
                     <StyledContentInner>
-                        {layoutContent.content.element}
+                        {React.cloneElement(layoutContent.content.element, { ...props.state })}
                     </StyledContentInner>
                 </Dockable.ContentContext.Provider>
                 
