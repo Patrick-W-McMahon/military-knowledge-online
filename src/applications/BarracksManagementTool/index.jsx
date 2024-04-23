@@ -28,7 +28,7 @@ const initalState = {
   buildings: [],
   people: [],
   units: [],
-  selectedObjHash: null
+  selectedObj: null
 }
 
 const applicationName = "Barracks Management";
@@ -37,7 +37,7 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
 
   const onNavigatorSelection = ({ hash }) => {
     console.log("hash: ", hash);
-    setState({...state, selectedObjHash: hash });
+    setState({...state, selectedObj: { hash } });
   }
 
   const dockState = Dockable.useDockable(s => {
@@ -47,14 +47,9 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
     createDockedPanel(s, rootPanel, Full, <FloorView/>);
     createDockedPanel(s, rootPanel, Full, <DbView/>);
     createDockedPanel(s, rootPanel, Left, <Navigator onSelection={onNavigatorSelection} />);
-    createDockedPanel(s, rootPanel, Right, <Inspector selectedObjHash={state.selectedObjHash} />);
+    createDockedPanel(s, rootPanel, Right, <Inspector />);
   });
 
-  const createPanel = (panel, mode) => {
-    Dockable.createDockedPanel(dockState, dockState.rootPanel, Dockable.DockMode[mode], panel);
-  }
-
-  
 
   const createNewDataset = () => {
     setState({...state, dataset: datasetTemplete, currentView: VMODES.SOLDIER });
@@ -137,7 +132,7 @@ const AppView = ({ selectedContentPanel, createBuilding }) => {
                 </Col>
               ):null */}
               <Col md={12} className={`body-page${selectedContentPanel===1 ? ' active' : ''} dock-frame`}>
-                <Dockable.Container state={ dockState }/>
+                <Dockable.Container state={{ ...dockState, ...state }}/>
                 {/*selectedObj !== null && selectedObj.type === "new-building" ? (
                   <form>
                     <h1>New Building</h1>
