@@ -33,7 +33,3 @@ table thead tr th:nth-child(1){
 table thead tr th:nth-child(5) {
     width: 200px!important;
 }
-
-.body-page {
-    overflow-y: scroll;
-}

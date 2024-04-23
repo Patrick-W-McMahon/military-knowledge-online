@@ -175,8 +175,11 @@ body {
     overflow-y: scroll;
 }
 
-.main-content.no-scroll {
-    overflow: hidden;
+.main-content.no-scroll,
+.main-content.no-scroll .body-page {
+    overflow: hidden!important;
+    overflow-x: hidden!important;
+    overflow-y: hidden!important;
 }
 
 .scroll-panel {
