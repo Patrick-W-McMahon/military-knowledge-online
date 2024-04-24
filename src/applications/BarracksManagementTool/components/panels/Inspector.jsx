@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import * as Dockable from '../../../../components/DockableFrame';
+import { Button, Table } from 'react-bootstrap';
+import personTemplate from '../../templates/personTemplate.json';
 
 const Wrapper = ({children}) => <div id="InspectorPanel">{children}</div>;
 const Inspector = (props) => {
@@ -8,27 +10,50 @@ const Inspector = (props) => {
     ctx.setTitle(`Inspector`);
     ctx.setPreferredSize(200, 250);
     console.log("Inspector props: ", props);
+    
+    const getDataTemplate = (template) => {
+        switch(template) {
+            case "person": 
+                return personTemplate;
+            default:
+                return {err: 'not supported template'};
+        }
+    }
 
     /*
     switch(selectedItemId) {
         default:*/
             //return <Wrapper><p>Selected Object not supported</p></Wrapper>;
     //}
-    if(selectedObj === null) {
+    if(selectedObj === null || selectedObj.inspectorStr === null) {
         return (
             <Wrapper>
                 <div>No object selected</div>
             </Wrapper>
         );
     }
+    const { inspectorStr } = selectedObj;
+    const iType = inspectorStr.split('<')[0];
+    const iObj = (inspectorStr.split('<')[1]).split('>')[0];
+    const iTemplate = (inspectorStr.split('<')[1]).split('>')[1];
+    console.log('data str: ', iType, iObj, iTemplate);
+    //const templateData = getDataTemplate(iTemplate);
+    
+    
 
-    switch(selectedObj.hash) {
-        case "list_people":
+    switch(iType) {
+        case "array":
             return (
                 <Wrapper>
-                    <Fragment>
-                        <div>show people list with the ability to add people</div>
-                    </Fragment>
+                    <h1><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></h1>
+                    
+                    <div className="array-list-view">
+                        <h2>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</h2>
+                        <Table>
+
+                        </Table>
+                        <Button variant="secondary" size={'sm'}>New {iTemplate.charAt(0).toUpperCase() + iTemplate.slice(1)}</Button>
+                    </div>
                 </Wrapper>
             );
         default:

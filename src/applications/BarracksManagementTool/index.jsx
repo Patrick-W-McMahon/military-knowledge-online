@@ -32,12 +32,11 @@ const initalState = {
 }
 
 const applicationName = "Barracks Management";
-const AppView = ({ selectedContentPanel, createBuilding }) => {
+const AppView = ({ selectedContentPanel }) => {
   const [ state, setState] = useState(initalState);
 
-  const onNavigatorSelection = ({ hash }) => {
-    console.log("hash: ", hash);
-    setState({...state, selectedObj: { hash } });
+  const onNavigatorSelection = ({ hash, inspectorStr }) => {
+    setState({...state, selectedObj: { hash, inspectorStr } });
   }
 
   const dockState = Dockable.useDockable(s => {

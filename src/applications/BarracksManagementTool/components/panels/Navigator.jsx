@@ -31,10 +31,23 @@ const Navigator = ({ onSelection }) => {
     ctx.setTitle(`Navigator`);
     ctx.setPreferredSize(200, 250);
 
+    const getInspectorStr = (hash) => {
+        switch(hash){
+            case "list_people":
+                return "array<people>person";
+            case "list_units":
+                return "array<units>unit";
+            case "list_buildings":
+                return "array<buildings>building";
+            default:
+                return "errType";
+        }
+    }
+
     const handleNavItemSelect = (item) => {
         const data = item.key.split('/');
         const hash = data[data.length -1];
-        onSelection({ hash });
+        onSelection({ hash, inspectorStr: getInspectorStr(hash) });
         setState({ ...state, focusKey: hash, activeKey: hash });
     };
     const handleNavToggle = (item) => {
