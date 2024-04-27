@@ -5,7 +5,7 @@ import InsArrCmp from "../InsArrCmp";
 
 const Wrapper = ({children}) => <div id="InspectorPanel">{children}</div>;
 const Inspector = (props) => {
-    const { selectedObj } = props;
+    const { selectedObj, buildings, people, units } = props;
     const ctx = Dockable.useContentContext();
     ctx.setTitle(`Inspector`);
     ctx.setPreferredSize(200, 250);
@@ -19,6 +19,7 @@ const Inspector = (props) => {
                 return {err: 'not supported template'};
         }
     }
+
 
     /*
     switch(selectedItemId) {
@@ -38,17 +39,20 @@ const Inspector = (props) => {
     const iTemplate = (inspectorStr.split('<')[1]).split('>')[1];
     console.log('data str: ', iType, iObj, iTemplate);
     //const templateData = getDataTemplate(iTemplate);
-    
-    const testData = [
-        {
-            _internal: {
-                label: "person 1",
-                type: "person"
-            }
-            
-        }
-    ];
-    
+    let selectedData = [];
+    switch(inspectorStr) {
+        case "array<people>person":
+            selectedData = people;
+        break;
+        case "array<units>unit":
+            selectedData = units;
+        break;
+        case "array<buildings>building":
+            selectedData = buildings;
+        break;
+        default:
+            selectedData = null;
+    }
 
     switch(iType) {
         case "array":
@@ -56,7 +60,7 @@ const Inspector = (props) => {
                 <Wrapper>
                     <h1><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></h1>
 
-                    <InsArrCmp title={iObj} data={testData} />
+                    <InsArrCmp title={iObj} data={selectedData} />
 
                     {/*
                     <div className="array-list-view">

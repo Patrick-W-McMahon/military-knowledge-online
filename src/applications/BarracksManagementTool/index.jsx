@@ -24,10 +24,61 @@ const VMODES = {
   BUILDING: 'buildings_view'
 }
 
+const testData = {
+  people: [
+    {
+        _internal: {
+            label: "person 1",
+            type: "person"
+        }
+        
+    },
+    {
+        _internal: {
+            label: "person 2",
+            type: "person"
+        }
+        
+    },
+    {
+        _internal: {
+            label: "person 3",
+            type: "person"
+        }
+        
+    }
+  ],
+  units: [
+    {
+        _internal: {
+            label: "24th",
+            type: "unit"
+        }
+        
+    },
+    {
+        _internal: {
+            label: "2nd MI",
+            type: "unit"
+        }
+        
+    }
+  ],
+  buildings: [
+    {
+        _internal: {
+            label: "1202",
+            type: "building"
+        }
+        
+    }
+  ]
+};
+
 const initalState = {
-  buildings: [],
-  people: [],
-  units: [],
+  buildings: [...testData.buildings],
+  people: [...testData.people],
+  units: [...testData.units],
   selectedObj: null
 }
 

@@ -101,6 +101,16 @@
     margin: 8px 8px 0 8px;
     border: 1px solid var(--clr-outline);
     background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 6px;
+    border-radius: 3px;
     min-height: 50px;
+    padding: 2px 0 2px 0;
+}
+
+.InsComp.array-list-view > ul > li {
+    padding: 2px 4px 2px 4px;
+}
+
+.InsComp.array-list-view > ul > li:hover {
+    background-color: rgba(77, 77, 77, 0.8);
+    cursor: pointer;
 }

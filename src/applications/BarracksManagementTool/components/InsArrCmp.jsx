@@ -6,7 +6,7 @@ const initalState = {
     open: true
 };
 
-const InsArrCmp = ({ title }) => {
+const InsArrCmp = ({ title, data }) => {
     const [ state, setState] = useState(initalState);
 
     const togglePanelView = () => setState({...state, open: !state.open});
@@ -17,7 +17,11 @@ const InsArrCmp = ({ title }) => {
             <header onClick={togglePanelView}>{title.charAt(0).toUpperCase() + title.slice(1)}</header>
             {open? (
                 <Fragment>
-                    <ul></ul>
+                    <ul>
+                        {data.map((d,i) => (
+                            <li key={i}>{d._internal.label}</li>
+                        ))}
+                    </ul>
                     <div className="btn-group">
                         <button>+</button>
                         <button>-</button>
