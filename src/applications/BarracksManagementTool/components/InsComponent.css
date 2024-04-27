@@ -5,11 +5,11 @@
 
 .InsComp {
     display: block;
-    width: calc(100% - 1px);
-    margin-left: 1px;
-    border-top: var(--clr-outline);
-    border-bottom: var(--clr-outline);
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    margin-left: 0;
+    border-top: 1px solid rgb(50, 50, 50);
+    border-bottom: 1px solid rgb(50, 50, 50);
+    background-color: rgb(80, 80, 80);
 }
 
 .InsComp > header {

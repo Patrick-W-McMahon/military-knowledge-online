@@ -150,7 +150,12 @@
     z-index: 0;
 }
 
-#InspectorPanel,
+#InspectorPanel {
+    background-color: rgb(110, 110, 110);
+    height: 100%;
+    width: 100%;
+}
+
 #NavigatorPanel,
 #NavigatorPanel .rstm-tree-item-group {
     display: block;
