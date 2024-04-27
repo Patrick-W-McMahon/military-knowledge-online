@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import * as Dockable from '../../../../components/DockableFrame';
-import { Button, Table } from 'react-bootstrap';
 import personTemplate from '../../templates/personTemplate.json';
+import InsArrCmp from "../InsArrCmp";
 
 const Wrapper = ({children}) => <div id="InspectorPanel">{children}</div>;
 const Inspector = (props) => {
@@ -39,6 +39,15 @@ const Inspector = (props) => {
     console.log('data str: ', iType, iObj, iTemplate);
     //const templateData = getDataTemplate(iTemplate);
     
+    const testData = [
+        {
+            _internal: {
+                label: "person 1",
+                type: "person"
+            }
+            
+        }
+    ];
     
 
     switch(iType) {
@@ -46,7 +55,10 @@ const Inspector = (props) => {
             return (
                 <Wrapper>
                     <h1><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></h1>
-                    
+
+                    <InsArrCmp title={iObj} data={testData} />
+
+                    {/*
                     <div className="array-list-view">
                         <h2>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</h2>
                         <Table>
@@ -54,6 +66,7 @@ const Inspector = (props) => {
                         </Table>
                         <Button variant="secondary" size={'sm'}>New {iTemplate.charAt(0).toUpperCase() + iTemplate.slice(1)}</Button>
                     </div>
+                    */}
                 </Wrapper>
             );
         default:

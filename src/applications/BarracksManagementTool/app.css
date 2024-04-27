@@ -150,6 +150,7 @@
     z-index: 0;
 }
 
+#InspectorPanel,
 #NavigatorPanel,
 #NavigatorPanel .rstm-tree-item-group {
     display: block;
@@ -167,7 +168,7 @@
     font-size: 1.9em;
     padding: 3px;
 }
-
+/*
 #InspectorPanel > .array-list-view {
     background-color: lightgray;
     color: black;
@@ -196,3 +197,4 @@
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
+*/

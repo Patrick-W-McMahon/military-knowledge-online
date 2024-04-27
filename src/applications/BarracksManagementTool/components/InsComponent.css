@@ -1,0 +1,106 @@
+:root {
+    --clr-outline: rgb(31, 31, 31);
+}
+
+
+.InsComp {
+    display: block;
+    width: calc(100% - 1px);
+    margin-left: 1px;
+    border-top: var(--clr-outline);
+    border-bottom: var(--clr-outline);
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.InsComp > header {
+    background-color: rgba(77, 77, 77, 0.4);
+    padding: 6px 0 6px 0;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    
+}
+
+.InsComp > header:before {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 6px 0 6px 8px;
+    border-color: transparent transparent transparent #d6d6d6c9;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px 14px 4px 8px; 
+}
+
+.InsComp > header:hover {
+    background-color: rgba(77, 77, 77, 0.8);
+    cursor: pointer;
+}
+
+.InsComp.open > header {
+    border-bottom: 1px solid rgba(77, 77, 77, 0.8);
+}
+
+.InsComp.open {
+    padding-bottom: 40px;
+}
+
+.InsComp.open > header::before {
+    transform: rotate(90deg);
+}
+
+.InsComp .array-list-view > ul {
+    background-color: rgb(77, 77, 77);
+    /*border: 1px solid var(--clr-outline);*/
+    border-radius: 8px;
+    margin: 4px;
+}
+
+.InsComp.array-list-view > .btn-group {
+    display: flex;
+    flex-wrap: nowrap;
+    float: right;
+    margin: 0 20px 0 0;
+}
+
+.InsComp.array-list-view > .btn-group > button {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 23px;
+    width: 28px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    border: 1px solid var(--clr-outline);
+    border-top: 0;
+    outline: none;
+    margin-top: -2px;
+}
+
+.InsComp.array-list-view > .btn-group > button:active {
+    background-color: rgba(77, 77, 77, 0.4);
+}
+
+.InsComp.array-list-view > .btn-group > button:hover {
+    cursor: pointer;
+}
+
+.InsComp.array-list-view > .btn-group > button:first-child {
+    border-bottom-left-radius: 6px;
+}
+
+.InsComp.array-list-view > .btn-group > button:last-child {
+    border-left: 0;
+    border-bottom-right-radius: 6px;
+}
+
+.InsComp.array-list-view > ul {
+    margin: 8px 8px 0 8px;
+    border: 1px solid var(--clr-outline);
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    min-height: 50px;
+}
