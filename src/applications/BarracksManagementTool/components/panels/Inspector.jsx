@@ -58,7 +58,7 @@ const Inspector = (props) => {
         case "array":
             return (
                 <Wrapper>
-                    <h1><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></h1>
+                    <header><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></header>
 
                     <InsArrCmp title={iObj} data={selectedData} />
 

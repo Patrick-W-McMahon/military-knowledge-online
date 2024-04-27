@@ -167,11 +167,13 @@
     background-color: lightgrey!important;
 }
 
-#InspectorPanel > h1 {
+#InspectorPanel > header {
     background-color: lightgray;
     color: black;
     font-size: 1.9em;
-    padding: 3px;
+    padding: 8px;
+    width: 100%;
+    font-weight: 600;
 }
 /*
 #InspectorPanel > .array-list-view {
