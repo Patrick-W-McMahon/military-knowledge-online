@@ -56,16 +56,16 @@ function getTimerDisplay(todayDate, timer) {
       break;
       case "Annual Countdown":
         const d = new Date(`${timer.month} ${timer.day}, ${todayDate.getFullYear()} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
-        if(getDaysExact(d) === 0) {
+        if(getDaysExact(d) === 0 && d.hours <= 0 && d.minutes <= 0 && d.seconds <= 0) {
             display = timer.finishMessage;
-            return;
+        } else {
+            let year = todayDate.getFullYear();
+            if(getDaysExact(d) < -1) {
+                year++;
+            }
+            const df = new Date(`${timer.month} ${timer.day}, ${year} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
+            display =  `${getDays(df)}d ${getHours(df)}h ${getMinutes(df)}m ${getSeconds(df)}s`;
         }
-        let year = todayDate.getFullYear();
-        if(getDaysExact(d) < -1) {
-            year++;
-        }
-        const df = new Date(`${timer.month} ${timer.day}, ${year} ${timer.hours}:${timer.minutes}:${timer.seconds}`).getTime() - todayDate.getTime();
-        display =  `${getDays(df)}d ${getHours(df)}h ${getMinutes(df)}m ${getSeconds(df)}s`;
       break;
       default:
         console.log('ERROR: unsupported timer type ', timer.timerType);
