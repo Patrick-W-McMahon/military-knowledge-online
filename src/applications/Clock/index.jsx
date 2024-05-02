@@ -2,9 +2,9 @@ import React, { Fragment, useState, useEffect } from "react";
 import { connect } from "react-redux";
 import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
-import { Container, Nav, NavDropdown, Row, Col, Button } from "react-bootstrap";
+import { Container, Nav, NavDropdown, Row, Col, Button, ButtonGroup } from "react-bootstrap";
 import localStore from '../../libs/localStore';
-import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionLoadClockData, ActionClearClockData } from '../../state/reducers/appClockReducer';
+import { ActionSetTimers , ActionGetTimers, ActionCreateTimer, ActionDeleteTimer, ActionLoadClockData, ActionClearClockData, ActionUpdateTimer, ActionMoveTimer } from '../../state/reducers/appClockReducer';
 import TimerTable from './timerTable';
 
 import './app.css';
@@ -13,6 +13,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July", 
 const timerTypes = ["Day Timer", "Date Countdown", "Annual Countdown"];
 const initalState = {
   formData: {
+    timerIndex: -1,
     label: "",
     finishMessage: "",
     timerType: timerTypes[0],
@@ -28,7 +29,7 @@ const initalState = {
 const applicationName = "Clock";
 const targetSystemCode = "CLOCK";
 const fileNameStr = "MKO_APP_Clock.dat";
-const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockData, LoadClockData, GetTimers, timers }) => {
+const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, UpdateTimer, MoveTimer, ClearClockData, LoadClockData, GetTimers, timers }) => {
   const [state, setState] = useState(initalState);
   useEffect(() => {
     GetTimers();
@@ -60,7 +61,23 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
     setState({...state, formData: initalState.formData});
     CreateTimer(timer, timers);
   }
+
+  const onUpdateTimer = () => {
+    console.log('update');
+    const timer = state.formData;
+    UpdateTimer(timer, timers);
+    cancelUpdateTimer();
+  }
+  const cancelUpdateTimer = () => {
+    setState({ ...initalState });
+  }
+  const startUpdateTimer = (index) => {
+    const formData = { ...timers[index], timerIndex: index };
+    setState({ ...state, formData });
+  }
   
+  const { formData } = state;
+  const { timerIndex, label, finishMessage, timerType, year, month, day, hours, minutes, seconds } = formData;
   return (
     <Fragment>
       <Seo title={applicationName} />
@@ -78,24 +95,31 @@ const AppView = ({ selectedContentPanel, CreateTimer, DeleteTimer, ClearClockDat
           <Row>
             <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
               <form>
-                <label>Label<input name="label" type="text" value={state.formData.label} onChange={(e) => onFormFieldChange(e)}/></label>
-                <label>End Message<input name="finishMessage" type="text" value={state.formData.finishMessage} onChange={(e) => onFormFieldChange(e)}/></label>
+                <label>Label<input name="label" type="text" value={label} onChange={onFormFieldChange}/></label>
+                <label>End Message<input name="finishMessage" type="text" value={finishMessage} onChange={onFormFieldChange}/></label>
                 <label>Type
-                  <select name="timerType" value={state.formData.timerType} onChange={(e) => onFormFieldChange(e)}>{timerTypes.map((e,i) => <option key={i} value={e}>{e}</option>)}</select>
+                  <select name="timerType" value={timerType} onChange={onFormFieldChange}>{timerTypes.map((e,i) => <option key={i} value={e}>{e}</option>)}</select>
                 </label>
-                <label>Year<input name="year" type="number" value={state.formData.year} onChange={(e) => onFormFieldChange(e)} disabled={state.formData.timerType===timerTypes[0] || state.formData.timerType===timerTypes[2]}/></label>
+                <label>Year<input name="year" type="number" value={year} onChange={onFormFieldChange} disabled={timerType===timerTypes[0] || timerType===timerTypes[2]}/></label>
                 <label>Month
-                  <select name="month" value={state.formData.month} onChange={(e) => onFormFieldChange(e)} disabled={state.formData.timerType===timerTypes[0]}>{months.map((m,i) => <option key={i} value={m}>{m}</option>)}</select>
+                  <select name="month" value={month} onChange={onFormFieldChange} disabled={timerType===timerTypes[0]}>{months.map((m,i) => <option key={i} value={m}>{m}</option>)}</select>
                 </label>
-                <label>Day<input name="day" value={state.formData.day} onChange={(e) => onFormFieldChange(e)} type="number" disabled={state.formData.timerType===timerTypes[0]} /></label>
-                <label>Hours<input name="hours" value={state.formData.hours} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
-                <label>Minutes<input name="minutes" value={state.formData.minutes} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
-                <label>Seconds<input name="seconds" value={state.formData.seconds} onChange={(e) => onFormFieldChange(e)} type="number" /></label>
-                <Button onClick={() => onCreateTimer()} variant="success" size="lg">Create Timer</Button>
+                <label>Day<input name="day" value={day} onChange={onFormFieldChange} type="number" disabled={timerType===timerTypes[0]} /></label>
+                <label>Hours<input name="hours" value={hours} onChange={onFormFieldChange} type="number" /></label>
+                <label>Minutes<input name="minutes" value={minutes} onChange={onFormFieldChange} type="number" /></label>
+                <label>Seconds<input name="seconds" value={seconds} onChange={onFormFieldChange} type="number" /></label>
+                {timerIndex === -1 ? (
+                  <Button onClick={onCreateTimer} variant="success" size="lg">Create Timer</Button>
+                ) : (
+                  <ButtonGroup className="updateTimerBtnGroup">
+                    <Button onClick={() => onUpdateTimer()} variant="success" size="lg">  Update Timer  </Button>
+                    <Button onClick={() => cancelUpdateTimer()} variant="secondary" size="lg">X</Button>
+                  </ButtonGroup>
+                )}
               </form>
             </Col>
             <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
-              <TimerTable timers={timers} onDeleteTimer={(timerIndex) => DeleteTimer(timerIndex, timers)} />
+              <TimerTable timers={timers} onDeleteTimer={(timerIndex) => DeleteTimer(timerIndex, timers)} onEditTimer={startUpdateTimer} onMoveTimer={MoveTimer} />
             </Col>
           </Row>
         </Container>
@@ -117,6 +141,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     GetTimers: () => ActionGetTimers(dispatch),
     CreateTimer: (timer, timers) => ActionCreateTimer(dispatch, timer, timers),
     DeleteTimer: (index, timers) => ActionDeleteTimer(dispatch, index, timers),
+    UpdateTimer: (timer, timers) => ActionUpdateTimer(dispatch, timer, timers),
+    MoveTimer: (index, direction, timers) => ActionMoveTimer(dispatch, index, direction, timers),
     ClearClockData: () => ActionClearClockData(dispatch),
     LoadClockData: (data) => ActionLoadClockData(dispatch, data)
 });

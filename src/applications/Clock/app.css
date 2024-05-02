@@ -33,3 +33,11 @@ table thead tr th:nth-child(1){
 table thead tr th:nth-child(5) {
     width: 200px!important;
 }
+
+.updateTimerBtnGroup {
+    width: 100%;
+}
+
+.updateTimerBtnGroup > :nth-child(2) {
+    width: 60px;
+}

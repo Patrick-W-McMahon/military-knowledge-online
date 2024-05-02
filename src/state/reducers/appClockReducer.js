@@ -52,6 +52,68 @@ export const ActionCreateTimer = (dispatch, timer, timers) => {
     return dispatch({ type: GET_TIMERS, timers: dataStore });
 }
 
+export const ActionUpdateTimer = (dispatch, timer, timers) => {
+    if(timer === undefined) {
+        console.error('Error: in ActionUpdateTimer timer undefined');
+        return;
+    }
+    if(timers === undefined) {
+        console.error('Error: in ActionUpdateTimer timers undefined');
+        return;
+    }
+    const index = timer.timerIndex;
+    if(index < 0 || index > timers.length) {
+        console.error('Error: in ActionUpdateTimer index out of range');
+        return;
+    }
+    let dataStore = [];
+    if(typeof window !== `undefined`) {
+        dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS)) || [];
+    }
+    dataStore[index] = timer;
+    window.localStorage.setItem(DATASTORE.APP_CLOCK_TIMERS, JSON.stringify(dataStore));
+    return dispatch({ type: GET_TIMERS, timers: dataStore });
+}
+
+export const ActionMoveTimer = (dispatch, index, direction, timers) => {
+    if(timers === undefined) {
+        console.error('Error: in ActionMoveTimer timers undefined');
+        return;
+    }
+    if(index < 0 || index > timers.length) {
+        console.error('Error: in ActionMoveTimer index out of range');
+        return;
+    }
+    if((index === 0 && direction === 'up') || (index === timers.length && direction === 'down')) {
+        console.error('Error: in ActionMoveTimer index move invalid');
+        return;
+    }
+    let dataStore = [];
+    if(typeof window !== `undefined`) {
+        dataStore = JSON.parse(window.localStorage.getItem(DATASTORE.APP_CLOCK_TIMERS)) || [];
+    }
+    let p1, p2;
+    switch(direction) {
+        case "up":
+            p1 = dataStore[index];
+            p2 = dataStore[index - 1];
+            dataStore[index] = p2;
+            dataStore[index - 1] = p1;
+        break;
+        case "down":
+            p1 = dataStore[index];
+            p2 = dataStore[index + 1];
+            dataStore[index] = p2;
+            dataStore[index + 1] = p1;
+        break;
+        default:
+            console.error('Error: in ActionMoveTimer unknown direction');
+            return;
+    }
+    window.localStorage.setItem(DATASTORE.APP_CLOCK_TIMERS, JSON.stringify(dataStore));
+    return dispatch({ type: GET_TIMERS, timers: dataStore });
+}
+
 export const ActionDeleteTimer = (dispatch, index, timers) => {
     if(index === undefined) {
         console.error('Error: in ActionCreateTimer index undefined');

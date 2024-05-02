@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Table,  } from "react-bootstrap";
+import { Button, Table, ButtonGroup } from "react-bootstrap";
 
 
 function pad(num, size) {
@@ -75,7 +75,7 @@ function getTimerDisplay(todayDate, timer) {
     return display;
   }
 
-const TimerTable = ({ timers, onDeleteTimer }) => {
+const TimerTable = ({ timers, onDeleteTimer, onEditTimer, onMoveTimer }) => {
     const [todayDate, setTodaysDate] = useState(new Date());
     setTimeout(() => {// Update Timers
         const now = new Date();
@@ -101,7 +101,14 @@ const TimerTable = ({ timers, onDeleteTimer }) => {
                             <td>{timer.label}</td>
                             <td>{getTimerDisplay(todayDate, timer)}</td>
                             <td>{getTimerSetDisplay(timer)}</td>
-                            <td><Button variant="danger" size="sm" onClick={() => onDeleteTimer(i)}>Delete</Button></td>
+                            <td>
+                                <ButtonGroup size="sm">
+                                    <Button disabled={i === 0} variant="secondary" onClick={() => onMoveTimer(i, 'up', timers)}>&#11165;</Button>
+                                    <Button disabled={i === timers.length - 1} variant="secondary" onClick={() => onMoveTimer(i, 'down', timers)}>&#11167;</Button>
+                                    <Button variant="info" onClick={() => onEditTimer(i)}><i className="far fa-edit"></i></Button>
+                                    <Button variant="danger" onClick={() => onDeleteTimer(i)}><i className="fas fa-trash-alt"></i></Button>
+                                </ButtonGroup>
+                            </td>
                         </tr>
                     );
                 })}
