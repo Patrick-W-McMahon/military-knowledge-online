@@ -6,5 +6,13 @@
             "func": "getLinksByTags",
             "val": ["online_education"]
         }
+    },
+    {
+        "label": "Online Tools",
+        "action": {
+            "obj": "links-action",
+            "func": "getLinksByTags",
+            "val": ["online_tools"]
+        }
     }
 ]
