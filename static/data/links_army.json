@@ -1231,5 +1231,12 @@
         "description": "The new Army E-Learning percipio login page.",
         "cardId": 31,
         "categories": ["education_military"]
+    },
+    {
+        "title": "Intelink",
+        "url": "https://www.intelink.gov/my.policy",
+        "description": "The Intelink Service Management Center (ISMC) provides the Intelink family of services for collaboration, but it is the user community that provides the content. The Intelink user community includes a broad range of consumers, (government civilians, contractors, and military personnel) with missions that support: Intelligence, Homeland Security, National Defense, Law Enforcement, Diplomatic/Foreign Relations",
+        "cardId": 158,
+        "categories": ["quick_links","army_website","dod_resource","human_resources","professional_development","resources", "resources_info_tech","us_gov_website"]
     }
 ]
