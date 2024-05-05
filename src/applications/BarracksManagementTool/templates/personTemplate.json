@@ -1,22 +1,76 @@
 {
-    "dod": 0,
-    "name": {
-        "first": "",
-        "middle": "",
-        "last": ""
+    "dod": {
+        "type": "number",
+        "default": null
     },
-    "rank": "",
-    "gender": "",
-    "deros": "",
-    "unitId": 0,
+    "firstName": {
+        "type": "string",
+        "default": null
+    },
+    "middleName": {
+        "type": "string",
+        "deafult": null
+    },
+    "lastName": {
+        "type": "string",
+        "deafult": null
+    },
+    "rank": {
+        "type": "string",
+        "default": null
+    },
+    "gender": {
+        "type": "select",
+        "options": ["Male", "Female"],
+        "default": "Male"
+    },
+    "deros": {
+        "type": "date",
+        "default": null
+    },
+    "unitId": {
+        "type": "index-key",
+        "default": null
+    },
     "housing": {
-        "buildingId": -1,
-        "roomId": -1
+        "type": "object",
+        "default": null,
+        "props": {
+            "buildingId": {
+                "type": "index-key",
+                "default": null
+            },
+            "roomId": {
+                "type": "index-key",
+                "default": null
+            }
+        }
     },
     "contactInfo": {
-        "phones": [],
-        "emails": []
+        "type": "object",
+        "default": null,
+        "props": {
+            "phones": {
+                "type": "array",
+                "objType": "phone-number",
+                "default": []
+            },
+            "emails": {
+                "type": "array",
+                "objType": "email-address",
+                "deafult": []
+            }
+        }
+        
     },
-    "notes": [],
-    "eventHistory":[]
+    "notes": {
+        "type": "array",
+        "objType": "string",
+        "default": []
+    },
+    "eventHistory": {
+        "type": "array",
+        "objType": "string",
+        "default": []
+    }
 }   

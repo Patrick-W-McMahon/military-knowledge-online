@@ -119,3 +119,47 @@
     background-color: rgba(77, 77, 77, 0.8);
     cursor: pointer;
 }
+
+.InsComp form {
+    padding: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.35)!important;
+}
+
+.InsComp form label {
+    margin: 3px 0 3px 0;
+    padding: 3px 0 3px 0;
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.InsComp form label > span,
+.InsComp form label > input,
+.InsComp form label > select {
+    display: inline-block;
+    width: auto;
+}
+
+.InsComp form label > span {
+    flex: 1;
+}
+.InsComp form label > input,
+.InsComp form label > select,
+.InsComp form label > .input-obj-error {
+    flex: 2;
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.InsComp form label > .input-obj-error {
+    color: rgba(168, 28, 28, 0.6);
+}
+
+.InsComp form button[type=submit] {
+    font-size: 1.45em;
+    background-color: rgba(74, 165, 55, 0.35);
+    padding: 4px 0 4px 0;
+}
+
+.InsComp form button[type=submit]:hover {
+    background-color: rgba(73, 165, 55, 0.705);
+    cursor: pointer;
+}

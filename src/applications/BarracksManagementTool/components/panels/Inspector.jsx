@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import * as Dockable from '../../../../components/DockableFrame';
 import personTemplate from '../../templates/personTemplate.json';
 import InsArrCmp from "../InsArrCmp";
+import InsFormCmp from "../InsFormCmp";
 
 const Wrapper = ({children}) => <div id="InspectorPanel">{children}</div>;
 const Inspector = (props) => {
@@ -19,7 +20,6 @@ const Inspector = (props) => {
                 return {err: 'not supported template'};
         }
     }
-
 
     /*
     switch(selectedItemId) {
@@ -40,9 +40,11 @@ const Inspector = (props) => {
     console.log('data str: ', iType, iObj, iTemplate);
     //const templateData = getDataTemplate(iTemplate);
     let selectedData = [];
+    let objectMap = null;
     switch(inspectorStr) {
         case "array<people>person":
             selectedData = people;
+            objectMap = personTemplate;
         break;
         case "array<units>unit":
             selectedData = units;
@@ -61,6 +63,7 @@ const Inspector = (props) => {
                     <header><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></header>
 
                     <InsArrCmp title={iObj} data={selectedData} />
+                    <InsFormCmp title={iTemplate} objectMap={objectMap} />
 
                     {/*
                     <div className="array-list-view">
