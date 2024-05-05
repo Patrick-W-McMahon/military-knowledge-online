@@ -12,5 +12,12 @@
         "description": "Brilliant.org is a website that offers interactive learning and problem-solving in math, science, and computer science. You can explore various topics, practice your skills, and challenge yourself with fun puzzles. Brilliant.org aims to inspire and educate people of all ages and backgrounds to enjoy learning and discover new ways of thinking.",
         "cardId": 157,
         "categories": ["online_education"]
+    },
+    {
+        "title": "GDB Online",
+        "url": "https://www.onlinegdb.com/",
+        "description": "GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, C#, OCaml, VB, Perl, Swift, Prolog, Javascript, Pascal, COBOL, HTML, CSS, JS Code, Compile, Run and Debug online from anywhere in world.",
+        "cardId": 1,
+        "categories": ["online_education"]
     }
 ]
