@@ -16,8 +16,9 @@
         "deafult": null
     },
     "rank": {
-        "type": "string",
-        "default": null
+        "type": "select",
+        "options":["PVT","PV2","PFC","SPC","SPC(P)","CPL","CPL(P)","SGT","SSG","SFC"],
+        "default": "PVT"
     },
     "gender": {
         "type": "select",
@@ -27,6 +28,10 @@
     "deros": {
         "type": "date",
         "default": null
+    },
+    "flagged": {
+        "type": "boolean",
+        "default": false
     },
     "unitId": {
         "type": "index-key",
