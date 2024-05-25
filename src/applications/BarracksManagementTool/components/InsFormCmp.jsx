@@ -49,13 +49,16 @@ const InsFormCmp = ({ title, objectMap, mode }) => {
                                     </label>
                                 </Fragment>
                             );
-                        case "boolean":
-                        case "symbol":
-                        case "undefined":
-                        case "object":
-                        case "function":
+                        case "date":
+                            return (
+                                <Fragment>
+                                    <label>
+                                        <span>{formatFieldName(objKey)}</span>
+                                        <input key={i} type="date" name={objKey} />
+                                    </label>
+                                </Fragment>
+                            );
                         case "select":
-                            console.log("select: ", objectMap[objKey]);
                             return (
                                 <Fragment>
                                     <label>
@@ -65,6 +68,26 @@ const InsFormCmp = ({ title, objectMap, mode }) => {
                                     
                                 </Fragment>
                             );
+                        case "object":
+                            return (
+                                <InsCmpBase title={formatFieldName(objKey)}>
+                                    <Fragment>
+                                        <div>object props</div>
+                                    </Fragment>
+                                </InsCmpBase>
+                            );
+                        case "boolean":
+                            return (
+                                <Fragment>
+                                    <label>
+                                        <span>{formatFieldName(objKey)}</span>
+                                        <input type="checkbox" name={objKey} />
+                                    </label>
+                                </Fragment>
+                            );
+                        case "symbol":
+                        case "undefined":
+                        case "function":
                         default:
                             console.log('unknown type: ', objectMap[objKey].type);
                             return (
