@@ -175,7 +175,7 @@
 #InspectorPanel > header {
     background-color: lightgray;
     color: black;
-    font-size: 1.9em;
+    font-size: 24px;
     padding: 8px;
     width: 100%;
     font-weight: 600;
