@@ -156,8 +156,9 @@
     width: 100%;
 }
 
-.dock-frame > * > div {
+.dock-frame > div > div {
     overflow: auto;
+    font-size: 15px;
 }
 
 #NavigatorPanel,
