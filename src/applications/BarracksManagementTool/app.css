@@ -156,6 +156,10 @@
     width: 100%;
 }
 
+.dock-frame > * > div {
+    overflow: auto;
+}
+
 #NavigatorPanel,
 #NavigatorPanel .rstm-tree-item-group {
     display: block;
