@@ -3,7 +3,7 @@ import InsCmpBase from "./InsCmpBase";
 
 const InsArrCmp = ({ title, data }) => {
     return (
-        <InsCmpBase title={title}>
+        <InsCmpBase title={title} className={'array-list-view'}>
             <Fragment>
                 <ul>
                     {data.map((d,i) => (

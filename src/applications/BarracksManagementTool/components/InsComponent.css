@@ -12,6 +12,10 @@
     background-color: rgb(80, 80, 80);
 }
 
+.InsComp .content {
+    /*overflow: auto!important;*/
+}
+
 .InsComp > header {
     background-color: rgba(77, 77, 77, 0.4);
     padding: 6px 0 6px 0;
@@ -53,14 +57,14 @@
     transform: rotate(90deg);
 }
 
-.InsComp .array-list-view > ul {
+.InsComp.array-list-view .content > ul {
     background-color: rgb(77, 77, 77);
     /*border: 1px solid var(--clr-outline);*/
     border-radius: 8px;
     margin: 4px;
 }
 
-.InsComp.array-list-view > .btn-group {
+.InsComp.array-list-view .content > .btn-group {
     display: flex;
     flex-wrap: nowrap;
     float: right;
@@ -72,7 +76,7 @@
     margin-top: -3px;
 }
 
-.InsComp.array-list-view > .btn-group > button {
+.InsComp.array-list-view .content > .btn-group > button {
     background-color: rgb(110, 110, 110);
     height: 23px;
     width: 28px;
@@ -84,25 +88,25 @@
     outline: none;
 }
 
-.InsComp.array-list-view > .btn-group > button:active {
+.InsComp.array-list-view .content > .btn-group > button:active {
     background-color: rgba(77, 77, 77, 0.4);
 }
 
-.InsComp.array-list-view > .btn-group > button:hover {
+.InsComp.array-list-view .content > .btn-group > button:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-.InsComp.array-list-view > .btn-group > button:first-child {
+.InsComp.array-list-view .content > .btn-group > button:first-child {
     border-bottom-left-radius: 6px;
 }
 
-.InsComp.array-list-view > .btn-group > button:last-child {
+.InsComp.array-list-view .content > .btn-group > button:last-child {
     border-left: 0;
     border-bottom-right-radius: 6px;
 }
 
-.InsComp.array-list-view > ul {
+.InsComp.array-list-view .content > ul {
     margin: 8px 8px 0 8px;
     border: 3px solid rgba(0, 0, 0, 0.6);
     background-color: rgb(110, 110, 110);
@@ -111,55 +115,55 @@
     padding: 2px 0 2px 0;
 }
 
-.InsComp.array-list-view > ul > li {
+.InsComp.array-list-view .content > ul > li {
     padding: 2px 4px 2px 4px;
 }
 
-.InsComp.array-list-view > ul > li:hover {
+.InsComp.array-list-view .content > ul > li:hover {
     background-color: rgba(77, 77, 77, 0.8);
     cursor: pointer;
 }
 
-.InsComp form {
+.InsComp .content form {
     padding: 2px;
     border: 1px solid rgba(0, 0, 0, 0.35)!important;
 }
 
-.InsComp form label {
+.InsComp .content form label {
     margin: 3px 0 3px 0;
     padding: 3px 0 3px 0;
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.35);
 }
 
-.InsComp form label > span,
-.InsComp form label > input,
-.InsComp form label > select {
+.InsComp .content form label > span,
+.InsComp .content form label > input,
+.InsComp .content form label > select {
     display: inline-block;
     width: auto;
 }
 
-.InsComp form label > span {
+.InsComp .content form label > span {
     flex: 1;
 }
-.InsComp form label > input,
-.InsComp form label > select,
-.InsComp form label > .input-obj-error {
+.InsComp .content form label > input,
+.InsComp .content form label > select,
+.InsComp .content form label > .input-obj-error {
     flex: 2;
     background-color: rgba(255, 255, 255, 0.35);
 }
 
-.InsComp form label > .input-obj-error {
+.InsComp .content form label > .input-obj-error {
     color: rgba(168, 28, 28, 0.6);
 }
 
-.InsComp form button[type=submit] {
+.InsComp .content form button[type=submit] {
     font-size: 1.45em;
     background-color: rgba(74, 165, 55, 0.35);
     padding: 4px 0 4px 0;
 }
 
-.InsComp form button[type=submit]:hover {
+.InsComp .content form button[type=submit]:hover {
     background-color: rgba(73, 165, 55, 0.705);
     cursor: pointer;
 }
