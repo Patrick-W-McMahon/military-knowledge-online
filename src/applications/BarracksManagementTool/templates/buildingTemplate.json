@@ -1,5 +1,41 @@
 {
-    "label": "",
-    "address": "",
-    "floors": []
+    "label": {
+        "type": "string",
+        "default": null
+    },
+    "address": {
+        "type": "string",
+        "deafult": null
+    },
+    "floors": {
+        "type": "array",
+        "objType": "object",
+        "objName": "floor",
+        "objDef": {
+            "id": {
+                "type": "index"
+            },
+            "floorplan": {
+                "type": "index"
+            },
+            "label":{
+                "type": "string"
+            },
+            "floorNum": {
+                "type": "string"
+            },
+            "rooms": {
+                "type": "array",
+                "objType": "object",
+                "objName": "room",
+                "objDef": {}
+            },
+            "suites": {
+                "type": "array",
+                "objType": "object",
+                "objName": "suite",
+                "objDef": {}
+            }
+        }
+    }
 }

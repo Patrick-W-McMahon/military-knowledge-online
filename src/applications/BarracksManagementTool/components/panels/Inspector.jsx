@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import * as Dockable from '../../../../components/DockableFrame';
 import personTemplate from '../../templates/personTemplate.json';
+import buildingTemplate from '../../templates/buildingTemplate.json';
 import InsArrCmp from "../InsArrCmp";
 import InsFormCmp from "../InsFormCmp";
 
@@ -51,6 +52,7 @@ const Inspector = (props) => {
         break;
         case "array<buildings>building":
             selectedData = buildings;
+            objectMap = buildingTemplate;
         break;
         default:
             selectedData = null;
