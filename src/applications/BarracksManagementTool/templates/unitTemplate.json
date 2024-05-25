@@ -1,0 +1,6 @@
+{
+    "label": {
+        "type": "string",
+        "default": null
+    } 
+}
