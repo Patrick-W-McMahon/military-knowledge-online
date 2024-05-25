@@ -79,7 +79,7 @@ const initalState = {
   buildings: [...testData.buildings],
   people: [...testData.people],
   units: [...testData.units],
-  selectedObj: null // "array<people>person"
+  selectedObj: { hash: "list_people", inspectorStr: "array<people>person" }
 }
 
 const applicationName = "Barracks Management";
