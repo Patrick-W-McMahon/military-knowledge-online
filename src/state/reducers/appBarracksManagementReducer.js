@@ -1,10 +1,12 @@
 
 import buildingTemplate from '../../applications/BarracksManagementTool/templates/buildingTemplate.json';
+import unitTemplate from '../../applications/BarracksManagementTool/templates/unitTemplate.json';
 
 
 export const SET_DATASET = 'applications/barracks_management/set_dataset';
 export const GET_DATASET = 'applications/barracks_management/get_dataset';
 export const GET_BUILDINGS = 'applications/barracks_management/get_buildings';
+export const CREATE_UNIT = 'applications/barracks_management/create_unit';
 
 
 
@@ -31,6 +33,8 @@ export default function appClockReducer(state = initialState, action) {
             return {...state, ...action.dataStore };
         case GET_BUILDINGS:
             return {...state, ...action.buildings };
+        case CREATE_UNIT:
+            return {...state, ...action.units }
         default:
             return state;
     }
@@ -62,6 +66,20 @@ export const ActionCreateBuilding = (dispatch, label, address) => {
     buildings.push({ ...buildingTemplate, label, address });
     window.localStorage.setItem(DATASTORE.BM_BUILDINGS, JSON.stringify(buildings));
     return dispatch({ type: GET_DATASET, buildings: buildings });
+}
+
+export const ActionCreateUnit = (dispatch, unit) => {
+    if(unit === undefined) {
+        console.error('Error: in ActionCreateUnit unit undefined');
+        return;
+    }
+    let units = [];
+    if(typeof window !== `undefined`) {
+        units = JSON.parse(window.localStorage.getItem(DATASTORE.BM_UNITS)) || [];
+    }
+    units.push({ ...unitTemplate.dataTemplate, ...unit });
+    window.localStorage.setItem(DATASTORE.BM_UNITS, JSON.stringify(units));
+    return dispatch({ type: CREATE_UNIT, units });
 }
 /*
 export const ActionDeleteTimer = (dispatch, index, timers) => {

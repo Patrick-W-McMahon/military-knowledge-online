@@ -1,7 +1,7 @@
 import React, { Fragment} from "react";
 import InsCmpBase from "./InsCmpBase";
 
-const InsFormCmp = ({ title, objectMap, mode }) => {
+const InsFormCmp = ({ title, objectMap, mode, onSubmit }) => {
     if(objectMap === null) {
         return (
             <InsCmpBase title={title}>
@@ -12,6 +12,13 @@ const InsFormCmp = ({ title, objectMap, mode }) => {
     const handleFormSubmit = e => {
         e.preventDefault();
         console.log('submit');
+        const obj = {...Object.keys(objectMap).map(itemKey => {
+            switch(objectMap[itemKey].type) {
+                case "string":
+                    return [itemKey] = null;
+            }
+        })};
+        onSubmit(obj);
     }
     const formatFieldName = str => str.charAt(0).toUpperCase() + str.slice(1).replace(/([A-Z])/g, ' $1').trim()
     const objKeys = Object.keys(objectMap);

@@ -5,7 +5,7 @@ import MainLayout from "../../components/layout/MainLayout";
 import Seo from "../../components/seo";
 import { Container, Nav, NavDropdown, Row, Col } from "react-bootstrap";
 //import localStore from '../../libs/localStore';
-import { ActionCreateBuilding } from '../../state/reducers/appBarracksManagementReducer';
+import { ActionCreateBuilding, ActionCreateUnit } from '../../state/reducers/appBarracksManagementReducer';
 import * as Dockable from '../../components/DockableFrame';
 import Navigator from './components/panels/Navigator';
 import FloorView from "./components/panels/FloorView";
@@ -90,6 +90,18 @@ const AppView = ({ selectedContentPanel }) => {
     setState({...state, selectedObj: { hash, inspectorStr } });
   }
 
+  const createNewInsObj = obj => {
+    const { createUnit } = this.props;
+    const { selectedObj } = this.state;
+    switch(selectedObj.hash) {
+      case "list_unit":
+        createUnit(obj);
+        break;
+      default:
+        console.error('Error: unknow selected object hash ', selectedObj.hash);
+    }
+  }
+
   const dockState = Dockable.useDockable(s => {
     const { createDockedPanel, DockMode } = Dockable;
     const { Full, Left, Right } = DockMode;
@@ -97,9 +109,11 @@ const AppView = ({ selectedContentPanel }) => {
     createDockedPanel(s, rootPanel, Full, <FloorView/>);
     createDockedPanel(s, rootPanel, Full, <DbView/>);
     createDockedPanel(s, rootPanel, Left, <Navigator onSelection={onNavigatorSelection} />);
-    createDockedPanel(s, rootPanel, Right, <Inspector />);
+    createDockedPanel(s, rootPanel, Right, <Inspector createNewInsObj={createNewInsObj} />);
   });
 
+
+  
 
   const createNewDataset = () => {
     setState({...state, dataset: datasetTemplete, currentView: VMODES.SOLDIER });
@@ -148,7 +162,7 @@ const AppView = ({ selectedContentPanel }) => {
                 </NavDropdown>
                 <NavDropdown title="Window">
                   <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Navigator onSelection={onNavigatorSelection} />)}>Navigator</NavDropdown.Item>
-                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Inspector selectedObjHash={state.selectedObjHash} />)}>Inspector</NavDropdown.Item>
+                  <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <Inspector selectedObjHash={state.selectedObjHash} createNewInsObj={createNewInsObj} />)}>Inspector</NavDropdown.Item>
                   <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <FloorView />)}>Floor Plan View</NavDropdown.Item>
                   <NavDropdown.Item disabled={false} onClick={() => Dockable.spawnFloating(dockState, <DbView />)}>Database Viewer</NavDropdown.Item>
                 </NavDropdown>
@@ -227,7 +241,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return ({
-    createBuilding: (label, address) => ActionCreateBuilding(dispatch, label, address)
+    createBuilding: (label, address) => ActionCreateBuilding(dispatch, label, address),
+    createUnit: unit => ActionCreateUnit(dispatch, unit)
 });
 }
 

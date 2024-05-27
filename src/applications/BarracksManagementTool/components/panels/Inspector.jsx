@@ -8,7 +8,7 @@ import InsFormCmp from "../InsFormCmp";
 
 const Wrapper = ({children}) => <div id="InspectorPanel">{children}</div>;
 const Inspector = (props) => {
-    const { selectedObj, buildings, people, units } = props;
+    const { selectedObj, createNewInsObj, buildings, people, units } = props;
     const ctx = Dockable.useContentContext();
     ctx.setTitle(`Inspector`);
     ctx.setPreferredSize(200, 250);
@@ -50,7 +50,7 @@ const Inspector = (props) => {
         break;
         case "array<units>unit":
             selectedData = units;
-            objectMap = unitTemplate;
+            objectMap = unitTemplate.objectMapping;
         break;
         case "array<buildings>building":
             selectedData = buildings;
@@ -66,8 +66,8 @@ const Inspector = (props) => {
                 <Wrapper>
                     <header><span>{iObj.charAt(0).toUpperCase() + iObj.slice(1)}</span></header>
 
-                    <InsArrCmp title={iObj} data={selectedData} />
-                    <InsFormCmp title={iTemplate} objectMap={objectMap} />
+                    <InsArrCmp title={iObj} data={selectedData} onNew={() => createNewInsObj({})} />
+                    <InsFormCmp title={iTemplate} objectMap={objectMap} onSubmit={createNewInsObj} />
 
                     {/*
                     <div className="array-list-view">

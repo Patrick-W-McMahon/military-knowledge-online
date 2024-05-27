@@ -1,6 +1,11 @@
 {
-    "label": {
-        "type": "string",
-        "default": null
-    } 
+    "objectMapping": {
+        "label": {
+            "type": "string",
+            "default": null
+        } 
+    },
+    "dataTemplate": {
+        "label": ""
+    }
 }
