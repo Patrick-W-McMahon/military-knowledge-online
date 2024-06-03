@@ -109,6 +109,10 @@ p {
 
 .list-menu-items-grid {
     display: flex-wrap;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: rgba(0, 0, 0, 0.5)!important;
+    color: rgb(119, 119, 119)!important;
 }
 
 .list-menu-items-grid>div {
@@ -118,12 +122,15 @@ p {
     margin: 5px;
     padding: 5px;
     border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.45);
     min-width: 100px;
 }
 
+.list-menu-items-grid td {
+    max-width: 300px;
+}
+
 .list-menu-items-grid>div:hover {
-    background-color: rgba(255, 255, 255, 0.75);
+    
     cursor: pointer;
 }
 
@@ -137,6 +144,12 @@ p {
     display: block;
     text-align: center;
     margin-top: 5px;
+}
+
+.list-menu-items-grid .icon-link,
+.list-menu-items-grid a {
+    color: white;
+    font-weight: 500;
 }
 
 .rstm-tree-item--focused {

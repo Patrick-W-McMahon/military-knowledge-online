@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { graphql } from "gatsby";
-import { Container, Row, Col, Table } from 'react-bootstrap';
+import { Container, Row, Col, Table, Button, ButtonGroup } from 'react-bootstrap';
 import MainLayout from "../components/layout/MainLayout";
 import InsCmpBase from "../components/BaseUILib/InsCmpBase";
 
@@ -66,25 +66,30 @@ const DocumentsPage = ({ selectedContentPanel, data }) => {
                                     <tr>
                                         <th>Document Num</th>
                                         <th>Title</th>
+                                        <th>Date</th>
                                         <th>Doc Type</th>
                                         <th>Doc Group</th>
                                         <th>File Type</th>
-                                        <th>Document</th>
-                                        <th>Page</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {filteredDocuments.map(doc => {
-                                        const { num, title, hash, pdfLink, docType, fileType, pageUrl, nav } = doc;
+                                        const { num, title, date, hash, pdfLink, docType, fileType, pageUrl, nav } = doc;
                                         return (
                                             <tr key={hash}>
                                                 <td>{num}</td>
                                                 <td>{title}</td>
+                                                <td>{date}</td>
                                                 <td>{docType}</td>
                                                 <td>{nav}</td>
                                                 <td>{fileType}</td>
-                                                <td>{fileType === 'PDF' ? <a href={pdfLink} target="_blank" rel="noreferrer" aria-label="PDF link"><i className="far fa-file-pdf fa-lg icon-link"></i></a> : ''}</td>
-                                                <td><a href={pageUrl} target="_blank" rel="noreferrer" aria-label="source page link"><i className="fas fa-external-link-alt"></i></a></td>
+                                                <td>
+                                                    <ButtonGroup className="actionButtonGroup">
+                                                        {fileType === 'PDF' ? <a href={pdfLink} title="PDF" target="_blank" rel="noreferrer" aria-label="PDF link" className="btn btn-secondary"><i className="far fa-file-pdf fa-lg"></i></a>: ''}
+                                                        <a href={pageUrl} title="Source Page" target="_blank" rel="noreferrer" aria-label="source page link" className="btn btn-secondary"><i className="fas fa-external-link-alt"></i></a>
+                                                    </ButtonGroup>
+                                                </td>
                                             </tr>
                                         );
                                     })}
