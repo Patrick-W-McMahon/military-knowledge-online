@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { graphql } from "gatsby";
-import { Container, Row, Col, Table, Accordion } from 'react-bootstrap';
+import { Container, Row, Col, Table } from 'react-bootstrap';
 import MainLayout from "../components/layout/MainLayout";
+import InsCmpBase from "../components/BaseUILib/InsCmpBase";
 
 const SideMenuSection =  ({title, data, eventKey, onUpdate}) => (
-    <Accordion.Item eventKey={eventKey} className="sidemenu-section h200">
-        <Accordion.Header>{title}</Accordion.Header>
-        <Accordion.Body>
-            <ul>
-                {data.map((item, index) => (
-                    <div key={index}>
-                        <input type="checkbox" id={`${title.replace(/\s/g, "")}-${item}`} name={item} value={item} onChange={e => onUpdate(e)}/>
-                        <span> {item.length > 0 ? item : 'Empty Value'}</span>
-                    </div>
-                ))}
-            </ul>                
-        </Accordion.Body>
-    </Accordion.Item>
+    <InsCmpBase title={title} key={eventKey} style={{main: { padding: "0 5px 0 5px"}, body: { height: "auto", maxHeight: "200px", overflowY: "auto", padding: "0 3px 0 3px"}}}>
+        <ul>
+            {data.map((item, index) => (
+                <div key={index}>
+                    <input type="checkbox" id={`${title.replace(/\s/g, "")}-${item}`} name={item} value={item} onChange={e => onUpdate(e)}/>
+                    <span> {item.length > 0 ? item : 'Empty Value'}</span>
+                </div>
+            ))}
+        </ul> 
+    </InsCmpBase>
 );
 
 const filterDocuments = (documents, filters) => {
@@ -58,17 +56,8 @@ const DocumentsPage = ({ selectedContentPanel, data }) => {
             <Container fluid>
                 <Row>
                     <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
-                        <Accordion  defaultActiveKey={['0']} alwaysOpen flush>
-                            <SideMenuSection title="Document Types" data={docTypes} eventKey="0" onUpdate={e => updateFilter('docType', e)} />
-                            <SideMenuSection title="File types" data={fileTypes} eventKey="1" onUpdate={e => updateFilter('fileType', e)}/>
-                            {/*<TreeMenu   data={allLinkMenuData.nodes} 
-                                        initialOpenNodes={selectedTreeData.openNodes} 
-                                        focusKey={selectedTreeData.key} 
-                                        activeKey={selectedTreeData.key} 
-                                        onClickItem={handleMenuItemSelected} 
-                                        onToggle={handleMenuItemToggled}
-                                    />*/}
-                        </Accordion>
+                        <SideMenuSection title="Document Types" data={docTypes} eventKey="0" onUpdate={e => updateFilter('docType', e)} />
+                        <SideMenuSection title="File Types" data={fileTypes} eventKey="1" onUpdate={e => updateFilter('fileType', e)}/>  
                     </Col>
                     <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
                         <div className="list-menu-items-grid scroll-panel">
