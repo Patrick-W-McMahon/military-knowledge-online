@@ -10,17 +10,17 @@ let docLinks = [];
   // Load documentsList.json into listData
   await fs.access(files[0], fs.constants.F_OK, async (err) => {
     if(err) {
-      console.log('documentsList.json doesn\'t exist creating file');
+      console.log(`${files[0]} doesn't exist creating file`);
       for (const url of URLs) {
         listData = [...listData, ...await getLists(url)];
       }
       await saveData(files[0], listData);
     } else {
-      console.log('found documentsList.json loading data.');
+      console.log(`found ${files[0]} loading data.`);
       await loadData(files[0], async listData => {
         await fs.access(files[1], fs.constants.F_OK, async (err) => {
           if(err) {
-            console.log('dataSet.json doesn\'t exist creating file');
+            console.log(`${files[1]} doesn't exist creating file`);
             docLinks = listData.map((url,index) => ({
               index,
               num: null,
@@ -35,7 +35,7 @@ let docLinks = [];
             }));
             await saveData(files[1], docLinks);
           } else {
-            console.log('found dataSet.json loading data.');
+            console.log(`found ${files[1]} loading data.`);
             await loadData(files[1], async dataSet => {
               let dataSetMem = dataSet;
               for(let i=0; i<dataSet.length;i++){
@@ -55,7 +55,7 @@ let docLinks = [];
                   await sleep(2000);
                 }
               }
-              console.log('\nFinished Scrapping. \nSaving data to dataSet.json');
+              console.log(`\nFinished Scrapping. \nSaving data to ${files[1]}`);
               await saveData(files[1],dataSetMem);
             });
           }
@@ -76,7 +76,8 @@ let docLinks = [];
   }
   
   async function dataConverter(dom,obj) {
-    await dom('#MainContent_tblContainer1').first().find('tr').each((i, tr) => {
+    //await dom('#MainContent_tblContainer1').first().find('tr').each((i, tr) => {
+    await dom('table.usa-table').first().find('tr').each((i, tr) => {
       const tdElements = dom(tr).find('td');
       const label = dom(tdElements[0]).text().trim().toLowerCase();
       const val = dom(tdElements[1]).text();
@@ -111,7 +112,7 @@ let docLinks = [];
           obj.footnotes = val;
           break;
         default:
-          console.log('unknown label', label);
+          console.log(`unknown label: "${label}", Value: "${val}"`);
       }
     });
     return obj;
@@ -179,7 +180,7 @@ async function getLists(url) {
         if (i === 0) return;
         const hrefValue = $(tr).find('td').first().find('a').first().attr('href');
         const poi = hrefValue.indexOf('.');//point of injection
-        results.push(`${hrefValue.substring(0, poi)}'_Printer'${hrefValue.substring(poi, this.length)}`);
+        results.push(`${hrefValue.substring(0, poi)}_Printer${hrefValue.substring(poi, this.length)}`);
       });
     }
   } catch (error) {
