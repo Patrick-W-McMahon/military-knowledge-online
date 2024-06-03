@@ -1,5 +1,5 @@
 import React, { Fragment} from "react";
-import InsCmpBase from "./InsCmpBase";
+import InsCmpBase from "../../../components/BaseUILib/InsCmpBase";
 
 const InsArrCmp = ({ title, data }) => {
     return (
