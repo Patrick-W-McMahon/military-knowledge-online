@@ -129,6 +129,10 @@ p {
     max-width: 300px;
 }
 
+.list-menu-items-grid tr>td:first-child {
+    width: 145px;
+}
+
 .list-menu-items-grid>div:hover {
     
     cursor: pointer;

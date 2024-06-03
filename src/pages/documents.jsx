@@ -86,8 +86,8 @@ const DocumentsPage = ({ selectedContentPanel, data }) => {
                                                 <td>{fileType}</td>
                                                 <td>
                                                     <ButtonGroup className="actionButtonGroup">
-                                                        {fileType === 'PDF' ? <a href={pdfLink} title="PDF" target="_blank" rel="noreferrer" aria-label="PDF link" className="btn btn-secondary"><i className="far fa-file-pdf fa-lg"></i></a>: ''}
-                                                        <a href={pageUrl} title="Source Page" target="_blank" rel="noreferrer" aria-label="source page link" className="btn btn-secondary"><i className="fas fa-external-link-alt"></i></a>
+                                                        {fileType === 'PDF' ? <a href={pdfLink} title="PDF" target="_blank" rel="noreferrer" aria-label="PDF link" className="btn btn-sm btn-secondary"><i className="far fa-file-pdf"></i></a>: ''}
+                                                        <a href={pageUrl} title="Source Page" target="_blank" rel="noreferrer" aria-label="source page link" className="btn btn-sm btn-secondary"><i className="fas fa-external-link-alt"></i></a>
                                                     </ButtonGroup>
                                                 </td>
                                             </tr>
