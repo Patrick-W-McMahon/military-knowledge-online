@@ -124,6 +124,10 @@ p {
     font-weight: 500;
 }
 
+.page-documents .body-page tr>td:first-child {
+    width: 145px;
+}
+
 .list-menu-items-grid {
     display: flex-wrap;
 }
@@ -137,12 +141,6 @@ p {
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.45);
     min-width: 100px;
-}
-
-
-
-.list-menu-items-grid tr>td:first-child {
-    width: 145px;
 }
 
 .list-menu-items-grid>div:hover {
