@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { graphql } from "gatsby";
-import { Container, Row, Col, Table, Button, ButtonGroup } from 'react-bootstrap';
+import { Container, Row, Col, Table, ButtonGroup } from 'react-bootstrap';
 import MainLayout from "../components/layout/MainLayout";
 import InsCmpBase from "../components/BaseUILib/InsCmpBase";
 
@@ -52,7 +52,7 @@ const DocumentsPage = ({ selectedContentPanel, data }) => {
     }
     let filteredDocuments = filterDocuments(documents, state.filters);
     return (
-        <MainLayout activePos={4} nonScroll>
+        <MainLayout activePos={4} nonScroll pageName="documents">
             <Container fluid>
                 <Row>
                     <Col md="2" className={`page-menu${selectedContentPanel===0 ? ' active' : ''}`}>
@@ -60,7 +60,7 @@ const DocumentsPage = ({ selectedContentPanel, data }) => {
                         <SideMenuSection title="File Types" data={fileTypes} eventKey="1" onUpdate={e => updateFilter('fileType', e)}/>  
                     </Col>
                     <Col md="10" className={`body-page${selectedContentPanel===1 ? ' active' : ''}`}>
-                        <div className="list-menu-items-grid scroll-panel">
+                        <div className="scroll-panel">
                             <Table striped bordered hover>
                                 <thead>
                                     <tr>

@@ -7,9 +7,10 @@ import './MainLayout.css';
 import Header from './comp/Header';
 import Sidebar from './comp/Sidebar';
 import Footer from './comp/Footer';
+import { strClassTransform } from '../../libs/common';
 
 const MainLayout = (props) => {
-    const { children, activePos, subTitle, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended, ToggleContentPanel, GetContentPanel, noSidePanel } = props;
+    const { children, activePos, subTitle, nonScroll, GetSideMenuMode, ToggleSideMenu, menuExtended, ToggleContentPanel, GetContentPanel, noSidePanel, pageName } = props;
     const [extendedSideBar, setExtendedSidebar] = useState(false);
     useEffect(() => {
         async function fetchData() {
@@ -55,14 +56,14 @@ const MainLayout = (props) => {
         <Fragment>
             <Header extended={extendedSideBar} titleLong={subTitle? `${titleShort} | ${subTitle}` :titleLong} titleShort={subTitle? `${titleShort} | ${subTitle}`: titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
             {noSidePanel ? (
-                <div className="main-body">
+                <div className={`main-body${pageName !== undefined && pageName.length ? ` page-${strClassTransform(pageName)}`:''}`}>
                     <div className={`content-wrapper full`}>
                         <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>
                         <Footer><p>{footerText}</p></Footer>
                     </div>
                 </div>
             ) : (
-                <div className="main-body">
+                <div className={`main-body${pageName !== undefined && pageName.length ? ` page-${strClassTransform(pageName)}`:''}`}>
                     <Sidebar extended={extendedSideBar} menuItems={sidebarLinks} activePos={activePos} handleSidebarToggle={() => handleSidebarToggle()} />
                     <div className={`content-wrapper${extendedSideBar ? ' extended' : ''}`}>
                         <div className={`main-content${nonScroll ? ' no-scroll' : null}`}><Fragment>{contentComponents}</Fragment></div>

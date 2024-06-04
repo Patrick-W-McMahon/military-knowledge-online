@@ -10,6 +10,7 @@ export const flattenLinksList = linksList => {
     return flatList;
 }
 
+export const strClassTransform = input => input !== undefined ? input.replace(/\s+/g, '-').toLowerCase():"";// Replace spaces with hyphens and convert to lowercase
 export const getActiveLinks = (allLinksData, selectedTreeData) => {
     //console.log('>>allLinksData: ', allLinksData);
     //console.log('>>selectedTreeData: ', selectedTreeData);

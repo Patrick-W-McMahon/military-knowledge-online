@@ -254,7 +254,7 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
     
     return (
         <Fragment>
-            <MainLayout activePos={0} nonScroll>
+            <MainLayout activePos={0} nonScroll pageName="links">
                 <MainLayout.Navigation>
                     <Nav className="me-auto">
                         <NavDropdown title="View">
