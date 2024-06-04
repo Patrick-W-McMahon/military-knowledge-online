@@ -9,6 +9,7 @@ import MainLayout from "../components/layout/MainLayout";
 //import { getEventMessage } from '../libs/common';
 import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
+import LGrid from "../components/BaseUILib/lGrid";
 
 const branchesFlattener = (all_military_branches_obj) => {
     return {
@@ -16,17 +17,8 @@ const branchesFlattener = (all_military_branches_obj) => {
         branches: all_military_branches_obj.branches[0].nodes
     }
 }
-
-const CardGrid = ({ cards, showInfo, toggleFav, classProps }) => (
-    <Fragment>
-        {cards.length && cards.map((card, index) => (
-            <LinkCard key={`card-${index}`} card={card} showInfo={showInfo} toggleFav={toggleFav} classProps={classProps} />
-        ))}
-    </Fragment>
-);
-
-const LinkCard = ({ card, showInfo, toggleFav, classProps }) => {
-    const { id, hash, title, url, description, cardId, fav, menlo } = card;
+const LinkCard = ({ id, hash, title, url, description, cardId, fav, menlo, showInfo, toggleFav, classProps }) => {
+    //const { id, hash, title, url, description, cardId, fav, menlo } = card;
     const cardIdStr = String(cardId).padStart(3, '0');
     return (
         <div key={id} className={`card-panel ${classProps ? ` ${classProps}`: ''}`}>
@@ -336,7 +328,11 @@ const IndexPage = ({ SetSelectedFilter, GetSelectedFilter, LoadFavLinks, workspa
                                         </Container>
                                     ):(
                                         <div className="list-menu-items-grid scroll-panel">
-                                            <CardGrid cards={activeLinks.links} showInfo={handleShowInfo} toggleFav={handleToggleFavLink} classProps=""/>
+                                            <LGrid dataArr={activeLinks.links} dataProps={{ showInfo: handleShowInfo, toggleFav: handleToggleFavLink }} classProps="">
+                                                <LGrid.Template>
+                                                    <LinkCard />
+                                                </LGrid.Template>
+                                            </LGrid>
                                         </div>
                                     )}
                                 </Fragment>  
