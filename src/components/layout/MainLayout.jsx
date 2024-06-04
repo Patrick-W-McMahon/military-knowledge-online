@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import Seo from "../seo";
 import { ActionToggleSideMenu, ActionGetSideMenuMode, ActionToggleContentPanel, ActionGetContentPanel } from '../../state/reducers/mainLayoutReducer';
 import './MainLayout.css';
 import Header from './comp/Header';
@@ -54,6 +55,7 @@ const MainLayout = (props) => {
 
     return (
         <Fragment>
+            <Seo title={`${titleLong}${subTitle? ` ${subTitle}`:''}`} />
             <Header extended={extendedSideBar} titleLong={subTitle? `${titleShort} | ${subTitle}` :titleLong} titleShort={subTitle? `${titleShort} | ${subTitle}`: titleShort} mainSideMenu={sidebarLinks} appMenu={navigationComponent} handleSidebarToggle={() => handleSidebarToggle()} handleToggleContentPanel={() => ToggleContentPanel()} />
             {noSidePanel ? (
                 <div className={`main-body${pageName !== undefined && pageName.length ? ` page-${strClassTransform(pageName)}`:''}`}>

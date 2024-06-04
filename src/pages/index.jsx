@@ -6,7 +6,6 @@ import TreeMenu from 'react-simple-tree-menu';
 import '../../node_modules/react-simple-tree-menu/dist/main.css';
 //import Layout from "../components/layout";
 import MainLayout from "../components/layout/MainLayout";
-//import Seo from "../components/seo";
 //import { getEventMessage } from '../libs/common';
 import { getActiveLinks, filterFavLinks } from '../libs/common';
 import { ActionSetSelectedFilter , ActionGetSelectedFilter, ActionToggleFavoriteLinks, ActionLoadFavoriteLinks } from '../state/reducers/webLinksReducer';
