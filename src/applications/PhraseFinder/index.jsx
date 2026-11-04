@@ -82,7 +82,7 @@ const AppView = () => {
                                     <Tab.Pane eventKey="Results">
                                         <Row>
                                             <Col>
-                                                <h3>Phrases <span className="subtext">(Seperate phrases with commas)</span></h3>
+                                                <h3>Phrases <span className="subtext">(Separate phrases with commas)</span></h3>
                                                 <textarea id="phrases" rows="20"  value={state.phraseStr} onChange={e => updatePhrases(e)}></textarea>
                                             </Col>
                                             <Col>

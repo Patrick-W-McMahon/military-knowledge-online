@@ -1,5 +1,5 @@
 # link_(branch name).json
-When editing a link file 'link_(branch name).json' the format is as followed. ONLY EDIT LINKS FOR YOUR BRANCH.
+When editing a link file 'link_(branch name).json' the format is as follows. ONLY EDIT LINKS FOR YOUR BRANCH.
 
 ```` json
 [
@@ -14,7 +14,7 @@ When editing a link file 'link_(branch name).json' the format is as followed. ON
 
 ````
 
-The text attribute is displayed for the link. The url property is the url you would like to go to when the link is clicked. The description property is a detailed set of text to explane to the user what the link is. The cardId is a number that matches with a card image that will be used for displaying the link as a card. 
+The text attribute is displayed for the link. The url property is the url you would like to go to when the link is clicked. The description property is a detailed set of text to explain to the user what the link is. The cardId is a number that matches with a card image that will be used for displaying the link as a card. 
 
 
 # branches.json
@@ -33,7 +33,7 @@ The branches.json file holds an array of all the branches of the military. This 
 
 
 # categories_(branch name).json
-This file provides quick catigories that will show up in the drop down menu to bring up links based on a catigory. ONLY EDIT THE FILE FOR YOUR BRANCH.
+This file provides quick categories that will show up in the drop down menu to bring up links based on a category. ONLY EDIT THE FILE FOR YOUR BRANCH.
 
 ```` json
 [
@@ -48,4 +48,4 @@ This file provides quick catigories that will show up in the drop down menu to b
 ]
 ````
 
-The categories file calls an action that requires an system obj to be targeted with a corresponding function call on that object. 
+The categories file calls an action that requires a system obj to be targeted with a corresponding function call on that object. 

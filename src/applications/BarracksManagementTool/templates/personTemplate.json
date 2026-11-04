@@ -9,11 +9,11 @@
     },
     "middleName": {
         "type": "string",
-        "deafult": null
+        "default": null
     },
     "lastName": {
         "type": "string",
-        "deafult": null
+        "default": null
     },
     "rank": {
         "type": "select",
@@ -63,7 +63,7 @@
             "emails": {
                 "type": "array",
                 "objType": "email-address",
-                "deafult": []
+                "default": []
             }
         }
         

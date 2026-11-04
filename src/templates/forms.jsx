@@ -74,7 +74,7 @@ const Forms = ({ data, pageContext }) => {
                   <Modal.Body>
                     <Row className="justify-content-md-center">
                       <Col md={9}>
-                        <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visiable on the network. Do not include classified information.</span>
+                        <span className="disclaimer"><b>DISCLAIMER!</b> while this site doesn't save/transmit user activity; The submission of this form will create outward traffic visible on the network. Do not include classified information.</span>
                       </Col>
                     </Row>
                   </Modal.Body>

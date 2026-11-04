@@ -14,7 +14,7 @@ const testLinksData = [
 */
 const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, defaultGroupFilterHash }) => (
     <Fragment>
-        <seciton className="outlined-section">
+        <section className="outlined-section">
             <header>Links Configurations</header>
             <div>
                 <h4>Link Edit Mode</h4>
@@ -35,7 +35,7 @@ const WorkspaceSettingsForm = ({ linkEditMode, settingChanged, groupFilters, def
                 <ListEditView data={testLinksData} />
                 */}
             </div>
-        </seciton>
+        </section>
     </Fragment>
 );
 

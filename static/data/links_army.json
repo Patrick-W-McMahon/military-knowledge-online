@@ -493,7 +493,7 @@
     {
         "title": "DOD CAC Cert Repository",
         "url": "https://public.cyber.mil/pki-pke/tools-configuration-files/",
-        "description": "The DOD Commmon Access Card Cert repository. Use the certs her to gain access to DOD websites with your common access card. Choose the correct one for your Operating System.",
+        "description": "The DOD Common Access Card Cert repository. Use the certs here to gain access to DOD websites with your common access card. Choose the correct one for your Operating System.",
         "cardId": 145,
         "categories": ["dod_resource", "resources_info_tech"]
     },
