@@ -5,7 +5,7 @@
     "onSubmit": {
         "api": "google.sheet",
         "SHEET_ID": "1eM4zqma2LjjAJQlGouKED1Xz5QcvuNyvI47N8BOe0QY",
-        "ACCESS_TOKEN":
+        "ACCESS_TOKEN": ""
     },
     "fields": [{
             "label": "How would you rate your experience in the barracks?",

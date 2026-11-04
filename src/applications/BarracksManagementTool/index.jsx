@@ -98,7 +98,7 @@ const AppView = ({ selectedContentPanel }) => {
         createUnit(obj);
         break;
       default:
-        console.error('Error: unknow selected object hash ', selectedObj.hash);
+        console.error('Error: unknown selected object hash ', selectedObj.hash);
     }
   }
 

@@ -72,7 +72,7 @@
         {
             "paygrade": "E-9",
             "insignia": "",
-            "ran": "Sergeant Major",
+            "rank": "Sergeant Major",
             "abbreviation": "SGM",
             "classification": "Noncommissioned Officer"
         },
@@ -196,7 +196,7 @@
             "classification": "Commissioned Officer"
         },
         {
-            "paygrade": "O-10",
+            "paygrade": "O-11",
             "insignia": "",
             "rank": "General of the Army",
             "abbreviation": "GA",

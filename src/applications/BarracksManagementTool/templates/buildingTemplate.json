@@ -5,7 +5,7 @@
     },
     "address": {
         "type": "string",
-        "deafult": null
+        "default": null
     },
     "floors": {
         "type": "array",

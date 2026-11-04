@@ -117,13 +117,13 @@ export const getEventMessage = () => {
             if (d >= 15) return "It is currently Hispanic Heritage and Suicide Prevention Month";
             return "It is currently Suicide Prevention Month";
         case 9:
-            if (d === 13) return "Happy Birthday Navy! It is currently Hispanic Heritage, Army Cybersecurity Awarenes, National Energy Action, and Disability Awareness Month Month";
-            if (d <= 15) return "It is currently Hispanic Heritage, Army Cybersecurity Awarenes, National Energy Action, and Disability Awareness Month";
-            return "It is currently Army Cybersecurity Awarenes, National Energy Action, and Disability Awareness Month";
+            if (d === 13) return "Happy Birthday Navy! It is currently Hispanic Heritage, Army Cybersecurity Awareness, National Energy Action, and Disability Awareness Month";
+            if (d <= 15) return "It is currently Hispanic Heritage, Army Cybersecurity Awareness, National Energy Action, and Disability Awareness Month";
+            return "It is currently Army Cybersecurity Awareness, National Energy Action, and Disability Awareness Month";
         case 10:
-            if (d === 10) return "Happy Birthday Marines! It is currently Miltary Family, Native American and Alaskan Heritage Month";
-            if (d === 11) return "It is currently Veterans Day! It is currently Miltary Family, Native American and Alaskan Heritage Month";
-            return "It is currently Miltary Family, Native American and Alaskan Heritage Month";
+            if (d === 10) return "Happy Birthday Marines! It is currently Military Family, Native American and Alaskan Heritage Month";
+            if (d === 11) return "It is currently Veterans Day! It is currently Military Family, Native American and Alaskan Heritage Month";
+            return "It is currently Military Family, Native American and Alaskan Heritage Month";
         case 11:
             if (d === 13) return "Happy Birthday National Guard!";
             if (d === 20) return "Happy Birthday Space Force!";
